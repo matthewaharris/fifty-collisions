@@ -1,0 +1,28 @@
+{
+  "id": 23,
+  "name": "Nightside",
+  "tagline": "A story evolved by sleeping brains: rehearse every element, cue half of them at sleep onset, and let whatever dreamers measurably replay become canon as it passes west with the night.",
+  "kind": "system",
+  "tier": "wild",
+  "innovation": 8,
+  "feasibility": 4,
+  "domains": ["sleep science", "targeted memory reactivation", "dream incubation", "collaborative storytelling", "population genetics", "open science"],
+  "summary": "Nightside is a collaborative story whose plot is selected by sleeping brains rather than authors. Each evening every participant rehearses all candidate story elements, each paired with a sound counterbalanced across sleepers. Overnight, Dormio-style sleep-onset loops cue a random half, so day residue cancels and each element's incorporation lift, cued versus uncued, becomes its measured fitness. Dream distortions that recur across independent sleepers spin off as new elements, time zones act as demes, and the canon passes west with the night, while a lucid corps answers plot forks with eye signals from inside REM. The result is an open dataset of what the sleeping brain preferentially replays and a serial credited to every sleeper, governed by a no-brands charter, personal valence ceilings and a cap on threat frequency.",
+  "core_loop": "Rehearse all candidate elements with counterbalanced sounds -> sleep-onset loops cue a random half -> voice reports are scored against a pre-registered motif dictionary and blind raters -> a hierarchical Bayesian model estimates each element's lift -> high-lift elements become canon, recurring distortions become new elements -> the updated set passes to the next time zone -> lucid dreamers vote on plot forks with eye signals in REM.",
+  "why_now": "Targeted memory reactivation, sleep-onset dream incubation (MIT's open-source Dormio) and two-way communication with lucid dreamers (Konkoly et al., 2021) are all published, and home targeted lucidity reactivation has been run with apps. Consumer sleep headbands (Muse S, Elemind) and the FDA's Jan 2026 wellness guidance give closed-loop audio wearables room, while LLMs and speech recognition make thousands of dream reports scorable overnight.",
+  "mvp": "90 days with a sleep lab's IRB. Weeks 1-3: build the kit (Dormio fork or Muse S plus earbuds), pre-register 12 elements with Latin-square sound assignment and the analysis plan. Weeks 4-8: 60 dreamers in two time-zone demes, four nights a week, sleep-onset loops with randomized half-cueing and voice reports. Weeks 9-12: the first selection round, the first spontaneous mutants and Chapter 1 of the canon. Kill metrics: no element shows a significant cued-over-uncued lift, or under half of dreamers still adhere by week 6.",
+  "stack": "Dormio-style hand sensor or Muse S EEG over BLE; earbuds for calibrated cue playback; phone app for sleep-onset detection and voice capture; Whisper transcription; pre-registered motif dictionary, embedding clustering for mutants and blind human raters; server-side nightly randomization; hierarchical Bayesian lift model with random effects for sleeper, sound and night; consented, scrubbed open dataset.",
+  "business_model": "A research instrument plus a serial, not a startup. A consortium of sleep labs funds the open dataset, with grants on top, dreamers buy kits at cost, and the canon is published as a podcast and book crediting every sleeper. Brands and paid elements are banned by charter.",
+  "risks": [
+    "Home sleep-onset cueing may produce no lift detectable at crowd scale",
+    "Adherence collapse: dream-journal habits rarely last past a few weeks",
+    "Cue sounds incorporated literally; mitigated by Latin-square counterbalancing and semantic scoring",
+    "LLM motif extraction over-finding motifs; mitigated by pre-registered dictionaries and blind raters",
+    "Threat drift causing nightmares; mitigated by exclusions, personal valence ceilings and threat-frequency caps",
+    "Commercial dream incubation (as in Coors' 2021 campaign); banned by charter",
+    "Dream reports are highly intimate data",
+    "Consumer REM detection may be too poor for a lucid corps at scale"
+  ],
+  "moonshot": "A planetary dream observatory. Tens of thousands of sleepers keep one story dreamed around the Earth, and divergence between demes gives the first measured map of which dream content is universal and which is cultural. Selected benign elements become therapy cues extending TMR-boosted nightmare therapy, and with better REM detection dozens of lucid dreamers receive the same beat at once and reach real-time consensus with their eyes: the first assembly convened inside sleep.",
+  "best_line": "One sleeper is a terrible channel, but a population is a good search engine even when every individual is noisy."
+}

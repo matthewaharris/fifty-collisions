@@ -1,0 +1,28 @@
+{
+  "id": 48,
+  "name": "Taper",
+  "tagline": "Queue middleware for fast chargers: past your car's own knee, courtesy is a rule; before it, and upstream on the corridor, yielding earns priority at your next congested stop.",
+  "kind": "system",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 7,
+  "domains": ["EV charging", "queue etiquette", "mechanism design", "airline overbooking", "air traffic flow management", "loyalty economics"],
+  "summary": "Taper is queue middleware for DC fast-charging operators, built on OCPP 2.0.1. When every stall is taken, a software queue forms that drivers join in the app, via ABRP, or by tapping a contactless card at the kiosk, and only the car at the head of the queue can start a session. Each car's knee is measured against its own session peak. Past the knee, courtesy becomes a rule: a three-minute nudge, then a congestion fee, never a payment, so lingering earns nothing. Before the knee, and upstream for cars heading into a forecast line, the operator posts rising yield offers paid in closed-loop slot credits that buy priority at the next congested stop. Faster turnover funds the credits, and the price of yields by site and hour shows where the next stalls should go.",
+  "core_loop": "All stalls busy -> queue forms (app, ABRP check-in, or a contactless card tap as the token) -> stalls authorise only the head of the queue -> cars past their own knee get a three-minute nudge, then a congestion fee -> if the line persists, the operator's clock-rising credit offer goes to cars still before their knee and to cars en route to the busy site, who are offered a quieter site upstream -> a yield mints slot credits only when a real queued car plugs in within five minutes -> credits decay over 90 days, are capped weekly, and buy priority at the next congested stop -> yield prices by site and hour feed stall siting.",
+  "why_now": "NACS opened Superchargers to other brands, mixing very different charging curves in the same lines. Tesla's 80% caps and congestion fees at busy sites show that operators already accept rules about the taper. OCPP 2.0.1, ISO 15118 Plug & Charge and OCPI 2.2.1 give middleware the session data and identity it needs, and open CPMS platforms like CitrineOS make integration practical. NEVI's open-access payment rules require app-free queue joining, which the card-tap token satisfies.",
+  "mvp": "Days 1-30: replay a partner operator's session logs to measure per-car knees and simulate the turnover gain from the knee rule and yields. Days 31-60: at one congested site, run the queue, head-of-queue authorisation, knee rule and credit yields on alternating weeks against control weeks. Days 61-90: add upstream offers between two corridor sites 15 km apart using app and ABRP check-ins. Gate: peak kWh per stall-hour up 20% and median wait down 30%.",
+  "stack": "CitrineOS or another open CPMS on OCPP 2.0.1; DC charging-status messages for SoC and live kW; ISO 15118 Plug & Charge identity, app starts and contactless card tokens; OCPI 2.2.1 for availability and later cross-network credits; a queue service with arrival forecasting from historical sessions and check-ins; a closed-loop, non-transferable credit ledger; ABRP integration.",
+  "business_model": "SaaS per stall per month to charge-point operators, priced against the extra kWh per stall-hour at peak. Credits are funded by the operator from faster turnover. Later revenue comes from siting analytics built on yield prices, and from corridor-level flow management across networks.",
+  "risks": [
+    "Distribution: winning an operator willing to let software decide who plugs in next",
+    "Upstream metering beyond app check-ins depends on nav partners (OEMs, Google, Apple) who may never share routing intent",
+    "Pricing courtesy can crowd it out (Gneezy and Rustichini); mitigated by making past-the-knee yielding a rule with no payment",
+    "Collusive credit farming between friends; mitigated by plug-in confirmation, linked-payment exclusion and weekly caps",
+    "Ride-hail drivers concentrating priority credits",
+    "Knee misclassification for slow-charging cars or cold packs; uses the car's own session peak and a ten-minute exemption",
+    "Queue jumping or confrontations at unattended sites if head-of-queue authorisation is bypassed",
+    "NEVI and state pricing rules constrain congestion fees and how payment works"
+  ],
+  "moonshot": "By 2036 a neutral charging flow-management layer on OCPI spans networks along every holiday corridor, the way Eurocontrol spans airspaces. Credits are honoured across operators, and car agents negotiate arrival slots under AP2 mandates before the driver leaves home, so Thanksgiving lines become ground holds nobody notices. Stall siting is planned from ten years of yield prices.",
+  "best_line": "Past the knee, courtesy is a rule; before it, yielding is a favour the network repays in priority."
+}

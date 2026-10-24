@@ -1,0 +1,51 @@
+- **01. Precedent** (mild, 3/7) — A patient-side appeals agent backed by a Shepard's-style citator of insurance case law.
+- **02. Hand Limit** (bold, 5/6) — A roguelite deckbuilder where your deck is an agent's toolset, your hand is its context window, and sponsors pay you to break their tools.
+- **03. Litmus Ghost** (bold, 6/5) — Theories of consciousness as fuzzable, versioned software: build the hollow case, log the bullet, find where theories split.
+- **04. Rule of Thumb** (mild, 3/7) — A Chess960 coach that treats principles as hypotheses, mined from human games and graded by your rating.
+- **05. Raid Night** (bold, 5/5) — Every distribution transformer is a raid guild: neighbours commit charge windows, earn DKP for yielding headroom, and keep the boss's load bar out of the red.
+- **06. Seedless** (bold, 5/6) — A roguelite that seals its prediction of your next move before you make it: be unreadable where it traps you, readable where it rewards you, and open the receipts at the end.
+- **07. Recount** (mild, 3/6) — Risk-limiting audits for rock-weathering carbon: bank every core, analyze by public lottery, retest the B-samples in 2036.
+- **08. Smoke-Filled Room** (bold, 4/7) — Design the auction, coach the AI cartel that breaks it, patch history's worst spectrum sales, and lose honestly to Gibbard-Satterthwaite.
+- **09. Caught** (bold, 4/7) — A meditation game whose only button is noticing you've drifted, scored in breaths and refereed by your own lungs.
+- **10. Crossover** (mild, 3/6) — Near-scrap bitcoin rigs as a hash-paying e-boiler for Dutch greenhouses, dispatched by band against all-in power cost.
+- **11. Washout** (mild, 3/7) — Randomize your own day, bet on your own effect, and watch an evidence wallet you can't fool by peeking.
+- **12. Off-Diagonal** (bold, 5/6) — A weekly roguelite on the real calendar where every card costs its market price and the only edge is a correlation the rest of the field missed.
+- **13. Canary Ladder** (wild, 8/4) — A cat bond on the end of elliptic-curve cryptography, whose calculation agent is a theorem and whose trigger is a forged signature.
+- **14. Second Shift** (mild, 3/6) — Book the night shift for the excavator already parked on your site, supervised from home by the crewmate who rode along that day.
+- **15. Yarrow** (bold, 5/7) — An oracle that diagnoses which kind of randomness your decision needs, casts it verifiably, and tells you with receipts where your gut beats chance.
+- **16. Corporation Sole** (wild, 8/4) — Incorporate the agent's office, not the agent: a P&I club of self-owning AI persons that insure, survey and arrest one another.
+- **17. Sengu** (bold, 6/6) — A 100-year time-capsule network where strangers carry each other's secrets as paper amulets and a memorized phrase, and rebuild them every five years.
+- **18. Table Stakes** (mild, 3/7) — Futarchy for the kitchen table: vote on what better means, bet chores on what each option will do, and make the doubter own the outcome.
+- **19. Hyphal Bourse** (wild, 8/4) — Read the carbon-for-phosphorus exchange rate between crops and fungi from glowing sentinel roots, and farm by bidding into that market instead of flooding it.
+- **20. Facing Out** (bold, 5/6) — Chronic care as Hanabi: your warning signs face out to the people you choose, and they help only through scarce, graded clues.
+- **21. Familiar** (mild, 3/6) — An adults-only AI companion you own on atproto: hosts rent the model, labelers stamp the safety, and your own history proves it's still her.
+- **22. Unaccounted** (bold, 5/5) — You can't follow a cobalt atom, so audit the books: IAEA-style mass balance that catches recycled tonnes sold twice, opened by scanning your own car's battery passport.
+- **23. Nightside** (wild, 8/4) — A story evolved by sleeping brains: rehearse every element, cue half of them at sleep onset, and let whatever dreamers measurably replay become canon as it passes west with the night.
+- **24. Always For Sale** (bold, 5/6) — A chess roguelite under a Harberger tax: every piece is a standing quote, any attacked piece can be bought at its price and flips where it stands, and the killer move is the quiet one that makes three enemy quotes stale.
+- **25. Offtaker** (mild, 3/6) — Compliance glass for German data centres with a heat-reuse quota and no buyer: the data centre owns the greenhouse, a tenant grower farms it, and every winter basket ships with a receipt for heat reused and heat dumped.
+- **26. Sandbox Escape** (wild, 8/4) — A bug-bounty league for the universe's engine: pay compressors per joule saved, pay detectors only for transfer, and salt the real sky to turn "are we simulated?" into a number with error bars.
+- **27. Ventris** (bold, 6/5) — Learn your grandmother's language by deciphering her street: pin hypotheses on a grid, check them with a pastry purchase, and graduate into transcribing the neighbourhood's oral history.
+- **28. Tab** (mild, 3/6) — Let agents run a tab: one global limit per principal, signed approvals servers verify offline, and an approval that pays no matter what.
+- **29. Order Parameter** (wild, 8/5) — Measure humanity's coupling constant: randomize how meditators are linked, fit the Kuramoto curve, and let global coherence live or die on the intercept at zero channel.
+- **30. Heptad** (bold, 5/7) — Ear training for structural biology: hear solved proteins as meter, diagnose their folds by ear, and prove it on a silent test, built first for students who can't see the pictures.
+- **31. Tombstone** (mild, 3/6) — Decommission a digital life like a server: map what recovers what, rehearse the death every year, and drain from the leaves inward on a certificate, never on silence.
+- **32. Ascension** (bold, 5/5) — Your real month as a roguelite: pay fills a reservoir, a rule curve releases your salary, locked tranches buy jackpot tickets, and every emergency costs a Curse, never a fee.
+- **33. Minute Hand** (wild, 8/4) — A ZX-calculus fusion puzzle where you solve at n = 4, your tactic is replayed at n = 256, and the score is how much cheaper your move makes breaking elliptic curves and simulating catalysts.
+- **34. Sonotype** (bold, 6/5) — A two-column binder for the night chorus: catch unknown calls by playing them back against decoys, and earn bounties for verified silence.
+- **35. Lookahead** (mild, 3/6) — A noise forecast for every window next to a build: the contractor buys its forecast dB-hours day-ahead, pays an imbalance penalty for every hour it underestimated, and learns to move the breaker to Thursday.
+- **36. Settlement** (bold, 6/5) — Seal what you expected and what you saw, settle each insight against handicapped odds, and let a coin decide who holds the pen.
+- **37. Capacity** (bold, 6/6) — A follow is a payment channel for credibility: vouching for a claim locks capacity on every hop until it resolves, and sources that are often wrong run out of reach.
+- **38. Tally** (mild, 3/6) — The brass tag board on every cap lamp: crews gossip each other's positions, any lamp that reaches the portal brings the whole tally out, and a fake collapse every night proves it still works.
+- **39. Bottleneck** (wild, 8/4) — A border language for agents, evolved through human players as the transmission bottleneck, where every clause must say how it knows and an unsigned claim of authority is ungrammatical.
+- **40. Scratch** (bold, 5/6) — Fantasy sports for your friends' actual bodies: draft their personal lines, win when they beat them, and bank points for benching them on Thursday.
+- **41. Share-Out** (mild, 3/6) — The weather oracle decides how much gets paid, the village decides who gets it, and a silent index can be appealed by pledging next year's share-out.
+- **42. Graveyard Shift** (bold, 6/5) — A public coroner for low Earth orbit: players time satellite glints and listen for beacons, and two witnesses on two senses pronounce each object dead or alive.
+- **43. Fountain Swap** (wild, 8/3) — Pension money buys royalty options on the cure for ageing, paid per dose and settled by a doping-style biological passport, and the market prices what a clock point is worth in survival.
+- **44. Seventeen Moments** (bold, 5/7) — A deckbuilder built on the Abhidhamma: every card you play ripens later and overwrites your mind, and the kindness you spam slowly turns into its counterfeit.
+- **45. Repro** (mild, 3/6) — Maintainers write their threat model as capture-the-flag, agents post a bond and must capture a flag before any human reads the report, and the finder never writes the fix.
+- **46. Mound** (wild, 8/3) — A compression-only earth building with no final drawing: a resident swarm grows it toward where people are, bone-style cavities remodel it, and the city permits an invariant instead of a shape.
+- **47. Piepowder** (bold, 6/5) — A court for agent commerce that clones the defendant: twelve rival agents re-enact the sealed decision, lay juries rule only where they split, and paid red-teamers fuzz the reasonable-agent standard before the harm spreads.
+- **48. Taper** (mild, 3/7) — Queue middleware for fast chargers: past your car's own knee, courtesy is a rule; before it, and upstream on the corridor, yielding earns priority at your next congested stop.
+- **49. Hans** (wild, 8/4) — Rules of evidence for minds heard only through a model: accredit the translator against planted ventriloquists, ask whales by offering quiet, and make 'we can't hear them' the applicant's problem.
+- **50. Dry Run** (wild, 8/5) — A public beta for laws: anyone proves a draft bill's loopholes with replayable witnesses, disclosure buys legal certainty, and every kept loophole gets a recorded vote.
+- **51. One Take** (bold, 6/6) — AI answers that can't be retaken: every pass@1 draw is sealed before a Bell-certified quantum pulse exists, and every private variant shows up as a public fork.

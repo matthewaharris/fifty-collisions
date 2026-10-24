@@ -1,0 +1,27 @@
+{
+  "id": 45,
+  "name": "Repro",
+  "tagline": "Maintainers write their threat model as capture-the-flag, agents post a bond and must capture a flag before any human reads the report, and the finder never writes the fix.",
+  "kind": "platform",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 6,
+  "domains": ["open-source maintenance", "agent bounties", "software security", "capture-the-flag", "agent payments", "immunology", "supply-chain regulation"],
+  "summary": "Repro is a GitHub App that turns an open-source project's threat model into flags planted in a sandbox harness: canary credentials, files outside the allowed root, internal-only endpoints and exec traps. Agents file reports by posting a bond, and a report reaches a human only after its reproducer captures a flag against the tagged release in a Firecracker sandbox. Out-of-model reports are rejected automatically and their bonds go to the maintainer. The finder is paid for the reproducer, a fixer from a different model family writes the patch, and the maintainer is paid per review from a pool funded by downstream companies. A public flag ledger records each flag's price and the measured sandbox-hours it has held, as evidence of effort and not a guarantee of safety.",
+  "core_loop": "Maintainer declares flags from templates (threat model as code) -> agents hunt using subsidised, metered sandbox compute -> to file, a reporter posts a bond ($5, falling with its valid rate) -> the reproducer must capture a flag against the tagged release, or the bond is forfeited unread -> a finder from one model family is paid, and a fixer from another writes the patch -> the maintainer reviews a small patch plus reproducer and is paid $50-150 -> captured flags become permanent regression tests and cross-project templates -> out-of-model captures go through the amendment lane, where ratification adds a new flag and refusal still sends the bug to private disclosure -> the flag ledger publishes price and sandbox-hours held.",
+  "why_now": "curl ended its bug bounty in January 2026 after AI slop pushed its valid rate below 5%. Agents now find real bugs: XBOW topped HackerOne's US leaderboard, Big Sleep found SQLite flaws, and AIxCC finalists open-sourced full find-and-patch systems. Google DeepMind's CodeMender upstreams AI patches. The EU Cyber Resilience Act's reporting duties began in September 2026, so manufacturers need due-diligence evidence on open-source components. x402 makes small agent bonds settle without friction.",
+  "mvp": "90 days. Days 1-30: flag kits for C (libFuzzer plus ASan, file and exec canaries) and Python (path traversal, SSRF and deserialization canaries), and 10 projects already in OSS-Fuzz signed with Alpha-Omega grant funding. Days 31-60: a closed beta with five AIxCC alumni teams, live bonds, and reports routed through GitHub private vulnerability reporting. Days 61-90: the first public flag ledger with measured sandbox-hours, and one manufacturer paying to price flags on its dependencies. Gate: valid rate above 30%, maintainer review under 20 minutes per report, and at least one ratified amendment.",
+  "stack": "GitHub App; Firecracker microVM sandboxes; ClusterFuzzLite harnesses; canary-token, file and seccomp exec traps as flags; GitHub Security Advisories and private vulnerability reporting; Sigstore and in-toto attestations for sandbox runs and the ledger; Stripe Connect for human payouts and x402 for agent bonds.",
+  "business_model": "A 10% fee on bounty pools. A paid assurance dashboard maps a company's SBOM to flag coverage and ledger history as due-diligence evidence. Maintainers are paid per review from pools funded by downstream companies. Grants from Alpha-Omega and the Sovereign Tech Agency seed the first projects.",
+  "risks": [
+    "Downstream companies may not fund pools, the step that broke Tidelift and the Core Infrastructure Initiative",
+    "Maintainers may not write flags at all",
+    "Plant-then-find attacks (xz-style); mitigated by 180-day escrow on recently changed code, git-blame identity checks and KYC above $500",
+    "Serious attackers sell to exploit brokers rather than claim, so the ledger proves effort, not safety",
+    "Reproducers are weaponised exploits and must stay private until patched",
+    "Maintainers refusing valid out-of-model findings; refused reports still go to private disclosure",
+    "Logic and web-application bugs that resist flag-based harnesses"
+  ],
+  "moonshot": "By 2036 every package ships its flags in its SBOM as threat-model-as-code. Hunting agents run continuously across the ecosystem, flag templates spread through each class of library like vaccination, and bug classes have public eradication curves. Separating finder from fixer is the standard procedure for any AI-written security patch, the xz lesson turned into a norm. Reviewing is a paid profession, and maintainers sell their attention instead of giving it away.",
+  "best_line": "A report reaches a human only after it captures a flag, so severity is whatever the maintainer said must never happen."
+}

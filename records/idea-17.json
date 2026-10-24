@@ -1,0 +1,27 @@
+{
+  "id": 17,
+  "name": "Sengu",
+  "tagline": "A 100-year time-capsule network where strangers carry each other's secrets as paper amulets and a memorized phrase, and rebuild them every five years.",
+  "kind": "platform",
+  "tier": "bold",
+  "innovation": 6,
+  "feasibility": 6,
+  "domains": ["deep time", "social networks", "time capsules", "proactive secret sharing", "ritual and religious practice", "oral tradition"],
+  "summary": "Sengu is a time-capsule network modelled on the Ise Grand Shrine, which survives by being rebuilt every 20 years rather than preserved. A capsule is a text letter encrypted under AES-256, its key split across a diverse set of custodians and its ciphertext Reed-Solomon-coded across their printed QR cards and mirrored to Arweave and the Internet Archive. Each carrier wraps all their cards with one memorized phrase per epoch, kept fresh by spaced repetition. Every five years CHURP resharing refreshes every share, old cards are handed in and burned (a real security step, since old shares still combine with each other) and the shares of the dead are re-dealt to heirs. Capsules open on a date, a death-registry trigger or an addressee's claim, and an opt-in colophon turns each opening into a reunion of strangers who carried it.",
+  "core_loop": "Seal a letter to a date or trigger -> the dealer splits its key across custodians chosen actuarially by cohort, country and graph distance -> carriers hold cards plus one memorized phrase and keep recall fresh by spaced repetition, building a pseudonymous keeper profile of years kept -> every five years CHURP reshares, old cards are burned and dead custodians' shares go to heirs -> at opening the threshold reconvenes, the addressee reads the letter, and the colophon reveals the carriers.",
+  "why_now": "Harvest-now-decrypt-later is a live threat: a EUROCRYPT 2026 estimate puts ECC-256 at about 1,098 logical qubits, so anything sealed with ECC today could open decades early, while hybrid ML-KEM transport is now the default in Chrome and Cloudflare. Bluesky's app is shrinking while its protocol grows, a reminder that practices and open specs outlast platforms. Rivest's LCS35 puzzle, meant to last 35 years, fell after 20, so deep-time cryptography needs renewal rather than fixed estimates.",
+  "mvp": "90 days. Weeks 1-4: CHURP-based resharing prototype, printed QR cards carrying shares and Reed-Solomon ciphertext fragments, Argon2id phrase wrapping. Weeks 5-8: 2,000 beta users on accelerated weekly mini-sengus with 5-of-9 splits across friends and strangers. Weeks 9-12: measure custodian return and phrase recall by age and graph distance, form the foundation and perpetual-care trust, and seal the first public capsules addressed to the 2033 Ise sengu. Kill metrics: custodian return below 70% per epoch, or phrase recall below 80% at six months.",
+  "stack": "AES-256-GCM capsules; Shamir shares refreshed with CHURP dynamic-committee proactive secret sharing; Argon2id phrase wrapping; hybrid ML-KEM (X25519MLKEM768) transport for all share traffic; Reed-Solomon-coded ciphertext on QR cards; Arweave and Internet Archive mirrors; spaced-repetition recall checks against local slow hashes; death-registry integrations.",
+  "business_model": "A one-time fee per capsule, part of it paid into a perpetual-care trust as cemeteries do, owned by a foundation, since a VC-backed company can't credibly promise 100 years. Later, institutional capsules for cities, archives and repositories that need knowledge kept across generations.",
+  "risks": [
+    "Custodian return rates across decades are unknowable until the first real sengu in 2031",
+    "Correlated custodian loss by cohort, country or app; mitigated by actuarial dealing and paper cards",
+    "The operator's share mapping makes it the natural broker for early-opening bribes; mitigated by anonymity until opening and a public access log",
+    "Phrases stored in password managers or photographed cards weaken the memory factor; memory is a norm, not a guarantee",
+    "Child-safety exposure from a contact graph between adults and minors; minors join only through family heirloom accounts and never appear in colophons",
+    "Capsules used as dead drops or for extortion; mitigated by text-only size caps and addressee-only delivery",
+    "Cultural sensitivity in borrowing Shinto practice and names"
+  ],
+  "moonshot": "The atomic priesthood, realised. Thomas Sebeok's 1984 proposal for a self-renewing priesthood to warn of nuclear waste for 10,000 years gets its civilian prototype: cities seal 2075 climate pledges with citizens as carriers, and Finland's Onkalo repository deposits its hazard knowledge as capsules re-dealt every sengu. The keepers become an institution whose only job is remembering.",
+  "best_line": "Old cards still combine with each other, so the burning is a security step, not theatre."
+}

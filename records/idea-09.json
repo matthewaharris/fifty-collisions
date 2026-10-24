@@ -1,0 +1,28 @@
+{
+  "id": 9,
+  "name": "Caught",
+  "tagline": "A meditation game whose only button is noticing you've drifted, scored in breaths and refereed by your own lungs.",
+  "kind": "game",
+  "tier": "bold",
+  "innovation": 4,
+  "feasibility": 7,
+  "domains": ["meditation", "biofeedback / wearables", "game input", "attention psychometrics", "rhythm games"],
+  "summary": "Caught is an eyes-closed iOS practice game built on the validated Levinson breath-counting task. The phone rests on the belly and reads respiration phase. The player taps each breath on the Watch, with a distinct tap on the tenth. Drifts are marked by three layers of evidence: count breaks and rare haptic probes as hard evidence, and tap-timing jitter from a hidden Bayesian change-point model to back-date onset. The headline stat is breaths-to-catch, with the self-caught ratio beside it. Self-caught drifts are returns that progress the game, and only probe-caught drifts are setbacks, so wandering is never punished, only going unnoticed is.",
+  "core_loop": "Sit with eyes closed -> tap each breath, with a distinct tap on ten -> drift happens (taps stop, the count breaks, or jitter rises) -> notice and self-catch, which is a return that earns progress -> or get caught by a rare haptic probe, which is a setback -> the session reports breaths-to-catch and the self-caught ratio -> optional audio ghost of your best sit.",
+  "why_now": "The FDA's January 2026 general-wellness guidance loosened rules for consumer wearables. The trends brief names objective, verifiable contemplative progress as the open gap, since incumbents (Headspace, Calm, Waking Up) are still content libraries and neurofeedback headbands have no breakout product. Apple's BCI HID points toward neural input as an OS primitive in the long run.",
+  "mvp": "90 days, iOS plus Watch, no EEG. Weeks 1-4: validate phone-on-belly respiration-phase detection against a Polar H10 in 20 people and calibrate Watch tap clock offsets. Weeks 5-8: the counting loop with returns and setbacks, haptic probes, and a hidden jitter change-point model. Weeks 9-12: 300 TestFlight users. Kill metrics: jitter predicts probe-caught drift at AUC < 0.6 (drop jitter), or breaths-to-catch doesn't shrink over four weeks while tracking an independent SART score (the product is a toy).",
+  "stack": "Swift/SwiftUI and watchOS, CoreMotion accelerometer at ~50 Hz with a 0.1-0.5 Hz bandpass and peak detection for respiration phase, WatchConnectivity with clock-offset calibration, Polar BLE SDK for the premium H10 path, and an on-device Bayesian change-point model on tap jitter. No cloud processing of attention data.",
+  "business_model": "A consumer subscription of about $70/year (Waking Up's range), differentiated by measured skill rather than content. Year two adds a teacher lineage marketplace, where teachers sell ghost sits on a revenue share. No employer dashboards with individual scores.",
+  "risks": [
+    "Breaths-to-catch may measure skill at the app rather than attention (the SART transfer test)",
+    "Phone-on-belly respiration-phase accuracy and Watch tap latency may be too noisy",
+    "Goodhart: if timing is graded visibly, players pace their breathing to their taps",
+    "False drift accusations from the jitter model; mitigated by scoring only self-catches and probes",
+    "Meditation adverse effects (Britton's Varieties of Contemplative Experience); session caps, no duration leaderboards, check-ins",
+    "Employer or insurer pressure to access attention scores",
+    "Regulatory and FTC exposure if marketed with ADHD or anxiety claims (Lumosity, Akili precedents)",
+    "Meditation-app churn"
+  ],
+  "moonshot": "Validated breaths-to-catch becomes the VO2max of attention, a trainable number people track for decades. Once non-invasive sensing runs through standard neural-input protocols, self-catch becomes a system-level event any app can listen for: the feed pauses when you catch yourself doomscrolling, and the car hands back control when you notice you've zoned out. Technology that responds to noticing amplifies meta-awareness instead of harvesting its absence.",
+  "best_line": "Wandering is never punished, only going unnoticed is."
+}

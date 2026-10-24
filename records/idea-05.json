@@ -1,0 +1,25 @@
+{
+  "id": 5,
+  "name": "Raid Night",
+  "tagline": "Every distribution transformer is a raid guild: neighbours commit charge windows, earn DKP for yielding headroom, and keep the boss's load bar out of the red.",
+  "kind": "platform",
+  "tier": "bold",
+  "innovation": 5,
+  "feasibility": 5,
+  "domains": ["EV managed charging / V2G", "co-op guild games", "commons governance", "utility grid operations"],
+  "summary": "Raid Night is an engagement layer sold to managed-charging programs. Each guild is the set of homes on one distribution transformer, and the 'boss' is the transformer's evening loading, modelled from device telemetry with uncertainty bands. Members commit charge windows and state-of-charge floors, earn non-transferable DKP (Dragon Kill Points, the MMO raid-attendance currency) for yielding headroom or shedding load, and spend it on priority charging windows, with bids kept private. Guilds form only once roughly 70% of homes on a secondary enroll, so recruitment is the first quest. Non-EV members are paid in cash, and where regulators reward deferral, the guild splits a seasonal non-wires payment.",
+  "core_loop": "A new EV on the secondary triggers a guild invite -> the guild forms at the enrollment threshold -> members commit windows and SoC floors -> the scheduler staggers charging under the transformer's thermal limit -> members earn DKP for yielding headroom and spend it bidding for priority windows -> emergency overrides are free -> the KPI is a lower override rate than plain managed charging -> a seasonal cash share where deferral is rewarded.",
+  "why_now": "EV clustering is overloading neighbourhood transformers. PG&E approved the Cybertruck Powershare V2X pilot in April 2026, and Tesla Grid Support launched in Texas. Managed-charging programs (WeaveGrid, ev.energy, utility EV rates) are scaling but suffer from user overrides. California's DIDF and New York's non-wires programs create deferral value.",
+  "mvp": "Weeks 1-4: partner with Green Mountain Power or a co-op utility for connectivity and loading data on 5 EV-clustered transformers. Weeks 5-8: DKP managed-charging app (Smartcar and the Tesla Fleet API, SoC floors, private bids, free emergency override). Weeks 9-12: run 5 guilds against control transformers. Kill metric: if overrides aren't measurably lower than plain managed charging, DKP is decoration.",
+  "stack": "Smartcar, Tesla Fleet API, charger and thermostat APIs, constrained charge scheduler, IEEE C57.91 transformer thermal model, Green Button Connect for settlement, React Native, Postgres ledger.",
+  "business_model": "B2B2C SaaS at $2-4 per home per month, paid by utilities and managed-charging providers to reduce override rates. Where regulation rewards deferral, there is an additional seasonal non-wires payment shared with guilds. No stablecoins in the core loop.",
+  "risks": [
+    "Regulated utilities profit from capex, so deferral payments exist only where regulators mandate them",
+    "Reaching ~70% enrollment on one secondary is a door-to-door recruitment problem",
+    "Transformer connectivity data lives in often-inaccurate utility GIS",
+    "Baseline gaming by pre-charging",
+    "Privacy leaks from charging schedules, plus neighbour drama and favouritism"
+  ],
+  "moonshot": "Every distribution transformer is a recognized micro-commons, building on the EU's citizen and renewable energy communities. Guilds federate into feeder alliances bidding flexibility into distribution-level markets under performance-based regulation. DKP becomes a portable flexibility reputation, and the grid edge is governed by Ostrom-style polycentric institutions instead of a central DERMS.",
+  "best_line": "Guilds allocated one sword among 40 people, not gold: the loot is the scarce resource itself."
+}

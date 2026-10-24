@@ -1,0 +1,28 @@
+{
+  "id": 27,
+  "name": "Ventris",
+  "tagline": "Learn your grandmother's language by deciphering her street: pin hypotheses on a grid, check them with a pastry purchase, and graduate into transcribing the neighbourhood's oral history.",
+  "kind": "game",
+  "tier": "bold",
+  "innovation": 6,
+  "feasibility": 5,
+  "domains": ["language learning", "alternate reality games", "geolocation", "AI agents", "documentary linguistics", "heritage languages", "oral history"],
+  "summary": "Ventris teaches a language as the decipherment of a real diaspora street, such as Portuguese in Newark's Ironbound. Learners, mostly heritage speakers who understand their grandparents but can't answer them, pin word-to-meaning hypotheses on a shared grid during weekly digs. Signs, menus and bulletins supply the parallel text, and opted-in merchants confirm guesses at the price of a real purchase. Between digs, agent NPCs who 'live' on the street run daily sessions pitched just beyond each learner's grid, using only dialect features attested and cited in the verified corpus, and reviews are scheduled across three contexts so words don't stay bound to one place. The corpus ladder climbs from signs to radio to paid, consented oral histories. Top-rung learners correct Whisper drafts and a heritage speaker signs off, so the game's endgame is the neighbourhood's own archive, a cited dictionary of its variety and ASR data for it.",
+  "core_loop": "Dig on the street and find fragments grounded by place -> pin word-to-meaning hypotheses with confidence on the grid -> check them with a merchant-oracle as part of a real purchase -> only speaker-verified entries propagate to the shared grid -> daily agent-NPC sessions reuse confirmed words and add one unknown per sentence, scheduled by FSRS across spot, photo and new contexts -> climb the corpus ladder from signs to oral histories -> correct ASR drafts of elders' recordings, which a heritage speaker signs off and which become fragments for the next cohort.",
+  "why_now": "LLM conversation partners are now mainstream (Duolingo Max, Speak, Praktika), and grid-constrained generation makes i+1 input controllable. Persistent agents can play NPCs that remember a learner for weeks. Whisper-class ASR is good enough to draft transcripts but fails on under-documented diaspora varieties, which is exactly where learner corrections are valuable. Decipherment games (Heaven's Vault, Chants of Sennaar) have proven the hypothesis-grid loop is fun.",
+  "mvp": "90 days in Ironbound. Weeks 1-3: a community partner organization, ten opted-in merchants, a consent framework and 40 fragments. Weeks 4-10: 30 learners (20 heritage) on weekly 90-minute digs plus daily ten-minute agent sessions. Weeks 8-12: three paid oral histories, Whisper-drafted and corrected by top-rung learners with heritage-speaker sign-off. Kill metrics: no listening-test gain over a matched Duolingo group, or heritage learners don't report speaking more with family.",
+  "stack": "React Native app; Mapbox geofences with stationary-only nudges; FSRS spaced repetition with context tags; LLM generation checked word by word against each learner's grid and restricted to attested, cited dialect features; Whisper fine-tuned on learner corrections; ELAN export; Local Contexts labels on archive items.",
+  "business_model": "Heritage families pay about $15 a month, and 20% of revenue goes to a consultant fund that pays elders fieldwork rates. Universities license cohorts for heritage-language courses, and business improvement districts sponsor digs because every oracle check is a purchase. Grants are a bonus, not the base, since major diaspora languages aren't endangered.",
+  "risks": [
+    "Efficacy unproven: decipherment digs may not beat a plain app on listening gains",
+    "Trust work with merchants and elders is slow and doesn't scale like software",
+    "Oral histories carry third parties' secrets (immigration status, politics); per-use consent, embargoes and community-controlled labels required",
+    "Neighbourhood-as-theme-park and merchant fatigue; opt-in, daily learner caps and a community veto board",
+    "LLM caricature of dialect; NPCs restricted to attested, cited features, and elders' voices are never cloned",
+    "Wrong glosses spreading through the shared grid; only speaker-verified entries propagate",
+    "Encoding specificity binding words to one place; mitigated by reviews in at least three contexts",
+    "In-person play with minors; 16+ or family accounts only"
+  ],
+  "moonshot": "A federated network of street archives, one per diaspora enclave, under community-controlled Local Contexts labels. Each street is linked to its sending region, so Ironbound learners decipher fragments recorded in Minho villages and those villages hear their emigrants' Portuñol. The grid becomes a shared standard with ELAN-compatible exports, and the same ladder turns toward truly endangered languages as onboarding for master-apprentice revitalization. Fieldwork stops being a PhD's privilege; a grandchild does it on Sundays.",
+  "best_line": "A cipher ends; a living archive doesn't."
+}

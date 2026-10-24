@@ -1,0 +1,29 @@
+{
+  "id": 36,
+  "name": "Settlement",
+  "tagline": "Seal what you expected and what you saw, settle each insight against handicapped odds, and let a coin decide who holds the pen.",
+  "kind": "system",
+  "tier": "bold",
+  "innovation": 6,
+  "feasibility": 5,
+  "domains": ["psychedelic-assisted therapy", "VR", "clinical trial measurement", "forecasting and calibration", "racing handicapping", "contemplative practice"],
+  "summary": "Settlement is a chain-of-custody and measurement layer for the integration weeks after a psychedelic session, used only inside clinical trials and licensed programmes. Before the session the patient seals a validated expectancy scale (SETS). Within hours after it, they seal a raw account in their own words, before any therapist interpretation. Checkable insights become dated notes that weekly check-ins settle against what actually happened. A per-note coin decides whether the therapist co-authors the text, and two blinded raters set each note's odds so that yield counts only what settles above the handicap. Uncheckable insights go to an unsettled class that gets checking questions and is never scored. The same check-ins log arm guesses, so blinding is measured continuously.",
+  "core_loop": "Seal expectancy scale (RFC 3161 hash) -> session in a licensed setting -> seal the raw account within hours -> at integration (optionally with VR or audio context reinstatement) checkable insights become dated notes, each tagged with provenance (forecast / own words / co-authored) and a coin-flipped authorship arm -> two blinded raters price each note's odds from baseline behaviour -> weekly SMS check-ins settle notes, with optional confirmers, and an independent rater logs arm guesses -> week 12: yield above handicap, split by provenance and authorship arm, plus a continuous blinding curve.",
+  "why_now": "Lykos's MDMA application failed in 2024 over functional unblinding and expectancy, and the FDA's 2023 draft guidance on psychedelic investigations names both. Compass's longer-term psilocybin data makes durability the open question. Oregon's SB 303 already requires psilocybin service centres to report client data. Ambient scribes and eCOA tooling make structured integration notes cheap to capture. Mouse work on psychedelics reopening a social critical period (Nardou 2023) points to integration as the stage where the work happens, yet it is the least measured.",
+  "mvp": "90 days. Days 1-30: a REDCap module with SMS check-ins, a preregistered protocol and IRB approval at one academic site. Days 31-60: three Oregon service centres, without the coin. Facilitators aren't therapists, so this tests feasibility only. Days 61-90: week-6 settlements, plus the handicap ICC test (drop the handicap if ICC < 0.5 after 60 notes). One site randomizes VR reinstatement against audio-only at the first integration visit. Kill metric: week-12 yield adds nothing to symptom scores in predicting 6-month relapse.",
+  "stack": "REDCap external module; SMS check-ins with risk-language routing to an on-call clinician; RFC 3161 timestamped hash commitments, with raw text encrypted and kept at the clinic; 21 CFR Part 11 audit trail; PyMC hierarchical models for the micro-randomized authorship analysis; Meta Quest 3 at one site for context reinstatement, with session music from providers such as Wavepaths.",
+  "business_model": "Trial sponsors and academic investigators pay per enrolled patient, as with eCOA vendors (Signant, YPrime). Licensed Oregon and Colorado centres pay SaaS, partly justified by state reporting duties. Cross-site base-rate tables are held by a nonprofit consortium. The licence bans using yield in marketing and payer coverage decisions.",
+  "risks": [
+    "Therapist suggestion during the post-session plasticity window; measured narrowly by the authorship coin, but it can't capture influence in conversation",
+    "Handicap raters may not agree (ICC < 0.5), which collapses yield into easy-note bias",
+    "Iatrogenic shame if depressed patients see defaulted notes; yield is hidden until week 12 and never shown as failure",
+    "Duty to respond: SMS check-ins surface suicidality outside office hours",
+    "Raw accounts are subpoena targets in custody or criminal cases; only hashes and outcomes leave the clinic",
+    "Confirmers can expose a patient's treatment, or be coercive partners; confirmers are optional and screened",
+    "Clinics marketing yield, payers denying coverage, or supervisors ranking therapists on it",
+    "VR reinstatement may add an intervention confound and re-trigger challenging material",
+    "Years of validation before any regulator accepts yield as an endpoint"
+  ],
+  "moonshot": "By 2036, integration is prescribed like the drug. Consortium base-rate tables show which integration practices move which insight classes, and a product label specifies a validated integration protocol the way Spravato's REMS specifies observation. The continuous blinding curve spreads to every trial whose treatment can't hide itself: surgery, exercise and digital therapeutics. Patients carry a sealed ledger across clinicians, so a raw account written years earlier is still unedited, theirs, and usable as evidence.",
+  "best_line": "A session issues IOUs; integration is the clearing house that settles them, and once the pen is randomized and the odds are handicapped, the question becomes whose insights pay."
+}

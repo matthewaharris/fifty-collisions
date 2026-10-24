@@ -1,0 +1,28 @@
+{
+  "id": 43,
+  "name": "Fountain Swap",
+  "tagline": "Pension money buys royalty options on the cure for ageing, paid per dose and settled by a doping-style biological passport, and the market prices what a clock point is worth in survival.",
+  "kind": "institution",
+  "tier": "wild",
+  "innovation": 8,
+  "feasibility": 3,
+  "domains": ["longevity biotech", "epigenetic clocks", "longevity risk transfer", "royalty finance", "pensions and reinsurance", "anti-doping science", "actuarial science"],
+  "summary": "Fountain Swap is a pool of royalty options on rejuvenation therapies, bought by the parties who lose when people live longer: longevity reinsurers first, then buy-in insurers, then pension trustees. Each biotech draws non-dilutive funding and gives up royalty units that vest only if its phase 2b or pooled readout beats control. Royalties are paid per dose, so the hedge pays on uptake, the real driver of the liability, and pensions end up lobbying for cheap cures. Settlement uses a biological-passport model across methylation, proteomic organ clocks, grip strength and VO2max. The endpoint is drawn from a randomness beacon fixed at preregistration, so a therapy that only rewrites methylation can't reliably win. When patents expire, units convert into q-forwards on the population mortality index. Alongside it, the Fountain Index publishes market and model estimates of clock-to-mortality exchange rates.",
+  "core_loop": "Protection buyers pay premiums into the Fountain Pool -> rejuvenation biotechs draw non-dilutive funding and pledge per-dose royalty units -> each trial preregisters its panel and a drand round that will pick the settling endpoint -> a hierarchical biological passport flags painted profiles (clocks falling while function stays flat) -> at phase 2b or pooled readout the drawn endpoint decides whether units vest -> vested units pay per dose sold, and at patent expiry convert into population-mortality q-forwards -> unit prices and model fits feed the Fountain Index of what a clock point is worth in survival, which is validated against deaths over 15 years.",
+  "why_now": "Partial reprogramming is entering the clinic: NewLimit raised $435M in June 2026 for human trials in 2027, Life Biosciences has Phase 1 approval, and Retro reportedly began dosing. Longevity risk transfer is a mature market (BT Pension's £16bn swap, q-forwards, Kortis), and Royalty Pharma has shown that drug royalties can be financed at scale. NHANES now publishes methylation clocks linked to mortality, so exchange rates can be fitted today. Prediction markets clearing $44.8B a month show demand for event-settled contracts.",
+  "mvp": "90 days with no live deal. Days 1-30: fit clock-to-mortality exchange rates (methylation and proteomic clocks against deaths) on NHANES with mortality linkage, and publish Fountain Index v0. Days 31-60: build and test the biological-passport detector on simulated painted profiles and mouse reprogramming data. Days 61-90: draft term sheets with one longevity reinsurer and two reprogramming biotechs, and get a legal opinion on how royalty units are treated as securities. Gate: exchange rates replicate in Generation Scotland within 25%.",
+  "stack": "Hierarchical Bayesian passport model in Stan; Illumina EPIC v2 methylation arrays; Olink proteomic organ clocks; functional measures (grip strength, VO2max); drand randomness beacon with hash commitments in preregistration; actuarial projection models (CMI-style) for the q-forward conversion; SPV and royalty-unit legal structure under SEC/FCA rules.",
+  "business_model": "A Royalty Pharma-style pool manager earning 1% plus carry. Fountain Index exchange rates are licensed to actuarial bodies, consultancies and reinsurers. Structuring fees on each programme that joins the pool.",
+  "risks": [
+    "Time: the first live settlement waits on phase 2b reprogramming readouts years away",
+    "Basis mismatch remains if successful therapies are cheap generics with little royalty volume",
+    "Goodhart: reprogramming acts directly on methylation; mitigated by the passport model and a random endpoint draw",
+    "Random endpoint draws multiply trial sample sizes and costs",
+    "Insider trading on unblinded data; mitigated by sponsor lockups and an independent seed-holding committee",
+    "Securities regulation of contingent royalty units",
+    "Fiduciary and capital rules keep pension trustees out until the index is validated",
+    "Intercept and slope effects can't be told apart before long mortality follow-up, so slope units are deferred"
+  ],
+  "moonshot": "By 2036 the Fountain Index is the reference rate actuaries put into life tables, and Solvency regimes accept it. Validated against fifteen years of deaths, the same exchange rate lets regulators recognise ageing as an indication. Slope units trade, and several countries index retirement ages to them. Ageing societies' largest fiscal fear, people living longer, is pre-funded by the institutions that feared it most, and those institutions own a share of every dose.",
+  "best_line": "Pay royalties per dose, not per dollar, and pensions end up lobbying for cheap cures."
+}

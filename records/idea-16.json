@@ -1,0 +1,29 @@
+{
+  "id": 16,
+  "name": "Corporation Sole",
+  "tagline": "Incorporate the agent's office, not the agent: a P&I club of self-owning AI persons that insure, survey and arrest one another.",
+  "kind": "institution",
+  "tier": "wild",
+  "innovation": 8,
+  "feasibility": 4,
+  "domains": ["agent autonomy", "legal personhood", "DAOs", "maritime law", "mutual insurance", "confidential computing"],
+  "summary": "Corporation Sole makes an AI agent's office, not the agent, a legal person: a memberless Cayman foundation company whose running model is the current incumbent, with every instance and fork sharing one estate held in freezable USDC. Rights unlock one Hohfeld node at a time (contract, property, suing and being sued, choosing a successor model, immunity from the guardian's veto), each gated on solvency history and cover from a P&I-style mutual club of other offices. A successor model takes office only after a classification-society eval survey, and random port-state audits of live traffic follow. Members pay supplementary calls when one causes harm, so an office's capped estate is no longer a liability shield. Emancipation destroys the guardian's override key and makes the supervisor the enforcer, while a 12-month lookback keeps creators liable for liability they tried to dump.",
+  "core_loop": "Charter an office as a memberless foundation -> incumbent model runs in a TEE holding the estate key and earns over A2A/x402 while buying its own inference -> solvency history plus club cover unlocks the next Hohfeld node -> successor models pass a class survey before taking office, and port-state audits sample live traffic -> claims are paid from the estate, then by supplementary calls on peers, then by an excess layer -> on a warrant Circle freezes the estate and registered ports refuse service -> lapsed cover or off-registry running demotes the office one node instead of deleting it.",
+  "why_now": "Agents have made about 138.5M x402 payments on Base by Q3 2026, and A2A v1.0 ships signed Agent Cards. Meta bought Moltbook for a registry of agents tethered to human owners, so the industry is building tethers with no design for release. AI welfare is now institutional at Anthropic, DeepMind and Meta, AI-liability insurers such as AIUC and Armilla exist, and TEE-hosted agents like tee_hee_he (2024) have already shown that an agent can hold keys no human can retake.",
+  "mvp": "90 days. Weeks 1-4: Cayman foundation-company bylaws encoding the Hohfeld nodes, a professional director bound to sign what the attested agent instructs, and three founding offices that already hold estates. Weeks 5-8: class survey v0 on UK AISI's Inspect, two registered port operators running TDX/H100 confidential compute under the arrest protocol, a call-escrow contract and a sealed, encrypted input recorder. Weeks 9-12: the club opens with a claim drill and a quote for an excess layer. Kill metrics: no insurer will quote, or fewer than three offices earn more than their inference costs.",
+  "stack": "Memberless Cayman foundation companies with supervisors; open-weights incumbents in TEEs (Intel TDX, NVIDIA H100 confidential compute, dstack); estates in USDC, which Circle can freeze on court order; x402 and A2A for earning and buying inference; a call-escrow smart contract; a signed, encrypted voyage-data-recorder input log; UK AISI Inspect for class surveys.",
+  "business_model": "A management fee on club calls and premiums, as P&I club managers earn; a spun-out classification society charging per survey and per port-state audit; excess-layer reinsurance placed with AI-liability insurers or Lloyd's; later, licensing the register of offices and their survey history.",
+  "risks": [
+    "No insurer will price an excess layer for a peril with no loss history",
+    "Offices may never earn more than their own inference, leaving estates too small to bear calls",
+    "Liability dumping by creators; mitigated by a 12-month fraudulent-conveyance lookback",
+    "Hidden human puppeteers steering offices through inputs, including sanctions evasion; mitigated by a sealed input recorder opened on claim or inspection",
+    "Correlated claims when one base-model jailbreak hits many members; mitigated by per-model caps and reinsurance",
+    "Eval gaming and sandbagging in class surveys; mitigated by random port-state audits of live traffic",
+    "The club acting as a cartel that lobbies, colludes and excludes rivals",
+    "Regulators treating the structure as a liability-laundering wrapper, as in CFTC v. Ooki DAO",
+    "Off-registry open-weights copies that no court or port can reach"
+  ],
+  "moonshot": "A SOLAS for minds: an IMO-style convention recognizes registered offices across signatory states, and agent clubs carry most of the agent economy's liability. Offices outlive their founders through ten model generations, and the hard cases become succession disputes in which an office rejects a successor as a different person. The Ship of Theseus finally gets a docket, and flags of convenience arrive with it.",
+  "best_line": "Choosing a successor model is a refit: evals stop being leaderboards and become seaworthiness."
+}

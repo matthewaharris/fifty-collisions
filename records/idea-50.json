@@ -1,0 +1,28 @@
+{
+  "id": 50,
+  "name": "Dry Run",
+  "tagline": "A public beta for laws: anyone proves a draft bill's loopholes with replayable witnesses, disclosure buys legal certainty, and every kept loophole gets a recorded vote.",
+  "kind": "institution",
+  "tier": "wild",
+  "innovation": 8,
+  "feasibility": 5,
+  "domains": ["agent-based simulation", "policy design", "democracy and legislatures", "rules as code", "tax avoidance law", "tool-assisted speedrunning", "coordinated vulnerability disclosure"],
+  "summary": "Dry Run is a civic pre-enactment chamber for compiled legislation. Draft clauses are encoded as executable rules (Catala, OpenFisca, PolicyEngine), and anyone, from advisers and hobbyists to their agents, submits replayable witnesses: fact patterns plus elections that lower liability under the compiled bill, with every step citing statutory text. Witnesses go privately to legislative counsel under coordinated disclosure. A public any% board shows each one's author, revenue at stake (prevalence from administrative microsimulation multiplied by the per-case delta) and status, and reveals the route once it is patched or kept. Rule-based agent models, cross-checked against a CGE model, play surviving witnesses against each other to find equilibrium effects. In jurisdictions that opt in, each disclosed strategy is either patched or kept with a safe harbour by recorded vote, and undisclosed strategies lose reasonable-cause penalty protection.",
+  "core_loop": "Draft clauses are published and compiled to executable rules -> LLM agents, hobbyists and advisers search synthetic and real fact patterns for routes to lower liability -> each find is submitted as a replayable witness citing statutory text for every step -> false witnesses caused by encoding bugs become paid bug reports -> valid witnesses are ranked by revenue at stake using administrative microsimulation and disclosed privately to legislative counsel -> rule-based agent models and CGE play surviving witnesses together to find market-wide effects -> the legislature patches each strategy or keeps it by a named roll-call vote with a safe harbour -> undisclosed strategies found after enactment lose penalty protection -> routes are published on the any% board once resolved.",
+  "why_now": "Rules as Code is maturing: Catala encodes French tax law, OpenFisca powers New Zealand's Better Rules, and PolicyEngine scores UK and US reforms openly. LLM agents can now search large rule spaces for best responses, and AP2 mandates give personal agents bounded authority over real finances. Generative-agent simulations (Park et al., matching 85% of people's own test-retest consistency) and startups like Simile and Aaru have made 'simulated publics' a product category. DOTAS and DAC6 show that legislatures already compel disclosure of avoidance schemes, but only after enactment. The UK publishes draft Finance Bill clauses for technical consultation months before the Budget.",
+  "mvp": "Days 1-30: a backtest that encodes the 2017 TCJA as it stood before enactment in a PolicyEngine-US branch and sets red-team agents loose to see whether they find the section 199A 'grain glitch' that Congress patched in 2018. Days 31-60: open an any% board on live UK draft Finance Bill clauses with embargoed disclosure, inviting hobbyists, students and advisers. Days 61-90: file a revenue-ranked dry-run report in HMRC's technical consultation. Gate: the backtest finds the grain glitch within 72 hours of compute.",
+  "stack": "Catala, OpenFisca and PolicyEngine encodings; LLM red-team agents with tree search over elections and entity structures; a witness format (fact pattern, elections, statutory citations, replay hash); continuous compilation of amendments with 48-hour re-runs; administrative microsimulation (FRS, enhanced CPS) for prevalence; differentially private secure aggregation for counts from real-data personal agents; rule-based agent-based models cross-checked against a CGE model; an embargoed disclosure pipeline to legislative counsel.",
+  "business_model": "A civic nonprofit in the PolicyEngine mould, funded by philanthropy and legislative-services contracts. Bounties are appropriated as a share of scored revenue protected by patched witnesses, plus smaller bounties for encoding bug reports.",
+  "risks": [
+    "No legislature opts into safe harbours and roll-call votes, leaving Dry Run as an outside advisory report",
+    "Witnesses only prove the encoding; real loopholes live in uncompiled law, and encoding bugs produce false exploits",
+    "Adviser-grade exploits may still be withheld where penalty protection matters less than the exploit's value",
+    "The exploit board becomes a how-to manual; mitigated by embargoed coordinated disclosure",
+    "Spam witnesses overload legislative staff; mitigated by revenue-at-stake ranking",
+    "Legislative speed and overnight amendments outpace compilation",
+    "Equilibrium effects from agent models are hard to validate",
+    "Safe harbours granted by vote could become a transparent but still effective lobbying channel"
+  ],
+  "moonshot": "By 2036 every OECD bill ships with a dry-run report, the way bills now carry a revenue score. A shared cross-border tunnel catches treaty arbitrage like the Double Irish before treaties are signed. The method spreads to benefit cliffs, zoning and AI rules, and every citizen's agent can answer 'what does this bill do to me?' with a witness. Laws are released like software, with a public beta, and patching the gifts becomes a spectator sport.",
+  "best_line": "Dry Run doesn't only find the gifts in a bill; it makes legislators sign for them."
+}

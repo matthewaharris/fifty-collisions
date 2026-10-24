@@ -1,0 +1,28 @@
+{
+  "id": 19,
+  "name": "Hyphal Bourse",
+  "tagline": "Read the carbon-for-phosphorus exchange rate between crops and fungi from glowing sentinel roots, and farm by bidding into that market instead of flooding it.",
+  "kind": "system",
+  "tier": "wild",
+  "innovation": 8,
+  "feasibility": 4,
+  "domains": ["mycorrhizal ecology", "distributed sensing", "agriculture", "synthetic biology", "market microstructure", "soil-carbon MRV"],
+  "summary": "Hyphal Bourse treats the trade between crops and arbuscular mycorrhizal fungi, carbon (largely as lipids) for phosphorus, as a market with a readable price. Mesh-walled trading posts buried in fields hold standard sentinel plants carrying fluorescent reporters on a lipid-payment promoter (RAM2/STR), a fungal-phosphate transporter promoter (PT4) and a constitutive reference. Fluorescence minirhizotrons read their colour ratio as a benchmark exchange rate per farm, anchored by isotope campaigns, while drone-read shoot phosphate-starvation reporters (SPX1) map hunger across conventional fields. Bidder intercrop rows on no-till farms pull fungal phosphorus toward hungry zones at root scale, and a rising carbon cost with no phosphorus behind it flags cheater fungi and dead inoculants. Blind retail scorecards and pay-on-performance trials for inoculant vendors fund the network, and the carbon-to-fungi flow is licensed to soil-carbon MRV.",
+  "core_loop": "Bury trading posts with standard sentinel buyers -> hyphae cross the mesh and trade with the sentinels -> the fluorescence ratio of carbon paid to phosphorus received is read as the local exchange rate, calibrated by 13C and 33P labelling -> drone maps of shoot hunger extend it across the field -> the agronomy agent responds with bidder intercrops, phosphorus micro-doses, cover crops, inoculation or nothing -> eDNA plus rate data score fungal strains and commercial inoculants -> rates aggregate into a regional benchmark for soil.",
+  "why_now": "Kiers's lab robot-imaged fungal trade as travelling waves (Nature, 2025), and Hawkins et al. (2023) estimate about 13 Gt CO2e a year flows from plants to mycorrhizal fungi, the largest unmetered carbon flow. InnerPlant has shown field sentinel crops readable from the air, with John Deere as a partner. Frontier approved an MRV methodology for enhanced rock weathering in June 2026, soil-carbon buyers want measured flows, and only 6% of farmers trust AI advice, so a price read from the crop's own roots is advice they can check.",
+  "mvp": "90 days. Weeks 1-4: partner with a mycorrhiza lab, obtain existing Medicago PT4 reporter lines, and build a fluorescence minirhizotron. Weeks 5-8: greenhouse phosphorus gradient crossed with three shelf-bought commercial inoculants, under 13C and 33P labelling. Weeks 9-12: calibrate the reporter index against isotope-measured exchange, publish the first blind inoculant scorecard, and sign three no-till farms for trading-post pilots next season. Kill metrics: the index fails to track isotope exchange, or it can't tell a dead inoculant from a live one.",
+  "stack": "Promoter-fluorophore reporter constructs (RAM2/STR, PT4, SPX1, constitutive reference); mesh in-growth trading posts (about 35 micron mesh) with sentinels cut before flowering; fluorescence minirhizotrons; drone fluorescence imaging; AMF eDNA (18S primers); 13C and 33P isotope calibration with university partners; an agronomy agent issuing interventions.",
+  "business_model": "The wedge is blind retail scorecards for mycorrhizal inoculants, with vendors paying for a 'trade-verified' label and pay-on-performance trials. Later, a per-acre phosphorus agronomy subscription, then licensing measured carbon-to-fungi flow and the regional benchmark rate to soil-carbon MRV and fertilizer buyers.",
+  "risks": [
+    "Promoter activity indicates a switched-on pathway, not flux; the index may not track real exchange",
+    "Bids may not move phosphorus beyond centimetres in real fields",
+    "Reporter silencing across generations and soil autofluorescence",
+    "GMO regulation and the rejection of engineered plants by regenerative and organic growers; mitigated by contained trading posts",
+    "Engineered bidder lines could outcompete local fungal partners and need containment rules",
+    "Vendors gaming trials with hand-picked batches; mitigated by sampling only from retail shelves",
+    "Near-zero signal in high-phosphorus conventional fields",
+    "Fungal evolution toward cheaters that exploit permanent high bidders"
+  ],
+  "moonshot": "A monetary authority for soil. Trading posts across SPUN's map publish the underground exchange rate across biomes, as weather stations do for the atmosphere. Agronomists stop prescribing fertilizer and start setting rates, tuning bidder lines and micro-doses to hold each field's soil rate in band. The roughly 13 Gt CO2e a year flowing to fungi becomes metered and creditable, contained bidder lines route nutrients across whole fields, and a non-human market's price system becomes infrastructure, as GPS did.",
+  "best_line": "Don't build compute out of mycelium: program the market the fungi already run."
+}

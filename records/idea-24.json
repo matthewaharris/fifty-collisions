@@ -1,0 +1,26 @@
+{
+  "id": 24,
+  "name": "Always For Sale",
+  "tagline": "A chess roguelite under a Harberger tax: every piece is a standing quote, any attacked piece can be bought at its price and flips where it stands, and the killer move is the quiet one that makes three enemy quotes stale.",
+  "kind": "game",
+  "tier": "bold",
+  "innovation": 5,
+  "feasibility": 6,
+  "domains": ["chess", "Harberger taxation", "market microstructure", "Georgist economics", "roguelite design", "game AI"],
+  "summary": "Always For Sale is a chess roguelite where every piece carries a self-assessed price, taxed each turn, and any attacked piece can be bought at that price, flipping colour where it stands while the buyer inherits its price and tax. Because a flip moves a piece into your own camp, a piece's true value is the evaluation swing of flipping it, which a variant engine computes cheaply and which drives the AI's pricing and boss personalities. Each turn is move or reprice, so tempo works like latency in markets: quotes go stale as the position changes, and quiet moves that make several enemy quotes stale at once are the signature tactic. Georgist rent from occupied centre squares feeds treasuries, a progressive tax on treasury size stops snowballing and a rising late tax ends stalls. Runs span eight boards with relics and bosses modelled on market regimes, and post-run receipts show each posted price against its flip swing.",
+  "core_loop": "Each turn, move, buy an attacked piece at its posted price, or reprice up to two pieces -> pay tax on posted prices and collect rent from centre squares -> moves change flip values, so quotes go stale -> snipe stale enemy quotes and protect your own -> bankruptcy or mate ends the board -> carry treasury and debt through eight boards of shops, relics and market-regime bosses -> read the post-run receipts of price versus flip swing.",
+  "why_now": "Slay the Spire 2 peaked at 574K concurrent players and Balatro proved economy roguelites can reach millions, while chess roguelites (Shotgun King, Pawnbarian) have shown a shelf exists. Freestyle chess showed audiences want chess without memorized theory, and no opening theory survives prices. Harberger taxation (Posner and Weyl's Radical Markets) is widely debated but almost untested on real human behaviour.",
+  "mvp": "90 days. Weeks 1-3: a Rust rules core on a 6x6 board with small armies and integer prices 1-12, plus self-play sweeps over tax and rent to find the band where buyouts happen every 6-10 turns. Weeks 4-8: three bosses (Honest, Monopolist, Batch), ten relics and post-run receipts. Weeks 9-12: a Steam Playtest with 500 players. Kill metrics: self-play finds no band where buying and pricing both matter, or players reprice on under 10% of turns.",
+  "stack": "Godot 4 front end; Rust rules core handling buyouts, tax, rent and chess legality; Fairy-Stockfish (native and WASM) scoring FENs for flip-swing evaluation; alpha-beta AI over moves with greedy buy rules and stale-quote repricing; telemetry logging posted price against flip swing; server-side replay validation for daily leaderboards.",
+  "business_model": "A $15-20 premium Steam game with a Next Fest demo, daily seeded runs and a classroom licence for economics teachers. No tokens, NFTs or paid power. Async PvP and expansions after launch.",
+  "risks": [
+    "Self-play may find no tax and rent band where both pricing and buying matter",
+    "Analysis paralysis from pricing many pieces; mitigated by a small board, integer prices and two reprices a turn",
+    "Degenerate turtling or snowballing; mitigated by rent, rising late tax and progressive treasury tax",
+    "Flip-value engine sees through every bluff, so the lemon meta needs shallow-search bosses or human PvP",
+    "Rule edge cases around pins and king exposure during buyouts",
+    "Engine-assisted cheating on daily leaderboards"
+  ],
+  "moonshot": "Async PvP brings a real Akerlof cycle as the ladder swings between trusting cheap pieces and fearing lemons. Millions of posted prices on identical positions give chess its first market valuation to set beside the engine's, and the game becomes the largest human-subject experiment on self-assessed taxation, showing whether people price honestly, panic-sell or bluff under Harberger rules.",
+  "best_line": "The new combination isn't a fork. It's a quiet move that makes three of the opponent's prices stale at once."
+}

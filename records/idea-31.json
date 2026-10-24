@@ -1,0 +1,28 @@
+{
+  "id": 31,
+  "name": "Tombstone",
+  "tagline": "Decommission a digital life like a server: map what recovers what, rehearse the death every year, and drain from the leaves inward on a certificate, never on silence.",
+  "kind": "app",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 6,
+  "domains": ["end-of-life", "digital legacy", "agents", "site reliability engineering", "social-recovery cryptography", "estate law"],
+  "summary": "Tombstone is a household agent that decommissions a digital life the way engineers retire a server, and it's sold through estate-planning platforms and life insurers. While the owner is alive, it builds an on-device recovery graph of which account recovers which. It then moves the owner off fragile roots: SMS 2FA becomes passkeys, Legacy Contacts get set, and shared photos and domains go into joint ownership. A yearly game day has an heir try to reach the root accounts, scores the household bus factor, and ends with a signed consent schedule that counts as a RUFADAA 'other record'. The map is split 2-of-3 between two heirs and an independent share holder. Silence triggers only an incapacity cordon. A death certificate is the only thing that starts the drain through official bereavement channels, which ends with tombstone notices to brokers.",
+  "core_loop": "Import account names from a password-manager export and on-device mailbox receipts -> build the recovery graph (phone number and primary email as roots) -> annotate keep/transfer/memorialize/delete with an heir per account -> move fragile roots to passkeys and heir-reachable recovery, configure Google/Apple/Meta legacy settings -> yearly game day: heir tries the root accounts with only the plan, agent scores household bus factor -> sign a dated consent schedule -> on owner silence plus timelock: incapacity mode (cordon, freeze mandates, hand off to POA holder) -> on verified death certificate: 2-of-3 Shamir reconstruction, drain leaves-inward via bereavement channels acting for the executor -> tombstone notices to Deceased Do Not Contact lists and brokers.",
+  "why_now": "Agents now hold signed AP2 mandates tethered to human owners, so a dead or incapacitated principal can leave agents spending on their behalf. The FTC's click-to-cancel rule was vacated in 2025, so cancellation is still a maze. Passkeys and provider legacy tools (Google Inactive Account Manager, Apple Legacy Contact) finally give a plan something to configure, and RUFADAA lets those tools outrank the will.",
+  "mvp": "90 days. Weeks 1-4: on-device recovery graph from a Bitwarden/1Password export (names only) plus Takeout/IMAP receipts, and the first drill. Weeks 5-7: 2-of-3 Shamir guardians, the owner-veto timelock, and the consent schedule reviewed by trusts-and-estates counsel in three states. Weeks 8-10: 200 households through one estate-planning partner. Weeks 11-12: executor mode for 20 providers' bereavement channels, plus scorecard v0 from drill logs. Kill metrics: under 30% of households finish a drill, or partner conversion under 5%.",
+  "stack": "Mobile app with on-device parsing of password-manager exports, Google Takeout and IMAP (avoiding Google's restricted-scope audit); a local LLM classifier for receipts; libsodium Shamir secret sharing with a server-side timelock and owner-device veto; ESIGN-compliant signatures for consent schedules; guided deep links for provider legacy settings (no UI-driving bots); executor-mode letter generation for bereavement channels.",
+  "business_model": "Business-to-business-to-consumer (B2B2C) distribution through estate-planning platforms (Trust & Will, Wealth.com) and life insurers, who want beneficiaries engaged before a claim. Roughly $60 a year per household, or a per-policy fee paid by the insurer. Incapacity mode for families facing dementia is the larger, earlier market.",
+  "risks": [
+    "Legal authority: logging in as the deceased breaches terms and arguably the CFAA, so everything runs through executor channels and signed consent",
+    "The recovery graph is an identity-theft honeypot; mitigated by on-device storage, topology only, and 2-of-3 shares",
+    "Elder financial abuse by family guardians; mitigated by an independent third share released only against a certificate",
+    "Silence mistaken for death (coma, dementia, lost phone); silence triggers only incapacity mode",
+    "Household graphs exposing a spouse's hidden accounts in abusive homes; each member sees only edges crossing into their own accounts",
+    "State variation from uniform RUFADAA",
+    "Low willingness to rehearse one's own death yearly; low consumer willingness to pay",
+    "Temptation to build a griefbot from the data; banned by charter"
+  ],
+  "moonshot": "Principal status becomes a protocol field. Electronic death and incapacity registrations publish signed events that providers subscribe to like card-revocation lists. Machine-readable consent schedules let providers drain their own nodes in days, and every AP2 mandate and agent identity carries a liveness reference, so a dead principal's agents cordon themselves within the hour. A public bereavement scorecard grows into regulation: a 'right to be buried' alongside the right to be forgotten.",
+  "best_line": "Once a year the agent simulates your death: the heir tries the root accounts with only what the plan gives them, and the drill signs the consent that makes the real drain legal."
+}

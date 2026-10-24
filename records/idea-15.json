@@ -1,0 +1,27 @@
+{
+  "id": 15,
+  "name": "Yarrow",
+  "tagline": "An oracle that diagnoses which kind of randomness your decision needs, casts it verifiably, and tells you with receipts where your gut beats chance.",
+  "kind": "app",
+  "tier": "bold",
+  "innovation": 5,
+  "feasibility": 7,
+  "domains": ["divination (I Ching, tarot)", "game theory", "decision science", "sortition", "causal inference"],
+  "summary": "Yarrow is a decision app that triages before it casts. An LLM interview, constrained by hard-coded rules, sorts each decision into Bind (a binding mixed strategy for repeated exploration choices, declared ties, or group Casting Tables where everyone affected is present and assents to the weights) or Mirror (log your hope before the reveal, and the gap is the reading). Health, money and crisis decisions are Mirror-only. Casts are committed before a drand beacon round and mapped onto yarrow-weighted hexagrams with Legge's public-domain text, so anyone can verify them. Because the cast is randomized, blinded outcome ratings turn it into an instrument: frequent decision classes get personal gut-versus-chance reports, and rare ones get pooled priors.",
+  "core_loop": "Describe the decision -> triage into Bind or Mirror under hard rules -> commit options and weights, then cast from a drand round onto yarrow-weighted hexagrams -> Bind: follow the draw (overrides logged); Mirror: log your hope before the reveal and your reaction after -> blinded outcome ping days later -> the ledger compares outcomes when the cast happened to agree vs. disagree with your gut, so the oracle gains or loses authority per decision class.",
+  "why_now": "AI astrology and tarot apps reportedly earn millions a month, which shows demand for ritualized reflection. Levitt's coin-flip study (2021) showed randomized nudges on big decisions improve wellbeing, and funders such as the NZ HRC and Swiss NSF now use partial lotteries. Public randomness beacons (drand) make verifiable casts free, and delegated AI agents need unpredictable mixed strategies (brief section 3).",
+  "mvp": "90 days. Weeks 1-4: iOS Mirror mode, LLM triage with rules in code, drand-committed cast, Legge I Ching text. Weeks 5-8: three Thompson-sampling exploration templates (which task, which friend, which habit), three-day blinded outcome pings, Casting Table as a Slack app. Weeks 9-12: 1,000-user beta and a partial-lottery pitch to three small funders. Kill metrics: under 30% of casts get an outcome rating, or day-30 retention under 15%.",
+  "stack": "SwiftUI; LLM triage behind hard-coded eligibility rules; drand quicknet beacon with options and weights committed before the target round; yarrow-weighted hexagram sampler; Beta-Bernoulli Thompson sampling; blinded outcome ratings with intent-to-treat analysis and hierarchical pooling across opted-in users; local-first end-to-end encrypted journal; Slack app for Casting Table; public-domain Legge (1882) I Ching and Rider-Waite-Smith (1909) content.",
+  "business_model": "A $6/month consumer premium for the ledger and gut-versus-chance reports. B2B partial-lottery tooling with a drand-backed audit trail for small foundations, hackathons and internal innovation funds.",
+  "risks": [
+    "Audience mismatch: ritual seekers may not want a ledger, and ledger users may not want a hexagram",
+    "Low outcome-rating compliance starves the ledger (the core kill metric)",
+    "Self-justification bias in outcome ratings; mitigated by neutral, blinded prompts",
+    "Too few decisions per class for personal estimates; pooled priors with wide intervals",
+    "Vulnerable users outsourcing serious decisions; health, money and crisis are Mirror-only, with crisis routing and Bind rate limits",
+    "Casts imposed on absent third parties; barred, and Casting Table requires everyone affected to be present and assent",
+    "Re-casting to fish for a preferred answer; logged and shown back as a Mirror signal"
+  ],
+  "moonshot": "An atlas of intuition. Millions of instrumented casts measure where human gut beats chance across decision classes and for whom, settling with intervals what Kahneman and Klein could only argue about. The same verified lot becomes civic infrastructure for school places, housing lotteries and grant tie-breaks, and AI agents call it for mixed strategies no counterparty can predict and any auditor can check.",
+  "best_line": "A lot is legitimate only when everyone it binds agreed to the weights."
+}

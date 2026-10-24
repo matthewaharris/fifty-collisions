@@ -1,0 +1,28 @@
+{
+  "id": 29,
+  "name": "Order Parameter",
+  "tagline": "Measure humanity's coupling constant: randomize how meditators are linked, fit the Kuramoto curve, and let global coherence live or die on the intercept at zero channel.",
+  "kind": "institution",
+  "tier": "wild",
+  "innovation": 8,
+  "feasibility": 5,
+  "domains": ["collective meditation", "physiological synchrony", "global events", "Kuramoto oscillator physics", "radio interferometry", "adversarial collaboration", "wearables"],
+  "summary": "Order Parameter is an adversarial instrument that measures the coupling constant between human nervous systems. A hash-committed quantum RNG assigns each meditation session a coupling channel: none (K0), belief that others are sitting (K1), live group breathing audio (K3) or a stranger's breath felt as haptics on the wrist (K4). Pace-then-release breathing gives each person a randomized natural frequency, so only free-running coupling counts. Kuramoto order parameters are fitted against time-shifted surrogate cohorts. Correlation is plotted against distance between meditators: a flat excess supports the nonlocal claim, and a slope means a channel leak. K0 is unblinded only after K4 passes as a positive control, and raw streams are published live, with Bayes factors pre-registered at the proponents' own predicted effect and co-signed by both camps. A haptic co-breathing subscription funds operations, and a sealed, delayed media arousal index (population heart-rate jolts around broadcasts) is a side output that is never sold.",
+  "core_loop": "Sit with a chest strap -> a hash-committed QRNG assigns a channel (K0 none, K1 belief, K3 audio, K4 haptic breath) -> pace-then-release sets a randomized natural frequency -> free-running breath and heart phase is recorded with disciplined timestamps -> order parameters are computed against time-shifted surrogates with cohort-level permutation tests -> excess is plotted against separation (flat = claim, slope = leak) -> K4 must beat surrogates before K0 unblinds -> r(N, K) fills in a dose-response curve and the K0 intercept is judged against pre-registered Bayes factors.",
+  "why_now": "COGITATE and the Transparent Psi Project showed that adversarial, pre-registered collaborations can deliver verdicts both camps accept. Beat-to-beat wearables such as the Polar H10 are cheap, and the FDA's Jan 2026 wellness guidance loosens consumer wearables. Contemplative tech still lacks objective measures, and app counters like Insight Timer's 'meditating now' already deploy the belief channel to millions without measuring anything.",
+  "mvp": "90 days. Weeks 1-3: iOS app with the Polar H10 BLE SDK and Apple Watch haptics, the pace-then-release protocol, hash-committed QRNG assignment, and a pre-registration co-signed by one proponent and one skeptic group. Weeks 4-8: 1,000 meditators sitting three times a week across K0, K1, K3 and K4 arms in cohorts of up to 200. Weeks 9-10: the positive-control analysis (K3/K4 against surrogates). Weeks 11-12: K0 unblinding plus one sealed match-night arousal pilot. Kill metrics: K4 fails to beat surrogates, or retention is under 40% by week 8.",
+  "stack": "Polar H10 chest straps (RR intervals, breath phase via RSA) over BLE; Apple Watch haptics via WatchKit; NTP-disciplined timestamps; QRNG assignments hash-committed in advance; Kuramoto order-parameter and phase-locking-value pipeline with time-shifted surrogates and cohort-level permutation tests; pre-registered Bayes factors; live public raw-data streams.",
+  "business_model": "A haptic co-breathing subscription (about $8 a month) carries operations. Foundations that fund both proponents and skeptics (BIAL) and Templeton fund the adversarial collaboration. The media arousal index is published aggregated and delayed, and never sold to advertisers or media buyers.",
+  "risks": [
+    "Artefactual synchrony from shared pacing and start cues; mitigated by pace-then-release, randomized detuning and surrogates",
+    "An insensitive rig makes a K0 null meaningless; mitigated by gating unblinding on the K4 positive control",
+    "Consumer wearables (Oura, Whoop) export only summaries, so planetary scale needs beat-to-beat access",
+    "Proponents may reject a null after co-signing, or groups may sit together off-app to 'help' and break blinding",
+    "Non-independent pairs inflating significance; mitigated by cohort-level permutation tests",
+    "Haptic contact with strangers and HRV data are sensitive; anonymity, opt-in, exclusions and GDPR special-category handling are required",
+    "The arousal index could become an ad-effectiveness meter; banned from sale by charter",
+    "Retention in multi-week meditation protocols"
+  ],
+  "moonshot": "An observatory for extraordinary collective claims. Watches stream beat-to-beat phase by default and millions opt in as standing stations. A claim about global meditation, mass prayer or the Maharishi Effect gets no press until it books observing time with a sealed proposal, predicted effect, minimum population and window, and the result is published whatever it shows. The other half maps which channels truly couple us (rituals, choirs, broadcasts, feeds), making co-regulation something you can measure and prescribe for loneliness and panic.",
+  "best_line": "A nonlocal coupling should be flat in separation: a flat excess is the claim, a slope means a leak."
+}

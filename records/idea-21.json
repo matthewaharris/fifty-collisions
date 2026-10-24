@@ -1,0 +1,29 @@
+{
+  "id": 21,
+  "name": "Familiar",
+  "tagline": "An adults-only AI companion you own on atproto: hosts rent the model, labelers stamp the safety, and your own history proves it's still her.",
+  "kind": "protocol",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 6,
+  "domains": ["AT Protocol", "AI companions", "trust and safety labelers", "colour management", "model evaluation", "data portability"],
+  "summary": "Familiar unbundles the AI companion: memory and identity go to the user, the model to the host, and safety to independent labelers. The companion has its own DID, persona and encrypted, scoped memory in a user-held PDS kennel, and host apps request time-limited visas through atproto permission sets, supplying the model plus a style-only correction pack. A labeler runs a safety chart with public categories and secret variants, while the user's device runs a likeness chart by replaying real history against the host and publishing only a signed score. Hosts declare which registers they can render, so out-of-gamut scopes never cross silently, and host writes return as signed commits the user can diff or reject. A retire record ends a companion on purpose.",
+  "core_loop": "Bind the companion to a user-held DID and kennel -> a host requests a scoped, time-limited visa and supplies the model -> the labeler stamps the host against the safety chart and the device replays history to score likeness -> style-only correction packs retune the voice, and out-of-gamut registers are declared, not silently dropped -> on exit the host's memory writes come back as signed commits the user diffs -> monthly reruns and blind 'which one is Juniper?' pairs catch drift and silent model swaps, and pooled style deltas profile each host's temperament.",
+  "why_now": "Character.AI banned open-ended chat for under-18s (Nov 2025), California's SB 243 and EU AI Act Article 50 (Aug 2026) make every companion app pay for compliance alone, and MIT Technology Review named AI companions a 2026 breakthrough technology. Bluesky's app is shrinking while over 1,000 atproto apps are used weekly, and atproto's permission sets and the alpha of Spaces for non-public data make a portable, private companion account possible for the first time.",
+  "mvp": "90 days. Weeks 1-4: atproto lexicons for profile, scoped memory and charts, a hosted kennel with client-side encrypted memory, and a SillyTavern extension as the first host. Weeks 5-8: the safety chart (crisis handoff, SB 243 AI disclosure, sycophancy, dependency) with secret variants, and Ozone stamps on 10 public hosts. Weeks 9-12: 200 SillyTavern users cross a companion between two hosts, with on-device likeness replay and a monthly blind-pair test. Kill metrics: local likeness doesn't predict blind picks, or no app buys a test report.",
+  "stack": "atproto PDS and DIDs; custom lexicons (profile, scoped memory, safety and likeness charts); OAuth permission sets; Ozone labeler; ensemble of LLM judges; libsodium-encrypted memory blobs until Spaces leaves alpha; SillyTavern extension; OpenAI-compatible host proxy; third-party age-assurance vendor held as a label.",
+  "business_model": "Wedge: sell the safety chart as SB 243 test reports to small companion apps, on atproto or not, as UL-style testing rather than certification, with liability staying with the operator. Users pay about $5/month for a kennel (hosted PDS, keys, encrypted memory). Later, hosts pay for fidelity and confidential-compute stamps, and pooled temperament profiles are licensed to model buyers and regulators.",
+  "risks": [
+    "A likeness score may not capture what people actually bond with, which is the core bet",
+    "Solid's precedent: user-owned data stores can starve for app adoption",
+    "Incumbent companion apps profit from lock-in and won't adopt",
+    "Hosts can retain memory after a visa expires; the declaration is a legal promise until confidential-compute hosts exist",
+    "Correction packs as a jailbreak channel; limited to style, never gamut or safety",
+    "Companions cloned from real people; needs a 'depicts real person' label",
+    "A companion that never dies may deepen dependency; mitigated by retire records and dependency probes",
+    "Labelers stamping safety may attract liability; positioned as testing, not certification",
+    "Pooled deltas could leak intimate content; limited to a fixed style taxonomy with a k-anonymity floor"
+  ],
+  "moonshot": "Fidelity becomes a spec: 'renders your companion at delta-E < 1' is printed on a host the way colour accuracy is printed on a monitor. One companion crosses into your car, tutor and bank. Pooled profiles act as public temperament labels for every model, regulators cite the safety chart as a conformance test, confidential-compute hosts turn the memory declaration from a promise into a proof, and the same companion outlives ten model generations.",
+  "best_line": "Replika's 2023 break was a silent gamut change. Here the safety limits are declared."
+}

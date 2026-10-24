@@ -1,0 +1,26 @@
+{
+  "id": 1,
+  "name": "Precedent",
+  "tagline": "A patient-side appeals agent backed by a Shepard's-style citator of insurance case law.",
+  "kind": "app",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 7,
+  "domains": ["healthcare AI", "agent-to-agent negotiation", "health insurance", "legal tech"],
+  "summary": "Precedent is a free patient-side agent for appealing insurance denials. It becomes the patient's authorized representative, drafts the appeal, sends the prescriber a pre-filled letter of medical necessity to sign, and tracks deadlines through to external review. Underneath is a citator: argument units extracted only from published Independent Medical Review and external-review decisions (CA DMHC, NY DFS) and from ERISA claim files. Each unit is linked to its source, carries a followed/distinguished/superseded status, and is matched to the version of the payer's policy in force on the date of service. Decision letters come back by fax, closing the outcome loop without relying on users to report back.",
+  "core_loop": "Upload or fetch the denial -> decode CARC/RARC codes and fetch the versioned payer policy -> retrieve matching argument units from the citator, with real citations only -> draft the appeal and LMN packet -> the prescriber signs -> Precedent files as authorized representative and requests the full claim file -> the decision letter arrives by fax and updates each argument's status.",
+  "why_now": "Payers and providers are automating prior auth (PrescriberPoint's autonomous PA agent, April 2026; 93% of physicians report PA-driven delays). CMS-0057-F requires payers to publish PA metrics now and adds PA status to the Patient Access API in 2027. Patient-side investment is near zero, and fewer than 1% of denials are appealed.",
+  "mvp": "90 days, GLP-1 and specialty-drug prior-auth denials on commercial plans with three payers. Weeks 1-4: ingest CA IMR and NY DFS decisions and extract argument units, with a pharmacist and a lawyer auditing 300. Weeks 5-8: authorized-representative flow, fax inbox and pre-filled LMN packet. Weeks 9-12: 200 live appeals through a patient-advocacy partner. Kill metric: if fewer than 50% of LMNs are signed within 7 days, pivot to a provider-side tool.",
+  "stack": "OCR plus structured LLM extraction (extractive citations only), Postgres with pgvector, versioned payer-policy crawler and diffing, HIPAA-BAA fax API, Flexpa/FHIR Patient Access APIs, e-signature for authorized-representative forms and LMNs, deadline engine.",
+  "business_model": "Free for patients. Revenue comes from licensing the citator API to the provider side (specialty pharmacies, PA teams, PA agents). Pharma hub-services revenue is firewalled from ranking and disclosed. Long term, the corpus could sit in a nonprofit trust.",
+  "risks": [
+    "ERISA self-funded plans (~65% of covered workers) have no published decisions, so coverage stays thin until claim-file requests accumulate",
+    "Prescribers may not sign LMN packets, which stalls the patient-only flow",
+    "Hallucinated or misapplied citations; mitigated by extractive-only argument units linked to their sources",
+    "PHI regulation for a non-covered entity (FTC Health Breach Notification Rule, Washington My Health My Data Act) and possible state claims-adjuster licensing for representation at scale",
+    "Pharma money could skew rankings toward their drugs",
+    "Selection bias in overturn data misleading patients or regulators"
+  ],
+  "moonshot": "Payer medical policies become executable policy-as-code, and every denial must cite the exact rule version that fired. Patient and payer agents argue over FHIR in seconds, citing a shared common law held in a nonprofit 'Westlaw of coverage' trust. Unsettled cases reach human reviewers already briefed, and denial-by-attrition stops paying.",
+  "best_line": "Lawyers don't search for identical cases. They check whether an argument is still good law."
+}

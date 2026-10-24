@@ -1,0 +1,27 @@
+{
+  "id": 8,
+  "name": "Smoke-Filled Room",
+  "tagline": "Design the auction, coach the AI cartel that breaks it, patch history's worst spectrum sales, and lose honestly to Gibbard-Satterthwaite.",
+  "kind": "platform",
+  "tier": "bold",
+  "innovation": 4,
+  "feasibility": 7,
+  "domains": ["mechanism design", "LLM red-teaming", "education", "mutation testing", "antitrust"],
+  "summary": "Smoke-Filled Room is a design-attack-patch course platform for market design. Students write auctions, voting rules and markets in a JSON DSL that compiles to a referee, then release waves of a mixed adversary zoo: small open LLMs, scripted best-responders, pretrained Calvano Q-learners and frontier bosses. A collusion meter reports the gap between the student's design and a reference mechanism under the same agents, so agent politeness cancels out. Levels come from a museum of historical disasters and from solver-verified mutants of safe mechanisms. Impossibility levels teach tradeoffs, not victories. Students swap between designer and cartel coach, and replayed cartel transcripts are the graded artifact.",
+  "core_loop": "Draft a mechanism in the DSL -> release a wave of the zoo against it and a reference mechanism -> read the collusion meter (gap with multi-seed intervals) and the cartel transcripts -> patch the rule (close channels, add reserves, default penalties, posted prices) -> swap sides and coach a cartel against a classmate's design -> verified exploits are logged as reproducible policies.",
+  "why_now": "Agents now bid and price for users over x402 and ACP. LLM pricing agents have been shown to collude tacitly (Fish, Gonczarowski and Shorrer, 2024), and DOJ's RealPage case put algorithmic collusion on the enforcement agenda. Anti-collusion mechanisms for multi-agent AI are an ICML/NeurIPS 2026 topic, and the trends brief flags a mechanism sandbox as unbuilt.",
+  "mvp": "90 days. Weeks 1-4: JSON mechanism DSL and referee for three families (single-item sealed-bid, simultaneous ascending multi-unit, small-electorate voting), solver benchmarks, and four museum levels (New Zealand 1990, Australia 1993, the Netherlands 2000, US West 1997). Weeks 5-8: difference meter, mutant generator with solver verification and equivalent-mutant filtering, instructor dashboard. Weeks 9-12: pilots in three market-design courses for the January term. Kill metrics: the zoo rediscovers fewer than 3 of the 4 museum exploits unaided, or designs that beat the zoo do no better against held-out humans in an oTree session.",
+  "stack": "JSON mechanism DSL compiled to a Python referee. HiGHS/OR-Tools for competitive benchmarks and manipulation search. Small open-weight LLMs on vLLM plus frontier API models for bosses. Calvano-style Q-learners pretrained offline. Fixed seeds and cached replays. Block-based web editor, transcript viewer, oTree for human holdout sessions.",
+  "business_model": "Per-seat course licences in the MobLab mould as the wedge and talent funnel. The real revenue is mechanism red-teaming for agent-facing marketplaces (ad exchanges, procurement portals, x402 posted-price APIs) and for competition authorities.",
+  "risks": [
+    "Zoo robustness may not transfer to human or real-world agents, making it a toy (the core kill metric)",
+    "The collusion meter could measure RLHF agreeableness rather than mechanism weakness; mitigated by the difference meter and a mixed zoo",
+    "Model drift changes adversary strength between terms; every update re-runs the museum",
+    "Cross-agent prompt injection confounds mechanism failure; logged separately as channel security",
+    "Noisy, stochastic grading; multi-seed confidence intervals required",
+    "Students exploiting real campus mechanisms (course bidding, housing lotteries); home levels allowed only on simulated copies with registrar sign-off and an embargo",
+    "Education is a small, slow market with semester-long sales cycles"
+  ],
+  "moonshot": "Crash-test ratings for markets. Before an agent-facing marketplace, ad exchange or procurement portal launches, it publishes its rules in the DSL and runs them through a public, versioned adversary zoo, NCAP-style, earning a star rating for collusion resistance. Exploits go into a public registry of mechanism vulnerabilities, CVEs for institutions, and competition authorities reject failing designs before cartels form.",
+  "best_line": "Theorems are learned by losing to them."
+}

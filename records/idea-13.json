@@ -1,0 +1,27 @@
+{
+  "id": 13,
+  "name": "Canary Ladder",
+  "tagline": "A cat bond on the end of elliptic-curve cryptography, whose calculation agent is a theorem and whose trigger is a forged signature.",
+  "kind": "institution",
+  "tier": "wild",
+  "innovation": 8,
+  "feasibility": 4,
+  "domains": ["post-quantum cryptography", "prediction markets", "insurance-linked securities", "deception security", "cryptanalysis economics"],
+  "summary": "Canary Ladder makes the failure of elliptic-curve cryptography an insurable, self-certifying peril. Three independent DKG ceremonies, each including both protection buyers and underwriters, produce ladders of range-restricted secp256k1 keys from 135 to 256 effective bits, each guarding a native bounty. A trust deed names an offline verifier as calculation agent: a rung falls when someone produces an SLH-DSA-committed signature under its key, on two of three ladders. A Bermuda special-purpose insurer holds T-bills off the curve and pays tranches as rungs fall, so the collateral doesn't die with the canary. A public Q-Day index combines rung fall times against the classical GPU-cost curve, dormant Satoshi-era P2PK movement, and the cheapest decoy balance band swept.",
+  "core_loop": "Generate range-restricted rung keys by DKG with opposed parties -> fund bounties -> calibration rungs (135-160 bits) fall to classical money and fit the GPU-cost curve -> a rung falling ahead of that curve is the quantum signal -> the offline verifier certifies the fall on two of three ladders -> the cat bond pays tranches from T-bill collateral, rung contracts resolve, the Q-Day index updates -> premiums fall as insured exposure migrates to post-quantum outputs.",
+  "why_now": "A EUROCRYPT 2026 estimate cut the cost of breaking 256-bit ECC to about 1,098 logical qubits, while Quantinuum Helios reached about 48 logical qubits at 99.9995% fidelity (Oct 2026). Google set an internal 2029 post-quantum deadline, and Bitcoin's BIP-360 is still a draft. Lloyd's state-backed cyber exclusions leave this peril uninsured, and ILS investors want risks uncorrelated with natural catastrophes.",
+  "mvp": "90 days. Weeks 1-4: DKG ceremony with buyers and underwriters, and funded calibration rungs at 135-160 bits as range-restricted secp256k1 keys. Weeks 5-8: SLH-DSA claim protocol, offline verifier in two languages, public dormant-P2PK movement index, trust deed drafted with Bermuda counsel. Weeks 9-12: term sheet for a private $10-25M cat bond with one ILS fund and one custodian sponsor, and a pitch to Kalshi to list rung contracts. Kill metrics: no ILS fund will price a tranche, or no calibration rung draws a credible solver.",
+  "stack": "Distributed key generation producing range-restricted secp256k1 keys; SLH-DSA (FIPS 205) commit-reveal claims; offline verifier with independent implementations; Bitcoin-native rung bounties; Bermuda special-purpose insurer issuing under Rule 144A with T-bill collateral in trust; chain monitor for dormant P2PK outputs and decoy wallets.",
+  "business_model": "Structuring fees from custodian and exchange sponsors who buy cover; ILS funds and quantum skeptics as investors earning premium; licensing the Q-Day index (rung fall times, dormant-coin movement, decoy sweeps) to exchanges, custodians, regulators and prediction markets that resolve on the verifier.",
+  "risks": [
+    "A peril with no loss history may never clear an ILS investment committee",
+    "Moral hazard: a covert CRQC owner knows the trigger first; protection limited to buyers with verified exposure",
+    "Ceremony corruption could fake or suppress a trigger; mitigated by opposed parties in each DKG and a 2-of-3 ladder rule",
+    "A false trigger could crash crypto markets",
+    "State attackers never claim bounties; covert capability shows only through dormant-coin and decoy movement, late",
+    "Classical cryptanalytic breakthroughs also trigger cover; the peril must be defined as ECDLP failure from any cause",
+    "Bounty compute costs, 144A distribution limits and a slow, conservative buyer base"
+  ],
+  "moonshot": "A futures market in mathematical hardness. Every deployed assumption (ML-KEM, ML-DSA, SLH-DSA, RSA and successors) gets a standing ladder and a hazard curve, the way SIKE should have had before a laptop broke it in 2022. NIST and central banks set deprecation dates from market-priced hardness rather than committee calendars, assumption cover becomes as routine as hurricane cover, and the market pays people to stop trusting maths early.",
+  "best_line": "This would be the first cat bond whose calculation agent is a theorem."
+}

@@ -1,0 +1,28 @@
+{
+  "id": 20,
+  "name": "Facing Out",
+  "tagline": "Chronic care as Hanabi: your warning signs face out to the people you choose, and they help only through scarce, graded clues.",
+  "kind": "app",
+  "tier": "bold",
+  "innovation": 5,
+  "feasibility": 6,
+  "domains": ["chronic illness", "co-op game design", "caregiving", "aviation crew resource management", "psychiatric advance directives", "digital phenotyping"],
+  "summary": "Facing Out is a co-op care protocol for conditions with blind spots, starting with bipolar disorder in collaborative-care clinics. In a Ulysses deal witnessed by a clinician while the patient is well, cards built from their personal relapse signature (sleep, late-night phone use, spending) are dealt facing out to chosen seats. Removing a card takes a 72-hour cooling-off period, but ejecting a seat is instant and silent, and the cards pass down a succession list. Teammates help only through a PACE ladder: Probe is free, Alert and Challenge cost a fixed budget, and Emergency needs two seats and runs only steps the patient wrote, never the police. The patient declares energy in spoons facing in, good weeks build shared fireworks, and the clinic's care manager sees an escalation profile validated against the Five Minute Speech Sample and bills collaborative-care codes.",
+  "core_loop": "While well, the patient deals relapse-signature cards to seats under a Ulysses deal -> wearable, phone and bank feeds fill the cards, with an LLM dealer summarizing raw signals and making no predictions -> the patient declares spoons each morning -> teammates spend a fixed weekly budget climbing the PACE ladder (Probe, Alert, Challenge, Emergency) -> the patient acts and good weeks build shared fireworks by domain -> misread clues or crises burn a fuse and trigger a short debrief -> lapsed or ejected seats pass their cards down the succession list -> the care manager reviews the escalation profile.",
+  "why_now": "Over-the-counter CGMs, FDA-cleared watch alerts and the FDA's loosened wellness guidance (Jan 2026) make outward-facing signals cheap. Dexcom Follow showed that unlimited caregiver visibility breeds nagging, which expressed-emotion research links to relapse. DeepMind's Hanabi Challenge made hidden-hand cooperation a theory-of-mind benchmark, and AI companions are about to take caregiving seats that need rules.",
+  "mvp": "90 days. Weeks 1-4: co-design relapse-signature card templates with one academic mood-disorders clinic running collaborative care. Weeks 5-8: pilot with 15 patient-teammate tables using HealthKit/Health Connect, Oura, on-device phone-use thresholds and Plaid spending categories. Weeks 9-12: measure clue use, ejections, Emergencies, and FMSS-rated expressed emotion before and after. Kill metrics: patients pull more than half their cards, teammates report more conflict, or the clinic won't staff its seat.",
+  "stack": "React Native app; HealthKit and Health Connect; Oura and wearable APIs; iOS DeviceActivity on-device thresholds for late-night phone use; Plaid with category-only spending; an LLM dealer limited to summarizing raw signals; HIPAA-compliant hosting under a BAA; a care-manager dashboard.",
+  "business_model": "B2B2C through clinics running collaborative care, which bill CoCM codes (99492-99494) for the care manager whose window Facing Out becomes. Later, payer and employer behavioral-health programs, and expansion to other conditions with blind spots.",
+  "risks": [
+    "Consent fails when insight does; mitigated by the Ulysses deal, the cooling-off period and the succession list",
+    "An abusive partner could use the cards for surveillance; mitigated by instant, silent ejection",
+    "Emergency escalation could drift toward coercion; limited to patient-written steps and the clinician, never the police",
+    "Clinics may not staff the clinician seat without reliable billing",
+    "Teammate drift in good months",
+    "The escalation profile may not track expressed emotion or relapse outcomes",
+    "Regulatory creep if the app starts predicting relapse, which would make it a medical device",
+    "Sensitive financial and behavioral data under HIPAA"
+  ],
+  "moonshot": "A grammar of care. The PACE clue ladder becomes an interoperable standard across conditions with blind spots, including dementia, epilepsy auras, hypoglycaemia unawareness and long-COVID crashes, and Ulysses deals hold up as digital psychiatric advance directives. As AI companions take caregiving seats, the clue economy becomes their guardrail: an agent seat may Probe and Alert, never nag, and can't climb past Challenge alone. The rules that stop a spouse nagging stop a companion hovering.",
+  "best_line": "You can always leave a teammate. You can't blind the table on impulse."
+}

@@ -1,0 +1,28 @@
+{
+  "id": 33,
+  "name": "Minute Hand",
+  "tagline": "A ZX-calculus fusion puzzle where you solve at n = 4, your tactic is replayed at n = 256, and the score is how much cheaper your move makes breaking elliptic curves and simulating catalysts.",
+  "kind": "game",
+  "tier": "wild",
+  "innovation": 8,
+  "feasibility": 4,
+  "domains": ["quantum computing", "puzzle games", "algorithm discovery", "ZX-calculus", "fault-tolerant resource estimation", "speedrunning", "post-quantum cryptography"],
+  "summary": "Minute Hand is a ZX-calculus puzzle game. Players fuse, pivot and complement spiders, and because every move is a sound rewrite in a complete calculus, every solution is correct by construction. Levels are parametric families taken from published fault-tolerant resource estimates: ECC arithmetic for Shor, QROM lookups, and FeMoco and P450 chemistry kernels. Players solve them at n = 3-5 on a board that preserves gflow, so every diagram can still be extracted as a circuit. The server lifts each rewrite path into an !-box tactic, replays it at n = 256, and adds it as a macro-action to an open PyZX+MCTS bot. The player is scored on the marginal spacetime volume the bot saves with the tactic compared with without it, measured by Qualtran with published assumptions. Named tactics enter an opening book and are promoted to primitives only after they save volume on sealed families they never saw. Two clock hands, Q-Day and Useful Day, show cost in logical-qubit-days, and a monthly Helios run checks whether the cost model holds on logical hardware.",
+  "core_loop": "Pick a parametric family (e.g. a modular adder) -> fuse/pivot/complement at n = 3-5 on a gflow-preserving board -> the rewrite path is lifted to an !-box tactic and replayed at n = 256 -> the tactic is added as a macro-action to the open PyZX+MCTS bot -> score = marginal Qualtran spacetime volume saved with vs. without the tactic (leave-one-out for overlaps) -> named tactics enter the opening book -> promotion to primitive only after transfer to sealed, rotating families -> the Q-Day and Useful Day hands move in logical-qubit-days -> a monthly Helios logical run calibrates the cost model.",
+  "why_now": "The estimated cost to break 256-bit ECC fell to about 1,098 logical qubits (EUROCRYPT 2026), and Google has a 2029 post-quantum migration deadline. Quantinuum Helios reported 99.9995% logical fidelity on Oct 19, 2026. AlphaTensor-Quantum showed that search can cut T-counts on the same arithmetic. Open ZX tooling (PyZX, ZXLive) and resource estimators (Qualtran) are mature, and Oxford's Quantum in Pictures showed that schoolchildren can learn ZX.",
+  "mvp": "90 days. Weeks 1-4: the !-box tactic lifting and replay engine, 10 adder and multiplier families from Litinski's 2023 ECC arithmetic, and Qualtran scoring. Weeks 5-8: closed beta with 500 ZX-literate players and a separate tool-assisted board. Weeks 9-12: the first sealed transfer test and one Helios logical calibration run. Kill metric: no tactic shows a positive marginal contribution on a sealed family.",
+  "stack": "Web canvas front end over PyZX (server-side), adapted from ZXLive; gflow-preserving move legality; a custom !-box (scalable ZX) tactic lifting and replay engine; an open PyZX+MCTS reference bot with tactics as macro-actions; Google Qualtran spacetime-volume estimation with published assumptions; monthly logical-level calibration runs on Quantinuum Helios via Nexus research credits.",
+  "business_model": "Research funding (DARPA's Quantum Benchmarking Initiative, science foundations), hardware credits from Quantinuum and IBM, and post-quantum bounty pools from crypto foundations. The tactic book is licensed free to schools through Quantum in Pictures-style curricula. Results are published as papers co-authored with post-quantum migration teams.",
+  "risks": [
+    "Humans may have no edge over search at all; the marginal-contribution kill metric tests this",
+    "Lifting a rewrite path to an !-box tactic that holds at n = 256 is program synthesis, a research-grade problem",
+    "Circuit extraction from arbitrary ZX diagrams can be #P-hard; mitigated by gflow-preserving moves",
+    "Cost models shift (magic-state cultivation made T cheaper); mitigated by scoring in Qualtran spacetime volume",
+    "A clock date would be read as a forecast; hands show logical-qubit-days, with any date behind a tap and stated roadmap assumptions",
+    "Dual use: making ECC cheaper to break; mitigated by the fact that attack estimates are already public, and by co-publishing with migration teams",
+    "Bots submitted as humans corrupt the human-edge measurement; mitigated by a separate tool-assisted board",
+    "Sealed transfer families leaking; rotated each season"
+  ],
+  "moonshot": "The tactic book becomes the compiler. Each !-box tactic is a machine-checkable theorem, exported to Lean as a verified rewrite library and shipped in fault-tolerant toolchains as an optimisation pass, with player provenance in the changelog. The grand prize is a cross-family primitive with better asymptotic cost (a Karatsuba of fault-tolerant arithmetic found by a teenager), and post-quantum migration deadlines and chemistry funding calls cite the Q-Day and Useful Day clocks as public infrastructure.",
+  "best_line": "Humans don't beat search at instances; they beat it at generalization: play the instance, win the family."
+}

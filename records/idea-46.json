@@ -1,0 +1,28 @@
+{
+  "id": 46,
+  "name": "Mound",
+  "tagline": "A compression-only earth building with no final drawing: a resident swarm grows it toward where people are, bone-style cavities remodel it, and the city permits an invariant instead of a shape.",
+  "kind": "system",
+  "tier": "wild",
+  "innovation": 8,
+  "feasibility": 3,
+  "domains": ["swarm robotics", "termite architecture", "construction", "masonry structural mechanics", "bone remodelling biology", "biocementation (MICP)", "building regulation"],
+  "summary": "Mound is an earth building with a resident swarm of small robots and no final drawing. The architect writes a signed genome of local rules. Robots deposit site soil hardened by microbially induced calcite precipitation where occupants' presence (CO2, heat, footfall) pulls growth, and thin areas nobody uses. The genome only admits compression-only (funicular) forms, so by Heyman's safe theorem the shape carries the safety, and weak biocemented earth is acceptable. Every change is a bounded bite-and-refill cavity modelled on bone's coupled remodelling units, and a face going into tension, the first sign of a hinge, vetoes any move. The city never approves a shape. It certifies one invariant, checked offline in simulation: every reachable shape stands with one cavity anywhere in it, under gravity and 0.2 g lateral load.",
+  "core_loop": "Architect writes and signs a genome -> occupants' presence (CO2, heat, footfall, sensed on-robot without cameras) raises local deposition appetite and disuse lowers it -> robots walking the crown take bounded bite-and-refill steps with site soil plus MICP -> passive RFID strain tags veto any step that puts a face into tension (an opening hinge) -> firmware interlocks beneath the genome protect egress widths and hinge limits -> after storms the swarm re-crusts a sacrificial outer skin -> a tending subscription keeps the metabolism running; when the swarm stops, the building starts to age.",
+  "why_now": "Robot labour now has a price: Bedrock Robotics raised $270M (Feb 2026) for retrofit autonomy and Figure is reported at about $25 per robot-hour. Biomason has commercialised MICP biocement. ETH Block Research Group's COMPAS makes thrust-network analysis scriptable. TERMES (2014) and Minibuilders proved that small robots can build with local rules. The Nubian Vault Association has made earth vaulting legal, trusted and taught across the Sahel.",
+  "mvp": "Days 1-30: a simulator that runs real presence traces through candidate genomes and uses COMPAS thrust networks plus Frost-style remodelling FE to prove the N-1 invariant (every reachable shape stands with one cavity anywhere, gravity plus 0.2 g lateral). Days 31-60: material tests of MICP on site soil, covering compressive strength, ammonium per kg and rain erosion. Days 61-90: a 1:1 arch tended by 10 robots that walk its crown. Gate: 100 bite-refill cycles without a hinge opening, and strain tags catch induced hinges in 10 of 10 sacrificial tests.",
+  "stack": "COMPAS thrust-network analysis; Frost mechanostat-style remodelling finite elements; Sporosarcina pasteurii MICP on site soil with rinse capture and on-site nitrification of ammonium; passive RFID strain tags embedded during deposition; small crown-walking robots with CO2, thermal and footfall sensing; signed genomes; a separate safety microcontroller for hinge and egress interlocks.",
+  "business_model": "Tending subscriptions per square metre replace the one-off handover. Genome certification is sold as a UL-style listing. First customers are grain stores and livestock shelters in the Sahel, which need passive cooling and sit where Nubian vaulting is already legal and taught, built with local mason networks.",
+  "risks": [
+    "Field robustness: a swarm that survives years of dust, rain, abrasion and dead batteries is unproven",
+    "In-situ MICP at building scale is unproven; strength is single-digit MPa and curing paces every layer",
+    "Ammonium release from ureolysis; needs captured rinses, nitrification and indoor NH3 monitoring",
+    "Unreinforced masonry is deadly in earthquakes; restricted to low-seismic sites and a 0.2 g lateral invariant",
+    "A hacked swarm is a drill inside a home; mitigated by signed genomes and firmware interlocks the genome can't override",
+    "Regulators have no route to certify a process or invariant instead of an as-built drawing",
+    "Strain-driven growth has no fixed point under self-weight, so growth must come from presence signals, which can be gamed with heaters",
+    "Moving material between lots is a property-law problem, deferred to consenting land trusts"
+  ],
+  "moonshot": "By 2036 building codes ship as libraries of verified invariants, and any genome that satisfies them is legal wherever the soil allows. Neighbourhoods join community land trusts whose mass is held in common, so atrophy can cross lot lines by consent: empty streets fade back into the ground, and material flows to where people actually live. Cities stop being built and start being tended, and archaeologists read a town's history from its wall sections the way anthropologists read a life from bone.",
+  "best_line": "The city never approves a shape; it certifies that every reachable shape stands with one cavity anywhere in it."
+}

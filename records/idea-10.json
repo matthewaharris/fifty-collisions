@@ -1,0 +1,34 @@
+{
+  "id": 10,
+  "name": "One Take",
+  "tagline": "AI answers that can't be retaken: every pass@1 draw is sealed before a Bell-certified quantum pulse exists, and every private variant shows up as a public fork.",
+  "kind": "protocol",
+  "tier": "bold",
+  "innovation": 6,
+  "feasibility": 6,
+  "domains": [
+    "quantum randomness",
+    "LLM sampling",
+    "verifiable provenance",
+    "transparency logs",
+    "AI evaluation",
+    "duplicate bridge / common random numbers"
+  ],
+  "summary": "One Take gives AI outputs receipts proving they were a first draw nobody chose, the operator included. Before a pulse exists, a lab commits its policy (weights, system prompt, rubric, sampler) and per-item slots to a Sigstore Rekor transparency log. Every variant it tries becomes a public policy fork, so cherry-picking turns into a visible take count. Per-token Gumbel-max noise is derived from HKDF(NIST CURBy Bell-certified pulse || drand round || commit) and decoded by a batch-invariant open-weight model. Anyone can verify the result with one teacher-forced prefill pass. Each receipt includes a 'double-slit screen' of sibling branches with the real take lit, captioned honestly: physics chose which dot, and sampling drew the pattern. Every receipt also says 'unchosen, not right'.",
+  "core_loop": "Seal: commit policy once, then per-item slots, to Rekor before the target pulse -> Collapse: derive per-token Gumbel noise from CURBy + drand + commit and decode in vLLM batch-invariant mode -> Verify: a prefill pass checks each token was the argmax of logits plus noise and flags near-ties -> Screen: sample sibling seeds and pinned paraphrases to plot the branch cloud with the real take lit -> Duplicate evaluation: models in a tokenizer family decode each item against the same noise, so common random numbers shrink the variance of pass@1 differences -> Monthly ceremony: a public CHSH run on IBM's free Heron minutes, labelled a demonstration, salts the month's seeds.",
+  "why_now": "NIST/CU's CURBy beacon publishes loophole-free Bell-certified randomness (99.7% of pulses certified in its first 40 days). Thinking Machines' batch-invariant kernels made LLM inference bitwise-deterministic in vLLM/SGLang. 'The Leaderboard Illusion' (2025) documented 27 private Llama 4 variants tested on LMArena before one was published. IBM's Open Plan gives 10 free Heron minutes every 28 days. EU AI Act Article 50 transparency duties began in August 2026, and the trends brief flags verifiable quantum randomness as an unexploited gap.",
+  "mvp": "90 days: a Gumbel-max sampler sidecar for vLLM in batch-invariant mode on open weights (Qwen3, Llama), a receipt format, and an offline prefill verifier. Then Rekor commits plus drand quicknet and CURBy pulse fetching with chain verification; CHSH ceremony #1 on IBM Heron publishing raw counts and S (about 2.5 against the classical 2); and a duplicate-noise pass@1 rerun of five open models on a public benchmark, published with branch screens. Kill metrics: CRN cuts pairwise variance by less than 30%, or more than 1% of tokens are near-ties that break verification.",
+  "stack": "vLLM/SGLang deterministic (batch-invariant) inference; Gumbel-max sampling keyed by HKDF over CURBy (Twine-chained Bell-test pulses) and drand quicknet (threshold BLS); Sigstore Rekor transparency log; Qiskit Runtime CHSH circuits on IBM Heron (Open Plan); a teacher-forced prefill verifier CLI with float-tolerance tie handling; a static web viewer for receipts and branch screens; lm-eval-harness integration.",
+  "business_model": "The log, receipt format and verifier are free and open. Revenue comes from paid cloud reports (about $20 each on under $1 of 8B compute for 1,000 sibling branches), eval-harness and leaderboard integrations, and hosted sealing for eval labs and benchmark operators. The quantum inputs cost $0 per bit: CURBy is public and the IBM ceremony uses the free tier, which would cost about $960 per run at pay-as-you-go rates.",
+  "risks": [
+    "Adoption: labs that publish forks compete against labs that hide them until a leaderboard requires receipts",
+    "'Certified' will be read as 'correct'; receipts must say 'unchosen, not right'",
+    "Near-ties and cross-hardware float drift can break verification, especially for MoE routing",
+    "Closed frontier APIs can't be sealed unless providers integrate",
+    "Dependence on one university beacon; a drand-only fallback must be visibly stamped 'classical take'",
+    "The IBM CHSH ceremony isn't loophole-free (one chip, IBM trusted) and could be oversold as certification",
+    "The hiring wedge has no willing buyer without a mandate; branch-weight disclosure could become ammunition operators avoid"
+  ],
+  "moonshot": "Entangled takes (2036). Metro quantum networks link the operator and the judged party. Each measures their own half of entangled pairs with settings they chose, and a loophole-free Bell violation certifies the seed to both, with no beacon in between. This is the device-independent form of the two-party protocol, and the entanglement carries correlations, not messages. Regulated AI verdicts in hiring, credit and parole carry their branch weight and a confidence interval as standard.",
+  "best_line": "drand's future is already written: rounds are BLS signatures under a key fixed at the DKG, so a colluding threshold can compute every future round today. A Bell-certified bit didn't exist until it was measured."
+}

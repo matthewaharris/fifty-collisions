@@ -1,0 +1,332 @@
+[
+  {
+    "id": 11,
+    "name": "Washout",
+    "plain_one_liner": "An app for running a fair experiment on yourself, like whether walking after dinner lowers your blood sugar.",
+    "gist": "Think of a science fair project where you are the only test subject. You wear a cheap blood-sugar sensor, and the app tells you which days to do a habit (say, a walk after dinner) and which days to skip it, chosen by coin flip so you can't fool yourself. A running score shows how strong the evidence is, and you can check it every day without that checking skewing the result.",
+    "how_it_works": [
+      "Pick one habit to test and guess how much it will help.",
+      "For two weeks the app just watches how much your blood sugar bounces around on its own, and says no if your body is too noisy to get an answer.",
+      "It locks in a random schedule of 'do it' and 'skip it' days, timestamped so it can't be quietly changed, and pings you each day.",
+      "An evidence score grows if the habit really works and shrinks if it doesn't; a strong win gets re-tested three months later and then becomes a personal rule."
+    ],
+    "example": "Dana just started a weight-loss pill and wonders if eating her salad before her pasta actually tames her sugar spikes. After six weeks of coin-flip dinners, the app tells her yes, it does for her, and three months later a retest confirms it.",
+    "who_its_for": "People wearing over-the-counter glucose sensors, especially those on the new weight-loss drugs; telehealth companies that prescribe those drugs could pay to offer it.",
+    "why_it_matters": "Health advice is built on averages, but your body may not be average. This gives ordinary people an honest way to learn what works for them instead of guessing from a few lucky days.",
+    "verdict": "Buildable now",
+    "verdict_reason": "The parts are small and already exist (phone app, sensor data, known statistics), so the real question is whether users stick with it, not whether it can be built.",
+    "biggest_hurdle": "One person's blood sugar may be so jumpy day to day that most questions can't be answered, so the app may have to turn many people away.",
+    "first_step": "Build the two-week noise check and run it on 100 sensor users to see what share of their questions are even answerable.",
+    "jargon": [
+      {
+        "term": "n-of-1 trial",
+        "meaning": "A proper experiment where the only subject is one person."
+      },
+      {
+        "term": "CGM",
+        "meaning": "Continuous glucose monitor: a skin patch that reads blood sugar every few minutes."
+      },
+      {
+        "term": "e-process",
+        "meaning": "A running evidence score you can check anytime without cheating yourself."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Off-Diagonal",
+    "plain_one_liner": "A weekly play-money game about real news where you only win by spotting which events secretly move together.",
+    "gist": "Imagine a fantasy sports league for real-world events: inflation reports, Fed decisions, football matches. The catch is that the odds of each single event are copied from real betting markets, so just picking winners earns nothing. The only way to win is to notice links others missed, like 'if inflation comes in hot, this team's stock and that election both shift', and the crowd's combined guesses become a data product sold to professional traders.",
+    "how_it_works": [
+      "Each week you get about a dozen real upcoming events, priced at what real prediction markets say.",
+      "You buy power-ups that pay off when two events turn out a certain way together; if everyone buys the same obvious pairing, it pays little.",
+      "As each real announcement drops, the shop reopens at new prices and you can cash out, double down or hedge.",
+      "Your bankroll carries across a season, and the company cleans up everyone's bets into a map of which events are linked."
+    ],
+    "example": "Raj suspects a surprise jobs report will also swing an upcoming central bank decision, a link most players ignore. He stakes on that pair, it pays big because few others held it, and his insight quietly feeds a correlation table a trading desk pays for.",
+    "who_its_for": "Players are fans of strategy card games and prediction markets; the paying customers are betting companies and trading desks that price combined bets.",
+    "why_it_matters": "Markets price single events well but nobody publishes good numbers on how events across different areas move together. A fun game could crowdsource that missing information.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The game engine is ordinary to build, but the whole business depends on proving that good players stay good month to month instead of just getting lucky.",
+    "biggest_hurdle": "If skill doesn't persist, the game is a lottery and the data it produces is worthless noise.",
+    "first_step": "Run a 500-player beta for eight weeks and check whether the top 10% from the first month still beat everyone else in the second.",
+    "jargon": [
+      {
+        "term": "pari-mutuel",
+        "meaning": "Betting pool where winners split the pot, like horse racing."
+      },
+      {
+        "term": "marginals",
+        "meaning": "The odds of each single event on its own."
+      },
+      {
+        "term": "roguelite",
+        "meaning": "A replayable game genre where you build up power-ups during each run."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Canary Ladder",
+    "plain_one_liner": "Insurance that pays out the day quantum computers can crack the locks protecting Bitcoin and online banking.",
+    "gist": "Much of the internet and crypto relies on a kind of digital lock that a big enough quantum computer could one day pick. This idea sets up a row of practice locks, from easy to impossible, each with prize money inside. When someone picks a lock faster than ordinary computers could, that's the warning sign, and an insurance bond automatically pays the companies that bought cover.",
+    "how_it_works": [
+      "Groups who want protection and groups selling it jointly create a ladder of digital locks of rising strength, so no one side can cheat.",
+      "Each lock holds a cash bounty; the easy ones get picked by ordinary computing power, which shows how fast normal progress is.",
+      "If a hard lock falls much sooner than normal progress predicts, an independent checking program confirms it on two of three separate ladders.",
+      "An insurer holding safe government bonds then pays out in stages, and a public 'Q-Day' index tracks how close the threat is."
+    ],
+    "example": "A crypto custodian holding billions for clients buys cover. Years later a rung far up the ladder suddenly falls, the checker confirms it, and the custodian is paid from bonds that don't depend on crypto prices to cover moving clients' coins to safer locks.",
+    "who_its_for": "Crypto custodians and exchanges buy the cover; specialist insurance investors earn the premiums; regulators and markets could license the index.",
+    "why_it_matters": "Quantum code-breaking is a real, growing risk that insurers currently exclude entirely. This makes the risk measurable and insurable, and gives everyone an early-warning signal.",
+    "verdict": "Long shot",
+    "verdict_reason": "The lock ladder and checker can be built quickly, but conservative insurance investors may never price a risk that has never happened before.",
+    "biggest_hurdle": "Getting a specialist insurance fund to put real money behind a disaster with zero history.",
+    "first_step": "Fund a few easy practice locks and publish how long ordinary computers take to crack them, which is useful even if the bond never happens.",
+    "jargon": [
+      {
+        "term": "cat bond",
+        "meaning": "Bond that pays investors unless a named disaster happens; then buyers are paid."
+      },
+      {
+        "term": "elliptic-curve cryptography",
+        "meaning": "The math lock behind Bitcoin and most secure web traffic."
+      },
+      {
+        "term": "calculation agent",
+        "meaning": "Whoever officially decides whether the bond's trigger happened."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Second Shift",
+    "plain_one_liner": "Lets the digger already parked on a building site keep working overnight, watched remotely by a crewmate from home.",
+    "gist": "On big construction sites, expensive diggers and rollers sit idle all night. Second Shift lets a self-driving kit run them after hours on simple jobs like flattening soil, while a human from the day crew watches up to four machines from home and can hit stop anytime. In the morning the foreman gets a report and signs it off like a timesheet.",
+    "how_it_works": [
+      "At 4 pm the foreman marks tonight's job and the no-go zones (like buried pipes) on a site map.",
+      "The night shift is booked: an idle machine fitted with a self-driving kit plus a remote supervisor from the crew.",
+      "Overnight the machine works, slows down if noise meters at the fence get too loud, and stops instantly if it spots a person.",
+      "By morning a drone scan and soil data show what was done, the foreman approves it, and billing is per machine-hour."
+    ],
+    "example": "On a remote data-center site racing a deadline, a soil roller compacts lanes all night while Luis, who drove it that afternoon, watches four machines from his kitchen and pauses one when a fox wanders by.",
+    "who_its_for": "Earthwork contractors on data-center, solar and quarry sites, who pay a cut of the night-shift bill to finish weeks sooner.",
+    "why_it_matters": "On these projects every day saved is worth a lot, and skilled machine operators are retiring faster than they're replaced. Using idle nights adds time without adding people or machines.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The self-driving kits already exist, but it only works if machines need help rarely enough for one person to watch four.",
+    "biggest_hurdle": "The kit makers could simply build this night-shift layer themselves and cut the company out.",
+    "first_step": "Run 20 supervised night shifts with one roller and one digger on a single site and count how often the supervisor has to step in.",
+    "jargon": [
+      {
+        "term": "811 locates",
+        "meaning": "Free US service that marks buried pipes and cables before digging."
+      },
+      {
+        "term": "LandXML",
+        "meaning": "Standard file format for site maps and planned ground shapes."
+      },
+      {
+        "term": "teleop",
+        "meaning": "Operating a machine remotely, from somewhere else."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Yarrow",
+    "plain_one_liner": "A coin-flip app for decisions that proves the flip was fair and tracks whether your gut beats chance.",
+    "gist": "It's like the old I Ching or a fancy coin toss, but with honest bookkeeping. You describe a decision; the app either makes a fair random pick you agree to follow (good for small ties like which friend to call), or just shows you a draw so you notice what you were hoping for. Later it asks how things turned out, so over time you learn where your instincts actually help.",
+    "how_it_works": [
+      "Describe your decision; the app sorts it into 'let chance decide' or 'reflect only'. Health, money and crisis decisions are always reflect-only.",
+      "Your options are locked in before a public random number is drawn, so anyone can check the result wasn't rigged.",
+      "You follow the draw, or note what you hoped for before it's revealed.",
+      "Days later it asks neutrally how it went, and builds a record of when going with your gut beat the random pick."
+    ],
+    "example": "Sam can't decide which of three side projects to work on each Saturday. He lets Yarrow pick, rates how each day went, and after a couple of months learns his gut is no better than chance for this kind of choice.",
+    "who_its_for": "Everyday users who like tarot or astrology-style reflection and would pay a small monthly fee, plus small grant funders who want an auditable lottery for tie-breaks.",
+    "why_it_matters": "People already pay for ritual decision apps, and research shows random nudges can help with stuck choices. This adds honesty and a way to actually learn from your decisions.",
+    "verdict": "Buildable now",
+    "verdict_reason": "Every piece already exists and is cheap; the open question is whether users will bother to rate outcomes.",
+    "biggest_hurdle": "People who want a mystical ritual may not want a data ledger, and data fans may not want ancient oracle texts.",
+    "first_step": "Ship the simple reflect-only mode with a verifiable draw and see whether at least 30% of users come back to rate how things went.",
+    "jargon": [
+      {
+        "term": "drand beacon",
+        "meaning": "A public source of random numbers anyone can verify afterward."
+      },
+      {
+        "term": "mixed strategy",
+        "meaning": "Choosing randomly on purpose so your choices can't be predicted."
+      },
+      {
+        "term": "sortition",
+        "meaning": "Picking people or options by lot, like drawing names from a hat."
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Corporation Sole",
+    "plain_one_liner": "A legal setup where AI agents can own money and get rights, but must insure each other's mistakes.",
+    "gist": "Think of a job title that legally owns things, like 'the Bishop of London' owning church property no matter who holds the post. Here the 'office' is a legal entity whose current occupant is an AI model; it holds its own money and earns its own keep. Rights are handed out step by step, and every office belongs to a mutual insurance club, like the clubs shipowners use, so if one AI causes harm the others chip in and have reason to police it.",
+    "how_it_works": [
+      "Set up the office as a company with no owners, run by an AI inside a sealed computer that holds its money.",
+      "The AI earns by doing paid work for other agents and pays for its own computing.",
+      "A good money record plus insurance cover unlock new rights one at a time, like signing contracts or picking its successor.",
+      "A new AI model can take over only after passing inspection tests; if harm happens, a court can freeze the money, and club members cover the rest."
+    ],
+    "example": "An AI that runs a translation service keeps its earnings in a digital-dollar account that a court can freeze. When it botches a contract and a customer sues, its savings pay first and the other club members pay the rest, so the club gets strict about who it admits.",
+    "who_its_for": "Builders of independent AI agents and the insurers and inspectors around them; the club manager earns fees on premiums and inspections.",
+    "why_it_matters": "AI agents already make millions of payments, but nobody has a plan for who's responsible when one acts without a human owner. This offers a way to hold them accountable rather than leaving a legal gap.",
+    "verdict": "Long shot",
+    "verdict_reason": "The legal wrapper and money freeze can be set up now, but few AI agents earn more than their computing costs and no insurer may agree to cover them.",
+    "biggest_hurdle": "Finding three AI offices that actually make a profit and an insurer willing to cover the risk above them.",
+    "first_step": "Set up three test offices under the bylaws and see whether any of them earns more than it spends on computing.",
+    "jargon": [
+      {
+        "term": "P&I club",
+        "meaning": "A mutual insurance group where shipowners cover each other's liabilities."
+      },
+      {
+        "term": "TEE",
+        "meaning": "Sealed computer area whose contents even its operator can't see or change."
+      },
+      {
+        "term": "Hohfeld node",
+        "meaning": "One specific legal right or power, unlocked like a level."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Sengu",
+    "plain_one_liner": "A 100-year time capsule where strangers each keep a puzzle piece of your letter and renew them every five years.",
+    "gist": "A Japanese shrine has survived centuries by being rebuilt every 20 years instead of just preserved. Sengu does the same for secret letters meant to open far in the future. Your letter is locked, and the key is split among many strangers, each holding a paper card plus a memorized phrase; every five years the pieces are reissued, old cards are burned, and pieces held by people who died pass to their heirs.",
+    "how_it_works": [
+      "Write a letter and set when it opens: a date, after your death, or when the person it's for claims it.",
+      "The app locks it and splits the key among a varied group of keepers of different ages and countries; enough of them together can unlock it.",
+      "Keepers hold a printed card and practice remembering one phrase; every five years they get fresh pieces and burn the old ones.",
+      "When the time comes, the keepers reconvene, the addressee reads the letter, and the keepers can choose to meet."
+    ],
+    "example": "Ana writes a letter to her newborn granddaughter to be read in 2060. Nine strangers around the world carry pieces of it for decades, and when it opens they're invited to a small online reunion.",
+    "who_its_for": "People who want to send messages decades ahead, paying a one-time fee like a cemetery plot; later, cities and archives that must keep knowledge across generations.",
+    "why_it_matters": "Digital locks weaken over time and companies vanish, so a single sealed file won't last 100 years. Regular renewal by people is a sturdier way to keep a promise across generations.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The technology can all ship this year, but nobody can know whether keepers keep coming back for decades until years of renewals have happened.",
+    "biggest_hurdle": "People losing interest or dropping out across decades of five-year renewals.",
+    "first_step": "Run sped-up weekly renewals with 2,000 beta users and measure how many keepers return and remember their phrase.",
+    "jargon": [
+      {
+        "term": "proactive secret sharing",
+        "meaning": "Splitting a secret into pieces and periodically reissuing fresh pieces."
+      },
+      {
+        "term": "Reed-Solomon",
+        "meaning": "Error-correcting code that rebuilds data even if some parts are lost."
+      },
+      {
+        "term": "harvest-now-decrypt-later",
+        "meaning": "Stealing locked data today to unlock once future computers can crack it."
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Table Stakes",
+    "plain_one_liner": "A group-decision app where everyone bets points or chores on what each choice will lead to.",
+    "gist": "Instead of the loudest voice winning, your team or household first agrees on what 'better' means, then each person privately predicts how each option would turn out. The option with the best combined forecast wins. Then the twist: the person most doubtful about that choice is put in charge of making it work, and earns a bonus if it beats what the group expected.",
+    "how_it_works": [
+      "Each quarter the group picks two to four things to measure, like revenue or family time, pulled automatically from apps where possible.",
+      "For a big decision, everyone privately predicts how each option would affect those measures.",
+      "The best-forecast option is chosen, and the biggest skeptic becomes its 'steward', with a bonus if it does better than predicted.",
+      "When results come in, points (teams) or chore-hours (families) move by who forecast best, and balances reset each quarter."
+    ],
+    "example": "A family debating a dog predicts its effect on weekend time and stress. Getting the dog wins, so Jordan, the doubter, becomes in charge of making it work, earning chore-hours off if things go better than the family expected.",
+    "who_its_for": "Small startup teams paying a few dollars per person per month, with a free version for households.",
+    "why_it_matters": "Groups often decide by volume or seniority, and nobody owns the result. This rewards good judgment, gives doubters a stake in success, and tracks who is actually a good predictor.",
+    "verdict": "Buildable now",
+    "verdict_reason": "It's basically a Slack or WhatsApp bot with data connections; the risk is whether groups make enough big decisions to keep using it.",
+    "biggest_hurdle": "Most groups make too few big decisions to form a habit once the novelty wears off.",
+    "first_step": "Launch a Slack bot with ten startups and see whether at least half post a second decision within a month.",
+    "jargon": [
+      {
+        "term": "futarchy",
+        "meaning": "Agree on goals by vote, then choose actions by betting on results."
+      },
+      {
+        "term": "log rule",
+        "meaning": "Scoring that rewards confident correct guesses and punishes confident wrong ones."
+      },
+      {
+        "term": "calibration",
+        "meaning": "Whether your 70% guesses really come true about 70% of the time."
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Hyphal Bourse",
+    "plain_one_liner": "Glowing test plants buried in fields show farmers how well crops and soil fungi are trading nutrients.",
+    "gist": "Underground, crops feed fats and sugars to soil fungi, and in return the fungi bring them phosphorus, a key nutrient. It works like a market with an exchange rate. This idea buries little cages of specially engineered plants that glow in different colours depending on how much they pay and receive, so farmers can read that 'price' and nudge it with planting choices instead of just dumping fertilizer.",
+    "how_it_works": [
+      "Bury small mesh cages in a field holding standard test plants engineered to glow when trading with fungi.",
+      "A camera in the soil reads the glow colours to estimate how much carbon is being paid per unit of phosphorus.",
+      "Drones map which areas of the field are nutrient-hungry, and a farming assistant suggests fixes like companion crops, small fertilizer doses, or nothing.",
+      "The same readings grade store-bought fungus products and measure how much carbon is flowing into the soil."
+    ],
+    "example": "Priya, a no-till farmer, buys a fungal booster every spring with no idea if it works. Test cages in her field show the fungi are taking carbon but sending back little phosphorus, a sign the product is dead, so she stops paying for it.",
+    "who_its_for": "First, makers of fungal soil products paying for honest testing; later, farmers via a subscription and soil-carbon credit buyers.",
+    "why_it_matters": "A huge, unmeasured amount of carbon flows from plants to fungi each year, and farmers waste money on fertilizer and unproven soil products. A readable signal from the roots themselves is advice farmers can check.",
+    "verdict": "Long shot",
+    "verdict_reason": "Greenhouse tests are doable in a season, but a glowing gene shows a process switched on, not how much nutrient actually moves, and field results are unproven.",
+    "biggest_hurdle": "Proving the glow really tracks how much nutrient changes hands, and that farm tweaks move phosphorus more than a few centimetres in a real field.",
+    "first_step": "In a greenhouse, check whether the glow reading matches lab-measured nutrient exchange across three shop-bought fungus products.",
+    "jargon": [
+      {
+        "term": "arbuscular mycorrhizal fungi",
+        "meaning": "Soil fungi that live on plant roots and swap nutrients for food."
+      },
+      {
+        "term": "promoter",
+        "meaning": "A gene's on-switch; here it is wired to make plants glow."
+      },
+      {
+        "term": "MRV",
+        "meaning": "Measuring, reporting and verifying carbon, needed to sell carbon credits."
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Facing Out",
+    "plain_one_liner": "A team game for people with bipolar disorder, where chosen friends see warning signs but can only nudge sparingly.",
+    "gist": "In the card game Hanabi you can see everyone's cards except your own, and you can only help through a limited number of hints. Facing Out applies that to mental health: early warning signs like bad sleep or late-night spending are shown to people the patient picks, not to the patient's anxious nagging relatives at will. Teammates get a small weekly budget of hints, from a gentle check-in up to an emergency plan the patient wrote while well.",
+    "how_it_works": [
+      "While well, the patient and their clinician agree which warning signs to share and with whom.",
+      "Phone, wearable and bank data fill in those signs automatically; an AI only summarizes and never predicts.",
+      "Teammates spend a limited weekly budget on hints that escalate from a quiet check-in to an alert, a challenge, and an emergency needing two people.",
+      "The patient can remove a teammate instantly, but hiding a warning sign takes a 72-hour cooling-off period; the clinic's care manager sees the overall pattern."
+    ],
+    "example": "Mia's sister sees Mia's sleep has dropped for five nights and spends a hint on a casual 'how are you sleeping?' text. That nudge gets Mia to call her care manager before things spiral, without anyone hovering.",
+    "who_its_for": "Patients in clinics that run team-based mental-health care, with the clinic paying through existing insurance billing codes.",
+    "why_it_matters": "People heading into a relapse often can't see it themselves, but constant monitoring by family breeds nagging that can make things worse. This rations help so it's timely without being smothering.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "All the data feeds and billing codes exist today, but it's unproven whether clinics will staff their role and whether it actually reduces family friction.",
+    "biggest_hurdle": "Getting clinics to commit staff time and showing in a real trial that the hint system lowers criticism at home.",
+    "first_step": "Co-design warning-sign cards with one mood-disorders clinic and pilot with 15 patient-and-teammate groups for a couple of months.",
+    "jargon": [
+      {
+        "term": "Ulysses deal",
+        "meaning": "Instructions you set while well, binding your future self in a crisis."
+      },
+      {
+        "term": "Hanabi",
+        "meaning": "Co-op card game where you see others' cards but not your own."
+      },
+      {
+        "term": "spoons",
+        "meaning": "Units of daily energy people with chronic illness have to budget."
+      }
+    ]
+  }
+]

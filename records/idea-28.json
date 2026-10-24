@@ -1,0 +1,28 @@
+{
+  "id": 28,
+  "name": "Tab",
+  "tagline": "Let agents run a tab: one global limit per principal, signed approvals servers verify offline, and an approval that pays no matter what.",
+  "kind": "platform",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 6,
+  "domains": ["agent payments", "credit bureaus", "signed identity", "card-network architecture", "clearing houses"],
+  "summary": "Tab is an authorization-and-guarantee network for metered APIs that serve AI agents, working across rails with x402 first. A business principal deposits USDC with a licensed custodian, and that deposit sets one global open-to-buy limit shared by every agent it runs. Agents reserve against it in chunks and present Ed25519-signed approvals that servers verify offline, and an approved reservation is paid whatever happens, an EMV-style liability shift. Liability follows the AP2 mandate. Principals get margin calls when their breadth runs above their own baseline, and servers hold rolling reserves and are flagged for anomalous depth, the agent version of a skimmer. The credit score isn't sold. It falls out of the network's own records, as PAYDEX did, and seasoned receivables from unrelated payers can raise a principal's limit.",
+  "core_loop": "A principal deposits collateral, which sets a global limit -> an agent presents its signed Agent Card and AP2 mandate -> the agent reserves a chunk against the global limit and gets a signed approval -> the server verifies offline and serves calls against the tab -> balances net into end-of-day settlement -> utilization, reservation velocity and settlement history update the principal's file -> breadth spikes trigger margin calls, and merchant depth anomalies hit reserves -> seasoned, unrelated receivables can raise the limit.",
+  "why_now": "x402 has gone from about 59K to about 138.5M transactions on Base in a year, and 87% are between $0.0001 and $0.10, where per-request settlement overhead rivals the price. Signed A2A Agent Cards and AP2 mandates give a credit file both a subject and a signer. Cloudflare's deferred x402 scheme shows demand for tabs, and the brief flags agent credit as a gap nobody owns.",
+  "mvp": "90 days, business principals only. Weeks 1-3: a licensed custodian partner with segregated escrow, the reservation API, signed approval tokens and a TypeScript/Python MCP middleware SDK. Weeks 4-6: 20 paid servers (pay-per-crawl publishers, data APIs) and 50 principals with secured tabs. Weeks 7-10: breadth-based margin calls, merchant rolling reserves and mandate-based dispute rules. Weeks 11-12: netting for principals who both earn and spend, and publishing loss rates. Kill metrics: fewer than half of servers keep tab mode on after 60 days, or losses top 1% of tab volume.",
+  "stack": "Coinbase's open-source x402 facilitator; Redis-backed real-time open-to-buy ledger; Ed25519-signed approval tokens verified offline; USDC settlement on Base via a licensed custodian; payment-graph cycle detection; MCP middleware SDKs in TypeScript and Python.",
+  "business_model": "A per-server fee plus basis points on settled volume across every rail, sold as zero-risk acceptance of agent traffic without signups. x402 alone, at about $1.6M a month in real volume, is too small to carry the business, so non-crypto metered APIs are the market.",
+  "risks": [
+    "Real agent dollar volume is still tiny; the take rate needs adoption beyond x402",
+    "Money-transmitter and custody regulation; mitigated by a licensed custodian partner",
+    "FCRA exposure if consumer principals are admitted before dispute machinery exists",
+    "Bust-out fraud across many servers; mitigated by global limits and breadth-based margin calls",
+    "Malicious servers prompt-injecting agents into over-consumption; mitigated by merchant rolling reserves and depth flags",
+    "Wash trading to inflate receivables-based credit; mitigated by counting only seasoned, unrelated payers and by cycle detection",
+    "False margin calls on naturally broad principals such as crawlers; mitigated by per-principal baselines",
+    "Card networks (Visa TAP, Mastercard Agent Pay) or agent-payment startups bundling the same guarantee"
+  ],
+  "moonshot": "Tab becomes the standard way an agent buys from a stranger. One signed approval token is honoured across x402, card networks, ACP and bank rails, and mandate-scoped liability becomes industry rules the way chargeback rules are today. Principals that both earn and spend net billions of sub-cent calls into one daily transfer, and a solo developer whose agents earn steadily gets trade credit without ever meeting an underwriter.",
+  "best_line": "Prompt injection is the agent version of a skimmer."
+}

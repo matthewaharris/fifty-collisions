@@ -1,0 +1,28 @@
+{
+  "id": 10,
+  "name": "Crossover",
+  "tagline": "Near-scrap bitcoin rigs as a hash-paying e-boiler for Dutch greenhouses, dispatched by band against all-in power cost.",
+  "kind": "system",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 6,
+  "domains": ["bitcoin mining", "AI compute", "EV batteries", "waste-heat agriculture", "power markets", "real-options finance"],
+  "summary": "Crossover sells heat-as-a-service to Westland greenhouse growers, who already trade power every quarter-hour with CHP, boilers and heat buffers. It owns immersion-cooled, near-scrap post-halving ASICs on a non-firm grid connection behind the grower's meter, valued as options on hashprice rather than by efficiency. A rolling 15-minute MILP co-dispatches the ASICs, boiler, buffer and CHP against all-in delivered power cost (EPEX day-ahead, intraday and TenneT imbalance, plus levies and kW-max tariffs). The ASIC band displaces boiler hours on cheap and negative-price hours, while the CHP keeps its high-temperature buffer, CO2 dosing and winter power sales. Heat is sold below the grower's gas-plus-ETS cost and Crossover keeps the hash; if the ASIC band can't beat a plain e-boiler, the optimiser becomes the product.",
+  "core_loop": "Forecast heat demand, EPEX/imbalance prices and hashprice -> rolling 15-minute MILP assigns bands (ASICs on seconds-fast imbalance and cheap or negative hours, buffer over hours, boiler and CHP as the base) -> ASIC power targets set via firmware -> 55°C immersion heat feeds low-temperature circuits in place of boiler gas -> hash is paid out by an FPPS pool -> the grower is billed for heat below gas-plus-ETS cost.",
+  "why_now": "Hashprice (~$28-30/PH/day) sits below miners' cash cost, so post-halving ASICs sell near scrap, and miners are being displaced by AI tenants (>$70B in AI/HPC contracts). Solar has made negative and volatile Dutch power prices routine. Netcongestie makes non-firm, leave-when-asked loads attractive to DSOs. Vertical farming's collapse (Infinite Acres, 80 Acres in 2026) showed that agriculture dies on energy cost, and the trends brief names a unified flexible-load market as the missing piece.",
+  "mvp": "90 days with one Westland grower. Weeks 1-4: two years of buffer, dispatch and heat-demand data, plus an all-in price model (EPEX plus levies plus kW-max tariffs) and a backtest of ASIC heat-plus-hash against boiler and e-boiler. Weeks 5-8: a 250 kW immersion ASIC pilot on a low-temperature loop with the optimiser in shadow mode. Weeks 9-12: live dispatch, with imbalance participation through the aggregator's BRP. Kill metric: if the ASIC band doesn't beat a plain e-boiler per MW-year after levies, tariffs and hardware failures, pivot to selling e-boiler and buffer controls.",
+  "stack": "Pyomo/HiGHS rolling MILP on 15-minute imbalance settlement periods. EPEX day-ahead and intraday feeds and TenneT imbalance prices. Braiins OS/LuxOS firmware for ASIC power targets and curtailment, immersion tanks with plate heat exchangers, FPPS mining-pool payouts, and a read-only Priva/Hoogendoorn climate-computer integration.",
+  "business_model": "Heat-as-a-service: Crossover owns the rigs, sells heat below the grower's gas-plus-ETS boiler cost, and keeps the hash revenue. Later, it licenses the optimiser to greenhouse energy aggregators, with a fallback of selling e-boiler and buffer controls if the ASIC band underperforms.",
+  "risks": [
+    "A plain e-boiler may beat ASICs per MW-year once levies, tariffs and failure rates are counted (the kill metric)",
+    "Grid connection capacity (netcongestie) is scarce, and each MW competes with the grower's own electrification",
+    "Kilowatt-hour levies and kW-max tariffs can erase negative wholesale prices",
+    "Seasonal mismatch: summer heat has little value, so ASICs run hash-only and dump heat; ATES charging is not viable at the 25°C permit cap",
+    "Temperature mismatch: 55°C immersion heat fits only low-temperature circuits, not 90°C CHP buffers",
+    "Hashprice collapse and the 2028 halving; old-rig failure rates; immersion-fluid fire safety",
+    "REMIT market-manipulation exposure when chasing imbalance prices",
+    "Bitcoin's reputation and greenwashing risk; never claim carbon negative"
+  ],
+  "moonshot": "One connection, many bands. Connections, not electrons, become the scarce resource, and DSOs grant capacity by band: firm for GPUs and climate control, non-firm for sponges, seconds-fast for batteries. Mixed-load campuses share one connection and clear power and heat in a local auction. The greenhouse becomes the compute economy's retirement home: dying ASICs, retired GPUs running deferrable batch jobs and second-life EV packs, each valued as an option on volatility, not on spec.",
+  "best_line": "Hashing is the only product here that travels for free, so heat demand picks the site and the hashes go out over fibre."
+}

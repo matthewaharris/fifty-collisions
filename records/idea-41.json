@@ -1,0 +1,28 @@
+{
+  "id": 41,
+  "name": "Share-Out",
+  "tagline": "The weather oracle decides how much gets paid, the village decides who gets it, and a silent index can be appealed by pledging next year's share-out.",
+  "kind": "system",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 6,
+  "domains": ["parametric insurance", "smallholder farming", "weather oracles", "village savings groups", "remote sensing", "mobile money", "telecom engineering"],
+  "summary": "Share-Out sells one parametric policy to a village savings and loan association instead of to individual farmers. It triggers on CHIRPS satellite rainfall plus the nearest TAHMO station and pays into an M-Pesa group wallet. The group divides the fixed pot at its share-out meeting. Members declare losses on sealed cards that are tallied in public and capped at their insured share, so overclaiming takes money from neighbours who will challenge it. When the index stays silent but the village lost, the group can appeal with a pledge against next year's share-out, and neighbouring groups can co-sign only by pledging too. A Sentinel-1/2 and crop-photo audit decides, confirmed appeals are paid from a premium-funded basis rider, and every audit adds to a public basis-risk map.",
+  "core_loop": "Group buys one index policy -> the index fires and pays the group wallet with no adjuster -> members declare losses on sealed cards, tallied in public and capped by insured share, and two members drawn by lot walk contested fields -> if the index stays silent, the group appeals by pledging part of next year's share-out, and neighbouring groups in the same pixel may co-sign with their own pledges -> a radar, optical and crop-photo audit confirms or rejects the appeal -> confirmed appeals are paid from the basis rider and pledges released, false appeals forfeit their pledge to the ward reserve -> every audit becomes a labelled point on the public basis-risk map used to retune triggers and site gauges.",
+  "why_now": "Index cover for smallholders has scaled through ACRE, Pula and OKO, with payouts reaching mobile wallets in about ten working days, but basis risk still drives non-renewal. Digital VSLA ledgers (CARE's Chomoka, DreamSave) and M-Pesa group wallets make group-level policies practical. Free Sentinel-1 radar and IFPRI's picture-based insurance make cheap per-plot audits possible. McKinsey's 2026 survey found 56% of farmers trust human agronomists against 6% for AI, so judgement stays with neighbours and only the arithmetic is automated.",
+  "mvp": "90 days in one Kenyan county with 30 groups through a digital-VSLA partner. Days 1-30: backtest five seasons of CHIRPS against recall loss surveys from the groups. Days 31-75: a shadow season over the short rains with real sealed cards, appeals and pledges, but no money moving. Score the audit against recall surveys first. Days 76-90: sign ACRE as risk carrier, file the basis rider, and enrol groups for the March long rains. Gate: if fewer than half of shadow appeals are confirmed, decide whether the pledge is too cheap or the audit too blind. Kill metric after the first paid season: group renewal must beat individually sold cover by 15 points.",
+  "stack": "USSD sealed-card flow via Africa's Talking; M-Pesa group wallets via the Daraja API; CHIRPS plus TAHMO station data for the trigger; Sentinel-1 radar and Sentinel-2 NDVI on Google Earth Engine for audits; KoboToolbox for picture-based crop evidence; ledger integration with Chomoka; commercial microwave-link rainfall from operator backhaul as appeal evidence from season three.",
+  "business_model": "About 12% distribution commission on subsidised group premiums, since most index cover in Kenya is co-paid by government or donors. The basis-risk map is licensed to reinsurers and to Global Shield-type climate-risk funders. NGOs that run savings groups (CARE-style) pay to connect their groups. The basis rider is premium-funded inside the licensed insurer's policy, not a separate pool.",
+  "risks": [
+    "The ward reserve becoming an unlicensed mutual under Kenya's IRA; mitigated by writing it as a premium-funded rider in the insurer's policy",
+    "Whole-group collusion on an appeal; mitigated by pledges against next year's share-out and staked co-signs from neighbouring groups",
+    "Blind audits: Sentinel-2 cloud cover in the long rains and noisy NDVI on intercropped plots under half a hectare",
+    "Elite capture of the share-out by group officers and their relatives",
+    "Women-majority groups farming land titled to husbands, complicating insured shares",
+    "Premium affordability depending on continued government and donor subsidy",
+    "Village feuds turning into evidence; unstaked contradictions removed for this reason",
+    "Telecom operators withholding the microwave-link attenuation data"
+  ],
+  "moonshot": "By 2036 the tower is nested at every level: member, group, ward, county, African Risk Capacity's sovereign cover, then reinsurers, and at each level the pot is divided by people close enough to see a lie. Rainfall from microwave-link attenuation is a regulated by-product of every operator's network. Ten years of honest pledges become a group credit history, and the public basis-risk map tells governments where to build gauges and insurers where to fix their triggers instead of loading premiums.",
+  "best_line": "At every level of the tower, the people dividing the pot are the ones who'd notice a lie."
+}

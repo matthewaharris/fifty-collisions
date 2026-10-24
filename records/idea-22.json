@@ -1,0 +1,27 @@
+{
+  "id": 22,
+  "name": "Unaccounted",
+  "tagline": "You can't follow a cobalt atom, so audit the books: IAEA-style mass balance that catches recycled tonnes sold twice, opened by scanning your own car's battery passport.",
+  "kind": "system",
+  "tier": "bold",
+  "innovation": 5,
+  "feasibility": 5,
+  "domains": ["battery passports", "provenance", "nuclear safeguards accountancy", "citizen science", "public data forensics", "circular economy"],
+  "summary": "Unaccounted treats recycled-content claims on batteries as a double-spend problem: under mass balance, one recycled tonne can be sold to several OEMs, and atoms are fungible, so the books are the only place to catch it. It multiplies each passport's recycled share by pack size, metal per kWh and public registrations to get claimed tonnes per OEM, and checks the industry sum against what recyclers can actually produce from bounded feedstock. Borrowing IAEA safeguards, each OEM-and-cell-maker pair is a material balance area with a quarterly 'material unaccounted for' and its uncertainty; CUSUM on shipper-receiver differences between OEMs sharing a chemistry and cell maker cancels systematic error. Players open the door by scanning their own car and score by tightening sigma through photo-confirmed VIN-to-cell joins and teardown assays. A quarterly accountancy report, a right of reply for OEMs, and an I-REC-style retirement registry complete the system, starting with cobalt and nickel.",
+  "core_loop": "Scan your car's passport and cell label -> the VIN joins to a cell maker and a balance area -> claimed recycled tonnes are computed from shares x kWh x metal per kWh x registrations -> a hierarchical Bayesian model computes quarterly MUF and sigma per area -> CUSUM on shipper-receiver differences tracks cumulative drift -> players earn by shrinking sigma with confirmed joins, assays and disclosures -> the quarterly report publishes drift lines with OEM replies -> OEMs with rising drift pre-register offtakes in the retirement registry.",
+  "why_now": "The EU battery passport becomes mandatory in 2027 under Regulation 2023/1542, recycled-content documentation follows, and minimum recycled shares (16% cobalt, 6% lithium, 6% nickel) start in 2031. China's export controls and the G7 target of under 60% dependence on any one supplier by 2030 make origin geopolitical, and voluntary passports (Volvo EX90, 2024) already exist to scan. Global Fishing Watch has shown that public data can audit an industry's mass balance and push governments to open their own data.",
+  "mvp": "90 days. Weeks 1-4: model three chemistries and ten OEMs across EU registrations 2023-26 from EAFO and KBA, with voluntary passports, OEM reports and recycler disclosures, and compute sigma-MUF. Weeks 5-8: 300 EV-forum enthusiasts resolve VIN-to-cell joins with photo evidence, plus five teardown assays to pin metal-per-kWh constants. Weeks 9-12: publish the first quarterly accountancy report with OEM replies, partnered with Transport & Environment. Kill metric: relative sigma-MUF can't get below the claimed recycled share.",
+  "stack": "Ingestion of registrations (EAFO, KBA), passports (BatteryPass schema, EU registry QR from 2027), recycler disclosures, scrap declarations and Comtrade; hierarchical Bayesian MUF model in PyMC; CUSUM on relative (shipper-receiver) balances; mobile scanner with OCR for cell labels; hashed-photo evidence store; reputation-weighted confirmation of joins.",
+  "business_model": "An I-REC-style public retirement registry for recycled tonnes, charging fees per retirement, which the drift lines pressure OEMs to join. Data licences for market-surveillance authorities, insurers and ESG analysts. The consumer app stays free.",
+  "risks": [
+    "Relative sigma-MUF may never get below the claimed recycled shares, so nothing is ever detectable",
+    "Defamation exposure; mitigated by the word 'unaccounted', published sigma and an OEM right of reply",
+    "The passport's public layer omits refiner and mine lineage, so data stays thin until 2027 and beyond",
+    "Short sellers weaponizing drift lines",
+    "OEM astroturfing or poisoned VIN joins; mitigated by photo evidence and reputation-weighted confirmation",
+    "Systematic errors in metal-per-kWh constants; mitigated by shipper-receiver differencing and teardown assays",
+    "Real participants are enthusiasts, journalists and students, not the mass public"
+  ],
+  "moonshot": "An IAEA for the circular economy. Cobalt, nickel, lithium, rare earths and nodule metals each have public balance areas from mine to recycler, and a passport claim is valid only if retired in the registry. Mine-by-mine isotope libraries let physical fingerprints check the books, unspent recycled tonnes trade at a public spot price, and every car is a sensor in the ledger of its own materials.",
+  "best_line": "A recycled-content claim under mass balance is a double-spend problem, not a taint problem: one recycled tonne gets sold to three OEMs."
+}

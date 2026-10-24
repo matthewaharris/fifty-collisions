@@ -1,0 +1,28 @@
+{
+  "id": 7,
+  "name": "Recount",
+  "tagline": "Risk-limiting audits for rock-weathering carbon: bank every core, analyze by public lottery, retest the B-samples in 2036.",
+  "kind": "system",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 6,
+  "domains": ["agriculture", "mine tailings / feedstock", "carbon credits", "election auditing", "anti-doping", "mining QA/QC"],
+  "summary": "Recount is the sampling-design and audit layer for enhanced-rock-weathering developers working with pools of small farms. It is not a registry. Third-party samplers pull a dense grid of GPS-locked baseline cores before spreading, then split and archive them unanalyzed. After spreading, a public dice ceremony seeds a lottery, and the lab analyzes only paired before/after cells. A SHANGRLA comparison audit checks the developer's pre-filed per-cell predictions against those cells until the risk limit or the budget cap is reached. Credits vest in tranches at the confidence lower bound against a buffer sized to the risk limit. B-halves are archived for ten years so claims can be retested as methods improve.",
+  "core_loop": "Match farms to assayed basalt or tailings feedstock -> third-party baseline cores on a dense grid, split and archived unanalyzed -> the developer files per-cell predictions -> spreading -> a public dice ceremony seeds Rivest's sampler, stratified by model confidence -> the lab analyzes drawn paired cores, with blind reference materials and second-lab duplicates -> a SHANGRLA comparison audit runs to the risk limit or the budget cap -> credits are issued at the lower bound -> later lottery rounds against archived baselines top up or claw back.",
+  "why_now": "Frontier approved Puro.earth's ERW methodology (June 2026), Climeworks and Lithos signed an ERW offtake (March 2026), and ERW credits trade around €200-500/t. Mati Carbon's 2025 XPRIZE win showed smallholder ERW works. MRV cost per hectare is the bottleneck for small farms, and the trends brief names small-farm ERW MRV as an unbuilt gap.",
+  "mvp": "90 days. Weeks 1-4: re-run published ERW trial datasets through comparison audits against the default stratified grid and publish the lab savings at equal uncertainty. Weeks 5-8: submit a sampling-design module to Isometric or Puro, and sign one developer and one ~60-farm co-op sharing one basalt quarry, with a field app, barcoded tamper-evident bags and a custody log. Weeks 9-12: bank baseline cores before spreading and schedule the first dice ceremony. Kill metric: under 30% lab savings at equal uncertainty, or no registry engagement.",
+  "stack": "Stark's open-source SHANGRLA (comparison and stratified risk-limiting audits), Rivest's consistent sampler seeded from public dice rolls, an offline field app (GPS, photos, barcoded tamper-evident bags), a LIMS, an append-only chain-of-custody log (no blockchain), contract XRF/ICP-MS labs, and Ti/Zr immobile-element mass balance for archived total-element retests.",
+  "business_model": "Developers pay a per-tonne audit fee, recovered from reduced lab spend. Buyers pay for extra lottery draws to tighten a pool's lower bound. Academic access to the archive goes through registered, lottery-drawn analyses that count in the audit. Farmers get free rock and an upfront spreading payment, and their share of vested credits comes later.",
+  "risks": [
+    "Registries (Isometric, Puro) may not accept the sampling module, and their protocols decide what counts",
+    "Nothing proves out until a full weathering season (or several) has passed",
+    "Poor early models create high discrepancies, pushing the audit toward a full count; mitigated by budget caps and confidence-stratified draws",
+    "Sample salting (the Bre-X pattern) and baseline fraud; mitigated by third-party samplers, field splits, blind reference materials and second-lab duplicates",
+    "Archive scope: dried B-samples support only total-element retests, not exchangeable or porewater measures",
+    "Heavy metals (nickel, chromium) in ultramafic tailings and the waste-exemption permits they need",
+    "Downstream river and ocean losses are invisible to soil cores and need a catchment haircut",
+    "Developers cherry-picking extra analyses, so every analyzed core must count"
+  ],
+  "moonshot": "A nonprofit sampling authority, a Colorado Secretary of State for carbon, audits every durable removal claim by lottery: ERW, biochar, soil carbon, ocean alkalinity. A continental B-sample library behind it lets the market be re-adjudicated from physical evidence when the science shifts. Developers compete on discrepancy rates, and a tonne's price tracks its audited confidence.",
+  "best_line": "Nobody games a sample they know may be re-examined in 2036 with better methods."
+}

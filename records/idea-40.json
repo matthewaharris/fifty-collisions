@@ -1,0 +1,28 @@
+{
+  "id": 40,
+  "name": "Scratch",
+  "tagline": "Fantasy sports for your friends' actual bodies: draft their personal lines, win when they beat them, and bank points for benching them on Thursday.",
+  "kind": "game",
+  "tier": "bold",
+  "innovation": 5,
+  "feasibility": 6,
+  "domains": ["amateur sports", "biomechanics wearables", "fantasy leagues", "golf handicapping", "rating systems", "pose estimation"],
+  "summary": "Scratch is a fantasy league where friends draft each other's personal performance lines rather than raw output. Free-living data from HealthKit and Garmin only builds each player's line, using a per-player Kalman model. Points come from one weekly posted round: a fixed-heart-rate pace test on a GPS-locked loop, plus a 60-second on-device sit-to-stand and balance screen. Every line carries a Glicko-style rating deviation, clamped at 0.7-1.3x, and World Handicap System mechanics (playing-conditions adjustment, a soft cap, exceptional-score resets) keep it fair and resistant to sandbagging. Managers see line beats and RD, never raw physiology, and benching pays out only through the next posted round.",
+  "core_loop": "Wearable data builds each player's line and RD -> managers draft friends whose lines look too pessimistic, mixing low-RD 'bonds' and high-RD 'lottery tickets' -> each week players post one standardised round -> the league-wide playing-conditions calculation adjusts every line for heatwaves or flu weeks -> points are line beats scaled by clamped RD, and benching pays only via the next round's RD-adjusted result -> the manager's edge is what only a friend knows, so the best strategy is to coach.",
+  "why_now": "Whoop's $10B round and the FDA's January 2026 wellness guidance put serious biometrics on wrists under looser rules. On-device pose estimation (Apple Vision) makes video movement screens private and free. The run-club boom gives ready-made friend groups, and the appetite for stacked fantasy-style bets is visible in the parlay surge, while points-only scoring stays outside the CFTC-versus-states fight.",
+  "mvp": "90 days. Days 1-30: 40 run-club volunteers each post six rounds, and we test whether the posted round's typical error is smaller than the smallest worthwhile change before any league is built. Days 31-60: iOS league app with draft, lines, RD, bench and PCC. Days 61-90: three run clubs and an eight-week season. Kill metric: typical error exceeds the smallest worthwhile change for most players, or fewer than 40% are still posting rounds at week 8.",
+  "stack": "Swift iOS app; HealthKit and Garmin Health API (Android Health Connect later; no Strava, whose 2024 API terms bar showing data to other users); Apple Vision on-device body pose for the sit-to-stand and balance screen; per-player Kalman line with Glicko-style RD; WHS-style PCC, soft cap and exceptional-score reduction; Postgres backend.",
+  "business_model": "About $30 per league-season, plus shoe and apparel brands sponsoring league prizes. Leagues recruit through run clubs, keeping acquisition cheap. No corporate-wellness edition, and selling data is banned in the terms.",
+  "risks": [
+    "Posted-round noise exceeds real change, so scoring becomes a lottery",
+    "Sandbagging lines so friends can draft cheaply; countered by the soft cap, exceptional-score resets and GPS-locked loops",
+    "RD scaling favouring people with regular routines; clamped at 0.7-1.3x",
+    "Wrist optical HR inaccuracy during runs; chest straps tighten RD",
+    "Body-shaming, eating-disorder triggers or coercive monitoring among friends and partners; no weight metrics, raw data hidden, draft opt-out",
+    "Exertion risk in older or cardiac players; submaximal tests and PAR-Q+ screening",
+    "Platform API restrictions (Strava, Garmin approval, HealthKit rules)",
+    "Health-data re-identification and pressure to sell to insurers; the conditions index is deferred to an IRB study"
+  ],
+  "moonshot": "By 2036 a Scratch line is a portable body handicap as recognised as a golf index. Any race, pickup game or club ride can run Dipsea-style staggered starts from personal lines, so a 62-year-old and her 24-year-old nephew finish together only if both beat their own lines. Opted-in leagues form the largest longitudinal cohort of non-elite movement ever assembled, answering questions about ageing, rest and amateur training. Physios prescribe bench weeks and managers enforce them.",
+  "best_line": "In fantasy the edge is the news; here, the news is friendship."
+}

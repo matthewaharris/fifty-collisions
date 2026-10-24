@@ -1,0 +1,27 @@
+{
+  "id": 30,
+  "name": "Heptad",
+  "tagline": "Ear training for structural biology: hear solved proteins as meter, diagnose their folds by ear, and prove it on a silent test, built first for students who can't see the pictures.",
+  "kind": "app",
+  "tier": "bold",
+  "innovation": 5,
+  "feasibility": 7,
+  "domains": ["music", "structural biology", "education", "perceptual learning", "auditory display", "accessibility"],
+  "summary": "Heptad is an ear-training curriculum for periodicity-driven protein structure. Students hear solved structures from the PDB and AlphaFold DB, with hydrophobicity as accent, 3D contacts as simultaneity and low-confidence regions out of tune. They compete in fast, ground-truthed diagnosis trials. Following perceptual-learning practice, timbre, tempo, key and register rotate each session while the structural mapping stays fixed, so students learn the invariant rather than the code. The repertoire is a 'Real Book' of periodic motifs, and the term ends with an ensemble concert of a real fold's contact map. Blind and low-vision students are its first audience, every task has a visual equivalent, and nothing is ever designed or synthesized.",
+  "core_loop": "Hear a solved public structure rendered as meter and timbre -> make a fast diagnosis call (periodicity, disorder, contact, confidence) -> get scored against ground truth -> nuisance dimensions rotate each session while the structural mapping stays fixed -> progress from etudes to mixed-meter domains -> a silent transfer test on bare sequences and helical wheels measures whether the ear taught biology.",
+  "why_now": "AlphaFold DB has put hundreds of millions of predicted structures, with per-residue confidence, in public hands, so ground truth is free. Browser audio (Web Audio, Tone.js) and trial harnesses like jsPsych make perceptual-learning experiments cheap to run at classroom scale. Sonification has gone mainstream in astronomy outreach and accessibility, and structural biology teaching is still almost entirely visual.",
+  "mvp": "90 days. Weeks 1-3: sonification engine over AlphaFold DB and PDB mmCIF with four diagnosis task types. Weeks 4-6: a 40-student pilot to calibrate difficulty. Weeks 7-12: a pre-registered two-arm trial of about 200 students against time-matched helical-wheel drilling, ending in a silent transfer test, with ten blind or low-vision students in the first cohort. Kill metric: no transfer advantage on the silent test.",
+  "stack": "Web Audio API and Tone.js; AlphaFold DB and PDB mmCIF parsing; DSSP secondary-structure annotation; pLDDT for the out-of-tune cue; contact maps computed from coordinates; jsPsych trial harness; mixed-effects models for analysis; screen-reader-first UI.",
+  "business_model": "Not a startup. A free web tier, per-seat licences for university biochemistry courses, and accessibility and STEM-education grants, with the auditory-display research community (ICAD) as its academic home.",
+  "risks": [
+    "Students may learn the sonification code rather than the biology; tested by the silent transfer endpoint",
+    "Periodic motifs are a thin slice of structural biology, so claims must stay scoped",
+    "Over-rotating mappings could prevent any learning; the structural mapping is held fixed",
+    "Auditory differences (amusia, hearing loss) must never gate grades; every task has a visual equivalent",
+    "'Musicians do better' findings could be misused as gatekeeping",
+    "Student data privacy (FERPA, COPPA)",
+    "A user-design-to-synthesis pipeline would be a biosecurity liability; it was cut from scope entirely"
+  ],
+  "moonshot": "Sound becomes a standard channel in structural biology, the way colour is today. Every major molecular viewer ships a screen-reader-grade audio layer, and blind researchers work in the field with tools as good as their sighted colleagues'. Listening extends from static structures to public simulation archives, so students hear solved proteins move, and 'Can you hear a heptad?' becomes as ordinary an exam question as drawing a helical wheel.",
+  "best_line": "If the ear-trained group beats the visual arm on a silent test, the music taught biology; if not, it taught a code, cheaply learned."
+}

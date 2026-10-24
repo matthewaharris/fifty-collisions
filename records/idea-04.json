@@ -1,0 +1,25 @@
+{
+  "id": 4,
+  "name": "Rule of Thumb",
+  "tagline": "A Chess960 coach that treats principles as hypotheses, mined from human games and graded by your rating.",
+  "kind": "app",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 7,
+  "domains": ["Chess960 / freestyle chess", "LLM coaching", "pedagogy", "causal inference"],
+  "summary": "Rule of Thumb is a post-game coach for Chess960 and standard chess, and the truth of each principle depends on your rating. It mines principles from the Lichess open database using within-player fixed effects across about 30 structural start families. A principle ships only if it replicates on held-out months and a human approves its name. Each critical moment gets a Stockfish and Maia-2 contrast narrated by an LLM that can't cite any move outside the supplied lines. Your principle profile shows which heuristics still pay at your level and which you've outgrown. Premium adds opponent scouting from finished public games, coach dashboards and a broadcast principle meter.",
+  "core_loop": "Import finished games via Lichess -> flag 3 critical moments -> compare lines that follow and break the relevant principle (Stockfish for engine truth, Maia-2 and the rating-band Atlas for human-practical truth) -> the validator-gated LLM narrates the contrast -> the principle profile updates (over-trusted, still paying, outgrown) -> the community names newly mined principles after the holdout gate passes.",
+  "why_now": "The first official FIDE Freestyle (Chess960) World Championship was held in February 2026, and Esports World Cup chess carries a $1.5M pool. Chess.com's Play Coach shows demand for AI coaching, while independent tests show LLM coaches still blunder tactically, so engine-grounded explanation is the gap.",
+  "mvp": "Weeks 1-3: ingest Lichess 960 PGNs, extract about 60 positional features, cluster starts into roughly 30 families. Weeks 4-6: fixed-effects mining; keep about 20 principles that replicate on held-out months. Weeks 7-9: post-game review app with Lichess OAuth, Stockfish WASM contrast and a narrator with a PV validator. Weeks 10-12: beta with 500 Lichess 960 players and 3 coaches. Kill metric: if more than half the mined principles fail holdout, ship hand-coded predicates with Stockfish contrast only.",
+  "stack": "Lichess open database, python-chess, DuckDB, statsmodels fixed-effects models, Maia-2 on one GPU, Stockfish 17 WASM, LLM narrator behind a PV validator, Postgres, Next.js.",
+  "business_model": "Freemium at about $7 a month (in line with Aimchess). Premium adds opponent scouting from finished public games and coach dashboards for scholastic programs, plus a possible broadcast 'principle meter' deal with Freestyle Chess events.",
+  "risks": [
+    "Small market: 960 is a sliver of online play, so standard-chess use is required",
+    "Mined principles may be spurious or fail to replicate",
+    "LLM narration hallucinating moves (mitigated by the PV validator)",
+    "Fair-play perception of scouting tools",
+    "Competition from Chess.com Coach, DecodeChess and Aimchess copying the framing"
+  ],
+  "moonshot": "The Atlas becomes a translation layer between engines and humans. Engine-discovered concepts get filtered into the ones that actually help a human at a given skill level, then named and sequenced into a curriculum. The method extends to any domain with millions of rated human decisions (Go variants, poker, RTS games, eventually clinical or flight-simulator decisions), where folk heuristics get measured, graded by skill level and given an expiry point.",
+  "best_line": "Castling early in this start is −0.4 for Stockfish, but 1400s who do it score 6% better."
+}

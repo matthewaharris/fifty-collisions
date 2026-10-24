@@ -1,0 +1,29 @@
+{
+  "id": 35,
+  "name": "Lookahead",
+  "tagline": "A noise forecast for every window next to a build: the contractor buys its forecast dB-hours day-ahead, pays an imbalance penalty for every hour it underestimated, and learns to move the breaker to Thursday.",
+  "kind": "platform",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 6,
+  "domains": ["construction", "digital twins", "neighbours", "environmental acoustics", "electricity market design", "planning law"],
+  "summary": "Lookahead gives every occupant next to a mid-size build an hourly noise forecast for their façade. It is built by running the contractor's P6 or Asta three-week lookahead through the BS 5228 plant tables and NoiseModelling propagation, and it is sent by SMS. The contractor buys each forecast dB-hour from occupants at a day-ahead price, and hours a household protects with one of its 20 weekly tokens cost three times as much. Measured hours above the forecast pay an imbalance penalty several times the day-ahead price, judged against operator-installed façade sensors and attributed through boundary-monitor correlation and plant telematics. Untagged plant counts against the site. The escrow is funded through the existing Construction Management Plan and Section 106 process. Payouts never buy a consent breach or waive a right, and the real product is the cost surface the scheduler sees.",
+  "core_loop": "Import the contractor's lookahead -> forecast hourly dB per façade from BS 5228 plant levels and ISO 9613-2/CNOSSOS propagation -> households spend weekly protected tokens on hours that matter -> the contractor buys forecast dB-hours day-ahead (3x in protected hours) -> operator-installed façade sensors measure, with attribution via boundary-monitor correlation and AEMP 2.0 telematics or vibration tags -> excess over forecast settles from escrow as an imbalance penalty paid to occupants -> the 4D scheduler sees the cost surface and moves noisy tasks to cheap hours.",
+  "why_now": "Retrofit autonomy kits (Bedrock) make night and off-hours plant work cheap to supply, so neighbour consent becomes the binding constraint. Megaprojects (HS2, Crossrail, Tideway) proved data-triggered insulation and rehousing policies, and London boroughs already run Construction Management Plans with monitoring fees, while mid-size sites have nothing. Open noise-mapping tools (NoiseModelling) and cheap LoRaWAN sensors make per-façade forecasts affordable.",
+  "mvp": "90 days. Weeks 1-4: the forecast engine, backtested against one finished site's boundary-monitor logs. Weeks 5-8: three Camden sites with daily SMS forecasts and no money moving. Weeks 9-12: escrow live through an e-money partner, protected tokens, and the first day-ahead and imbalance settlements. Kill metrics: under 70% of forecast hours within ±5 dB, or no contractor reschedules a single task because of the cost surface.",
+  "stack": "Primavera P6 and Asta Powerproject XML import; BS 5228 Annex C plant noise tables; NoiseModelling (open-source, CNOSSOS/ISO 9613-2) propagation; Class 2 façade sensors on LoRaWAN storing levels and spectra only, never audio; AEMP 2.0 (ISO 15143-3) telematics and vibration tags for attribution; TimescaleDB; SMS forecasts; payouts through a licensed e-money partner.",
+  "business_model": "SaaS of about £1,500 per site-month paid by the contractor, plus 3% of payouts. The escrow (roughly £30-60K for a 12-month mid-size build) is funded by developers through existing Section 106 and Construction Management Plan obligations. The contractor's return is faster Section 61 consents and dispensations, and fewer complaints, Section 60 notices and injunctions.",
+  "risks": [
+    "Forecast sandbagging; neutralised by charging for forecast dB-hours day-ahead",
+    "Attribution disputes with traffic and neighbour noise; boundary correlation, telematics, and burden shifted to untagged plant",
+    "Payout farming at the window; operator-installed sensors only",
+    "Everyone claiming protection; capped at 20 equal tokens per household per week",
+    "Payouts read as waivers of nuisance rights or as bought consent breaches; excluded in the scheme's terms",
+    "Landlords capturing payouts; money goes to occupants",
+    "Exposure records affecting property values; kept private to the address",
+    "A tradable cumulative street budget lacks a clean legal basis under COPA s61; deferred to year two",
+    "Slow three-party adoption (borough, developer, contractor) through Section 106 negotiations"
+  ],
+  "moonshot": "Lane rental for ears: one neighbourhood ledger of dB-hours that roadworks, data-centre chillers, festivals and wind-farm construction all draw on. Autonomous night excavators' schedulers bid directly against each street's cost surface, so robot shifts land in the hours residents value least. A Section 61 consent becomes a forecast with an imbalance bond, and linked street budgets make cumulative impact enforceable.",
+  "best_line": "Pay on the forecast, settle the error: when padding the forecast costs money, an honest forecast becomes the cheapest one."
+}

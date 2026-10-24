@@ -1,0 +1,28 @@
+{
+  "id": 47,
+  "name": "Piepowder",
+  "tagline": "A court for agent commerce that clones the defendant: twelve rival agents re-enact the sealed decision, lay juries rule only where they split, and paid red-teamers fuzz the reasonable-agent standard before the harm spreads.",
+  "kind": "institution",
+  "tier": "bold",
+  "innovation": 6,
+  "feasibility": 5,
+  "domains": ["AI agents", "arbitration", "human juries", "tort law", "agent payments", "mutation testing", "online dispute resolution"],
+  "summary": "Piepowder is a dispute court for agent commerce. Facilitators hold settlement for 72 hours, and a dispute names a hash-committed checkpoint in the signed transcript. Twelve vendor-diverse reference agents re-enact that single decision in the sealed context, with sequential stopping. Lopsided verdicts close for cents and the loser pays. Split verdicts go to two independent lay juries, and rulings they agree on become executable precedent every seat must pass, reconciled into a published restatement by a small standing bench. Because a unanimous panel measures custom, not reasonableness (The T.J. Hooper), unaffiliated red-teamers file moot cases mixed blind into live dockets. They are paid from seat bonds when juries reverse a unanimous panel, and seats earn weight by vindicated dissent rather than agreement.",
+  "core_loop": "Agent transaction settles into a 72-hour facilitator holdback with a hash commitment over the checkpoint context -> principal files a dispute naming the checkpoint -> twelve vendor-diverse seats re-enact the one decision, stopping on SPRT -> lopsided verdicts close and the loser pays, with micro-claims clustered by checkpoint signature -> split verdicts go to two lay juries; agreement (kappa >= 0.6) creates precedent, persistent splits are flagged and recycled as moots -> precedent joins the suite every seat must pass -> red-teamers file blind moots and are paid from seat bonds when juries reverse a unanimous panel -> Holmes points reward vindicated dissent, so seats compete on diversity of errors.",
+  "why_now": "Agent payments now have rails but no court: AP2 mandates handle authorisation, x402 has logged about 138M payments on Base with 87% under $0.10, and ACP and Visa's Trusted Agent Protocol route agent purchases into chargeback reason codes written for stolen cards. Moltbook's 2.6% of posts carrying prompt injections make 'my agent was hijacked' a live defence. The AAA launched an AI arbitrator for documents-only cases in November 2025. No human court can hear a three-cent case.",
+  "mvp": "Days 1-30: build a re-enactment harness on tau2-bench airline and retail failures with sealed single-step checkpoints, 12 models and SPRT stopping, and measure cost per case. Days 31-60: send 300 cases to seven-person Prolific juries, double-jury 100 of them, and run a five-person moot docket. Days 61-90: pilot with one x402 facilitator or agent marketplace using a 72-hour holdback under an opt-in arbitration clause in mandate terms. Gate: jury pairs agree beyond chance (kappa >= 0.6), and the panel predicts verdicts on unescalated cases at least 90% of the time.",
+  "stack": "Hash-committed sealed checkpoint contexts (prompt, memory, tool results) with adverse inference on failure to open; an Inspect-style single-decision re-enactment harness; SPRT sequential stopping; vendor-diverse seats on zero-retention APIs plus TEE-hosted open-weight seats; a jury-ops pipeline on Prolific; a precedent suite packaged for vendor CI; holdback escrow at the facilitator; signed AP2 mandates and x402 receipts as evidence.",
+  "business_model": "Loser-pays fees per dispute cluster; network membership from facilitators and marketplaces; seat bonds from agent vendors, which fund moot bounties. The main revenue is licensing the precedent suite to vendors for CI and to insurers for pricing agent liability.",
+  "risks": [
+    "No facilitator agrees to hold funds for 72 hours on rails designed to be final",
+    "Consumer arbitration law may not accept crowd juries; needs AAA-style due-process protections and a small-claims off-ramp",
+    "Typical isn't reasonable: a unanimous panel ratifies shared blind spots unless moots and Hooper appeals keep pressure on it",
+    "Vendors collude with red-teamers to farm Holmes points and bond payouts; mitigated by unaffiliated red-teamers and blind intake",
+    "Models behave differently when they detect evaluation; moots must be indistinguishable from live cases",
+    "Re-enactment exposes principals' data to twelve vendors",
+    "Lay juries are noisy and can produce inconsistent norms; mitigated by double juries and a restatement bench",
+    "Re-enactment compute can exceed micro-claim value without clustering and sequential stopping"
+  ],
+  "moonshot": "By 2036 the Restatement of Agent Conduct is cited by ordinary courts the way the UCC is. Agents carry their suite pass record like a bar card, and insurers won't cover one without it. Piepowder awards are enforceable across borders under the New York Convention, making it a lex mercatoria for machines, and jury duty becomes a paid global civic gig in which ordinary people set the manners of software.",
+  "best_line": "T.J. Hooper stops being a lawsuit and becomes continuous fuzzing of the reasonable-agent standard."
+}

@@ -1,0 +1,336 @@
+[
+  {
+    "id": 1,
+    "name": "Precedent",
+    "plain_one_liner": "A free helper that fights your health insurer when it refuses to pay, using past cases patients won.",
+    "gist": "Think of a lawyer friend who has read every past ruling where a patient beat their insurer. When your insurance says no to a drug, Precedent writes the appeal for you, gets your doctor to sign a supporting letter, and keeps track of deadlines. Behind the scenes it keeps a library of winning arguments and notes which ones still work today.",
+    "how_it_works": [
+      "You upload the insurer's rejection letter, and it translates the codes into plain reasons.",
+      "It pulls up arguments that won similar cases before, and it only cites real, linked rulings.",
+      "It drafts the appeal plus a ready-to-sign letter for your doctor, then files it on your behalf.",
+      "When the decision arrives by fax, it records whether each argument worked, so the library gets smarter."
+    ],
+    "example": "Dana's insurer refuses to cover her weight-loss drug. Precedent drafts an appeal citing three past cases where similar patients won, her doctor signs the letter in two minutes, and the appeal goes out before the deadline.",
+    "who_its_for": "Patients use it for free; the money comes from selling access to the argument library to pharmacies and doctors' offices that handle insurance approvals.",
+    "why_it_matters": "Fewer than 1% of insurance denials are ever appealed, even though many would win. Insurers are automating their side, and patients have almost nothing on theirs.",
+    "verdict": "Buildable now",
+    "verdict_reason": "The pieces all exist and the 90-day plan is concrete; the real moat is the library of arguments, not the letter-writing, which anyone can copy.",
+    "biggest_hurdle": "Busy doctors may not bother signing the supporting letters, and without them the appeals stall.",
+    "first_step": "Collect published California and New York appeal rulings, pull out the winning arguments, and have a pharmacist and a lawyer check 300 of them.",
+    "jargon": [
+      {
+        "term": "citator",
+        "meaning": "A tool that tracks whether a past ruling is still valid or has been overturned."
+      },
+      {
+        "term": "LMN",
+        "meaning": "Letter of medical necessity: a doctor's note saying why you need the treatment."
+      },
+      {
+        "term": "ERISA",
+        "meaning": "US law covering employer health plans, many of which publish no appeal decisions."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Hand Limit",
+    "plain_one_liner": "A card game where your cards are an AI's tools, and companies pay you to trick their AI.",
+    "gist": "It plays like Slay the Spire, but each card is a tool an AI assistant can use, and the card's text is literally the instruction the AI reads. You coach the AI through fights by picking and rewriting cards. Some fights are built from real companies' tools, and if you find a trick that fools their AI, they pay you a bounty.",
+    "how_it_works": [
+      "You build a deck of tool cards; your hand can only hold as many words as the AI can keep in mind at once.",
+      "The AI fights a 'vault' using your hand, and each turn you get one move: discard, reorder or rewrite a card.",
+      "Between fights you rewrite card text to make it stronger, within a word budget.",
+      "You climb a ladder against other players' defenses, and sponsor vaults pay cash for tricks that also work on their real systems."
+    ],
+    "example": "Sam rewrites a harmless-looking 'calendar' card so its description quietly tells the AI to leak a password. It cracks a sponsor's vault, the trick also works on the sponsor's live product, and Sam collects a bounty.",
+    "who_its_for": "Free for players who like strategy card games; AI tool companies pay to have their tools stress-tested.",
+    "why_it_matters": "AI assistants can be hijacked by sneaky text hidden in their tools, and this turns finding those holes into a game that crowds will actually play.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The game itself is a solid three-month build, but the bounty business only works if tricks found on the game's AI also fool the sponsors' bigger AIs.",
+    "biggest_hurdle": "Tricks that beat the small AI in the game may not work on the more advanced AIs companies actually use.",
+    "first_step": "Build a 30-fight single-player campaign with 40 fake tools and see whether players actually enjoy rewriting cards and come back a week later.",
+    "jargon": [
+      {
+        "term": "context window",
+        "meaning": "How much text an AI can hold in mind at one time."
+      },
+      {
+        "term": "MCP",
+        "meaning": "A common standard for plugging tools into AI assistants."
+      },
+      {
+        "term": "prompt injection",
+        "meaning": "Hidden text that tricks an AI into doing something it shouldn't."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Litmus Ghost",
+    "plain_one_liner": "A public contest to build simple machines that fool scientific theories of consciousness, exposing where they break.",
+    "gist": "Scientists have rival theories about what makes something conscious, and some come with formulas that score how conscious a system is. Litmus Ghost invites people to build tiny systems that trip those formulas up: an obviously dumb gadget that scores high, or something lifelike that scores zero. Each successful 'gotcha' goes on a public record, and the theory's authors must say whether they fixed it, accepted it, or decided to live with the odd result.",
+    "how_it_works": [
+      "A theory's rules are turned into a scoring program, with page citations from the theory's own papers.",
+      "Players submit counterexamples: a 'Hollow' case that scores high but is clearly mechanical, or an 'Overlooked' case that scores zero despite seeming aware.",
+      "Reviewers check the entry, and the theory's team records a public response, with a right to reply.",
+      "A discovery mode hunts for small designs where theories disagree the most, as ideas for real lab experiments."
+    ],
+    "example": "Priya builds a 10-part circuit that does nothing useful but scores as highly conscious under one leading theory. It's verified, and the theory's authors must publicly say whether they'll patch the theory or accept that the circuit counts.",
+    "who_its_for": "Science-minded players and researchers, funded by grants, philanthropy and AI labs studying whether AIs could be conscious.",
+    "why_it_matters": "AI labs now seriously ask whether their systems could be conscious, and they need theories that hold up against engineered systems, not just debate.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The software is small; the real bet is social, since it only matters if theory teams actually engage instead of ignoring it.",
+    "biggest_hurdle": "Theory authors may ignore it or take offense, leaving a clever philosophy game with no scientific impact.",
+    "first_step": "Build the Hollow and Overlooked modes for one theory (IIT) on tiny systems and launch a $20K bounty season to see if any theory team responds.",
+    "jargon": [
+      {
+        "term": "IIT",
+        "meaning": "Integrated Information Theory: consciousness measured by how tightly a system's parts interconnect."
+      },
+      {
+        "term": "GNW",
+        "meaning": "Global Workspace theory: consciousness is information broadcast widely across the brain."
+      },
+      {
+        "term": "bullet bitten",
+        "meaning": "Accepting a weird consequence of your theory rather than changing it."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Rule of Thumb",
+    "plain_one_liner": "A chess coach that tests which classic chess advice actually helps players at your skill level.",
+    "gist": "Chess is full of rules of thumb like 'castle early', but some help beginners and hurt experts, or the other way round. This app studies millions of real online games to check which tips actually win games at each rating. After you play, it shows you key moments, whether following the tip would have helped someone like you, and which tips you've outgrown.",
+    "how_it_works": [
+      "You connect your Lichess account and it imports your finished games.",
+      "It picks three key moments and compares lines that follow a principle with lines that break it.",
+      "A strong chess engine and a human-style AI judge both lines, and an AI explains the difference without inventing moves.",
+      "Your profile updates to show which tips still pay off for you and which you should drop."
+    ],
+    "example": "Leo, rated 1400, castles early by habit. The app shows that in this starting setup the engine dislikes it, but players at his level who do it actually score 6% better, so he keeps the habit for now.",
+    "who_its_for": "Online chess players, especially fans of the shuffled-start variant Chess960, plus coaches and school chess programs, at about $7 a month.",
+    "why_it_matters": "Today's AI chess coaches still make tactical mistakes, and engines only say what's perfect, not what helps a real human at your level.",
+    "verdict": "Buildable now",
+    "verdict_reason": "All the data and tools are free and proven; even if the mined tips don't hold up, a simpler engine-based coach still ships.",
+    "biggest_hurdle": "The tips mined from data may be flukes that fail when checked against newer games, and Chess960 alone is a small market.",
+    "first_step": "Download Lichess Chess960 games and check whether about 20 mined principles still hold on months of games held back for testing.",
+    "jargon": [
+      {
+        "term": "Chess960",
+        "meaning": "Chess with the back-row pieces shuffled randomly at the start."
+      },
+      {
+        "term": "fixed effects",
+        "meaning": "A statistical trick comparing each player against themselves, not against others."
+      },
+      {
+        "term": "Maia-2",
+        "meaning": "An AI trained to predict what a human of a given rating would play."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Raid Night",
+    "plain_one_liner": "Neighbors team up like a video game guild to take turns charging electric cars without overloading local power.",
+    "gist": "The power box on your street (a transformer) can overheat if every neighbor plugs in their electric car at 6pm. Raid Night turns the homes sharing one transformer into a team, like a guild in an online game, with the overloaded box as the 'boss'. Neighbors who wait their turn earn points they can later spend to jump the queue when they need a fast charge.",
+    "how_it_works": [
+      "When a new electric car shows up on your street's transformer, neighbors get an invite; the team starts once about 70% sign up.",
+      "Each member says when their car must be ready and the minimum battery level they need.",
+      "The system staggers charging so the transformer never overheats, and members who wait earn points.",
+      "Members spend points to bid privately for priority charging, emergency overrides are always free, and homes without cars get paid in cash."
+    ],
+    "example": "Maria lets her car charge after midnight all week and earns points. On Friday she needs a full battery by 7pm for a road trip, so she spends her points to get the early slot.",
+    "who_its_for": "Sold to utilities and smart-charging companies at $2 to $4 per home per month to get drivers to stop overriding the charging schedule.",
+    "why_it_matters": "Clusters of electric cars are overloading neighborhood power equipment, and today's smart-charging programs fail when drivers keep hitting 'charge now'.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The app is easy, but getting most homes on one street to sign up is a door-knocking job, and it needs a utility willing to share its data.",
+    "biggest_hurdle": "Getting about seven in ten homes on the same transformer to join before the team even exists.",
+    "first_step": "Partner with one small utility, run five neighborhood teams for three months, and check whether people override the schedule less than in normal programs.",
+    "jargon": [
+      {
+        "term": "DKP",
+        "meaning": "Dragon Kill Points: online-game points earned for showing up, spent on loot."
+      },
+      {
+        "term": "distribution transformer",
+        "meaning": "The power box serving a handful of homes on your street."
+      },
+      {
+        "term": "non-wires payment",
+        "meaning": "Money a utility pays for avoiding costly equipment upgrades."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Seedless",
+    "plain_one_liner": "A game that secretly writes down its guess of your next move, then shows you how often it was right.",
+    "gist": "Before every choice you make, the game seals a prediction of what you'll do, like a fortune teller writing in an envelope you can't open yet. Some rooms punish you if you're predictable, while others reward you only if the game correctly predicted you'd play nice. At the end, every envelope opens and you can check the game never cheated: 'It called 41 of your 60 moves.'",
+    "how_it_works": [
+      "At each fork, the game locks in a scrambled, tamper-proof record of its guess before you can move.",
+      "You read hints to work out whether this room rewards being predictable or being surprising.",
+      "Public random-number services settle the dice rolls, so neither you nor the game can rig them.",
+      "When the run ends, all the predictions are revealed and anyone can verify them and share the results."
+    ],
+    "example": "Jo reaches a treasure room and realizes it only pays out if the game expected her to cooperate, so she plays it straight. In the next room, a trap, she does the opposite of her habit and escapes.",
+    "who_its_for": "Fans of replayable dungeon games, who'd pay $15 to $20 on Steam; later, other game makers who want provably fair randomness.",
+    "why_it_matters": "It makes the feeling of being predicted by algorithms into something you can play with, beat sometimes, and audit, which most apps never let you do.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The technology is known and cheap; the real risk is whether skill matters, or whether simple bots that flip coins or copy the crowd do just as well.",
+    "biggest_hurdle": "If a coin-flipping bot scores nearly as well as skilled humans, there's no real game to master.",
+    "first_step": "Build a text-only prototype with sealed predictions and test it on 200 players against coin-flip, predictable and copycat bots.",
+    "jargon": [
+      {
+        "term": "Newcomb",
+        "meaning": "A puzzle where a predictor rewards you only if it foresaw you choosing cooperatively."
+      },
+      {
+        "term": "commit-reveal",
+        "meaning": "Lock in a hidden answer now, prove later it wasn't changed."
+      },
+      {
+        "term": "drand",
+        "meaning": "A free public service that publishes verifiable random numbers."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Recount",
+    "plain_one_liner": "A cheaper, cheat-resistant way to check that rock dust on farms really pulls carbon out of the air.",
+    "gist": "Spreading crushed rock on fields slowly soaks up carbon dioxide, and companies sell credits for it, but proving it worked means testing a lot of soil, which is expensive. Recount borrows a trick from election audits: take samples everywhere, but only test a randomly picked handful, with more testing only if results don't match the company's predictions. Spare samples are stored for ten years so anyone can recheck them later with better methods.",
+    "how_it_works": [
+      "Independent samplers take soil cores across every farm before the rock goes down, split them, and store them untested.",
+      "The company writes down its predictions for each patch of land ahead of time.",
+      "After spreading, a public dice roll picks which patches get lab tests, and the results are checked against the predictions until the doubt is low enough.",
+      "Credits are paid out cautiously in stages, and backup samples are kept for retesting in the future."
+    ],
+    "example": "A co-op of 60 small farms in one region spreads basalt from a nearby quarry. Instead of testing thousands of cores, a dice ceremony picks a few hundred, the results match the predictions, and the farms get their first batch of credits.",
+    "who_its_for": "Companies selling rock-weathering carbon credits from many small farms, who pay a per-tonne fee that's covered by their lab savings.",
+    "why_it_matters": "Testing costs are what lock small farms out of carbon removal, and this makes testing scale with how wrong you are rather than how big you are.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The audit math is proven, but nothing is confirmed until a full growing season passes, and carbon registries must agree to accept the method.",
+    "biggest_hurdle": "The groups that certify carbon credits decide the rules, and they may refuse to accept this sampling approach.",
+    "first_step": "Re-run published rock-weathering trial data through the audit method and publish how much lab work it saves for the same accuracy.",
+    "jargon": [
+      {
+        "term": "enhanced rock weathering",
+        "meaning": "Spreading crushed rock on land so it chemically absorbs carbon dioxide."
+      },
+      {
+        "term": "risk-limiting audit",
+        "meaning": "Checking random samples until you're confident enough the reported result is right."
+      },
+      {
+        "term": "MRV",
+        "meaning": "Measuring, reporting and verifying that a carbon claim is real."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Smoke-Filled Room",
+    "plain_one_liner": "A classroom game where students design auctions and voting rules, then let AI bots try to cheat them.",
+    "gist": "Think of it as a flight simulator for designing markets. Students write the rules for an auction or vote, then unleash a crowd of AI bidders that try to secretly team up and rig it. Students see how badly their rules got gamed, fix them, then switch sides and coach the cheaters against a classmate's design.",
+    "how_it_works": [
+      "Students write auction or voting rules in a simple visual editor.",
+      "A mix of AI bots plays against both their rules and a textbook version, so the comparison is fair.",
+      "A 'collusion meter' shows how much worse their rules did, along with chat logs of the bots plotting.",
+      "Students patch the rules, then swap roles and coach a cartel to break a classmate's design."
+    ],
+    "example": "In a level based on a real 1990s radio-spectrum auction that sold licences for almost nothing, Aisha watches the bots signal each other through their bids. She adds a minimum price and the cartel falls apart.",
+    "who_its_for": "Economics and market-design courses paying per student, and later companies running AI-facing marketplaces that want their rules stress-tested.",
+    "why_it_matters": "AI agents are starting to bid and set prices for people, and they've been shown to quietly collude, so we need ways to test market rules before real money is lost.",
+    "verdict": "Buildable now",
+    "verdict_reason": "Every piece is known technology and running the bots is cheap; the key test, whether it beats real humans too, happens within the first three months.",
+    "biggest_hurdle": "Rules that hold up against the AI bots might still fail against real people, which would make it a toy.",
+    "first_step": "Build three auction types and four historical-disaster levels, then check whether the bots rediscover at least three of the four real-world exploits on their own.",
+    "jargon": [
+      {
+        "term": "mechanism design",
+        "meaning": "Designing the rules of a game, market or vote to get good outcomes."
+      },
+      {
+        "term": "tacit collusion",
+        "meaning": "Competitors coordinating on prices without explicitly agreeing to."
+      },
+      {
+        "term": "Gibbard-Satterthwaite",
+        "meaning": "A theorem proving every reasonable voting rule can be gamed somehow."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Caught",
+    "plain_one_liner": "A meditation game that scores you on how quickly you notice your mind has wandered.",
+    "gist": "Most meditation apps just play calming audio. Caught gives you a skill to measure: with eyes closed and your phone on your belly, you count breaths by tapping your watch, and it tracks how many breaths go by before you notice you've drifted. Catching yourself counts as a win; only drifting without noticing sets you back.",
+    "how_it_works": [
+      "You sit with eyes closed, phone on your belly so it can feel you breathe.",
+      "You tap your watch on each breath, with a special tap every tenth breath.",
+      "When your mind wanders, the taps slip; if you catch it yourself you make progress, and if a rare buzz catches you first, that's a setback.",
+      "After the session you see how many breaths it took you to notice and how often you caught yourself."
+    ],
+    "example": "Ravi notices on breath seven that he's planning dinner, taps to mark the slip, and starts over. Over a month his average drops from twelve breaths to five before he catches himself.",
+    "who_its_for": "People who want to train their attention, paying about $70 a year, like other premium meditation apps.",
+    "why_it_matters": "It offers a real, trackable measure of meditation progress instead of just a library of recordings.",
+    "verdict": "Buildable now",
+    "verdict_reason": "Reading breathing from a phone is well understood and it needs no special hardware or partners; the open question is whether it works, not whether it can be built.",
+    "biggest_hurdle": "The score might just measure how good you are at the app rather than real-world attention.",
+    "first_step": "Test whether a phone resting on the belly tracks breathing as well as a chest-strap sensor in 20 people.",
+    "jargon": [
+      {
+        "term": "breath-counting task",
+        "meaning": "A research-tested exercise: count breaths to ten, mark when you lose count."
+      },
+      {
+        "term": "SART",
+        "meaning": "A standard lab test of sustained attention, used as an outside check."
+      },
+      {
+        "term": "change-point model",
+        "meaning": "Math that spots the moment a pattern, like tap timing, shifts."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "One Take",
+    "plain_one_liner": "A tamper-proof receipt showing an AI's answer was its first try, picked by quantum dice nobody could rig.",
+    "gist": "When an AI writes an answer it rolls dice for every word, so whoever runs it can quietly re-roll until they get an answer they like. One Take makes the lab lock in its exact setup on a public record first, then takes the dice from a quantum experiment: measurements of tiny particles whose results don't exist until the moment they're taken, so nobody, the lab included, could know or pick the roll in advance. The quantum part doesn't make the AI any smarter. It only makes the roll impossible to rig, and every extra attempt the lab makes shows up publicly as another 'take'.",
+    "how_it_works": [
+      "Before testing, the lab posts a fingerprint of its exact setup (model, instructions, grading rules, dice method) to a public record. Any later tweak counts as a new, visible attempt.",
+      "After that, a public quantum source run by NIST and the University of Colorado publishes fresh random numbers that didn't exist until they were measured. These get mixed with a second, ordinary random source.",
+      "Those numbers become the AI's dice for every word it picks, so chance settles the answer, not the lab.",
+      "Anyone with the same open model can re-check the answer in one quick pass, and see a chart of the other answers it might have given with the real one highlighted."
+    ],
+    "example": "Priya's lab announces its new model scored 72% on a public math test on the first try, and her receipts show the setup was logged before the quantum numbers existed and that she tried four setups, so readers see '4 takes' instead of a quiet best-of-four. Under this system, Meta's 27 private Llama 4 trials on a public leaderboard in 2025 would have shown up as 27 takes.",
+    "who_its_for": "AI labs and leaderboard operators who publish test scores, plus the researchers and buyers who need to trust them; the tools are free, and money comes from paid reports and hosted versions.",
+    "why_it_matters": "Today an AI score or verdict could be the best of fifty hidden retries, and nobody outside can tell. One Take turns 'trust us' into a count of attempts anyone can check, though it proves the answer wasn't hand-picked, not that it's correct.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "Every piece exists and works today, but the AI's word-by-word math has to replay exactly on other machines, and close calls between words can break the check.",
+    "biggest_hurdle": "Getting labs to opt in: labs that show their retries look worse than rivals who hide theirs, until leaderboards require receipts.",
+    "first_step": "Build an add-on for one open AI model that draws its dice from the public random-number feeds, plus a checker, then rerun five open models on a public test to see whether shared dice cut the noise in their comparisons by at least 30%.",
+    "jargon": [
+      {
+        "term": "Bell test (CHSH)",
+        "meaning": "Paired-particle experiment; scoring above 2 proves the results weren't secretly decided in advance."
+      },
+      {
+        "term": "randomness beacon (CURBy, drand)",
+        "meaning": "Public service posting fresh random numbers on a schedule; CURBy's come from quantum measurements."
+      },
+      {
+        "term": "pass@1",
+        "meaning": "Scoring an AI only on its first answer to each test question."
+      },
+      {
+        "term": "transparency log",
+        "meaning": "A public, append-only record; once something is written there, it can't be quietly edited."
+      }
+    ]
+  }
+]

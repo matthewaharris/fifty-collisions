@@ -1,0 +1,28 @@
+{
+  "id": 32,
+  "name": "Ascension",
+  "tagline": "Your real month as a roguelite: pay fills a reservoir, a rule curve releases your salary, locked tranches buy jackpot tickets, and every emergency costs a Curse, never a fee.",
+  "kind": "game",
+  "tier": "bold",
+  "innovation": 5,
+  "feasibility": 5,
+  "domains": ["roguelite design", "personal finance", "behavioral economics", "reservoir hydrology", "prize-linked savings", "gig work"],
+  "summary": "Ascension is a roguelite played on your real income, built first for gig workers. Payouts land in a sponsor-bank or credit-union reservoir, not in checking. A hydrology-style rule curve, forecast from the bills mined in your history, releases a synthetic salary to checking over FedNow. It keeps a release floor, and an instant override is always available. Each month is a run: you draft relics (release and lock rules), rent is the boss, irregular bills are elites, and HP is runway in days. Locked tranches earn prize-linked tickets in a monthly jackpot funded by pooled yield. Early unlocks and emergency draws add Curses to your deck but never cost money. The death screen names a suspected bias, as a hypothesis, until three runs agree. Every run you survive climbs one Ascension level and raises the locked share by 1%.",
+  "core_loop": "Payout lands in the reservoir -> rule curve forecasts elites (irregular bills) and releases a synthetic salary over FedNow above a floor -> player drafts relics (release schedules, lock tranches) at the start of each run -> locked tranches earn prize-linked tickets -> emergency draws and early unlocks are instant but add Curses -> month end: survive and climb one Ascension (+1% locked share) or die and get a cause-of-death hypothesis with evidence -> counter-relic unlocks for the next run.",
+  "why_now": "Slay the Spire 2's record 574K concurrent players and Balatro made relics, curses and Ascension ladders a mass literacy. FedNow and RTP make instant releases cheap. Gig income is volatile and payday lending still fills predictable shortfalls. The Synapse collapse taught fintech to use direct-ledger sponsor banks.",
+  "mvp": "90 days. Weeks 1-4: sign a bank or credit-union partner, build the direct ledger and the rule-curve forecaster. Weeks 5-8: 300 drivers recruited through one gig cooperative, with platform payouts pointed at the reservoir account, in the fill phase. Weeks 9-12: synthetic salary goes live, three release relics, one curse type, the death screen, and the first prize draw. Kill metrics: over 5% of releases overridden in emergencies, or fewer than 40% of players start a second run.",
+  "stack": "Sponsor bank or credit union with a direct ledger (e.g. Column); Plaid for read-only history; FedNow/RTP for releases; quantile income and bill forecasts over mined transaction calendars; prize-linked savings draws under the American Savings Promotion Act; React Native client.",
+  "business_model": "Gig platforms (driver retention) and employers (financial-wellness benefit) pay per active player per month. Players never pay. There are no paid items and no lending upsell.",
+  "risks": [
+    "Automatic transfers causing overdrafts (the Digit CFPB precedent); mitigated by release floors and never sweeping below the rule curve",
+    "Releasing ahead of inflow is lending under state advance rules; v1 bridges only from the player's own locked tranches",
+    "Forecast errors cost asymmetrically (missed rent); instant override is always available",
+    "Fill phase of 6-10 weeks before smoothing works for gig players",
+    "BaaS reconciliation and sponsor-bank regulatory risk after Synapse",
+    "Prize-linked savings legality depends on bank or credit-union sponsorship and on state law",
+    "Dark-pattern gamification aimed at low-income users",
+    "Overfit bias diagnoses from a single month"
+  ],
+  "moonshot": "Reservoirs join into a watershed: a member-owned cooperative of linked reservoirs whose partly uncorrelated income shocks let it pay every gig worker a steady salary on far less buffer per head, which amounts to income insurance run like a water district with the rule curve as its actuarial model. The game becomes behavioral economics' largest consenting field lab, with every new relic shipped as a preregistered randomized trial across millions of real months.",
+  "best_line": "Surplus is whatever sits above the rule curve, and nothing is swept below it."
+}

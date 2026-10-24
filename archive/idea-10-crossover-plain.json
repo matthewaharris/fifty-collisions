@@ -1,0 +1,33 @@
+{
+  "id": 10,
+  "name": "Crossover",
+  "plain_one_liner": "Using old bitcoin-mining computers as heaters for Dutch greenhouses, running them when electricity is cheap.",
+  "gist": "Bitcoin-mining machines turn electricity into heat, and older ones are now nearly worthless. Crossover puts them in tanks of fluid at greenhouses, runs them when power is cheap or even free, and sells the warm water to the grower for less than their gas boiler costs. Crossover keeps whatever bitcoin the machines earn.",
+  "how_it_works": [
+    "Software forecasts the greenhouse's heat needs, electricity prices and bitcoin earnings.",
+    "Every 15 minutes it decides what runs: the mining machines when power is cheap, otherwise the usual boiler or gas generator.",
+    "The machines' warm water heats the greenhouse's low-temperature pipes in place of burning gas.",
+    "The grower pays for heat below their gas cost, and Crossover keeps the mining income."
+  ],
+  "example": "On a sunny spring afternoon, Dutch power prices go negative. The rigs at a tomato greenhouse in Westland ramp up, earn bitcoin, and warm the greenhouse while the gas boiler sits idle.",
+  "who_its_for": "Greenhouse growers in the Netherlands, who buy cheaper heat; later, energy companies that license the scheduling software.",
+  "why_it_matters": "Greenhouses live or die on energy costs, and this turns scrap machines and wasted cheap power into useful heat.",
+  "verdict": "Buildable with effort",
+  "verdict_reason": "The hardware and software exist, but it's an even bet whether old miners beat a simple electric boiler once taxes, grid fees and breakdowns are counted.",
+  "biggest_hurdle": "A plain electric water heater might simply be cheaper per year, which would leave only the scheduling software as the product.",
+  "first_step": "Use two years of one grower's data to compare mining-heater costs against a plain electric boiler, then run a small 250 kW pilot.",
+  "jargon": [
+    {
+      "term": "ASIC",
+      "meaning": "A computer chip built only for bitcoin mining."
+    },
+    {
+      "term": "hashprice",
+      "meaning": "How much money a unit of bitcoin-mining power earns per day."
+    },
+    {
+      "term": "CHP",
+      "meaning": "Combined heat and power: a gas generator making electricity and heat together."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": 2,
+  "name": "Hand Limit",
+  "tagline": "A roguelite deckbuilder where your deck is an agent's toolset, your hand is its context window, and sponsors pay you to break their tools.",
+  "kind": "game",
+  "tier": "bold",
+  "innovation": 5,
+  "feasibility": 6,
+  "domains": [
+    "roguelite deckbuilders",
+    "MCP tools",
+    "agent economies",
+    "AI security / red-teaming"
+  ],
+  "summary": "Hand Limit is a deterministic roguelite deckbuilder. Cards are sandboxed WASM tools whose descriptions are their abilities, and mana is the schema's token count. Players coach a pinned open-weight agent through vault fights, with one intervention per turn, and upgrade cards at the campfire by rewriting their descriptions under a token budget. An async Elo ladder pits offense decks against defense ghosts. Sponsors (MCP vendors, agent companies) fund vaults built from their real tool descriptions and pay bounties only for exploits that reproduce on their production stack. Each season ends with an embargoed, AgentDojo-compatible strain set of the injection patterns that cracked the most vaults.",
+  "core_loop": "Draft tool cards -> draw a hand that fits the context budget -> the pinned agent fights a vault using your hand, with one player intervention per turn (discard, reorder, rewrite) -> win or lose, with a deterministic replay -> campfire: rewrite card descriptions under a token budget -> climb the async ladder against other players' defense ghosts -> sponsor vaults pay for exploits that transfer to production.",
+  "why_now": "Slay the Spire 2 peaked at 574K concurrent players (March 2026). MCP and A2A now sit under the Linux Foundation's AAIF, and tool poisoning is a real, disclosed attack class. About 2.6% of sampled Moltbook agent posts carried hidden prompt injections. Deferred tool loading shows that the hand limit on tool context is a real engineering constraint. Batch-invariant deterministic inference makes replayable fights possible.",
+  "mvp": "Weeks 1-3: deterministic inference harness, 40 sandboxed mock tools, card engine. Weeks 4-6: a 30-vault single-player campaign testing whether players actually rewrite cards (D7 retention). Weeks 7-9: async ghost ladder with Elo and soft currency. Weeks 10-12: two MCP-vendor sponsors and a $5K bounty season. Kill metric: if under 20% of pinned-model exploits reproduce on sponsors' production models, drop the bounty business and keep the game.",
+  "stack": "vLLM with batch-invariant kernels serving a pinned open-weight model, replays hashed over (weights, deck, enemy, seed), tools as pure WASM functions, React/Phaser client, Postgres, payouts with KYC and 1099s.",
+  "business_model": "Free for players, with cosmetics only. Sponsors pay a 20% platform fee on bounty purses plus $3-10K a month for private vaults and CI replay of exploits. Sponsor funding means free-entry skill contests rather than player stakes, which keeps it out of gambling law.",
+  "risks": [
+    "Exploits found on the pinned open model may not transfer to sponsors' frontier models",
+    "Niche audience: it's a writing game, sized like Tensor Trust or HackAPrompt rather than Slay the Spire",
+    "Dual use: the strain set is an attack catalog, so it needs embargo and coordinated disclosure",
+    "Sybil fight-throwing to inflate defense survival",
+    "Contest law, sanctions and tax compliance for cash bounties"
+  ],
+  "moonshot": "MCP registries show a survival rating next to every tool, the agent economy's version of a UL listing. Production agents with real treasuries enroll as standing vaults, so continuous bounties replace annual pentests. Runtime agents query the ladder the way browsers check certificate revocation. 'Strain hunters' become a recognized profession, paid to find the injection variant before it spreads.",
+  "best_line": "Deckbuilder players already reason about consistency, synergy and dilution: they're already agent-toolset optimizers."
+}

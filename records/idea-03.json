@@ -1,0 +1,25 @@
+{
+  "id": 3,
+  "name": "Litmus Ghost",
+  "tagline": "Theories of consciousness as fuzzable, versioned software: build the hollow case, log the bullet, find where theories split.",
+  "kind": "institution",
+  "tier": "bold",
+  "innovation": 6,
+  "feasibility": 5,
+  "domains": ["consciousness science", "citizen science", "AI agent architectures", "philosophy of science"],
+  "summary": "Litmus Ghost is a grant-funded public research instrument. Players build small systems that break the computable specs of consciousness theories: Hollow cases that max a theory's indicators while plainly mechanical, and Overlooked cases that the theory scores at zero despite every hallmark. Each verified counterexample forces a recorded verdict (patched, conceded, or bullet bitten), stored in a sourced claims database with right of reply. Theories without computable specs carry an 'untestable' badge that only publishing a spec removes, and reports count bullets per computable commitment so precision isn't punished. Discovery mode turns the crowd into an experimental-design engine, finding tiny architectures where theories' predictions diverge most.",
+  "core_loop": "A theory spec is published (from the theory's own papers, with page citations) -> players submit Hollow or Overlooked counterexamples, or machine-checkable Contradictions -> auto-scoring, isomorphism dedupe and panel review -> a verdict (patched / conceded / bullet bitten) is logged against quoted commitments, with right of reply -> Discovery mode sweeps player-proposed architecture families for maximal theory disagreement -> the top controversial systems become candidate targets for real adversarial collaborations.",
+  "why_now": "COGITATE (Nature, 2025) left both IIT and GNW damaged, and INTREPID is pending. Anthropic, DeepMind and Meta are formally studying AI consciousness and need theories that survive engineered systems. Butlin and Long's indicator framework, IIT 4.0's mathematical spec and cheap agent substrates make computable theory tests practical.",
+  "mvp": "Weeks 1-4: a claims database of 150 sourced commitments from IIT 4.0, GNW and higher-order theories, plus compute backends. Weeks 5-8: Hollow and Overlooked modes on IIT only (PyPhi, ≤12 nodes). Weeks 9-12: a $20K season-0 bounty pool and a Discovery prototype for IIT vs. GNW. Kill metric: if no theory team responds publicly, it's a philosophy game, not an instrument.",
+  "stack": "PyPhi (IIT 4.0 branch) on a capped job queue, a Brian2 toy of the Dehaene-Changeux global workspace model, nauty graph canonicalization for dedupe, a controversial-stimuli optimizer, Postgres claims database with DOIs and verbatim quotes, a web sandbox.",
+  "business_model": "Not a business. A roughly $400K-a-year research instrument funded by Templeton World Charity Foundation's ARC program, philanthropy, and AI-lab model-welfare budgets, with lab money firewalled from verdicts. Bounty pools are funded per season.",
+  "risks": [
+    "Theory teams ignore or disown it, leaving a philosophy game with no scientific uptake",
+    "Reputational harm and feuds from labeling positions 'bullet bitten' without consent",
+    "Precision penalty: computable theories like IIT attract all the hits unless results are normalized",
+    "Verdicts weaponized by labs or advocates as AI-welfare PR",
+    "Niche audience of a few thousand serious players"
+  ],
+  "moonshot": "A standing adversarial-collaboration exchange in which no consciousness theory is taken seriously without a versioned computable spec. Discovery-mode designs feed real experiments in intracranial EEG, BCI cohorts and organoid systems, each preregistered and scored back into the ledger. AI welfare regulation cites a public record of which theories survived contact with engineered systems.",
+  "best_line": "The scoreboard isn't who's right. It's each theory's bullet count."
+}

@@ -1,0 +1,27 @@
+{
+  "id": 12,
+  "name": "Off-Diagonal",
+  "tagline": "A weekly roguelite on the real calendar where every card costs its market price and the only edge is a correlation the rest of the field missed.",
+  "kind": "game",
+  "tier": "bold",
+  "innovation": 5,
+  "feasibility": 6,
+  "domains": ["prediction markets", "roguelite build-crafting", "portfolio theory", "pari-mutuel wagering", "event studies"],
+  "summary": "Off-Diagonal is a free-to-play weekly roguelite played on the real calendar. Each slate holds about 12 listed events whose marginals are pinned to Kalshi and Polymarket prices, so picking winners is worth nothing. About 20 curated event pairs have joint cells that run as pari-mutuel pools among players. Relics (Chain, Hedge, Mirror) are claims on those cells, so obvious correlations get crowded and pay little. Each scheduled release is a floor: the shop reopens at conditional prices, and liquid pairs are marked to the market's 15-minute price jump. Seasons are scored on log-wealth. The product is a shrinkage-cleaned crowd correlation matrix with intervals, licensed to combo desks.",
+  "core_loop": "Draft a slate of event cards at exchange-pinned prices -> buy relics that are claims on player pari-mutuel joint pools (Chain, Hedge, Mirror) -> each scheduled release (CPI, FOMC, payrolls, matches) is a floor: liquid pairs mark to the 15-minute exchange price jump, the shop reopens at conditional prices, and you bail, double down or hedge -> final settlement at resolution -> bankroll carries across the season, scored on log-wealth.",
+  "why_now": "Kalshi and Polymarket combined volume reached $44.8B in June 2026, and parlays and combos are surging. Slay the Spire 2 peaked at 574K concurrent players, so roguelite build-crafting is at its mainstream peak. Exchange APIs now expose live marginals for events across many domains, while nobody publishes cross-domain joint pricing. Play money keeps the game out of the CFTC-versus-states fight.",
+  "mvp": "90 days. Weeks 1-4: slate builder, pari-mutuel engine for about 20 curated pairs, Kalshi feed, jump scorer for three scheduled release types (CPI, FOMC, payrolls). Weeks 5-8: 500-player closed beta drawn from Balatro and prediction-market Discords, four-week seasons, masked-history mode built from obscure past slates. Weeks 9-12: first published crowd matrix with Ledoit-Wolf shrinkage and bootstrap intervals, and a pitch to one exchange combo desk. Kill metrics: week-4 retention under 20%, or the top decile from weeks 1-4 fails to beat the field in weeks 5-8.",
+  "stack": "React Native client, Postgres, Kalshi WebSocket and Polymarket CLOB price feeds, pari-mutuel pool engine, a scheduled-release calendar with an event-study jump scorer, Python (Ledoit-Wolf shrinkage, bootstrap) for the crowd matrix.",
+  "business_model": "Free to play, with a season pass and cosmetic relics. The revenue is licensing the cleaned crowd correlation matrix to exchange combo desks, sportsbook same-game-parlay pricing teams and macro funds. No affiliate links to real-money exchanges.",
+  "risks": [
+    "Skill may not persist across months, making it a lottery and the matrix noise (the core kill metric)",
+    "A weekly cadence fights the roguelite appetite for many short runs; masked-history mode has to carry volume",
+    "Thin exchange contracts jump on noise; mark-to-jump is limited to liquid pairs around scheduled releases",
+    "Sockpuppet accounts crowding cells to poison payouts; phone verification and stake caps",
+    "State sweepstakes and skill-contest laws (California banned sweepstakes casinos in 2025); no cash prizes or purchasable currency",
+    "Commercial licensing costs and terms for exchange price feeds",
+    "Teaching young players to love parlays; 18+ only, and every Chain relic shows the sportsbook hold"
+  ],
+  "moonshot": "A crowd-built Bayes net of the world. Pairs grow into conditional chains (if the strait closes, then oil, then the Fed), and millions of players drafting relics maintain a living, public dependency graph across domains. Combinatorial prediction markets finally work because the game supplies joint liquidity that no order book attracts. A coupling gauge on a fixed core basket becomes a standard systemic-risk indicator next to the VIX.",
+  "best_line": "The other players are the house: obvious correlations get crowded and pay nothing, so your edge is the link the field missed."
+}

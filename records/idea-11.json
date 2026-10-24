@@ -1,0 +1,27 @@
+{
+  "id": 11,
+  "name": "Washout",
+  "tagline": "Randomize your own day, bet on your own effect, and watch an evidence wallet you can't fool by peeking.",
+  "kind": "app",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 7,
+  "domains": ["n-of-1 trials", "GLP-1 / CGM", "randomization inference", "anytime-valid statistics", "Kelly betting"],
+  "summary": "Washout is a consumer n-of-1 trial app for CGM users, built for people on GLP-1s. The user picks one on-label behavioural template (post-dinner walk, meal order, fibre preload) on a fixed anchor meal. A two-week run-in measures personal noise and either sizes the trial or declines the question. The app seals a randomized block schedule inside each sensor's wear period and one dose plateau, commits it via OpenTimestamps, and pushes each day's arm. Instead of a blindfold, an anytime-valid evidence wallet (a mixture e-process) can be checked daily without inflating error. Wins earn a sealed replication three months later, and survivors become standing personal rules.",
+  "core_loop": "Pick a template and predict your effect -> two-week run-in sizes the trial or refuses it -> seal and timestamp the block-randomized schedule and analysis plan -> follow the daily arm by push -> watch the evidence wallet (half staked on your prediction, half on a default grid) grow or bleed -> stop at 20x (alpha 0.05) or at the planned end -> a sealed replication three months later turns survivors into standing rules.",
+  "why_now": "Oral GLP-1 orforglipron was approved April 1, 2026 at $149-349/month cash, putting millions on a drug that changes post-meal glucose. OTC CGMs (Dexcom Stelo, Abbott Lingo) make the outcome cheap and dense. The FDA's Jan 6, 2026 wellness and CDS guidance leaves room for behavioural self-experiments. Anytime-valid inference (e-values, testing by betting) has matured enough to put in a consumer app.",
+  "mvp": "90 days. Weeks 1-4: iOS app with HealthKit ingestion, run-in noise model and power check, three templates, mixture e-process engine, simulations confirming validity. Weeks 5-10: closed beta with 100 Stelo users, half on a GLP-1, with safety screens. Weeks 11-12: seal replications and pitch one GLP-1 telehealth partner. Kill metrics: under 40% of users finish a trial, or under 25% of finished trials are conclusive.",
+  "stack": "SwiftUI and HealthKit, Dexcom API as backup. Python e-process and randomization-test engine. Schedules and analysis plans hash-committed through OpenTimestamps. Meal detection from the glucose rise as a fallback for missed taps. Stan for the opt-in hierarchical pool of trials.",
+  "business_model": "$9/month or $29 per sealed trial for consumers, who already pay about $100/month for a CGM. The main channel is B2B2C through GLP-1 telehealth providers (Ro, Hims and similar), for whom discontinuation is the biggest cost and personal lifestyle rules are a retention product. Pooled heterogeneity data goes to IRB-backed research partnerships, not data sales.",
+  "risks": [
+    "Day-to-day glucose noise may make most questions unanswerable at one person's scale; the run-in will refuse many trials (the PREEMPT risk)",
+    "Low completion over multi-week trials",
+    "Hypoglycemia risk for insulin or sulfonylurea users; they are excluded",
+    "Eating-disorder risk from GLP-1 use plus glucose fixation; screening required",
+    "Drifting into clinical decision support if templates touch drug dosing; drug-timing arms are killed",
+    "Dose titration and weight loss confound replications; trials are confined to one dose plateau",
+    "Pooled estimates come from self-selected enthusiasts; FTC Health Breach Notification Rule and IRB consent obligations"
+  ],
+  "moonshot": "Prescriptions that come with a test. Any chronic-drug renewal, including AI-renewed ones like Utah's sandbox, can carry an optional sealed personal trial run under a clinician and an IRB-style protocol: dose timing, deprescribing, or the add-on you've taken for years without knowing whether it works. Templates and their pooled e-values sit in a public registry, so evidence about who responds keeps updating instead of living in one subgroup table.",
+  "best_line": "Seal the analysis, not the data: the evidence wallet grows only if the effect is real, so looking becomes the game."
+}

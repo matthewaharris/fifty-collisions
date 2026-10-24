@@ -1,0 +1,27 @@
+[
+  {
+    "id": 51,
+    "name": "One Take",
+    "plain_one_liner": "A tamper-proof receipt showing an AI's answer was its first try, picked by quantum dice nobody could rig.",
+    "gist": "When an AI writes an answer it rolls dice for every word, so whoever runs it can quietly re-roll until they get an answer they like. One Take makes the lab lock in its exact setup on a public record first, then takes the dice from a quantum experiment: measurements of tiny particles whose results don't exist until the moment they're taken, so nobody, the lab included, could know or pick the roll in advance. The quantum part doesn't make the AI any smarter. It only makes the roll impossible to rig, and every extra attempt the lab makes shows up publicly as another 'take'.",
+    "how_it_works": [
+      "Before testing, the lab posts a fingerprint of its exact setup (model, instructions, grading rules, dice method) to a public record. Any later tweak counts as a new, visible attempt.",
+      "After that, a public quantum source run by NIST and the University of Colorado publishes fresh random numbers that didn't exist until they were measured. These get mixed with a second, ordinary random source.",
+      "Those numbers become the AI's dice for every word it picks, so chance settles the answer, not the lab.",
+      "Anyone with the same open model can re-check the answer in one quick pass, and see a chart of the other answers it might have given with the real one highlighted."
+    ],
+    "example": "Priya's lab announces its new model scored 72% on a public math test on the first try, and her receipts show the setup was logged before the quantum numbers existed and that she tried four setups, so readers see '4 takes' instead of a quiet best-of-four. Under this system, Meta's 27 private Llama 4 trials on a public leaderboard in 2025 would have shown up as 27 takes.",
+    "who_its_for": "AI labs and leaderboard operators who publish test scores, plus the researchers and buyers who need to trust them; the tools are free, and money comes from paid reports and hosted versions.",
+    "why_it_matters": "Today an AI score or verdict could be the best of fifty hidden retries, and nobody outside can tell. One Take turns 'trust us' into a count of attempts anyone can check, though it proves the answer wasn't hand-picked, not that it's correct.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "Every piece exists and works today, but the AI's word-by-word math has to replay exactly on other machines, and close calls between words can break the check.",
+    "biggest_hurdle": "Getting labs to opt in: labs that show their retries look worse than rivals who hide theirs, until leaderboards require receipts.",
+    "first_step": "Build an add-on for one open AI model that draws its dice from the public random-number feeds, plus a checker, then rerun five open models on a public test to see whether shared dice cut the noise in their comparisons by at least 30%.",
+    "jargon": [
+      {"term": "Bell test (CHSH)", "meaning": "Paired-particle experiment; scoring above 2 proves the results weren't secretly decided in advance."},
+      {"term": "randomness beacon (CURBy, drand)", "meaning": "Public service posting fresh random numbers on a schedule; CURBy's come from quantum measurements."},
+      {"term": "pass@1", "meaning": "Scoring an AI only on its first answer to each test question."},
+      {"term": "transparency log", "meaning": "A public, append-only record; once something is written there, it can't be quietly edited."}
+    ]
+  }
+]

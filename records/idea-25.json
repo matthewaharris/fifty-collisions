@@ -1,0 +1,29 @@
+{
+  "id": 25,
+  "name": "Offtaker",
+  "tagline": "Compliance glass for German data centres with a heat-reuse quota and no buyer: the data centre owns the greenhouse, a tenant grower farms it, and every winter basket ships with a receipt for heat reused and heat dumped.",
+  "kind": "system",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 6,
+  "domains": ["urban agriculture", "data-centre waste heat", "community-supported agriculture", "energy regulation", "horticultural engineering"],
+  "summary": "Offtaker designs, builds and operates heat-offtake greenhouses for German data centres that must meet Energy Efficiency Act reuse quotas but have no district-heating buyer. The data centre owns the glass as part of its compliance capex, built alongside a full dry-cooler bypass so cooling never depends on the farm, and sells heat through an isolated plate exchanger to a tenant grower on calibrated meters. Return water cascades from 45-55 degrees C air heating in sunlit bays to 25-30 degrees C root-zone benches for low-light winter greens, with buffer tanks shifting daytime heat into the night and forced chicory filling the winter basket. The data centre pays per metered MWh reused and Offtaker files its reuse report, while neighbours subscribe through Solawi bidding rounds and every basket carries a receipt of MWh reused and MWh dumped.",
+  "core_loop": "Data centre with a reuse quota signs on -> Offtaker builds data-centre-owned glass with a full cooler bypass -> heat is sold through an isolated exchanger to a tenant grower on MID-certified meters -> return water cascades from air heating to root-zone benches, buffered by tanks -> Solawi bidding rounds sell weekly winter baskets -> each basket ships with a heat receipt -> metered MWh feed the operator's EnEfG reuse report and Offtaker's per-MWh fee.",
+  "why_now": "Germany's Energy Efficiency Act requires new data centres to reuse a rising share of their heat from July 2026, reaching 20% by 2028, and district-heating offtakers are not showing up. Liquid-cooled AI racks return water at roughly 40-55 degrees C, poor for district heating but suitable for low-temperature greenhouse pipes and root-zone heating. Vertical farms have failed on lighting electricity and financing, and data centres face local opposition that a legible community benefit could ease.",
+  "mvp": "90 days. Weeks 1-3: a legal opinion on whether heat sold to a tenant grower in data-centre-owned glass counts as reuse under the EnEfG, a heat model, and a shortlist of three German data centres opening in 2026-27 with no offtaker. Weeks 4-8: letters of intent with one operator and one Solawi grower, and design of a 2,000 m2 cascade bay. Weeks 9-12: a 300-basket bidding round and glass ordered for winter. Kill metrics: no operator signs, or the heat doesn't count.",
+  "stack": "Isolated plate heat exchangers (no shared fluid with the data centre), insulated buffer tanks, sunlit greenhouse bays with low-temperature heating pipes, root-zone heated benches, hydroponic chicory forcing, Priva climate computer, MID-certified heat meters, a public heat-receipt dashboard and Solawi-style subscription software.",
+  "business_model": "Offtaker charges the data centre a fee per metered MWh reused and files its reuse report. The data centre funds the glass as compliance capex. Tenant growers pay rent plus a nominal heat tariff, and neighbourhood baskets are sold through Solawi bidding rounds.",
+  "risks": [
+    "Regulators may treat heat used in data-centre-owned glass as internal use rather than reuse",
+    "No operator signs as the first site",
+    "Winter light limits crop yield, so revenue depends on low-light greens and forced chicory",
+    "The greenhouse cannot count toward N+1 cooling redundancy, so the full dry-cooler bypass remains a cost",
+    "Legionella in 25-45 degrees C water; mitigated by closed loops, cold irrigation and exchanger isolation",
+    "Greenhouse humidity near data-centre air intakes",
+    "A tenant grower quitting mid-winter; mitigated by step-in rights in the lease",
+    "The basket can launder a data centre's grid and water impact; mitigated by a receipt showing heat dumped as well as reused",
+    "Urban land and roof constraints next to data centres"
+  ],
+  "moonshot": "The maraicher belt, rebuilt around compute. Every European data centre over the threshold has a heat tenant, and cities zone new ones where glass can go. Each site cascades heat by grade, from district heating at 60 degrees C to greenhouse air at 45, root zones at 28 and aquaculture below that, so a city's winter salad comes from its inference load as Paris's once came from its cab horses. Heat receipts become a standard disclosure, and an AI provider's sustainability claims are checked in metered MWh.",
+  "best_line": "The GPU is the new horse."
+}

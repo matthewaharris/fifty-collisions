@@ -1,0 +1,27 @@
+{
+  "id": 18,
+  "name": "Table Stakes",
+  "tagline": "Futarchy for the kitchen table: vote on what better means, bet chores on what each option will do, and make the doubter own the outcome.",
+  "kind": "app",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 7,
+  "domains": ["futarchy", "prediction markets", "households", "team decision-making", "peer prediction", "forecasting calibration"],
+  "summary": "Table Stakes brings futarchy to groups of three to thirty. Each quarter the group votes on two to four metrics, each paired with a lagging guard and filled from Stripe, PostHog, Plaid and the shared calendar, with a binary 'better or worse?' pulse capped at a third of the score. Big decisions go to sealed forecast rounds per branch, scored by the log rule and pooled by mean log-odds, and the best-forecast branch wins unless it breaks a hard constraint. The member who priced the winning branch lowest becomes its steward, earning a bonus for beating the other members' pooled forecast, or the group's base rate in groups too small for that. Teams stake points and households stake chore-hours, with a quarterly jubilee and no negative balances for minors, while a ledger tracks calibration by member and domain and a running commitment premium.",
+  "core_loop": "Vote on metrics each quarter -> anyone proposes a decision with branches and a horizon -> members submit sealed forecasts per branch -> the best-pooled branch is chosen -> the lowest forecaster becomes steward -> weekly practice questions build calibration between decisions -> at the horizon the branch settles against measured metrics, log scores move points or chore-hours, the steward is paid for beating the benchmark, and the commitment premium (outcome minus forecast) is logged -> the quarterly jubilee clears balances.",
+  "why_now": "MetaDAO showed conditional markets can run but saw revenue fall about 70% and pivoted, and the trends brief flags small-group futarchy as largely unbuilt. Kalshi and Polymarket volume and surging parlays have made conditional bets a mass-market idea, while metric APIs (Stripe, PostHog, Plaid) make passive, non-self-reported settlement cheap for small groups.",
+  "mvp": "90 days. Weeks 1-4: a Slack bot for 10 startups with sealed forecast rounds, log scoring, and Stripe and PostHog metric connectors. Weeks 5-8: the steward mechanic, weekly practice questions, and a WhatsApp beta for 30 households paying in chore-hours with a binary pulse. Weeks 9-12: measure repeat decisions, calibration and reported conflict. Kill metrics: under half of teams post a second decision within 30 days, or families report more conflict.",
+  "stack": "Slack Bolt app and WhatsApp Business API bot; Stripe, PostHog, Plaid and Google Calendar connectors; a scoring engine for log scoring, mean log-odds pooling, base-rate benchmarks and binary robust Bayesian Truth Serum; Postgres.",
+  "business_model": "Teams pay about $3 per seat per month, priced like Geekbot; households get a free tier, since household apps monetize poorly. Points are never convertible to money or bonuses, avoiding gambling and payroll questions.",
+  "risks": [
+    "Groups make too few big decisions to form a habit once novelty fades",
+    "Traders can move the outcome; mitigated by stewardship, passive metrics and capping the self-reported pulse",
+    "Chore debt as a tool of coercive control; mitigated by the quarterly jubilee, no negative balances for minors and one-tap dissolution",
+    "Goodhart effects such as pulling MRR forward; mitigated by pairing each metric with a lagging guard",
+    "Information asymmetry: whoever holds the bank login or the data may dominate forecasts",
+    "Peer-prediction scoring breaks down if a family coordinates its pulse reports",
+    "Relationship harm when 'the app decided' replaces conversation"
+  ],
+  "moonshot": "A map of which decisions are forecastable. Ten years of commitment premiums across a million teams and households show which decisions are settled by foresight and which by someone deciding to win them. Co-ops, school boards and municipal budgets then send forecastable choices to markets and will-driven ones to stewards, and futarchy grows from the kitchen up rather than from the nation-state down.",
+  "best_line": "The member who priced the winning branch lowest becomes its steward: 'disagree and commit', with a price on it."
+}

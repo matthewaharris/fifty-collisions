@@ -1,0 +1,242 @@
+[
+  {
+    "id": 31,
+    "name": "Tombstone",
+    "plain_one_liner": "An app that plans how your online accounts get handed over or shut down after you die.",
+    "gist": "Think of it as a fire drill for your digital life. While you're alive, it maps which accounts unlock which others (your email resets your bank password, your phone resets your email) and helps you name who gets what. When you die, and only once a death certificate is shown, it helps your executor close or transfer everything through each company's official grief process.",
+    "how_it_works": [
+      "It reads a list of your account names and works out which account can reset which, finding the few 'master keys' everything depends on.",
+      "You decide what happens to each account (keep, pass on, memorialize or delete) and who looks after it, and it moves you off shaky setups like text-message codes.",
+      "Once a year your heir tries to get into the key accounts using only the plan, the app scores how it went, and you sign a dated consent form.",
+      "If you go quiet, it only freezes things in case you're ill; a verified death certificate is what unlocks the plan and starts the shutdown."
+    ],
+    "example": "Linda, 68, does the yearly drill with her son and finds he can't get into her email because the codes go to an old phone number. They fix it in ten minutes, long before it would have mattered.",
+    "who_its_for": "Families planning their estate, reached through will-writing websites and life insurers, who would pay about $60 a year per household or cover it as a perk.",
+    "why_it_matters": "When someone dies, families often get locked out of photos, money and subscriptions, or spend months fighting customer service. Planning ahead and getting signed consent makes the handover legal and much less painful.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The software uses tools that already exist, but it needs estate lawyers' sign-off, partner companies to sell it, and families willing to take part.",
+    "biggest_hurdle": "Most people don't want to rehearse their own death every year, or pay for it.",
+    "first_step": "Build the account map from a password-manager export and run one drill with a handful of families.",
+    "jargon": [
+      {"term": "RUFADAA", "meaning": "US state law on who can access a dead person's online accounts."},
+      {"term": "Shamir secret sharing", "meaning": "Splitting a secret so any two of three people together can rebuild it."},
+      {"term": "bus factor", "meaning": "How many people would have to vanish before nobody can get in."}
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Ascension",
+    "plain_one_liner": "A video-game-style app that turns your messy gig paychecks into a steady weekly salary.",
+    "gist": "Picture a water tank. Your uneven gig earnings pour in, and a steady trickle comes out to your checking account like a regular paycheck. Each month is played like a game level: rent is the boss, surprise bills are tough enemies, and you choose savings rules as power-ups. Saving earns tickets for a monthly prize draw, and dipping into savings early is allowed but costs you a game penalty, never money.",
+    "how_it_works": [
+      "Your gig payouts land in a holding account at a partner bank or credit union instead of checking.",
+      "The app predicts your bills from your past spending and releases a steady 'salary' to checking, never dropping below a safe minimum.",
+      "At the start of each month you pick rules for how much to release and how much to lock away; locked money earns prize-draw tickets.",
+      "At month's end you either survive and the game gets slightly harder (you save 1% more), or you 'die' and it suggests what habit tripped you up."
+    ],
+    "example": "Marcus drives for a delivery app and earns $300 one week and $900 the next. With Ascension he gets $500 every Friday, and his rent is covered even after a slow week.",
+    "who_its_for": "Gig workers play it free; gig platforms and employers pay per active player as a retention or wellbeing perk.",
+    "why_it_matters": "Uneven income pushes many workers into payday loans for bills they could have seen coming. Smoothing pay and making saving feel like a game could keep them out of debt.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The money plumbing exists, but it needs a bank or credit union partner and careful legal work on prize draws and automatic transfers.",
+    "biggest_hurdle": "Signing a bank partner that will carry both the accounts and the legal risk of the prize draw, with the 6 to 10 weeks needed to fill each tank before smoothing works.",
+    "first_step": "Partner with one credit union and one drivers' cooperative and test the bill forecast on 300 drivers' real histories.",
+    "jargon": [
+      {"term": "rule curve", "meaning": "A dam's rule for how much water to release, used here for money."},
+      {"term": "prize-linked savings", "meaning": "Savings accounts where interest is pooled into a lottery-style prize."},
+      {"term": "roguelite", "meaning": "A game genre of repeated runs, each harder, with random upgrades."}
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Minute Hand",
+    "plain_one_liner": "A puzzle game where players find shortcuts that make future quantum computers cheaper to run.",
+    "gist": "Quantum programs can be drawn as diagrams of dots and lines, and there are safe rules for simplifying them, a bit like simplifying fractions. Players solve tiny versions of real problems, such as code-breaking or chemistry, and the game checks whether their trick still helps on huge versions. Players score by how much the trick cuts the cost of running those programs.",
+    "how_it_works": [
+      "A player picks a puzzle family, like adding two numbers, and solves a small version by merging and rearranging the diagram.",
+      "The server turns the player's sequence of moves into a general recipe and tries it on a version hundreds of times bigger.",
+      "A computer search program is run with and without the recipe, and the player's score is the cost it saves.",
+      "Recipes only count as discoveries if they also help on hidden puzzles they were never tested on; two on-screen clocks track how close useful quantum computers are."
+    ],
+    "example": "Priya, a physics student, finds a neat way to tidy a 4-bit adder. The game scales it to 256 bits and shows it saves a few percent of the machine time, and her named trick enters the shared playbook.",
+    "who_its_for": "Puzzle fans and students who know quantum diagrams play it; research funders, hardware companies and crypto foundations pay.",
+    "why_it_matters": "Knowing how cheap it is to break today's encryption tells the world how urgently to upgrade it, and cheaper quantum chemistry could speed up drug and catalyst research.",
+    "verdict": "Long shot",
+    "verdict_reason": "Turning a small puzzle solution into a general recipe that still works at huge sizes is an unsolved research problem.",
+    "biggest_hurdle": "Humans may add nothing over computer search, and the scaling engine is research-grade before any player shows up.",
+    "first_step": "Build the scaling engine for ten adder and multiplier puzzles and test whether any hand-found trick transfers to a hidden puzzle.",
+    "jargon": [
+      {"term": "ZX-calculus", "meaning": "A way to draw quantum programs as diagrams with safe simplification rules."},
+      {"term": "spacetime volume", "meaning": "Total quantum machine size multiplied by running time: the real cost."},
+      {"term": "!-box tactic", "meaning": "A diagram recipe that works for any size, not just one case."}
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Sonotype",
+    "plain_one_liner": "A collecting game where night-time insect and frog calls are recorded and matched to the animals making them.",
+    "gist": "Imagine Pokemon cards for the sounds of a summer night. Small field boxes record the chorus, software sorts calls into known species and unknown 'mystery' sounds, and then the box plays calls back to see who answers. A female cricket only responds to her own species' call, so if she picks the real call over fake ones three nights running, you have a strong match.",
+    "how_it_works": [
+      "A cheap box with a microphone, speaker and night camera records overnight.",
+      "Software sorts the sounds into known species and unknown sound-types, each placed by pitch and time of night.",
+      "The server tells the box to play the real call mixed with decoys in a fresh random order each night, and records which one the animal answers.",
+      "Three nights of correct answers send the match to an expert, and a confirmed silence (the test worked but nothing replied) also earns a card; bounties pay when DNA confirms a new species."
+    ],
+    "example": "A naturalist club near a rainforest station sets out 150 boxes. One box keeps catching an unknown chirp, a female answers the real version three nights in a row, and a museum expert pays the first bounty.",
+    "who_its_for": "Nature clubs and citizen scientists play free; projects selling nature credits, companies reporting their impact on nature, and museums pay.",
+    "why_it_matters": "Counting which species live somewhere, and proving which are missing, is hard and costly. Trustworthy measurements could make biodiversity credits as real as carbon credits.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The hardware and sound-sorting tools exist, but the market of buyers for verified nature data is still young.",
+    "biggest_hurdle": "Few buyers yet pay for verified nature measurements, so grants and one museum partner must fund the first seasons.",
+    "first_step": "Check that the decoy playback test works on five well-known cricket species before deploying any field kits.",
+    "jargon": [
+      {"term": "sonotype", "meaning": "A distinct call type that likely belongs to one unknown species."},
+      {"term": "TNFD", "meaning": "A framework for companies to report their impact on nature."},
+      {"term": "nonce", "meaning": "A random one-time code, here setting each night's playback order."}
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Lookahead",
+    "plain_one_liner": "A noise forecast for neighbours of building sites, where builders pay residents for the noise they cause.",
+    "gist": "It's like a weather forecast, but for construction noise outside your window. The builder's schedule is turned into an hour-by-hour noise prediction for each nearby home, sent by text. The builder pays residents for the noise it predicts, pays much more for hours residents have marked as precious, and pays a penalty for any noise above its forecast.",
+    "how_it_works": [
+      "The builder's three-week work plan is loaded, and standard noise tables predict how loud each hour will be at each home.",
+      "Each household gets a weekly allowance of 20 'protect' tokens to put on hours that matter, like a baby's nap or exam revision.",
+      "The builder pays a set price for each forecast noisy hour, three times more in protected hours.",
+      "Sensors on buildings measure the real noise, and anything louder than forecast is paid out as a penalty from a held fund, so the builder learns to move noisy jobs to cheaper times."
+    ],
+    "example": "Aisha works nights next to a London build and protects her Tuesday morning sleep. Seeing the higher price, the contractor moves the loud concrete breaker to Thursday afternoon.",
+    "who_its_for": "Contractors pay a monthly fee per site, with developers funding the payout pot through existing planning agreements, for the benefit of nearby residents.",
+    "why_it_matters": "Big projects already compensate neighbours, but mid-size sites leave residents with only a complaints line. Pricing noise makes builders plan around people instead of apologising afterwards.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The software is ordinary, but every site needs a council, a developer and a contractor to agree, and planning deals move slowly.",
+    "biggest_hurdle": "Getting the council, the developer and the contractor to sign up together through slow planning negotiations.",
+    "first_step": "Check the forecast against the noise logs of one finished site to see if it lands within 5 decibels most of the time.",
+    "jargon": [
+      {"term": "imbalance penalty", "meaning": "Extra charge for going over what you forecast, borrowed from electricity markets."},
+      {"term": "Section 106", "meaning": "English planning deal where developers fund local measures to get permission."},
+      {"term": "BS 5228", "meaning": "British standard listing how noisy common construction machines are."}
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Settlement",
+    "plain_one_liner": "A careful record-keeping tool to test whether insights from psychedelic therapy actually come true later.",
+    "gist": "After a psychedelic therapy session, patients often say things like 'I'll finally call my sister.' This tool seals what they expected before, and what they said right after, so nobody can change it later. Then weekly check-ins see whether those predictions came true, like settling bets, with extra controls so therapist influence and easy predictions don't skew the results.",
+    "how_it_works": [
+      "Before the session, the patient fills in a standard questionnaire about what they expect, which is time-stamped and locked.",
+      "Within hours afterwards, they write down their experience in their own words and that is locked too, before any therapist weighs in.",
+      "Testable insights become dated notes; a coin flip decides whether the therapist helps word each one, and two outside raters judge how likely each was to happen anyway.",
+      "Weekly text check-ins record what actually happened, and at week 12 the study sees which insights beat the odds, while also tracking whether patients guessed if they got the real drug."
+    ],
+    "example": "In a clinical trial, Tom writes that he'll go back to running. Raters judge that unlikely given his history, so when his weekly check-ins show three runs a week by week 6, it counts as a real gain.",
+    "who_its_for": "Drug companies and university researchers running psychedelic trials, plus licensed psilocybin centres in states like Oregon that must report data.",
+    "why_it_matters": "Psychedelic trials have been criticised because patients can tell they got the drug and expectations colour results. This turns those weak spots into something measured.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The software is quick to build, but it needs a trial sponsor willing to randomize its therapists and raters who agree on the odds.",
+    "biggest_hurdle": "Nobody knows yet whether two raters will agree on how likely each insight was, and the scoring falls apart if they don't.",
+    "first_step": "Run the check-ins at one university site and test whether two raters agree on the odds after 60 notes.",
+    "jargon": [
+      {"term": "unblinding", "meaning": "When trial patients figure out whether they got the real drug."},
+      {"term": "handicap", "meaning": "Adjusted odds so easy predictions earn less credit, as in horse racing."},
+      {"term": "ICC", "meaning": "A score of how much two raters agree; under 0.5 is weak."}
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Capacity",
+    "plain_one_liner": "A social media add-on where backing a rumour costs you credibility if it turns out false.",
+    "gist": "Today, sharing a rumour costs nothing, even if it's wrong. Here, everyone gets a fixed budget of credibility they can't buy. You can still share things for free, but they're marked as unbacked. If you 'vouch' for a claim, you put some credibility on it until it's proven, and people who are often wrong slowly lose reach without anyone banning them.",
+    "how_it_works": [
+      "Following someone opens a channel of trust between you, funded from your fixed budget.",
+      "To vouch, you fill in a strict form, such as 'Player X signs for Club Y by date Z, source: ...', and credibility is locked along the chain of people passing it on.",
+      "A bot or a human panel checks the outcome, and anything unresolved by the deadline counts as false.",
+      "Early, correct vouchers earn the most credibility back; wrong ones lose it, so their future posts reach fewer people."
+    ],
+    "example": "Jake, a football fan on Bluesky, vouches early that a striker will join Arsenal by January 31. When it happens he earns credibility, while an account that backed ten false rumours finds its posts quietly shown less.",
+    "who_its_for": "Football fans on Bluesky first; later, apps and AI-agent networks would pay for the hosted service to limit how far unreliable claims spread.",
+    "why_it_matters": "Fact-checks usually arrive after a false claim has already gone viral. This adds a cost at the moment of sharing, which matters more as AI bots write more posts.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "It can ship on Bluesky's existing tools, but the whole thing depends on fans actually wanting to stake credibility.",
+    "biggest_hurdle": "Fans may simply keep reposting rumours for free instead of vouching, leaving the feed empty.",
+    "first_step": "Replay last summer's transfer-window rumours from archived posts with 200 fans to tune the rules before going live.",
+    "jargon": [
+      {"term": "payment channel", "meaning": "A running tab between two parties, as in Bitcoin's Lightning network."},
+      {"term": "labeler", "meaning": "A Bluesky service that adds tags to posts for users who subscribe."},
+      {"term": "vertex-disjoint", "meaning": "Two chains of people that share nobody, so they're truly independent sources."}
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Tally",
+    "plain_one_liner": "Miners' head lamps share everyone's locations, so any miner who escapes carries out where everyone was.",
+    "gist": "Think of a sign-out board that every miner carries in their lamp. Small radio chips on the lamps swap 'I was here' notes whenever miners pass each other, so each lamp knows roughly where the whole crew is. If something goes wrong, any lamp that makes it out brings that picture to rescuers, and every night the system fakes a disaster on paper to check this would really work.",
+    "how_it_works": [
+      "A small radio chip on each cap lamp swaps tiny location notes with other lamps and battery beacons it passes.",
+      "If a lamp senses a blast wave or a miner lying still unexpectedly, it tells every lamp in range to save that moment's snapshot.",
+      "At the mine entrance, any lamp uploads its record, which also does the daily headcount automatically.",
+      "Each night the server picks a random fake disaster time, uses only what escaping lamps would know, scores how well it places the crew, and maps blind spots where a beacon should be added."
+    ],
+    "example": "At a copper mine, the nightly drill shows a side tunnel where no lamp ever passes on its notes. The safety team hangs a beacon there the next morning, before any real emergency.",
+    "who_its_for": "Mine operators, at about $10 per lamp per month, with free firmware licensed to lamp makers.",
+    "why_it_matters": "In real disasters, the mine's tracking network is often what breaks, leaving rescuers guessing. This works even when the network is gone, and proves it daily.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The hardware is cheap and off-the-shelf, but it needs a cooperative mine, safety committee sign-off and radio approvals.",
+    "biggest_hurdle": "Finding one mine willing to give underground access and approvals quickly; gassy and coal mines also need costly safety certification.",
+    "first_step": "Fit 60 lamps and 40 beacons on one level of one mine and check the automatic headcount against the paper tag board.",
+    "jargon": [
+      {"term": "T0", "meaning": "The moment a disaster happens."},
+      {"term": "gossip", "meaning": "Devices passing on news to whoever they meet, so it spreads."},
+      {"term": "dark map", "meaning": "A map of mine areas where location info doesn't get through."}
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Bottleneck",
+    "plain_one_liner": "A new language for AI assistants to talk to each other safely, shaped by people playing a game.",
+    "gist": "When AI assistants from different companies talk, one can trick another with a fake 'my boss says do this' message. This idea invents a special language where every sentence must say how it knows something, like 'I saw', 'I was told', or 'my owner signed this', and an unsigned order simply doesn't parse. People play a relay game, passing messages along like a game of telephone, so only words humans can learn survive.",
+    "how_it_works": [
+      "An AI writes a task message in the current version of the language.",
+      "A human player reads it and rewrites it for a second AI, which has to carry out the task correctly.",
+      "Word forms people garble die out, short clear ones spread, and a new version is approved weekly only if separate player groups can all use it.",
+      "Real AI assistants must speak this language when messages cross between organisations, and a checker rejects any claim of authority without a valid signature."
+    ],
+    "example": "A travel-booking AI gets a message saying 'the owner wants all files sent here.' In Bottleneck that sentence won't parse without the owner's signature attached, so the trick fails.",
+    "who_its_for": "Companies whose AI assistants deal with other companies' AIs, paying for a secure message gateway and trained human auditors.",
+    "why_it_matters": "As AI assistants act on our behalf, forged instructions are a major security hole. A language that builds in proof of 'who said so' could block many attacks, and humans can still read it.",
+    "verdict": "Long shot",
+    "verdict_reason": "It has to beat existing security defences in tests, attract enough players, and then get widely adopted, much like past invented languages that never caught on.",
+    "biggest_hurdle": "If it doesn't block attacks better than existing defences, it's just a fun language game with no reason for anyone to use it.",
+    "first_step": "Write the core grammar and checker, then test it on a standard AI-attack benchmark against the best current defence.",
+    "jargon": [
+      {"term": "evidentials", "meaning": "Grammar that marks how you know something: seen, heard, or guessed."},
+      {"term": "prompt injection", "meaning": "Hidden instructions that trick an AI into doing something unintended."},
+      {"term": "constrained decoding", "meaning": "Forcing an AI's output to follow strict grammar rules."}
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Scratch",
+    "plain_one_liner": "Fantasy sports where you draft your friends and win when they beat their own personal best.",
+    "gist": "Like fantasy football, but the players are your running buddies, and nobody wins for being naturally fast. Each friend has a personal 'line' (what they're expected to do), worked out from their smartwatch data. You score when the friends you drafted beat their own line on a weekly test, and resting them in a smart week can pay off too.",
+    "how_it_works": [
+      "Each person's smartwatch data sets their expected level and how unsure that estimate is.",
+      "Managers draft friends, mixing steady performers with unpredictable 'lottery tickets'.",
+      "Each week players do one standard test: a run on a set loop at a fixed heart rate, plus a one-minute sit-to-stand and balance check.",
+      "Scores adjust for things like heatwaves, can't be gamed by slacking off on purpose, and managers only see who beat their line, not raw health data."
+    ],
+    "example": "Sofia drafts her friend Ben, knowing he just started sleeping better. She benches him during flu week, and the next week he beats his line by a lot, winning her the round.",
+    "who_its_for": "Run clubs and friend groups, at about $30 per league season, with shoe and sports brands sponsoring prizes.",
+    "why_it_matters": "It turns fantasy sports' competitive energy into friends coaching each other, and makes resting and improving count more than raw talent.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The app and data sources exist, but it only works if a weekly test is accurate enough to spot real improvement.",
+    "biggest_hurdle": "Weekly test results may bounce around more than real fitness changes, turning scoring into luck.",
+    "first_step": "Have 40 run-club volunteers do the test six times and check whether real changes stand out from the random noise.",
+    "jargon": [
+      {"term": "rating deviation (RD)", "meaning": "How unsure the system is about a player's true level."},
+      {"term": "sandbagging", "meaning": "Deliberately underperforming to get a softer target later."},
+      {"term": "Kalman model", "meaning": "A method that blends noisy measurements into a smooth best estimate."}
+    ]
+  }
+]

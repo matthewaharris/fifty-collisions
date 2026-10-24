@@ -1,0 +1,332 @@
+[
+  {
+    "id": 41,
+    "name": "Share-Out",
+    "plain_one_liner": "Drought insurance sold to a whole village savings group, which decides itself how to split the payout.",
+    "gist": "Think of a neighbourhood savings club buying one weather insurance policy for everyone instead of each farmer buying their own. If satellites and a local weather station show the rains failed, money lands in the group's mobile wallet automatically, and the members divide it among themselves at their regular meeting. If the weather data misses a real disaster, the group can challenge it, but only by putting some of next year's savings on the line.",
+    "how_it_works": [
+      "A village savings group buys one policy that pays out when measured rainfall drops below a set level.",
+      "If it pays, members each privately write down their losses; the cards are counted in public and nobody can claim more than their share, so neighbours police each other.",
+      "If the rain data says 'fine' but crops died, the group appeals by pledging part of next year's savings; nearby groups can back them only by pledging too.",
+      "Satellite images and crop photos settle the appeal, and every result goes on a public map showing where the weather data tends to be wrong."
+    ],
+    "example": "Wanjiku's savings group in a Kenyan county loses most of its maize to a dry spell the satellite didn't catch. They pledge part of next year's savings to appeal, satellite radar confirms the damage, and the payout comes from a reserve built into the policy.",
+    "who_its_for": "Village savings groups and the NGOs that run them, with insurers carrying the risk and governments or donors usually subsidising the premiums.",
+    "why_it_matters": "Weather-triggered insurance is cheap to run but often misses real losses, so farmers stop renewing; letting neighbours split the money and challenge misses could keep them covered.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "All the parts already exist (mobile money, free satellite data, digital savings ledgers), but it hinges on an insurer partner and on whether groups actually renew.",
+    "biggest_hurdle": "The satellite check on appeals may be too blind (clouds, tiny mixed plots) to tell honest groups from lying ones.",
+    "first_step": "Run one 'practice' season with 30 Kenyan groups using real loss cards and appeals but no real money, and see how often the satellite check agrees with what farmers report.",
+    "jargon": [
+      {
+        "term": "parametric policy",
+        "meaning": "Insurance that pays automatically when a measurement, like rainfall, crosses a set line."
+      },
+      {
+        "term": "basis risk",
+        "meaning": "The chance the measurement says 'fine' even though you actually suffered a loss."
+      },
+      {
+        "term": "share-out",
+        "meaning": "The yearly meeting where a savings group divides its pooled money among members."
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Graveyard Shift",
+    "plain_one_liner": "A citizen-science game where hobbyists watch and listen to satellites to declare which ones are dead or alive.",
+    "gist": "Thousands of satellites circle Earth, and nobody publicly tracks which ones still work. In this game, players use a cheap kit to film sunlight flashing off satellites at dusk and to tune in to their radio signals. By combining flashes seen from different cities, the system works out how a dead satellite is spinning, and two independent witnesses are needed before declaring it dead or alive.",
+    "how_it_works": [
+      "A player adopts a slice of the sky and buys an $89 kit: a phone mount for filming plus a small radio receiver.",
+      "At twilight they film glints off passing satellites; at any hour they listen for the satellite's radio 'heartbeat'.",
+      "Clips from cities along the night line are stitched together to work out each object's spin and shape, like timing a lighthouse.",
+      "Once two witnesses using different methods agree, the satellite's owner gets 72 hours to respond before the verdict goes public."
+    ],
+    "example": "A player in Lisbon catches three flashes from an old rocket stage and one in Kyiv catches two more; together they pin down that it tumbles every 40 seconds, and with no radio signal heard on a scheduled pass, it is ruled dead.",
+    "who_its_for": "Space hobbyists and radio amateurs play for credit; collision-warning companies, space insurers and regulators pay for the data.",
+    "why_it_matters": "Satellites dodge each other hundreds of thousands of times a year, and knowing whether the other object can still move is essential for that, yet nobody publishes it.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "Listening for radio signals works today through an existing open ground-station network; timing phone-video flashes precisely enough is the unproven part.",
+    "biggest_hurdle": "Phone video from different cities may not be precise enough to recover a satellite's spin, which would leave the 'eye' half of the game as decoration.",
+    "first_step": "Test whether phone footage from two cities can recover the known spin rate of the old ENVISAT satellite to within 1%.",
+    "jargon": [
+      {
+        "term": "phase-connected",
+        "meaning": "Stitching separate timing observations together to work out one steady rhythm."
+      },
+      {
+        "term": "conjunction-assessment",
+        "meaning": "Checking whether two objects in orbit might collide."
+      },
+      {
+        "term": "light curve",
+        "meaning": "How an object's brightness changes over time as it spins."
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Fountain Swap",
+    "plain_one_liner": "Pension funds that lose money when people live longer invest in anti-ageing drugs to cover that cost.",
+    "gist": "Pension funds and insurers get poorer every time people live longer, because they pay out for more years. Fountain Swap lets them fund anti-ageing drug companies in exchange for a cut of every dose sold, so if a real cure for ageing arrives, the same breakthrough that costs them money also pays them. A careful test, borrowed from how sport catches doping, decides whether a drug truly slowed ageing or just gamed one lab measurement.",
+    "how_it_works": [
+      "Insurers and pension funds pay into a shared pot.",
+      "Anti-ageing biotech companies draw money from the pot and promise royalties on each dose, but only if their trial beats the control group.",
+      "Before the trial, a public random-number source is locked in to pick which ageing measure will decide success, so no company can tune its drug to fool one test.",
+      "A side product, the Fountain Index, publishes estimates of how much a change in a 'biological age' test is really worth in extra years of life."
+    ],
+    "example": "A UK pension fund worried about retirees living to 100 puts money into the pool; years later a rejuvenation drug passes its mid-stage trial, and the fund earns a small royalty on every dose sold worldwide.",
+    "who_its_for": "Longevity reinsurers first, then life insurers and pension trustees; biotech companies are the ones receiving the money.",
+    "why_it_matters": "It turns the institutions that fear longer lives into backers of anti-ageing research, and because they're paid per dose, they want cures to be cheap and widely used.",
+    "verdict": "Moonshot",
+    "verdict_reason": "The first real payout depends on anti-ageing trials that may be five or more years away, plus a reinsurer willing to go first and regulators accepting a new kind of security.",
+    "biggest_hurdle": "Time: nothing can settle until rejuvenation drugs reach mid-stage human trials, which could be years off.",
+    "first_step": "Use US health survey data that links blood tests to later deaths to publish a first estimate of what a 'biological age' point is worth in survival.",
+    "jargon": [
+      {
+        "term": "epigenetic clocks",
+        "meaning": "Lab tests estimating 'biological age' from chemical tags on your DNA."
+      },
+      {
+        "term": "q-forwards",
+        "meaning": "Financial contracts that pay out based on how many people die in a population."
+      },
+      {
+        "term": "non-dilutive funding",
+        "meaning": "Money given without the company handing over ownership shares."
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Seventeen Moments",
+    "plain_one_liner": "A card game where your habits slowly take over your mind, based on Buddhist psychology.",
+    "gist": "It's a card-battling video game, like Slay the Spire, where your 'deck' is your mind. Your mind has a fixed number of slots, and every card you play comes back later and replaces an older one, so habits crowd each other out rather than piling up. Good cards like kindness have look-alike evil twins, like clingy attachment, and the more you lean on a good card, the more likely you're secretly holding the fake.",
+    "how_it_works": [
+      "Something happens in the game world, and your habit cards play themselves automatically unless you spend scarce 'attention' to stop or redirect them.",
+      "Every card you play goes into a waiting line and, a few turns later, overwrites the oldest card in your 52-slot mind.",
+      "Each good card has a counterfeit twin, and the chance of drawing the counterfeit grows the more you play the original; the game shows you that risk.",
+      "When you die, the last card you played decides where your next run begins, and the death screen reveals any fakes you were holding."
+    ],
+    "example": "Sam spams the 'loving-kindness' card because it keeps winning fights, but halfway through the run it has quietly turned into 'attachment', and when a painful event hits he has nothing left to respond with.",
+    "who_its_for": "Fans of roguelite deckbuilder games, who'd pay about $20 on Steam and later Switch.",
+    "why_it_matters": "It teaches a real model of how the mind works through how the game plays, not through lectures, and offers fresh mechanics in a hugely popular genre.",
+    "verdict": "Buildable now",
+    "verdict_reason": "It's a game in an established genre made with standard tools, so the main question is design balance, not technology.",
+    "biggest_hurdle": "Standing out in a crowded genre while not overwhelming new players with 52 mental factors and unfamiliar Pāli terms.",
+    "first_step": "Build a paper prototype and a bot that plays millions of games to check that no single card ends up dominating the mind.",
+    "jargon": [
+      {
+        "term": "Abhidhamma",
+        "meaning": "An ancient Buddhist text that maps the mind into specific mental factors."
+      },
+      {
+        "term": "near-enemy",
+        "meaning": "A bad quality that looks like a good one, like pity posing as compassion."
+      },
+      {
+        "term": "sati",
+        "meaning": "Pāli word for mindfulness; here, the scarce attention you spend to interrupt habits."
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Repro",
+    "plain_one_liner": "A filter that only lets AI bug reports reach open-source maintainers once they've proven the bug is real.",
+    "gist": "Open-source projects are drowning in junk security reports written by AI, so some have shut down their bug bounties. Repro has maintainers plant 'tripwires' in a safe test copy of their software, marking things that must never happen, like a fake password leaking. A reporter, usually an AI agent, pays a small deposit and must actually trigger a tripwire before any human reads the report; fakes lose their deposit.",
+    "how_it_works": [
+      "The maintainer lists what must never happen in their project, and Repro turns each item into a planted flag, like a fake secret key, inside a sealed sandbox.",
+      "AI agents hunt for bugs and pay a small deposit (around $5) to submit a report.",
+      "The report's demo must trip a flag against the real release; if it can't, the report is thrown out unread and the deposit goes to the maintainer.",
+      "The finder is paid, a different AI writes the fix, and the maintainer is paid $50–150 to review it from a pool funded by companies that use the software."
+    ],
+    "example": "An AI agent claims a popular Python library can be tricked into reading private files; its demo actually grabs the planted fake file in the sandbox, so the maintainer gets a short, verified report and a ready-made patch to review for $100.",
+    "who_its_for": "Open-source maintainers use it; companies that depend on that software and need proof of security checks under EU rules are meant to pay.",
+    "why_it_matters": "It cuts the AI-generated spam that's burning out volunteer maintainers while still letting real AI-found bugs through, and pays maintainers for their review time.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "Every technical part exists today, but getting companies to actually pay for open-source security has failed before.",
+    "biggest_hurdle": "Persuading downstream companies to fund the payment pools, the step that sank earlier efforts like Tidelift.",
+    "first_step": "Build flag kits for C and Python and sign up 10 well-known open-source projects with grant money to test the report filter.",
+    "jargon": [
+      {
+        "term": "threat model",
+        "meaning": "A written list of the bad things that must never happen to a system."
+      },
+      {
+        "term": "capture-the-flag",
+        "meaning": "A hacking contest where you prove a break-in by grabbing a hidden secret."
+      },
+      {
+        "term": "sandbox",
+        "meaning": "A sealed-off test environment where code can't harm anything real."
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Mound",
+    "plain_one_liner": "A mud building that small robots keep reshaping over time, growing toward where people actually spend time.",
+    "gist": "Picture a termite mound for people: an earth building tended by a crew of small resident robots, with no final blueprint. The robots add hardened soil where people gather and thin out the walls in unused spots, the way bones rebuild themselves where they're stressed. Safety comes from only allowing arch-and-dome shapes that stand by pure squeezing, so even weak earth holds up, and the city approves the growth rules rather than a fixed design.",
+    "how_it_works": [
+      "An architect writes a signed set of growth rules instead of drawing a final building.",
+      "Sensors pick up where people spend time (body heat, breath, footsteps), and the robots add soil hardened by bacteria there while slowly thinning unused parts.",
+      "Each change is a small dig-and-refill, and embedded sensors block any change that would start to crack a wall open.",
+      "The city certifies, by computer simulation, that every possible shape the rules can grow will stay standing, then a subscription keeps the robots working."
+    ],
+    "example": "A grain store in the Sahel starts as a simple earth vault; over a few seasons the robots thicken the walls by the busy loading door and let a neglected back corner shrink.",
+    "who_its_for": "First customers would be grain stores and livestock shelters in the Sahel, paying a tending subscription per square metre.",
+    "why_it_matters": "It could make cheap, cool, locally built shelter that adapts to how people use it, and it challenges the idea that buildings must be finished and frozen.",
+    "verdict": "Moonshot",
+    "verdict_reason": "Robots that survive years of dust and rain, and bacteria-hardened soil at building scale, are both unproven, and no regulator can yet approve a rule set instead of a drawing.",
+    "biggest_hurdle": "Keeping a swarm of small robots running outdoors for years through dust, rain, wear and dead batteries.",
+    "first_step": "Build one full-size earth arch tended by 10 robots and check it survives 100 dig-and-refill cycles without cracking.",
+    "jargon": [
+      {
+        "term": "MICP",
+        "meaning": "Using bacteria to grow natural cement that hardens loose soil."
+      },
+      {
+        "term": "funicular",
+        "meaning": "A shape, like an arch, that stands purely by compression with no bending."
+      },
+      {
+        "term": "invariant",
+        "meaning": "A rule that must stay true no matter how things change."
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Piepowder",
+    "plain_one_liner": "A fast, cheap court for disputes when AI shopping agents mess up, using other AIs and ordinary jurors.",
+    "gist": "AI agents are starting to buy things for people, and when one makes a bad purchase over a few cents, no real court will hear the case. Piepowder replays the exact moment of the disputed decision in front of twelve different AI models and asks what they would have done. If they clearly agree, the case closes for pennies; if they split, panels of ordinary people decide, and those rulings become test cases every AI must pass.",
+    "how_it_works": [
+      "Payments made by agents are held for 72 hours, with a sealed record of what the agent saw when it decided.",
+      "If someone disputes a purchase, twelve AIs from different companies replay that one decision from the sealed record.",
+      "A clear majority settles it and the loser pays; a split goes to two separate juries of ordinary people.",
+      "When both juries agree, the ruling becomes a test all agents must pass, and paid testers plant fake cases to check the AI panel isn't just copying common bad habits."
+    ],
+    "example": "Priya's shopping agent buys a non-refundable flight after reading a hidden instruction on a website; the replay panel splits, two crowd juries both side with Priya, and 'don't obey instructions hidden in web pages' becomes a test every agent must now pass.",
+    "who_its_for": "Payment processors and agent marketplaces that join the network, with AI vendors and insurers paying to license the resulting test cases.",
+    "why_it_matters": "As AI agents spend real money, people need a way to resolve tiny disputes fairly, and the rulings slowly build a shared standard for how agents should behave.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The replay and crowd-jury tech is doable now, but it needs a payment company willing to hold funds for 72 hours and legal acceptance of crowd juries.",
+    "biggest_hurdle": "Convincing a payment provider to delay settlement for 72 hours on systems designed to be instant and final.",
+    "first_step": "Replay known AI agent failures from a public test set in front of 12 models and online juries, and check whether paired juries agree more than chance.",
+    "jargon": [
+      {
+        "term": "reasonable-agent standard",
+        "meaning": "The benchmark of what a sensible agent should have done in a situation."
+      },
+      {
+        "term": "moot cases",
+        "meaning": "Practice cases planted to test the system, not real disputes."
+      },
+      {
+        "term": "precedent",
+        "meaning": "A past ruling that later cases must follow."
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Taper",
+    "plain_one_liner": "Software that runs a fair queue at busy electric-car chargers and rewards drivers who give up their spot.",
+    "gist": "An EV battery charges fast at first and then slows to a crawl near full, like filling a glass that needs careful pouring at the top. When a charging station is full, Taper runs a virtual line so only the next car in line can plug in. Drivers who keep charging in the slow zone get a nudge and then a fee, while drivers who leave early, or head to a quieter station, earn credits that let them skip ahead next time.",
+    "how_it_works": [
+      "When every charger is busy, drivers join a line through an app, a navigation app, or by tapping a bank card at the kiosk.",
+      "Only the car at the front of the line can start charging.",
+      "Once a car reaches its own slow-charging point, it gets a three-minute reminder and then an idle fee.",
+      "If the line persists, cars still charging fast, or driving toward the busy site, are offered rising credits to leave early or stop somewhere else; credits buy priority at a future busy stop."
+    ],
+    "example": "On a holiday weekend Carlos is at 60% and still charging fast, but six cars are waiting; he accepts a credit to unplug and finish 15 km down the road, then uses it to jump the line on his drive home.",
+    "who_its_for": "Charging-network operators, who pay a monthly fee per charger.",
+    "why_it_matters": "Holiday charging lines are a real pain, and keeping cars moving gets more drivers charged per hour without building new stations right away.",
+    "verdict": "Buildable now",
+    "verdict_reason": "It plugs into existing charger communication standards and open charging software, so the tech is ready; selling it is the hard part.",
+    "biggest_hurdle": "Finding a charging operator willing to let software decide who plugs in next.",
+    "first_step": "Replay a partner operator's past charging logs to measure each car's slowdown point and simulate how much faster the line would move.",
+    "jargon": [
+      {
+        "term": "knee",
+        "meaning": "The point where a car's charging speed drops sharply as the battery fills."
+      },
+      {
+        "term": "OCPP",
+        "meaning": "A standard language chargers use to talk to their management software."
+      },
+      {
+        "term": "middleware",
+        "meaning": "Software that sits between two systems and coordinates them."
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Hans",
+    "plain_one_liner": "A watchdog that checks whether AI 'whale translators' are honest before their output counts as evidence.",
+    "gist": "AI tools that claim to translate whale sounds will soon be quoted in fights over deep-sea mining, and either side could quietly tune a tool to say what it wants. Hans tests these translators the way labs test forensic labs, including secretly slipping in rigged 'ventriloquist' models to see if they get caught. It also gives each whale clan a guardian who 'asks' questions gently, for example by quieting ship traffic on random days and watching how the whales respond.",
+    "how_it_works": [
+      "Any AI translator must first pass blind tests on animals whose calls are already understood, like monkey alarm calls.",
+      "The test set also includes secret, deliberately rigged models, and the accreditor checks that its tests can tell rigged from honest.",
+      "A guardian for each whale clan runs fair experiments, like asking ships to slow down on randomly chosen days, and records how the whales react.",
+      "If the evidence comes back 'we don't know', the company seeking a permit has to prove it won't cause harm, not the whales' side."
+    ],
+    "example": "A deep-sea mining firm presents an AI 'translation' saying whales don't mind ship noise; Hans shows that tool failed accreditation, while its slowdown trials off Dominica show whales calling more on quiet days.",
+    "who_its_for": "A nonprofit funded by fees from labs building these translators, by regulators, by philanthropy, and later by AI labs testing whether their own AIs' claims about feelings can be trusted.",
+    "why_it_matters": "As AI starts speaking for animals, and even for other AIs, someone needs to check that those 'voices' aren't just saying what whoever paid for them wanted.",
+    "verdict": "Long shot",
+    "verdict_reason": "The testing benchmark is buildable now, but legal standing for whale clans and shifting the burden of proof both have to be won in forums that have never granted either.",
+    "biggest_hurdle": "Persuading international regulators to give whale clans a voice and to treat 'we can't tell' as a reason to say no.",
+    "first_step": "Build a public test using known animal calls plus five rigged translator models, and check it can catch the rigged ones.",
+    "jargon": [
+      {
+        "term": "planted ventriloquists",
+        "meaning": "AI models secretly trained to give a chosen 'translation', used as decoys."
+      },
+      {
+        "term": "coda",
+        "meaning": "A short pattern of clicks sperm whales use to communicate."
+      },
+      {
+        "term": "burden of proof",
+        "meaning": "Which side has to prove its case to win."
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Dry Run",
+    "plain_one_liner": "A public test run for new laws where anyone can find loopholes before the law passes.",
+    "gist": "Software companies release beta versions so people can find bugs before launch; Dry Run does that for tax laws. A draft bill is turned into computer code, then anyone, from hobbyists to AI agents, hunts for loopholes and submits step-by-step proof that a trick lowers someone's tax bill. Lawmakers are told privately and must either close each loophole or keep it by a recorded, named vote.",
+    "how_it_works": [
+      "Draft clauses of a bill are translated into computer rules that can calculate tax owed.",
+      "People and AI agents search for setups that cut tax and submit each one as a replayable proof citing the exact wording of the bill.",
+      "Finds are ranked by how much money is at stake and sent privately to the lawmakers' legal drafters.",
+      "Lawmakers fix each loophole or keep it with a named vote; a public scoreboard reveals the trick once it's settled."
+    ],
+    "example": "Before the 2017 US tax law passed, a test like this could have flagged the 'grain glitch' that let farmers who sold to co-ops pay far less tax, which Congress had to patch a year later.",
+    "who_its_for": "Legislatures and tax authorities, with a nonprofit running it on philanthropy and government contracts.",
+    "why_it_matters": "Loopholes cost governments huge sums and are usually found only after a law passes; this finds them first and makes lawmakers publicly own the ones they keep.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "Turning tax law into code already works in several countries, but the real power needs a legislature willing to adopt recorded votes and safe harbours.",
+    "biggest_hurdle": "No legislature has agreed to formally vote on each disclosed loophole, so it may end up as just an outside advisory report.",
+    "first_step": "Code up the 2017 US tax bill as it stood before passing and see if AI agents can find the known grain glitch within 72 hours.",
+    "jargon": [
+      {
+        "term": "Rules as Code",
+        "meaning": "Writing laws as computer programs so they can be calculated and tested."
+      },
+      {
+        "term": "safe harbour",
+        "meaning": "A legal promise that following a certain path won't be penalised."
+      },
+      {
+        "term": "coordinated disclosure",
+        "meaning": "Telling the responsible party about a flaw privately before going public."
+      }
+    ]
+  }
+]

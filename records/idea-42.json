@@ -1,0 +1,27 @@
+{
+  "id": 42,
+  "name": "Graveyard Shift",
+  "tagline": "A public coroner for low Earth orbit: players time satellite glints and listen for beacons, and two witnesses on two senses pronounce each object dead or alive.",
+  "kind": "game",
+  "tier": "bold",
+  "innovation": 6,
+  "feasibility": 5,
+  "domains": ["space debris", "satellite tracking", "citizen science", "gaming", "pulsar timing", "commons governance", "security disclosure", "amateur radio"],
+  "summary": "Graveyard Shift is a citizen-science game in which players adopt beats in low Earth orbit and decide whether each satellite is dead, alive or fragmented. Each player uses an $89 eye-and-ear kit. The eye times specular glints on GNSS-stamped phone video, and the ear listens for beacons through the SatNOGS ground-station network. Glints caught in different cities are phase-connected, pulsar-style, through a light-curve inversion model that recovers spin and shape. A verdict needs two independent witnesses on two senses. It then goes through coordinated disclosure, giving the operator 72 hours to answer before publication. Verified verdicts feed a liveness record sold to conjunction-assessment firms, insurers and regulators.",
+  "core_loop": "Adopt a beat (altitude band and inclination family) -> at twilight, film glints with GNSS-timed video, and around the clock, listen for beacons on an SDR -> uploads from cities along the terminator are phase-connected into a spin and shape model, so the relay is handed west through the night -> two witnesses on different senses support a verdict (dead: tumbling light curve plus silence through a scheduled pass; alive: beacon or manoeuvre residual) -> the operator has 72 hours to respond before publication -> the first confirmed call is credited on the object's public record -> zombies (listed dead, heard again) and disputed objects become the high-value levels.",
+  "why_now": "Operational spacecraft rose from about 10,000 to 16,000 in two years, and Starlink reported 207,152 collision-avoidance manoeuvres in six months. Avoidance assumes you know whether the other object can still move. SatNOGS has made open RF ground stations cheap, Android's Camera2 and GNSS APIs give millisecond-timed phone video, and amateurs keep outperforming institutions at liveness (Scott Tilley's 2018 rediscovery of NASA's IMAGE). Debris removal (Astroscale's ADRAS-J) and orbital-use-fee proposals both need spin, shape and liveness data that nobody publishes.",
+  "mvp": "90 days. Days 1-30: ship the eye-and-ear kit (RTL-SDR, turnstile antenna, phone mount), integrate with SatNOGS, and ingest about 300 disputed objects where McDowell's catalog, Space-Track and SatNOGS disagree. Days 31-60: the flash-timing app with Camera2 sensor timestamps disciplined to GNSS, calibrated on ENVISAT's laser-ranged spin and the MMT-9 light-curve archive. Gate: phone footage from two cities recovers a known tumble period to within 1%. Days 61-90: open the beats and publish the first verdicts through the 72-hour disclosure process. Kill metric: 50 pronouncements confirmed by operators or by re-entry.",
+  "stack": "Android Camera2 sensor timestamps disciplined to GNSS time; Tetra3 plate solving; Skyfield with CelesTrak SupGP orbits; SatNOGS network API and gr-satellites decoders; a custom phase-connection fitter built on light-curve inversion (pulsar-timing methods adapted for changing Sun-observer geometry); a verdict ledger with a disclosure workflow.",
+  "business_model": "Players are credited, not paid, as at the Minor Planet Center. Revenue comes from a liveness and spin-state feed sold to conjunction-assessment firms (LeoLabs, Slingshot, COMSPOC), space insurers, debris-removal operators and regulators, plus sales of the $89 kit. ESA Space Safety and NSF citizen-science grants fund the early network. Proof-of-life beacons are pursued as advocacy through the Space Data Association, not as a product.",
+  "risks": [
+    "Phase-connecting phone glints across changing geometry may not reach the 1% gate, leaving the eye as decoration",
+    "Short sellers seeding false 'dead' verdicts against listed operators (Spire, Planet, AST SpaceMobile); mitigated by two witnesses, 72-hour disclosure and confirmed-first credit",
+    "Many cubesats lack panels that glint, so the ear must carry them",
+    "Twilight, weather and geography limit optical cadence",
+    "Time-of-death estimates from YORP spin drift carry error bars of months and must not be presented as evidence",
+    "Pressure over publishing verdicts on classified or military objects",
+    "Revenue depends on a small market of conjunction-assessment and space-insurance buyers"
+  ],
+  "moonshot": "By 2036 about 100,000 kits keep a twilight relay running around the planet. Crowd-built shape-and-spin dossiers are the standard pre-capture survey for every debris-removal mission, so no one has to fly up to a stage just to learn how it tumbles, as ADRAS-J did. Verdicts feed orbital-use fees, so a dead object costs its operator rent until it comes down. Proof-of-life beacons are a licensing condition. In Ostrom's terms, the commoners finally monitor their own commons.",
+  "best_line": "A tumbling satellite is a pulsar in a 550 km orbit: Lisbon catches three flashes, Kyiv catches two, and together they have a period."
+}

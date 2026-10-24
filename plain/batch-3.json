@@ -1,0 +1,242 @@
+[
+  {
+    "id": 21,
+    "name": "Familiar",
+    "plain_one_liner": "An adult AI companion you keep, even when you switch apps, with outside checks that it's safe and still 'her'.",
+    "gist": "Think of your phone number: you can switch carriers and keep it. Familiar does that for an AI companion. Her memories and identity sit in an account you control, apps just rent her a 'brain' for a while, and independent testers check that each app is safe.",
+    "how_it_works": [
+      "You set up your companion's identity and encrypted memories in your own account, not inside any one app.",
+      "An app asks for temporary, limited access and supplies the AI model that does the talking.",
+      "An outside tester grades the app on safety, and your phone replays your old chats to score whether she still sounds like herself.",
+      "When you leave, any memories the app wrote come back as changes you can review and accept or reject."
+    ],
+    "example": "Dana has chatted with her companion Juniper for a year in one app that just raised prices. She moves Juniper to a cheaper app, and her phone runs a quick check showing the new version scores 92% on 'still sounds like Juniper'.",
+    "who_its_for": "Adults who use AI companions pay about $5 a month for the account, and small companion apps pay for safety test reports to meet new laws.",
+    "why_it_matters": "Today, if a companion app changes its model or shuts down, the personality you bonded with can change overnight with no warning. This makes your companion portable and makes any change visible.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The plumbing exists on Bluesky's open protocol, but nobody knows if a 'likeness score' captures what people actually feel attached to.",
+    "biggest_hurdle": "Big companion apps make money by locking you in, so they have little reason to join, and past 'own your data' projects starved for lack of apps.",
+    "first_step": "Build a plug-in for one open-source chat app and have 200 users move a companion between two apps, then test whether the likeness score predicts which version they recognize in a blind test.",
+    "jargon": [
+      {"term": "atproto", "meaning": "The open protocol behind Bluesky that lets your account move between apps."},
+      {"term": "labeler", "meaning": "An independent service that tags apps or posts, here with safety grades."},
+      {"term": "out-of-gamut", "meaning": "Things a given app can't render, like a printer missing a colour."}
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Unaccounted",
+    "plain_one_liner": "Checking carmakers' 'recycled metal' claims by adding them up, to catch the same recycled tonne being sold twice.",
+    "gist": "Imagine three friends each claiming they ate the last slice of one pizza. You can't trace which crumbs went where, but you can count slices. Unaccounted does that for recycled cobalt and nickel in car batteries: it totals what every carmaker claims and compares it with what recyclers could actually have produced.",
+    "how_it_works": [
+      "A car owner scans their battery's digital ID label, linking the car to the company that made its cells.",
+      "The system estimates how many tonnes of recycled metal each carmaker claims, using battery sizes and car registration numbers.",
+      "A statistical model compares those claims with real recycling output each quarter and tracks any gap, along with how sure it is.",
+      "A public quarterly report shows the gaps, carmakers get a chance to reply, and a registry lets them prove a tonne was claimed only once."
+    ],
+    "example": "Lukas, an EV fan in Munich, photographs the cell label on his car. That confirms which cell maker supplied it, which narrows the error bars on whether his carmaker's 16% recycled cobalt claim adds up.",
+    "who_its_for": "Regulators, insurers and ESG analysts pay for the data, and carmakers pay fees to register recycled tonnes; the scanning app is free for enthusiasts.",
+    "why_it_matters": "The EU will require minimum recycled content in batteries, and the current accounting rules make it easy to double-count. Public books could catch cheating that inspecting metal never can.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The data pipeline and math are buildable, but the estimates may never be precise enough to spot a gap smaller than the claims themselves.",
+    "biggest_hurdle": "The public part of battery passports leaves out refinery and mine details, so the data stays thin until at least 2027.",
+    "first_step": "Model ten carmakers from public EU registration data and published reports, and see whether the uncertainty is small enough to detect anything.",
+    "jargon": [
+      {"term": "mass balance", "meaning": "Accounting where recycled and new metal mix, and claims are tracked on paper."},
+      {"term": "MUF (material unaccounted for)", "meaning": "The gap between what the books say and what physically exists."},
+      {"term": "battery passport", "meaning": "A required digital record of a battery's makeup and origin, scanned by QR code."}
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Nightside",
+    "plain_one_liner": "A story whose plot is chosen by which ideas people actually dream about after hearing cues while falling asleep.",
+    "gist": "It's a group story where sleeping brains, not writers, pick what happens next. Everyone learns a set of possible story pieces in the evening, then soft sounds tied to half of them play as they drift off. Whichever pieces show up more in dreams when cued become part of the official story.",
+    "how_it_works": [
+      "Each evening you rehearse every candidate story element, each paired with its own sound.",
+      "As you fall asleep, a headband or hand sensor triggers sounds for a random half of the elements.",
+      "You record a voice note about your dream, and software plus human raters score which elements appeared.",
+      "Elements that show up more when cued join the story, odd dream twists shared by many people become new elements, and the story passes to the next time zone."
+    ],
+    "example": "Priya in London rehearses twelve story bits, including 'a lighthouse with no door'. The lighthouse sound plays as she dozes off, and she and dozens of others report doors that aren't there, so the doorless lighthouse becomes canon before the story moves to New York.",
+    "who_its_for": "Sleep researchers and grant funders pay for the open dataset; dream enthusiasts buy kits at cost and get credited in the published story.",
+    "why_it_matters": "It would produce the first big dataset on what sleeping brains tend to replay, plus a strange new art form credited to every sleeper.",
+    "verdict": "Long shot",
+    "verdict_reason": "The techniques are published lab science, but no one knows if home cueing produces an effect large enough to measure across a crowd.",
+    "biggest_hurdle": "People rarely keep up dream journals past a few weeks, and the effect may simply be too small to detect.",
+    "first_step": "Run a 60-person, few-week trial with a sleep lab's ethics approval, cueing half of 12 elements, and check for any measurable lift.",
+    "jargon": [
+      {"term": "targeted memory reactivation", "meaning": "Replaying a cue during sleep to strengthen a linked memory."},
+      {"term": "lucid dreamer", "meaning": "Someone who knows they're dreaming and can sometimes signal with eye movements."},
+      {"term": "demes", "meaning": "Separate local groups; here, sleepers in different time zones."}
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Always For Sale",
+    "plain_one_liner": "A chess game where every piece has a price tag, and your opponent can buy any piece they're attacking.",
+    "gist": "It's chess where each piece wears a price tag you set yourself, and you pay tax on that price every turn. Price it high and the tax bleeds you; price it low and an attacking opponent can buy it, and it switches sides right where it stands. You play through eight boards in a row with upgrades and bosses, like a deck-building game.",
+    "how_it_works": [
+      "Each turn you either move, buy an enemy piece you're attacking at its listed price, or change the prices of up to two of your pieces.",
+      "You pay tax on your prices and earn income from holding centre squares.",
+      "As the board shifts, some prices become bargains, so you hunt for underpriced enemy pieces while protecting your own.",
+      "Win or go bankrupt, then carry your money into the next board; afterwards, a report shows how well you priced each piece."
+    ],
+    "example": "Sam makes a quiet pawn move that suddenly makes three enemy pieces far more valuable to him than their price tags. His opponent can only fix two prices per turn, so Sam buys the third, a rook, which flips to his side.",
+    "who_its_for": "Strategy and chess fans buying a $15-20 Steam game; economics teachers could get a classroom licence.",
+    "why_it_matters": "It's a fresh twist on chess with no memorized openings, and it quietly tests an economics idea, owners setting their own price and paying tax on it, with real players.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "A small team can build it with existing chess engines in a quarter, but it might turn out that no tax setting makes pricing and buying both interesting.",
+    "biggest_hurdle": "Finding tax and income settings where buying pieces happens often enough to matter without wrecking the game.",
+    "first_step": "Build the rules on a small 6x6 board and have computers play each other thousands of times across tax settings to find a fun range.",
+    "jargon": [
+      {"term": "Harberger tax", "meaning": "You name your property's price, pay tax on it, and must sell at it."},
+      {"term": "roguelite", "meaning": "A game of repeated runs where you lose progress but keep some upgrades."},
+      {"term": "stale quote", "meaning": "A listed price that's out of date because the situation changed."}
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Offtaker",
+    "plain_one_liner": "Data centres use their waste heat to warm greenhouses that grow winter vegetables for neighbours.",
+    "gist": "Computer servers get hot, and new German rules say data centres must put some of that heat to use. Many can't find a buyer, so Offtaker builds a greenhouse next door, owned by the data centre and run by a local farmer. Neighbours subscribe to winter veg boxes that come with a note showing how much heat was reused and how much was still wasted.",
+    "how_it_works": [
+      "A data centre that needs to meet its heat-reuse quota signs up, and Offtaker builds a greenhouse beside it, plus a backup cooler so the servers never rely on the farm.",
+      "Warm water from the servers heats the greenhouse air, then the cooler leftover water warms the plant roots, and tanks store daytime heat for the night.",
+      "A tenant farmer grows hardy winter greens and chicory, and neighbours sign up for weekly boxes.",
+      "Certified meters count the heat reused, which goes into the data centre's official report and sets Offtaker's fee."
+    ],
+    "example": "A new data centre outside Frankfurt has no district-heating customer. Offtaker builds a 2,000 m2 greenhouse beside it, and 300 local households get winter salad boxes with a slip saying '1.2 MWh reused, 4 MWh dumped'.",
+    "who_its_for": "German data centre operators facing reuse quotas pay a fee per unit of heat reused; farmers rent the greenhouse and neighbours buy the boxes.",
+    "why_it_matters": "It turns a compliance headache into a visible local benefit, and the honest heat note keeps it from being greenwashing.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "The greenhouse engineering is standard, but everything depends on regulators agreeing this counts as reuse and on one operator going first.",
+    "biggest_hurdle": "Regulators might say heat used in the data centre's own greenhouse is internal use, not reuse, which would kill the business case.",
+    "first_step": "Get a legal opinion on whether this setup counts as heat reuse under German law, then approach three new data centres with no heat buyer.",
+    "jargon": [
+      {"term": "EnEfG", "meaning": "Germany's Energy Efficiency Act, which sets data-centre heat-reuse quotas."},
+      {"term": "Solawi", "meaning": "German community farming where members share costs and receive harvest boxes."},
+      {"term": "offtaker", "meaning": "The buyer who takes a product, here the heat, off a producer's hands."}
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Sandbox Escape",
+    "plain_one_liner": "A contest building cheap fake universes and spotting their shortcuts, to test whether ours might be simulated.",
+    "gist": "Think of a video game that saves effort by blurring distant scenery. This league pays one team to build toy universes that cut corners while still looking right, and another team to detect those shortcuts. The best detectors are then run on real telescope data to put a number on how 'cheap' our universe could be if it were a simulation.",
+    "how_it_works": [
+      "Builder teams, helped by AI code optimizers, make toy physics simulations and earn money for every bit of energy their shortcuts save while still passing realism tests.",
+      "Hunter teams submit detection programs that only see simulated instrument readings, and they're paid only if their methods work on simulations they've never seen.",
+      "At season's end, the winning shortcuts' traces are secretly planted in copies of real space-telescope data to check whether hunters can find them.",
+      "Hunters' results on the clean real data become real limits on unknown physics, and those limits raise the bar for next season."
+    ],
+    "example": "A team's toy universe saves 15% of its energy by rounding light's speed slightly at high energies. A hunter's program catches that in planted gamma-ray data, then finds nothing in the real data, which tightens a known physics limit.",
+    "who_its_for": "Physics foundations fund the science side, while robotics and AI safety teams pay to learn which simulator flaws an AI can notice.",
+    "why_it_matters": "It turns a philosophy question into a measurable one, and the same method shows AI labs how realistic a test environment must be before an AI realizes it's being tested.",
+    "verdict": "Long shot",
+    "verdict_reason": "A toy league on public telescope data fits in a quarter, but no one knows if detectors carry over between simulation types or if tiny toys say anything about our universe.",
+    "biggest_hurdle": "Results from toy universes may not scale to the real one, so most outputs will be 'no glitch found' limits that are hard to fund.",
+    "first_step": "Build a dozen small simulations in three styles and test whether any detector trained on two styles works on the third.",
+    "jargon": [
+      {"term": "Standard Model Extension bounds", "meaning": "Measured limits on how much known physics laws could be slightly off."},
+      {"term": "Fermi-LAT", "meaning": "A NASA space telescope whose gamma-ray data is public."},
+      {"term": "salted round", "meaning": "Secretly planting known fake signals in data to test detectors."}
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Ventris",
+    "plain_one_liner": "Learn your grandparents' language like a detective, decoding the signs, shops and stories of their neighbourhood.",
+    "gist": "It's a language-learning game played on a real immigrant neighbourhood street, like the Portuguese area of Newark. You treat shop signs and menus like a code to crack, guess what words mean, and confirm guesses by chatting with shopkeepers while buying something. At the top level, you help transcribe elders' recorded life stories, building a real archive for the community.",
+    "how_it_works": [
+      "On weekly walks you collect words from signs, menus and posters and pin your guesses about their meaning on a shared board.",
+      "You check guesses with participating shopkeepers as part of a real purchase, and only confirmed words go on the shared board.",
+      "Between walks, AI characters 'from the street' chat with you daily, using words you know plus one new one, in the local dialect.",
+      "As you advance from signs to radio to recorded interviews, you correct AI transcripts of elders' stories, and a native speaker signs off."
+    ],
+    "example": "Ana, 19, understands her avó's Portuguese but can't reply. She guesses a bakery sign word means 'custard tart', confirms it with the baker while buying one, and months later helps transcribe a local elder's immigration story.",
+    "who_its_for": "Heritage families pay about $15 a month, universities license it for heritage-language courses, and local business groups sponsor walks.",
+    "why_it_matters": "It aims to get young people actually talking with their grandparents, and leaves behind a lasting record of the neighbourhood's dialect and stories.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "A pilot is easy, but every new neighbourhood needs months of trust-building with shopkeepers and elders, and the learning benefit is unproven.",
+    "biggest_hurdle": "Building trust with local businesses and elders is slow, hands-on work that doesn't scale like an app.",
+    "first_step": "Run a 90-day pilot with 30 learners and ten shops in one neighbourhood, comparing listening gains against a Duolingo group.",
+    "jargon": [
+      {"term": "heritage speaker", "meaning": "Someone raised hearing a family language who may not speak it fluently."},
+      {"term": "ASR", "meaning": "Automatic speech recognition: software that turns speech into text."},
+      {"term": "FSRS", "meaning": "A flashcard scheduling method that times reviews right before you'd forget."}
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Tab",
+    "plain_one_liner": "A bar tab for AI agents: one spending limit, instant approvals, and guaranteed payment for the seller.",
+    "gist": "When AI software buys tiny services, like a fraction of a cent per data lookup, paying for each one is clumsy. Tab works like a credit card network for these agents. A business puts money down, its agents share one spending limit, and sellers get an approval they can check instantly that guarantees they'll be paid.",
+    "how_it_works": [
+      "A business deposits money with a licensed custodian, which sets one spending limit for all its AI agents.",
+      "An agent reserves a chunk of that limit and gets a signed approval it shows to the seller.",
+      "The seller checks the approval on its own without calling anyone, serves the requests, and is guaranteed payment.",
+      "Charges are settled at the end of the day, and the payment history builds a credit record that can raise the limit or trigger warnings if spending looks odd."
+    ],
+    "example": "A startup's research agents hit 40 different data services thousands of times a day. Instead of paying each call separately, they all draw from one $5,000 tab, and each service gets one daily payment it knows is guaranteed.",
+    "who_its_for": "Companies selling pay-per-use services to AI agents pay a fee and a small cut of volume; businesses running agents get easy access.",
+    "why_it_matters": "It lets sellers accept AI customers they've never met without risk or sign-ups, which could unlock a market of tiny automated purchases.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "A deposit-backed version can ship in a quarter, but real money spent by AI agents is still tiny, so the business may not cover licensing costs.",
+    "biggest_hurdle": "There isn't much money flowing through AI agent payments yet, so it needs non-crypto services to adopt it.",
+    "first_step": "Sign up 20 paid services and 50 businesses with deposit-backed tabs and see if sellers keep using it after 60 days.",
+    "jargon": [
+      {"term": "x402", "meaning": "A protocol for charging per web request, usually in stablecoins."},
+      {"term": "open-to-buy limit", "meaning": "How much more someone is allowed to spend right now."},
+      {"term": "liability shift", "meaning": "A rule deciding who eats the loss when a payment goes wrong."}
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Order Parameter",
+    "plain_one_liner": "A careful experiment testing whether people meditating far apart truly fall into sync, or only when linked.",
+    "gist": "Some people claim that meditating together across the globe syncs us up even without contact. This project tests it fairly. Each session randomly gets a different link between meditators: none at all, just knowing others are sitting, shared breathing audio, or a stranger's breath felt as buzzes on your wrist. Heart and breath sensors then show whether people actually fall into rhythm.",
+    "how_it_works": [
+      "You wear a chest strap, and a random number generator secretly picks your session's type of connection.",
+      "You start by breathing to a set pace, then breathe freely, so any syncing that happens isn't just from the shared starting rhythm.",
+      "Software measures how in-step everyone's breathing and heartbeats are, compared against fake groups made by shifting recordings in time.",
+      "The 'no connection' results are only revealed after the wrist-buzz group proves the setup can detect real syncing, and believers and skeptics agree on the scoring beforehand."
+    ],
+    "example": "Kenji in Osaka and Maria in Lisbon both sit in the 'no link' group. If their breathing syncs as much as people a few miles apart, that supports the claim; if syncing drops with distance, something is leaking through.",
+    "who_its_for": "Meditators pay about $8 a month for a co-breathing app, and science foundations fund the study.",
+    "why_it_matters": "It could settle a long-running claim in a way both sides accept, and map which real connections, like shared audio or touch, actually calm us together.",
+    "verdict": "Buildable with effort",
+    "verdict_reason": "A 1,000-person trial with cheap chest straps is affordable and rigorous, but scaling up needs smartwatch makers to share detailed heartbeat data.",
+    "biggest_hurdle": "Getting meditators to stick with sessions for weeks, and getting believers to accept a negative result they agreed to in advance.",
+    "first_step": "Build an app with a chest strap and wrist buzzes, and check whether the wrist-buzz group syncs more than chance.",
+    "jargon": [
+      {"term": "Kuramoto", "meaning": "A math model of how separate rhythms, like fireflies, fall into sync."},
+      {"term": "QRNG", "meaning": "A quantum random number generator, used for truly unpredictable assignment."},
+      {"term": "Bayes factor", "meaning": "A number for how much the data favours one explanation over another."}
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Heptad",
+    "plain_one_liner": "An app that turns protein shapes into music so students, especially blind ones, learn biology by ear.",
+    "gist": "Proteins are long chains that fold into shapes, and those shapes are usually taught with pictures. Heptad plays real protein structures as music, with rhythm, accents and harmony standing for parts of the fold. Students practise identifying features by ear, and a final test without sound checks whether they truly learned the biology.",
+    "how_it_works": [
+      "The app picks a real, already-solved protein and plays it as music, with water-avoiding parts as accents and parts that touch in 3D as notes played together.",
+      "You quickly answer a question, like whether a section is a repeating coil or floppy, and get scored against the known answer.",
+      "Instruments, tempo and key change each session while the rules stay the same, so you learn the pattern, not one sound.",
+      "At the end, a silent test on written sequences checks whether your ear training taught you real biology."
+    ],
+    "example": "Leo, a blind biochemistry student, hears a steady seven-beat rhythm and correctly calls it a coiled-coil, a shape his classmates usually spot in diagrams. On the silent test he can then spot the same pattern in a written sequence.",
+    "who_its_for": "University biochemistry courses buy seat licences, with a free tier and accessibility grants; blind and low-vision students are the first audience.",
+    "why_it_matters": "Structural biology is taught almost entirely with images, which shuts out blind students, and sound could open a real second channel for everyone.",
+    "verdict": "Buildable now",
+    "verdict_reason": "It's a web app built on free public protein data with a small classroom trial, so nothing technical stands in the way.",
+    "biggest_hurdle": "Students might just learn the sound code rather than the biology, which the silent test could reveal.",
+    "first_step": "Build the sound engine with four question types and pilot it with 40 students to tune difficulty.",
+    "jargon": [
+      {"term": "heptad", "meaning": "A seven-unit repeating pattern in some protein coils."},
+      {"term": "AlphaFold DB", "meaning": "A free public database of AI-predicted protein shapes."},
+      {"term": "sonification", "meaning": "Turning data into sound so you can hear patterns."}
+    ]
+  }
+]

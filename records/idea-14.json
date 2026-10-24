@@ -1,0 +1,28 @@
+{
+  "id": 14,
+  "name": "Second Shift",
+  "tagline": "Book the night shift for the excavator already parked on your site, supervised from home by the crewmate who rode along that day.",
+  "kind": "platform",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 6,
+  "domains": ["construction", "robot-hour billing", "labour marketplaces", "remote supervision", "noise regulation"],
+  "summary": "Second Shift is a vendor-neutral layer for unattended night earthwork, built on existing autonomy and teleop kits (Teleo first, then Bedrock), and it uses machines already parked on site instead of mobilizing new ones. At 4 pm the foreman imports tonight's task from LandXML: compaction lanes first, stockpiling second. Hard boundaries come only from 811 locates and the foreman's signature, and day-shift traces can only add speed caps. The remote supervisor is the day operator's crewmate on a weekly rotation, paid a negotiated union supervision premium and watching up to four machines with an independent wireless e-stop. Property-line meters throttle work live against a public noise page, and by morning compaction data plus a drone diff arrive as a handback the foreman signs like a timesheet.",
+  "core_loop": "Foreman draws tonight's task on the site surface (LandXML) with 811-derived boundaries -> book the shift: idle kitted machine plus crewmate supervisor -> machine works overnight under a live noise throttle; the supervisor intervenes over WebRTC; a detected person triggers stop, lights and alert -> morning handback of intelligent-compaction data and drone-scan diff -> foreman approves like a timesheet -> billing per robot-hour plus a supervision slice.",
+  "why_now": "Bedrock Robotics raised $270M (Feb 2026) for one-shift retrofit kits on 20-80 ton excavators and targets operator-less work in 2026. Figure's roughly $25 per robot-hour makes robot labour a line item. Data-center construction puts an extreme premium on schedule, and those greenfield sites are remote and often lit around the clock. The industry is losing veteran operators faster than it trains new ones.",
+  "mvp": "90 days. Weeks 1-4: Teleo API integration, LandXML task import from Propeller, morning drone diff, independent wireless e-stop, supervisor console. Weeks 5-12: 20 night shifts on one data-center pad with an autonomous compaction roller and one stockpiling excavator, two-person rotating crew, IUOE local sign-off where union. Kill metrics: more than one supervisor intervention per machine-hour (rules out a 1:4 ratio), or the foreman rejecting more than 20% of morning handbacks.",
+  "stack": "Vendor kit APIs (Teleo, then Bedrock and others), LandXML / Propeller / DroneDeploy surfaces, WebRTC supervisor console, FORT-style independent wireless e-stop, cab thermal camera, property-line decibel meters with a live throttle, intelligent-compaction data, insurer-readable telemetry logs, geofence edits requiring a logged foreman signature.",
+  "business_model": "About 15% of night-shift billing, layered on the kit lease from the rental house or vendor. Sold to data-center, solar and quarry earthwork contractors on days saved to energization rather than on robot-hour cost.",
+  "risks": [
+    "Kit vendors (Teleo, Bedrock) build the night console themselves and disintermediate the layer",
+    "Intervention rate too high for one supervisor to cover four machines",
+    "Municipal night-noise ordinances; wedge limited to greenfield sites until variances or noise budgets exist",
+    "Trespassers on unattended sites; perception must stop for people in the dark",
+    "Insurers have no loss history for unattended night work",
+    "Supervisor fatigue; solved with two-person crews rotating weekly",
+    "Union resistance to piece rates or lost seats; solved with a negotiated supervision premium",
+    "Remote-supervision businesses are hard to make pay (Phantom Auto shut down in 2024)"
+  ],
+  "moonshot": "Noise as a city's tradable night budget. Every district publishes a nightly Quota Count budget, sites bid for it, and quiet electric fleets earn headroom they can sell to the site next door. Remote supervision becomes a licensed trade with its own apprenticeship, run from regional control rooms like air traffic control, and construction schedules shorten sharply because nights stop being wasted.",
+  "best_line": "Traces can add caution, never remove it."
+}

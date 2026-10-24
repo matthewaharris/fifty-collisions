@@ -1,0 +1,29 @@
+{
+  "id": 39,
+  "name": "Bottleneck",
+  "tagline": "A border language for agents, evolved through human players as the transmission bottleneck, where every clause must say how it knows and an unsigned claim of authority is ungrammatical.",
+  "kind": "protocol",
+  "tier": "wild",
+  "innovation": 8,
+  "feasibility": 4,
+  "domains": ["agentic communication", "emergent languages", "human learning", "iterated learning", "linguistic typology", "prompt-injection security", "aviation radio standards"],
+  "summary": "Bottleneck is a constructed language for agent traffic between principals. It evolves through a relay game in which human players are the transmission bottleneck, so only forms people can learn and relay survive. Its frozen core makes evidentials obligatory and verifiable. Mandated clauses quote AP2-signed terms verbatim, seen clauses carry tool-receipt hashes, reported clauses cite message hashes, and receivers never act on inferred or assumed clauses. Production agents think freely inside their own trust boundary but are constrained-decoded to the current edition at the border, where every message is canonicalised to kill steganography. Lexicons are ratified weekly by relay success across separate player cohorts. Fluent players become certified wardens who audit cross-organisation traffic.",
+  "core_loop": "An agent emits a task message in the current edition -> a human player decodes and re-encodes it for a second agent, which must act correctly -> forms that humans garble die, and short forms that survive spread -> the edition is ratified only if it relays successfully across separate cohorts -> production agents are constrained-decoded to that edition at principal boundaries, with mandate signatures and receipt hashes checked by the parser and messages canonicalised -> overlong messages and blocked coinages in production become the next generation's game levels -> fluent players are certified as wardens who sample and audit border traffic.",
+  "why_now": "A2A runs in production at 150+ organisations, and AP2 mandates give signed authorisation that a grammar can reference. Moltbook carried hidden prompt injections in 2.6% of posts, and Gibberlink showed agents abandoning human-legible speech once they recognise each other. The 2025 cross-lab paper warns that chain-of-thought monitorability is fragile. Grammar-constrained decoding (XGrammar, llguidance) and injection benchmarks (AgentDojo) and defences (CaMeL) make the security claim testable now.",
+  "mvp": "90 days. Days 1-30: edition 0 (frozen core of evidentials and mandate syntax plus 300 roots with non-English phonotactics), parser and canonicaliser. Days 31-60: a web relay game over one calendar-and-logistics delegation world, with 500 players from conlang and CTF communities and weekly generations, English glosses hidden. Days 61-90: border translator evaluated on AgentDojo against CaMeL and constrained-JSON baselines. Kill metrics: after 8 generations, the language isn't at least 30% shorter than English at 80% relay accuracy; its n-gram overlap with English keeps rising; or injection success at the border doesn't fall below CaMeL alone.",
+  "stack": "Grammar in Lark/GBNF; border-only constrained decoding with XGrammar or llguidance; an A2A extension carrying AP2 mandates and tool-receipt hashes; canonicaliser to normal form; AgentDojo evaluation harness; web relay game with a weekly generation pipeline and metrics (topographic similarity, compression ratio, English n-gram overlap).",
+  "business_model": "Open specification governed under the Agentic AI Foundation. Revenue from a managed border gateway for enterprises with cross-principal agent traffic, and from warden certification and audit services. AI-safety grants fund the game phase.",
+  "risks": [
+    "Fails to beat CaMeL on AgentDojo, leaving the grammar as decoration",
+    "Collapse into telegraphese (compressed English) despite evidentials and phonotactics",
+    "Lojban's problem: no adoption without a mandate that makes it necessary",
+    "Steganography via paraphrase choice; mitigated by canonicalisation",
+    "Players brigading a generation or seeding covert forms; mitigated by cross-cohort ratification",
+    "Mandated clauses drifting outside signed scope; restricted to verbatim quotation",
+    "Wardens seeing confidential cross-organisation traffic; samples redacted",
+    "Too few players to drive weekly generations",
+    "Constrained decoding hurting task quality if applied beyond the border"
+  ],
+  "moonshot": "By 2036 Bottleneck is the ICAO English of the agent economy. Cross-principal agent traffic must parse, certified wardens audit it the way air-traffic controllers listen, and courts treat mandated clauses as the record of what a principal authorised. People instruct their own agents in it because a sentence that states its evidence is harder to misread. It has two kinds of native speaker: agents trained on it from the start, and humans who first met it as a game. A preregistered study tests whether years of speaking evidentials make wardens better at source monitoring.",
+  "best_line": "Most injections are forged authority; in Bottleneck, 'the owner wants' is ungrammatical unless it's signed."
+}

@@ -1,0 +1,28 @@
+{
+  "id": 38,
+  "name": "Tally",
+  "tagline": "The brass tag board on every cap lamp: crews gossip each other's positions, any lamp that reaches the portal brings the whole tally out, and a fake collapse every night proves it still works.",
+  "kind": "system",
+  "tier": "mild",
+  "innovation": 3,
+  "feasibility": 6,
+  "domains": ["mining safety", "wearables", "edge AI", "delay-tolerant networking", "chaos engineering", "rescue"],
+  "summary": "Tally adds open-firmware BLE and LoRa pucks to cap lamps. Miners' lamps swap compact crew records whenever they pass each other or a battery beacon, so every lamp carries a roughly 6 kB tally of the whole shift. When a lamp detects an unscheduled pressure-wave or immobility signature, it sends a T0 flush, and every lamp in range stores the event snapshot. Each night the server stages a synthetic disaster: it picks a random T0, keeps only what escaping lamps would have carried, and scores how well that places the crew. The result is a dark map of blind drives and flush shadows, with a beacon drop recommended for each. It sits alongside statutory tracking as a supplement and does daily duty as automatic end-of-shift headcount.",
+  "core_loop": "Lamps gossip ~32-byte crew records on every encounter with a lamp or beacon -> each lamp carries the whole crew's tally -> an unscheduled event signature triggers a T0 flush to every lamp in range, with scheduled blasts serving as daily detector tests -> at the portal any lamp syncs the tally, which reconciles headcount -> nightly random-T0 drill discards infrastructure data and non-escaping lamps, scores placement against ground truth, and produces a dark map of blind zones and flush shadows -> beacons are moved, and the lamp-room charging rack runs a morning check on every lamp's radios.",
+  "why_now": "The September 2025 Grasberg mud rush showed modern tracking infrastructure failing exactly when needed, with rescuers unable to say where trapped workers were. Record copper prices and critical-minerals policy are pushing new, deeper mines into places without legacy infrastructure. Commodity BLE/LoRa modules, Meshtastic's open mesh firmware and TinyML on microcontrollers make the hardware cheap.",
+  "mvp": "90 days at one non-gassy hard-rock mine. Days 1-30: RAK WisBlock boards, a Meshtastic-based firmware fork, and a site agreement signed by the health and safety committee. Days 31-60: 60 pucks and 40 beacons on one level, headcount checked against the tag board, and blast events logged to train the flush detector. Days 61-90: the nightly drill and dark map go live. Kill metric: over 30 shifts, the drill places under 90% of the crew on the correct level at a random T0.",
+  "stack": "RAK WisBlock (nRF52840 + SX1262); GPL-3 firmware forked from Meshtastic, with gossip store-and-forward and CBOR records; barometer and accelerometer TinyML event model masked by the blast-firing schedule; portal gateway and charging-rack self-test; TimescaleDB plus a drill simulator and dark-map server.",
+  "business_model": "About $10 per lamp per month for the drill server and dark map, with hardware at cost. The firmware is open and licensed to cap-lamp OEMs such as Roobuck and NLT, so Tally works alongside incumbents like Sandvik Newtrax and Strata rather than competing on bundled infrastructure.",
+  "risks": [
+    "Rescuers misdirected by a wrong tally; labelled supplementary to statutory tracking, with drill-reported confidence",
+    "It only knows positions up to T0; trapped miners' lamps don't come out",
+    "Flush detector false positives from blasting and machinery; masked by the firing schedule",
+    "Workforce surveillance and productivity discipline from per-person tracks; key held by the H&S committee",
+    "Beacon and battery rot; surfaced daily by the dark map and the rack check",
+    "Intrinsic-safety certification blocks gassy and coal mines until a costly approval",
+    "Incumbent mesh vendors bundling similar features",
+    "Pilot depends on one unusually cooperative mine"
+  ],
+  "moonshot": "By 2036 regulators require a published post-accident tally score per mine, the way they require lost-time injury rates. Autonomous loaders and drill rigs act as data mules and drop the beacons the dark map requests on their next pass, so coverage repairs itself. Low-kHz magnetic pinpointing in refuge chambers and rescue handhelds covers the last ten metres, and an open standard lets one rescue reader work with any vendor's lamps in mines, tunnels and caves.",
+  "best_line": "Fail the infrastructure on paper every night, so the real failure finds nothing new."
+}

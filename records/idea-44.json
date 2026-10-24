@@ -1,0 +1,26 @@
+{
+  "id": 44,
+  "name": "Seventeen Moments",
+  "tagline": "A deckbuilder built on the Abhidhamma: every card you play ripens later and overwrites your mind, and the kindness you spam slowly turns into its counterfeit.",
+  "kind": "game",
+  "tier": "bold",
+  "innovation": 5,
+  "feasibility": 7,
+  "domains": ["deckbuilders", "Buddhist psychology", "Stoicism", "evolutionary ecology", "roguelites", "philosophy of mind"],
+  "summary": "Seventeen Moments is a roguelite deckbuilder whose engine comes from the Abhidhamma rather than being decorated with it. The mind is fixed at 52 slots, one per mental factor. Habit cards auto-play in response to sense impressions unless the player spends sati, a scarce attention resource that occupies its own slot and can be overwritten. Every card played enters a ripening queue and later overwrites the oldest card as a result draw, so habits replace rather than accumulate. Each wholesome card has a near-enemy twin from the Visuddhimagga (mettā and attachment, compassion and pity). The chance of drawing the twin rises with play frequency, following Batesian mimicry, and is shown on the queue. The last card played before death picks the next run's realm.",
+  "core_loop": "A sense impression arrives with an intent -> habit cards auto-play unless sati is spent to withhold assent or play another card -> each played card enters the ripening queue, showing its counterfeit risk, which rises with how often it has been played -> some turns later it ripens and overwrites the oldest card in the 52-slot mind -> insight uproots cards; one breath per turn can't be overwritten, and retreat nodes restore the sati slot -> at death the last javana (steerable with deathbed chanting) picks the next realm, and the death screen reveals any counterfeit you were holding.",
+  "why_now": "Slay the Spire 2 peaked at 574K concurrent players and sold 6.5M copies, showing that deckbuilders remain a mass genre. Auto-play builders like The Bazaar have shown that games can run themselves and stay tense. Meditation apps still sell content libraries rather than a model of the mind you can operate, which leaves room for a game that teaches by its mechanics with no wellbeing claims.",
+  "mvp": "90 days. Days 1-30: a paper prototype plus a headless bot harness running millions of runs to tune the ripening delay and mimicry curve. Gate: at equilibrium, no card holds more than 35% of the mind. Days 31-60: a Godot vertical slice with one realm and 40 cards, tested with 20 roguelite players. Gate: 70% rate counterfeit deaths 'fair'. Days 61-90: Steam page and a demo submitted to February Next Fest, aiming for about 30k wishlists.",
+  "stack": "Godot 4 with C#; deterministic seeds and daily runs; a headless simulation harness with bot players for balance; Steam, then Switch.",
+  "business_model": "Premium game at about $20 on Steam, followed by Switch. No microtransactions or loot in a game about craving. Later, tradition rule sets ship as paid expansions.",
+  "risks": [
+    "Saturated deckbuilder market; differentiation rests on the inversion landing in a short demo",
+    "Hidden-information deaths feeling unfair; mitigated by visible counterfeit risk and art tells",
+    "Sati-loss death spiral; mitigated by an unoverwritable breath and retreat nodes",
+    "Onboarding load from 52 factors, Pāli terms and the ripening queue",
+    "Religious and cultural offence; mitigated by a Theravāda scholar, a monastic reader, no Buddha images as loot and no wellbeing claims",
+    "Monoculture strategies surviving the mimicry curve"
+  ],
+  "moonshot": "By 2036 the engine is a shared model of mind, and traditions ship as rule sets: Stoic prohairesis and the discipline of assent, Lojong's taking and sending, and CBT's cognitive distortions as near enemies of accurate thought. The bot harness compares which rule sets produce stable, diverse minds, so comparative philosophy of mind becomes something you can simulate and argue about in patch notes. Separately, a preregistered study tests whether expert players spot near enemies faster in vignettes from everyday life.",
+  "best_line": "A mind of pure mettā has nothing left to answer pain with, and the more you play it, the more of it is attachment."
+}

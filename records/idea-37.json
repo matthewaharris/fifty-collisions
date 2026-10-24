@@ -1,0 +1,28 @@
+{
+  "id": 37,
+  "name": "Capacity",
+  "tagline": "A follow is a payment channel for credibility: vouching for a claim locks capacity on every hop until it resolves, and sources that are often wrong run out of reach.",
+  "kind": "protocol",
+  "tier": "bold",
+  "innovation": 6,
+  "feasibility": 6,
+  "domains": ["social networks", "game theory", "staking", "credit networks / Lightning", "AT Protocol", "journalism ethics", "football transfers"],
+  "summary": "Capacity treats the follow graph as a credit network for claims. Each follow opens a channel funded from a fixed, non-transferable budget. Reposts route free but are labelled unbacked. A vouch is a signed atproto record on a strict dated template, and it locks capacity on every hop until the claim resolves or times out; a timeout counts as false. Returns scale with how long capacity was locked before the evidence appeared, so being early and right pays and piling on pays nothing. Sources that are repeatedly wrong drain the channels into them, so their reach shrinks without anyone being banned. It ships first as a Bluesky labeler and feed for football transfer rumours.",
+  "core_loop": "Follow opens a channel with capacity from a non-transferable budget -> vouch on a template (player, club, signed-by date, cited origin) locks capacity on every forwarding hop, HTLC-style -> the labeler shows locked backing, each voucher's record on that resolver class, and 'two backers' once origin-collapsed paths are vertex-disjoint -> an oracle bot or a bonded evidence race resolves the claim; a timeout counts as false -> capacity flows back with time-weighted returns, or drains in proportion to what each hop forwarded, settled over 24 hours with per-hop position limits.",
+  "why_now": "Moltbook showed agent-populated networks carrying hidden prompt injections in 2.6% of posts, so agent reach needs hard bounds. AT Protocol's custom feeds, labelers and 1,000+ apps let this ship without a new network. Meta's adoption of Community Notes made bridging resolution mainstream but exposed its lag behind virality. Non-monetary capacity stays out of the CFTC-versus-states prediction-market fight.",
+  "mvp": "90 days, aimed at the January 2027 transfer window. Days 1-30: the capacity.vouch lexicon, a Jetstream indexer, the Postgres ledger and 200 seed fans with the follow graph imported. Days 31-60: replay the summer 2026 window from archived posts to tune lock sizes, timeouts and position limits. Days 61-90: go live when the window opens on January 1, with a three-person resolver rota. Kill metric: vouched rumours resolve true no more often than the same users' raw follow feed, or fewer than 30% of users vouch weekly.",
+  "stack": "AT Protocol custom lexicon (capacity.vouch) stored in users' PDS; Jetstream firehose indexer; Postgres capacity ledger; max-flow / vertex-disjoint path computation for routing and the two-backers label; a Bluesky labeler and feed generator; oracle bots for resolver classes with official feeds, and a human resolver rota for the rest.",
+  "business_model": "The ledger is public, so the data can't be sold. Revenue comes from a hosted indexer and API for apps that adopt the protocol, then from bounded-reach routing sold to agent networks and A2A registries that need Sybil-proof amplification limits. Licences exclude bookmakers.",
+  "risks": [
+    "Fans may not lock capacity on rumours they'd repost for free, leaving the feed empty",
+    "Players' agents plant rumours and pay hubs off-platform; mitigated by position limits and time-weighted returns",
+    "Graph-disjoint paths can share one original source; origins are collapsed, but citing a source honestly can't be enforced",
+    "A credibility bank run when a hub vouches wrong; mitigated by 24-hour settlement and position limits",
+    "Hub centralisation, as happened in Lightning",
+    "Defamation and harassment if templates expand to injuries, health or private life; excluded by design",
+    "Resolution disputes and fake evidence in classes without an official feed",
+    "The feed only governs its own distribution on atproto; other apps still show the raw posts"
+  ],
+  "moonshot": "By 2036, bounded reach is a protocol primitive. Resolver classes span transfers, earnings dates, product launches, court rulings and preprint replications, and records are scoped by class, never one global score. Most claims are written by agents, and none reaches a person unless someone they follow locks capacity behind it. A2A registries use it as their amplification limit, and reporters who route well earn fees and reputations no algorithm handed them.",
+  "best_line": "Forty vouches that all trace back to one origin get one source, however loud they are."
+}

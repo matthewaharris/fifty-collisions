@@ -1,0 +1,28 @@
+{
+  "id": 34,
+  "name": "Sonotype",
+  "tagline": "A two-column binder for the night chorus: catch unknown calls by playing them back against decoys, and earn bounties for verified silence.",
+  "kind": "game",
+  "tier": "bold",
+  "innovation": 6,
+  "feasibility": 5,
+  "domains": ["bioacoustics", "collecting games", "biodiversity bounties", "behavioural ecology", "challenge-response authentication", "occupancy modelling", "nature credits"],
+  "summary": "Sonotype is a collecting game for the night chorus, played with signed field kits: a Raspberry Pi, a microphone, an IR camera and a speaker. Perch 2.0 embeddings and HDBSCAN split each night's audio into Named cards (known species) and silhouettes (unknown sonotypes), each pinned to a frequency × hour niche grid. To pair a silhouette with its singer, the kit runs a challenge-response that exploits female preference functions. It plays the true call plus temperature-corrected decoys, in a fresh order set each night by a server nonce. A responder that picks the true call three nights running goes to an expert as a candidate. A silence card is a challenged cell inside one watershed where the nightly positive control passed and nothing answered. Eavesdropping parasitoid flies and bats caught on camera become edge cards, and a split candidate pays out when a partner taxonomist confirms it by DNA barcode.",
+  "core_loop": "Deploy a kit overnight -> Perch 2.0 + HDBSCAN cluster calls into Named cards and silhouettes on the niche grid -> server issues a nonce-ordered challenge set (true call + temperature-corrected decoys) -> kit plays it back and records acoustic and IR-video responses with signed uploads -> three nights of correct discrimination make a pairing candidate for expert review -> unanswered challenges with a passing positive control become calibrated silence cards within the watershed -> eavesdroppers on camera become edge cards -> clean song splits inside a Named species become split candidates confirmed by barcode -> bounties pay first-hearer and pairer.",
+  "why_now": "Perch 2.0 (Aug 2025) covers about 14,600 species across taxa, insects included, so clustering unknown calls is cheap. BirdNET and Merlin made acoustic ID a mass habit. Carbon markets moved only once measurement was trusted, and nature-credit frameworks (Verra Nature, Plan Vivo PV Nature, Wallacea Trust) and TNFD disclosure now need verified biodiversity measurements they can't source.",
+  "mvp": "90 days. Weeks 1-4: build the kits and the challenge protocol, and calibrate decoy spacing on five Named cricket species. Weeks 5-9: deploy 150 kits at one tropical field station with a local naturalist club, using only sonotypes under 20 kHz. Weeks 10-12: first decoy-verified pairings reviewed by a museum orthopterist who posts the first ten bounties, and the first silence cards. Kill metric: decoy discrimination fails on Named species.",
+  "stack": "Raspberry Pi Zero 2 kits with LTE, an AudioMoth-grade microphone, an IR camera, a speaker and a temperature sensor; device-key-signed uploads; server-issued nonce challenge orders; Perch 2.0 embeddings and HDBSCAN sonotype clustering; occupancy models for detection probability; export to Xeno-canto and GBIF with coordinate obscuring for sensitive taxa.",
+  "business_model": "Free to play. Revenue comes from monitoring-as-a-service, priced per calibrated site-night, for nature-credit projects and companies making TNFD land-impact disclosures. Bounties posted by museums, agencies and credit buyers carry a 15% platform fee. Kits are rented to clubs. GBIF and NSF grants fund the open data.",
+  "risks": [
+    "Temperature shifts both song and preference; mitigated by temperature-corrected decoys calibrated per taxon",
+    "Paying for silence rewards dead microphones; mitigated by nightly positive controls",
+    "Faked pairings from internet recordings; mitigated by nonce-ordered challenges and signed audio",
+    "Poaching of rare frogs revealed by location data; sensitive taxa coarsened to 10 km cells",
+    "Playback disturbing or mixing populations; capped playback, invertebrates and frogs only, relays limited to one watershed, research permits",
+    "Taxonomist review bottleneck and multi-year species descriptions; split bounties paid at barcode confirmation",
+    "Ultrasonic species need expensive speakers; v1 limited to calls under 20 kHz",
+    "Nature-credit and TNFD demand for calibrated site-nights is still immature"
+  ],
+  "moonshot": "Playback-verified presence and calibrated silence become standard units of account for nature, as tonnes of CO2 did for carbon, so biodiversity credits are priced on detection-corrected occupancy instead of habitat-area proxies. Taxonomy accepts the acoustic holotype, a signed, challenge-verified recording beside the barcode. Edge cards add up to a continental eavesdropper food web, and moving silences become an early alarm for climate range shifts.",
+  "best_line": "The female cricket's preference function is the password check: a real match answers the true call and ignores the decoys."
+}
