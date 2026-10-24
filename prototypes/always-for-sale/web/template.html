@@ -1,0 +1,437 @@
+<title>Always For Sale</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a banknote-engraved ledger. The board is the note's vignette; the
+   right column is the ledger of both treasuries, the order ticket and the tape. */
+:root {
+  --paper: #edf2ec;
+  --paper-2: #e0e9e1;
+  --ink: #163a2d;
+  --ink-soft: #52705f;
+  --rule: #b6c9bb;
+  --light-sq: #d9e5db;
+  --dark-sq: #97b3a1;
+  --coin-w: #fbf9f1;
+  --coin-b: #74202f;
+  --coin-b-ink: #f6eadf;
+  --gold: #9a6d12;
+  --danger: #b0281f;
+  --good: #23704a;
+  --target: rgba(22, 58, 45, .38);
+  --sel: #c9a43c;
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0d1814; --paper-2: #13221c; --ink: #d5e6da; --ink-soft: #8ea999; --rule: #2a4136;
+    --light-sq: #2c4439; --dark-sq: #1b2e27; --coin-w: #f1eee0; --coin-b: #8e2b3c; --coin-b-ink: #f6eadf;
+    --gold: #d8a845; --danger: #ef7468; --good: #5fc08b; --target: rgba(213, 230, 218, .42); --sel: #d8a845;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0d1814; --paper-2: #13221c; --ink: #d5e6da; --ink-soft: #8ea999; --rule: #2a4136;
+  --light-sq: #2c4439; --dark-sq: #1b2e27; --coin-w: #f1eee0; --coin-b: #8e2b3c; --coin-b-ink: #f6eadf;
+  --gold: #d8a845; --danger: #ef7468; --good: #5fc08b; --target: rgba(213, 230, 218, .42); --sel: #d8a845;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 40px;
+}
+.wrap { max-width: 1060px; margin: 0 auto; display: grid; gap: 18px; }
+header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px;
+  padding-bottom: 14px; border-bottom: 1px solid var(--rule);
+  background-image: repeating-radial-gradient(circle at 100% 0, transparent 0 6px, color-mix(in srgb, var(--rule) 45%, transparent) 6px 7px);
+  background-size: 260px 100%; background-repeat: no-repeat; background-position: right top; }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(30px, 6vw, 46px); line-height: 1; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+.sub { margin: 6px 0 0; color: var(--ink-soft); max-width: 60ch; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+select, button { font: inherit; color: var(--ink); }
+select { background: var(--paper-2); border: 1px solid var(--rule); border-radius: 4px; padding: 6px 8px; }
+button { cursor: pointer; border-radius: 4px; border: 1px solid var(--ink); background: transparent; padding: 7px 12px; font-weight: 500; }
+button.primary { background: var(--ink); color: var(--paper); }
+button:disabled { opacity: .45; cursor: default; }
+button:focus-visible, select:focus-visible, .sq:focus-visible { outline: 2px solid var(--sel); outline-offset: 2px; }
+.main { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+@media (max-width: 760px) { .main { grid-template-columns: minmax(0, 1fr); } }
+
+.board-col { display: grid; gap: 10px; min-width: 0; }
+.status { font-family: var(--display); font-size: 21px; min-height: 1.5em; text-wrap: balance; }
+.status.alert { color: var(--danger); }
+.board { display: grid; grid-template-columns: 22px repeat(6, minmax(0, 1fr)); gap: 0; width: 100%; max-width: 560px; }
+.files { display: contents; }
+.lab { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); display: grid; place-items: center; }
+.sq { aspect-ratio: 1; position: relative; display: grid; place-items: center; border: 0; padding: 0; border-radius: 0; max-width: 100%; }
+.sq.l { background: var(--light-sq); } .sq.d { background: var(--dark-sq); }
+.sq.centre::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, transparent 0 5px, color-mix(in srgb, var(--gold) 22%, transparent) 5px 6px); pointer-events: none; }
+.sq.sel { box-shadow: inset 0 0 0 3px var(--sel); }
+.sq.last { box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--gold) 70%, transparent); }
+.dot { position: absolute; width: 24%; aspect-ratio: 1; border-radius: 50%; background: var(--target); pointer-events: none; }
+.sq.cap .dot { width: 86%; background: transparent; border: 3px solid var(--target); }
+.coin { width: 74%; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; position: relative;
+  font-family: var(--display); font-weight: 700; font-size: clamp(16px, 4.6vw, 30px); line-height: 1; pointer-events: none; }
+.coin.w { background: var(--coin-w); color: #163a2d; box-shadow: inset 0 0 0 2px #163a2d, inset 0 0 0 5px var(--coin-w), inset 0 0 0 6px #6d8a79, 0 1px 2px rgba(0,0,0,.25); }
+.coin.b { background: var(--coin-b); color: var(--coin-b-ink); box-shadow: inset 0 0 0 2px #3b0d16, inset 0 0 0 5px var(--coin-b), inset 0 0 0 6px #d9a6ad, 0 1px 2px rgba(0,0,0,.3); }
+.coin.k { font-size: clamp(18px, 5.2vw, 34px); }
+.tag { position: absolute; right: -6%; bottom: -6%; min-width: 46%; padding: 1px 4px; border-radius: 3px; font-family: var(--mono); font-weight: 500;
+  font-size: clamp(10px, 2.4vw, 13px); line-height: 1.3; text-align: center; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); font-variant-numeric: tabular-nums; }
+.tag.staged { background: var(--sel); color: #1c1606; border-color: #1c1606; }
+.mark { position: absolute; left: 4%; top: 4%; font-family: var(--mono); font-size: clamp(9px, 2vw, 11px); line-height: 1; padding: 2px 3px; border-radius: 2px; pointer-events: none; }
+.mark.atk { background: var(--danger); color: #fff; }
+.mark.buy { background: var(--gold); color: #1c1606; }
+.mark.fresh { background: var(--ink-soft); color: var(--paper); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--ink-soft); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { font-style: normal; font-family: var(--mono); font-size: 10px; padding: 1px 4px; border-radius: 2px; }
+
+.side-col { display: grid; gap: 16px; min-width: 0; }
+.ledger { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.ledger th, .ledger td { text-align: right; padding: 6px 4px; border-bottom: 1px solid var(--rule); font-size: 13.5px; }
+.ledger th:first-child, .ledger td:first-child { text-align: left; }
+.ledger thead th { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); font-weight: 500; }
+.ledger td.num { font-family: var(--mono); }
+.neg { color: var(--danger); } .pos { color: var(--good); }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-soft); margin: 0 0 6px; }
+.ticket { border: 1px solid var(--ink); border-radius: 6px; padding: 14px; display: grid; gap: 10px; background: var(--paper-2); }
+.ticket h2 { font-family: var(--display); font-size: 20px; margin: 0; font-weight: 500; }
+.ticket p { margin: 0; }
+.muted { color: var(--ink-soft); font-size: 13.5px; }
+.stepper { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.stepper output { font-family: var(--mono); font-size: 22px; min-width: 2.2ch; text-align: center; }
+.stepper button { width: 38px; padding: 6px 0; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.tape { list-style: none; margin: 0; padding: 0; max-height: 220px; overflow: auto; font-size: 13px; border-top: 1px solid var(--rule); }
+.tape li { display: grid; grid-template-columns: 3.2em 1fr; gap: 8px; padding: 4px 0; border-bottom: 1px dotted var(--rule); }
+.tape .n { font-family: var(--mono); color: var(--ink-soft); }
+.tape .you { font-weight: 500; }
+details { border-top: 1px solid var(--rule); padding-top: 10px; }
+summary { cursor: pointer; font-weight: 600; }
+details ul { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 4px; font-size: 13.5px; }
+.receipts { display: grid; gap: 10px; }
+.receipts table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+.receipts th, .receipts td { padding: 4px; border-bottom: 1px solid var(--rule); text-align: right; }
+.receipts th:first-child, .receipts td:first-child, .receipts th:nth-child(2), .receipts td:nth-child(2) { text-align: left; }
+.scroll { overflow-x: auto; }
+.gate { font-family: var(--mono); font-size: 12.5px; }
+footer { color: var(--ink-soft); font-size: 12.5px; border-top: 1px solid var(--rule); padding-top: 10px; }
+@media (prefers-reduced-motion: no-preference) { .coin { transition: transform .15s ease; } .sq:hover .coin { transform: translateY(-1px); } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Always For Sale</h1>
+      <p class="sub">Chess where every piece carries a price. Any piece you attack can be bought at its posted price, and it changes sides where it stands. You pay tax on your own prices every round.</p>
+    </div>
+    <div class="controls">
+      <label class="muted" for="preset">Economy</label>
+      <select id="preset"></select>
+      <select id="side" aria-label="Your side"><option value="White">Play White</option><option value="Black">Play Black</option></select>
+      <select id="opp" aria-label="Opponent"><option value="full">vs Honest</option><option value="monopolist">vs Monopolist</option></select>
+      <button id="newgame" class="primary">New game</button>
+    </div>
+  </header>
+
+  <div class="main">
+    <section class="board-col" aria-label="Board">
+      <div class="status" id="status" aria-live="polite">Loading the rules engine…</div>
+      <div class="board" id="board"></div>
+      <div class="legend">
+        <span><i class="mark atk" style="position:static">!</i> your piece is attacked: reprice or move it</span>
+        <span><i class="mark buy" style="position:static">$</i> you can buy this piece</span>
+        <span><i class="mark fresh" style="position:static">new</i> just bought, safe for a ply</span>
+        <span>hatched squares pay rent</span>
+      </div>
+    </section>
+
+    <aside class="side-col">
+      <div>
+        <p class="eyebrow" id="roundline">Round 0</p>
+        <table class="ledger" aria-label="Treasuries">
+          <thead><tr><th></th><th>Treasury</th><th>Posted</th><th>Next settlement</th></tr></thead>
+          <tbody id="ledger"></tbody>
+        </table>
+      </div>
+      <div class="ticket" id="ticket"></div>
+      <div>
+        <p class="eyebrow">Tape</p>
+        <ol class="tape" id="tape"></ol>
+      </div>
+      <details>
+        <summary>Rules</summary>
+        <ul>
+          <li>Each turn, do one thing: <strong>move</strong>, <strong>buy</strong> an enemy piece you attack, or <strong>reprice</strong> up to the limit of your own pieces (prices 1–12).</li>
+          <li>A bought piece flips to the buyer where it stands and keeps its price. The buyer pays the owner. It can't be bought straight back on the next ply.</li>
+          <li>Kings are never for sale. Buying the piece that gives check gets you out of check. Repricing never does.</li>
+          <li>After every Black move: each side pays the tax rate times its posted prices, collects rent for pieces on the four centre squares, and pays a progressive tax on a large treasury.</li>
+          <li>From round 30 the tax rate climbs each round, so long games end.</li>
+          <li>Below zero coins after settlement, you are bankrupt and lose. Both at once is a draw. Checkmate still wins. Ply 200 is a draw.</li>
+          <li>6×6 Los Alamos board: no bishops, no castling, no double pawn step. Pawns promote to queen, rook or knight, priced at 9, 5 or 3.</li>
+        </ul>
+      </details>
+    </aside>
+  </div>
+
+  <section class="receipts" id="receipts" hidden></section>
+
+  <footer>Prototype for POC 7 in the Fifty Collisions build plans. The rules engine and the bot are the same Rust code the self-play sweeps ran, compiled to WebAssembly. Everything runs in this page.</footer>
+</div>
+
+<script>
+const WASM_B64 = "__WASM__";
+const PRESETS = __PRESETS__;
+const KIND = { Pawn: "P", Knight: "N", Rook: "R", Queen: "Q", King: "K" };
+const NAME = { Pawn: "pawn", Knight: "knight", Rook: "rook", Queen: "queen", King: "king" };
+const CENTRE = new Set([14, 15, 20, 21]);
+let ex = null, V = null, sel = null, staged = new Map(), promoPick = null, botTimer = null, lastSq = new Set();
+
+function call(o) {
+  const enc = new TextEncoder().encode(JSON.stringify(o));
+  const p = ex.alloc(enc.length);
+  new Uint8Array(ex.memory.buffer, p, enc.length).set(enc);
+  const r = BigInt.asUintN(64, ex.call(p, enc.length));
+  ex.dealloc(p, enc.length);
+  const rp = Number(r >> 32n), rl = Number(r & 0xffffffffn);
+  const s = new TextDecoder().decode(new Uint8Array(ex.memory.buffer, rp, rl).slice());
+  ex.dealloc(rp, rl);
+  return JSON.parse(s);
+}
+const sqName = s => "abcdef"[s % 6] + (Math.floor(s / 6) + 1);
+const fmt = x => (Math.round(x * 10) / 10).toFixed(1);
+const signed = x => (x >= 0 ? "+" : "−") + fmt(Math.abs(x));
+const me = () => V.human, them = () => (V.human === "White" ? "Black" : "White");
+const ci = c => (c === "White" ? 0 : 1);
+const myTurn = () => V && !V.outcome && V.side === V.human;
+const setupOpen = () => V && V.human_counts.total === 0 && !V.outcome;
+
+function newGame() {
+  clearTimeout(botTimer);
+  const pr = PRESETS[+document.getElementById("preset").value];
+  V = call({ cmd: "new", params: pr.params, coin_value: pr.coin_value, human: document.getElementById("side").value,
+             bot: document.getElementById("opp").value, seed: Math.floor(Math.random() * 1e9) });
+  sel = null; staged.clear(); promoPick = null; lastSq = new Set();
+  document.getElementById("receipts").hidden = true;
+  render();
+  maybeBot();
+}
+
+function maybeBot() {
+  if (V && !V.outcome && V.side !== V.human) {
+    botTimer = setTimeout(() => {
+      const before = V.log.length;
+      V = call({ cmd: "bot" });
+      markLast(before);
+      sel = null; promoPick = null;
+      render();
+    }, 420);
+  }
+}
+function markLast(before) {
+  lastSq = new Set();
+  const e = V.log[V.log.length - 1];
+  if (!e || V.log.length === before) return;
+  (e.text.match(/[a-f][1-6]/g) || []).forEach(n => lastSq.add(n));
+}
+
+function act(action) {
+  if (!myTurn()) return;
+  const before = V.log.length;
+  const r = call({ cmd: "act", action });
+  if (r.error) { flash(r.error); return; }
+  V = r; markLast(before); sel = null; staged.clear(); promoPick = null;
+  render(); maybeBot();
+}
+function flash(msg) { const s = document.getElementById("status"); s.textContent = msg; s.classList.add("alert"); }
+
+function movesFrom(s) { return V.moves.filter(a => a.Move.from === s); }
+function buyable(s) { return V.buys.some(a => a.Buy.sq === s); }
+
+function clickSq(s) {
+  if (!V || V.outcome) return;
+  const p = V.squares[s];
+  if (sel !== null && myTurn()) {
+    const ms = movesFrom(sel).filter(a => a.Move.to === s);
+    if (ms.length === 1) return act(ms[0]);
+    if (ms.length > 1) { promoPick = ms; render(); return; }
+  }
+  promoPick = null;
+  sel = (sel === s) ? null : (p ? s : null);
+  render();
+}
+
+function stagedPrice(s) { return staged.has(s) ? staged.get(s) : V.squares[s].price; }
+function step(s, d) {
+  const p = V.squares[s];
+  const np = Math.max(1, Math.min(12, stagedPrice(s) + d));
+  if (setupOpen()) {
+    V = call({ cmd: "setup", prices: [[s, np]] });
+    render(); return;
+  }
+  if (np === p.price) staged.delete(s);
+  else {
+    if (!staged.has(s) && staged.size >= V.params.reprice_limit) {
+      flash(`You can reprice ${V.params.reprice_limit === 1 ? "one piece" : "two pieces"} per turn. Post or clear the staged quote first.`);
+      return;
+    }
+    staged.set(s, np);
+  }
+  render();
+}
+function postQuotes() {
+  const e = [...staged.entries()];
+  act({ Reprice: { n: e.length, sqs: [e[0][0], e[1] ? e[1][0] : 0], prices: [e[0][1], e[1] ? e[1][1] : 0] } });
+}
+
+function render() {
+  if (!V) return;
+  const human = me(), flip = human === "Black";
+  const board = document.getElementById("board");
+  board.innerHTML = "";
+  const targets = new Map();
+  if (sel !== null && myTurn() && V.squares[sel] && V.squares[sel].color === human)
+    movesFrom(sel).forEach(a => targets.set(a.Move.to, true));
+  const ranks = flip ? [0, 1, 2, 3, 4, 5] : [5, 4, 3, 2, 1, 0];
+  const files = flip ? [5, 4, 3, 2, 1, 0] : [0, 1, 2, 3, 4, 5];
+  for (const r of ranks) {
+    const lab = document.createElement("div"); lab.className = "lab"; lab.textContent = r + 1; board.appendChild(lab);
+    for (const f of files) {
+      const s = r * 6 + f, p = V.squares[s];
+      const b = document.createElement("button");
+      b.className = "sq " + ((r + f) % 2 ? "l" : "d") + (CENTRE.has(s) ? " centre" : "") + (sel === s ? " sel" : "") + (lastSq.has(sqName(s)) ? " last" : "");
+      b.id = "sq-" + s;
+      b.setAttribute("aria-label", sqName(s) + (p ? ` ${p.color} ${NAME[p.kind]}${p.kind !== "King" ? " priced " + p.price : ""}` : " empty"));
+      if (p) {
+        const c = document.createElement("div");
+        c.className = "coin " + (p.color === "White" ? "w" : "b") + (p.kind === "King" ? " k" : "");
+        c.textContent = KIND[p.kind];
+        if (p.kind !== "King") {
+          const t = document.createElement("span");
+          t.className = "tag" + (staged.has(s) ? " staged" : "");
+          t.textContent = p.color === human ? stagedPrice(s) : p.price;
+          c.appendChild(t);
+        }
+        b.appendChild(c);
+        if (p.color === human && p.attacked && p.kind !== "King") b.appendChild(Object.assign(document.createElement("span"), { className: "mark atk", textContent: "!" }));
+        else if (p.color !== human && myTurn() && buyable(s)) b.appendChild(Object.assign(document.createElement("span"), { className: "mark buy", textContent: "$" }));
+        else if (p.fresh && p.kind !== "King") b.appendChild(Object.assign(document.createElement("span"), { className: "mark fresh", textContent: "new" }));
+      }
+      if (targets.has(s)) { if (p) b.classList.add("cap"); b.appendChild(Object.assign(document.createElement("span"), { className: "dot" })); }
+      b.addEventListener("click", () => clickSq(s));
+      board.appendChild(b);
+    }
+  }
+  board.appendChild(Object.assign(document.createElement("div"), { className: "lab" }));
+  for (const f of files) board.appendChild(Object.assign(document.createElement("div"), { className: "lab", textContent: "abcdef"[f] }));
+
+  // Status line
+  const st = document.getElementById("status");
+  st.classList.remove("alert");
+  if (V.outcome) {
+    const o = V.outcome, won = o.winner === human;
+    const why = { Checkmate: "by checkmate", Bankruptcy: "by bankruptcy", MutualBankruptcy: "both sides went bankrupt", Stalemate: "stalemate", Insufficient: "only kings left", PlyCap: "200-ply limit" }[o.reason];
+    st.textContent = o.winner ? (won ? `You win, ${why}.` : `You lose, ${why}.`) : `Draw: ${why}.`;
+  } else if (myTurn()) {
+    st.textContent = V.in_check ? "Check. Move, block, capture, or buy the checking piece." : (setupOpen() ? "Set your opening quotes, then make your first move." : "Your turn.");
+    if (V.in_check) st.classList.add("alert");
+  } else st.textContent = "The house is thinking…";
+
+  // Ledger
+  document.getElementById("roundline").textContent = `Round ${V.round + 1} · tax ${(V.tax_rate * 100).toFixed(1)}% of posted prices · rent ${fmt(V.params.rent)} per centre square`;
+  const rows = [[human, "You"], [them(), "House"]].map(([c, label]) => {
+    const i = ci(c), t = V.treasury[i], d = V.settlement[i];
+    const danger = t + d < 0 ? " neg" : "";
+    return `<tr><td>${label} <span class="muted">(${c})</span></td><td class="num${danger}">${fmt(t)}</td><td class="num">${V.posted[i]}</td><td class="num ${d >= 0 ? "pos" : "neg"}">${signed(d)}</td></tr>`;
+  });
+  document.getElementById("ledger").innerHTML = rows.join("");
+
+  renderTicket();
+
+  // Tape
+  const tape = document.getElementById("tape");
+  tape.innerHTML = V.log.slice().reverse().map(e =>
+    `<li><span class="n">${Math.floor(e.ply / 2) + 1}${e.side === "White" ? "." : "…"}</span><span class="${e.side === human ? "you" : ""}">${e.side === human ? "You" : "House"}: ${e.text}</span></li>`).join("") ||
+    `<li><span class="n">—</span><span class="muted">No moves yet. White moves first.</span></li>`;
+
+  if (V.outcome) renderReceipts();
+}
+
+function renderTicket() {
+  const tk = document.getElementById("ticket"), human = me();
+  if (promoPick) {
+    tk.innerHTML = `<h2>Promote to</h2><div class="row">${promoPick.map((a, i) => `<button id="promo-${i}">${NAME[a.Move.promo]} (${{ Queen: 9, Rook: 5, Knight: 3 }[a.Move.promo]})</button>`).join("")}</div>`;
+    promoPick.forEach((a, i) => document.getElementById("promo-" + i).onclick = () => act(a));
+    return;
+  }
+  const stagedList = [...staged.entries()];
+  const postBtn = stagedList.length && myTurn()
+    ? `<div class="row"><button class="primary" id="post">Post ${stagedList.length === 1 ? "1 new quote" : "2 new quotes"} (uses your turn)</button><button id="clear">Clear</button></div>` : "";
+  const p = sel !== null ? V.squares[sel] : null;
+  if (!p) {
+    tk.innerHTML = `<h2>Order ticket</h2><p class="muted">${setupOpen()
+      ? "Opening quotes are free. Tap one of your pieces to change its price before your first move. Lower prices cost less tax; anything you leave cheap and attacked can be bought."
+      : "Tap one of your pieces to move or reprice it. Tap an enemy piece marked $ to buy it."}</p>${postBtn}`;
+  } else if (p.color === human) {
+    const label = `Your ${NAME[p.kind]} on ${sqName(sel)}`;
+    if (p.kind === "King") {
+      tk.innerHTML = `<h2>${label}</h2><p class="muted">Kings are never for sale.</p>${postBtn}`;
+    } else {
+      const note = setupOpen() ? "Free before your first move." :
+        `Repricing uses your turn, up to ${V.params.reprice_limit === 1 ? "one piece" : "two pieces"}.${p.attacked ? " This piece is attacked: below its worth, the house will buy it." : ""}`;
+      tk.innerHTML = `<h2>${label}</h2><div class="stepper"><button id="dn" aria-label="Lower price">−</button><output>${stagedPrice(sel)}</output><button id="up" aria-label="Raise price">+</button><span class="muted">posted ${p.price} · tax ${fmt(p.price * V.tax_rate)}/round</span></div><p class="muted">${note}</p>${postBtn}`;
+      document.getElementById("dn").onclick = () => step(sel, -1);
+      document.getElementById("up").onclick = () => step(sel, +1);
+    }
+  } else {
+    const label = `House ${NAME[p.kind]} on ${sqName(sel)}`;
+    let body;
+    if (p.kind === "King") body = `<p class="muted">Kings are never for sale.</p>`;
+    else if (myTurn() && buyable(sel)) body = `<p>Posted at <strong>${p.price}</strong>. You have ${fmt(V.treasury[ci(human)])}.</p><div class="row"><button class="primary" id="buy">Buy it for ${p.price}</button></div>`;
+    else {
+      const why = !myTurn() ? "Wait for your turn." : p.fresh ? "It was just bought, so it can't change hands this ply." :
+        (p.price > V.treasury[ci(human)] ? `You can't afford ${p.price}.` : "You need to attack it to buy it.");
+      body = `<p>Posted at <strong>${p.price}</strong>.</p><p class="muted">${why}</p>`;
+    }
+    tk.innerHTML = `<h2>${label}</h2>${body}${postBtn}`;
+    const bb = document.getElementById("buy"); if (bb) bb.onclick = () => act({ Buy: { sq: sel } });
+  }
+  const pb = document.getElementById("post"); if (pb) pb.onclick = postQuotes;
+  const cb = document.getElementById("clear"); if (cb) cb.onclick = () => { staged.clear(); render(); };
+}
+
+function renderReceipts() {
+  const box = document.getElementById("receipts"), human = me();
+  const rc = V.receipts || [];
+  const hc = V.human_counts, share = hc.total ? hc.reprices / hc.total : 0;
+  const rows = rc.map(r => {
+    const youBought = r.buyer === human, gap = r.value - r.price;
+    const verdict = youBought ? (gap > 0 ? `you got ${fmt(gap)} below value` : `you overpaid ${fmt(-gap)}`) : (gap > 0 ? `you sold ${fmt(gap)} below value` : `you were paid ${fmt(-gap)} over value`);
+    return `<tr><td>${Math.floor(r.ply / 2) + 1}</td><td>${youBought ? "You bought" : "House bought"} the ${NAME[r.kind]} on ${r.sq}</td><td>${r.price}</td><td>${fmt(r.value)}</td><td class="${(youBought ? gap > 0 : gap < 0) ? "pos" : "neg"}">${verdict}</td></tr>`;
+  }).join("");
+  box.innerHTML = `<div><p class="eyebrow">Receipts</p><h2 style="font-family:var(--display);margin:0;font-weight:500">Every sale, price against value</h2>
+    <p class="muted">Value is what the piece was worth to its owner at the moment of sale: the swing in the position if it changed sides, in coins.</p></div>
+    ${rc.length ? `<div class="scroll"><table><thead><tr><th>Round</th><th>Sale</th><th>Price</th><th>Value</th><th>Verdict</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="muted">No piece changed hands this game.</p>`}
+    <p class="gate">You repriced on ${hc.reprices} of ${hc.total} turns (${(share * 100).toFixed(0)}%). The prototype's player test passes if the typical player reprices on at least 10% of turns.</p>`;
+  box.hidden = false;
+}
+
+async function boot() {
+  const presetSel = document.getElementById("preset");
+  PRESETS.forEach((p, i) => presetSel.appendChild(new Option(p.label, i)));
+  try {
+    const bytes = Uint8Array.from(atob(WASM_B64), c => c.charCodeAt(0));
+    const { instance } = await WebAssembly.instantiate(bytes, {});
+    ex = instance.exports;
+  } catch (e) { flash("The rules engine failed to load: " + e.message); return; }
+  document.getElementById("newgame").onclick = newGame;
+  newGame();
+}
+boot();
+</script>

@@ -1,0 +1,1129 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Caught</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&display=swap">
+<style>
+/* Layout: one calm phone column. The live breath trace is the hero; the sit itself happens on a near-black full-screen layer. */
+:root {
+  --bg: #edf0f4;
+  --surface: #f8f9fb;
+  --ink: #172033;
+  --muted: #586277;
+  --line: #d3d9e3;
+  --accent: #a96b14;
+  --accent-soft: #f3e4c9;
+  --alert: #b0473a;
+  --ok: #3b7a58;
+  --night: #040507;
+  --night-ink: #39404e;
+  --font-display: "Spectral", "Iowan Old Style", Georgia, serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.1875rem;
+  --step-2: 1.5rem;
+  --step-3: 2.25rem;
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c111b; --surface: #141b28; --ink: #e3e7ee; --muted: #97a1b4; --line: #253043;
+    --accent: #e2a94e; --accent-soft: #3a2e1a; --alert: #e47c6c; --ok: #74c294;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c111b; --surface: #141b28; --ink: #e3e7ee; --muted: #97a1b4; --line: #253043;
+  --accent: #e2a94e; --accent-soft: #3a2e1a; --alert: #e47c6c; --ok: #74c294;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--bg); }
+body {
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 40px;
+}
+.app { max-width: 640px; margin: 0 auto; display: grid; gap: 22px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; margin: 0; text-wrap: balance; line-height: 1.15; }
+h1 { font-size: var(--step-3); font-style: italic; font-weight: 300; letter-spacing: -0.01em; }
+h2 { font-size: var(--step-2); }
+h3 { font-size: var(--step-1); }
+p { margin: 0; max-width: 65ch; }
+.muted { color: var(--muted); }
+.small { font-size: var(--step--1); }
+.label { font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.data { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+a { color: var(--accent); }
+
+header.masthead { display: grid; gap: 6px; }
+header.masthead .row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+nav.tabs { display: flex; gap: 4px; padding: 4px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+nav.tabs button {
+  flex: 1 1 0; min-width: 0; border: 0; background: transparent; color: var(--muted);
+  font: 700 var(--step--1)/1 var(--font-body); padding: 10px 6px; border-radius: 999px; cursor: pointer;
+}
+nav.tabs button[aria-selected="true"] { background: var(--ink); color: var(--bg); }
+
+.panel { display: grid; gap: 18px; }
+.card > * { min-width: 0; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; display: grid; gap: 12px; min-width: 0; }
+
+.trace-wrap { display: grid; gap: 10px; }
+.trace { width: 100%; height: 150px; display: block; border-radius: 10px; }
+.trace-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px;
+  border: 1px solid var(--line); font-size: var(--step--1); font-weight: 700; color: var(--muted); background: var(--bg);
+}
+.chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+.chip.live .dot { background: var(--accent); animation: pulse 2.4s ease-in-out infinite; }
+.chip.ok { color: var(--ok); } .chip.ok .dot { background: var(--ok); }
+.chip.warn { color: var(--alert); } .chip.warn .dot { background: var(--alert); }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) { .chip.live .dot { animation: none; } }
+
+.bpm { font-family: var(--font-data); font-size: var(--step-2); font-variant-numeric: tabular-nums; }
+.bpm small { font-size: var(--step--1); color: var(--muted); font-family: var(--font-body); }
+
+.choices { display: flex; flex-wrap: wrap; gap: 8px; }
+.seg { display: flex; width: 100%; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.seg button { flex: 1 1 0; min-width: 0; white-space: nowrap; border: 0; background: transparent; color: var(--ink); font: 700 var(--step--1)/1 var(--font-data); padding: 12px 4px; cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); }
+
+.btn {
+  appearance: none; border: 1px solid var(--ink); background: var(--ink); color: var(--bg);
+  font: 700 var(--step-0)/1.2 var(--font-body); padding: 13px 18px; border-radius: 12px; cursor: pointer; text-align: center;
+}
+.btn.secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.accent { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn:focus-visible, nav.tabs button:focus-visible, .seg button:focus-visible, .linkbtn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-row .btn { flex: 1 1 180px; }
+.linkbtn { background: none; border: 0; color: var(--accent); font: inherit; text-decoration: underline; cursor: pointer; padding: 0; }
+
+.legend { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.legend li { display: grid; grid-template-columns: 96px 1fr; gap: 12px; align-items: baseline; }
+.legend .g { font-family: var(--font-data); font-size: var(--step--1); color: var(--accent); font-weight: 500; }
+
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.checks li { display: flex; gap: 10px; align-items: center; }
+.checks li::before { content: ""; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--line); flex: none; }
+.checks li.pass::before { background: var(--ok); border-color: var(--ok); }
+.progress { height: 4px; border-radius: 4px; background: var(--line); overflow: hidden; }
+.progress > i { display: block; height: 100%; width: 0; background: var(--accent); transition: width 0.25s linear; }
+
+.notice { border-left: 3px solid var(--accent); padding: 4px 0 4px 12px; display: grid; gap: 6px; }
+.notice.warn { border-color: var(--alert); }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px 18px; }
+.stat { display: grid; gap: 2px; min-width: 0; }
+.stat .v { font-family: var(--font-data); font-size: var(--step-2); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.stat .v.hero { font-size: var(--step-3); color: var(--accent); }
+.stat .d { font-size: var(--step--1); color: var(--muted); }
+
+.timeline { width: 100%; height: 86px; display: block; }
+.timeline text { fill: var(--muted); font: 11px var(--font-data); }
+.chart { width: 100%; height: 150px; display: block; }
+.chart text { fill: var(--muted); font: 11px var(--font-data); }
+.chart .grid { stroke: var(--line); stroke-width: 1; }
+.chart .line { fill: none; stroke: var(--accent); stroke-width: 2; }
+.chart .line.alt { stroke: var(--ink); }
+.chart .pt { fill: var(--accent); }
+.chart .pt.alt { fill: var(--ink); }
+.chart .pt.example, .chart .line.example { opacity: 0.45; }
+.key { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: var(--step--1); color: var(--muted); }
+.key span { display: inline-flex; gap: 6px; align-items: center; }
+.key i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: var(--step--1); }
+th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { color: var(--muted); font-weight: 700; }
+td.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+tr.example td { color: var(--muted); font-style: italic; }
+
+.checkin { display: grid; gap: 10px; }
+.checkin .choices button { flex: 1 1 110px; }
+.checkin button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+
+footer { color: var(--muted); font-size: var(--step--1); display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 16px; }
+
+/* Full-screen layers: the sit and the attention test. These commit to one dark look on purpose. */
+.layer {
+  position: fixed; inset: 0; z-index: 50; background: var(--night); color: var(--night-ink);
+  touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
+  display: grid; place-items: center;
+  padding: calc(16px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+}
+.layer .hint { text-align: center; font-family: var(--font-display); font-size: var(--step-1); font-style: italic; color: #59606f; transition: opacity 2.5s ease; max-width: 26ch; }
+.layer .hint.faded { opacity: 0.12; }
+.layer .end {
+  position: absolute; top: calc(12px + env(safe-area-inset-top, 0px)); right: max(12px, env(safe-area-inset-right, 0px));
+  background: transparent; border: 1px solid #1d222b; color: #4a5160; border-radius: 999px; padding: 8px 14px; font: 700 13px var(--font-body); cursor: pointer;
+}
+.layer .debug { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); bottom: calc(12px + env(safe-area-inset-bottom, 0px)); font: 11px/1.4 var(--font-data); color: #6c7484; white-space: pre; text-align: left; }
+.sart-layer { background: #050608; color: #e9ecf1; }
+.sart-digit { font-family: var(--font-data); font-weight: 500; line-height: 1; color: #f1f3f7; }
+.sart-mask { width: 88px; height: 88px; border: 3px solid #8a93a3; border-radius: 50%; position: relative; }
+.sart-mask::before, .sart-mask::after { content: ""; position: absolute; left: 50%; top: 50%; width: 72px; height: 3px; background: #8a93a3; transform: translate(-50%, -50%) rotate(45deg); }
+.sart-mask::after { transform: translate(-50%, -50%) rotate(-45deg); }
+.sart-count { position: absolute; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); left: 0; right: 0; text-align: center; font: 12px var(--font-data); color: #5d6575; }
+</style>
+
+<div class="app" id="app">
+  <header class="masthead">
+    <div class="row">
+      <h1>Caught</h1>
+      <span class="label">Prototype · POC 5</span>
+    </div>
+    <p class="muted">Count your breaths with your eyes closed. Your mind will wander. Noticing that is the skill, and every time you catch yourself it counts as a return.</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" id="tab-sit" aria-selected="true" aria-controls="panel-sit">Sit</button>
+    <button role="tab" id="tab-test" aria-selected="false" aria-controls="panel-test">Attention test</button>
+    <button role="tab" id="tab-history" aria-selected="false" aria-controls="panel-history">History</button>
+  </nav>
+
+  <!-- SIT -->
+  <section class="panel" id="panel-sit" role="tabpanel" aria-labelledby="tab-sit">
+
+    <!-- report -->
+    <div class="card" id="reportCard" hidden>
+      <div class="checkin" id="checkin">
+        <h2>How was that?</h2>
+        <div class="choices" role="group" aria-label="How the sit felt">
+          <button class="btn secondary" type="button" data-feel="settled" aria-pressed="false">Settled</button>
+          <button class="btn secondary" type="button" data-feel="okay" aria-pressed="false">Okay</button>
+          <button class="btn secondary" type="button" data-feel="restless" aria-pressed="false">Restless</button>
+          <button class="btn secondary" type="button" data-feel="unpleasant" aria-pressed="false">Unpleasant</button>
+        </div>
+        <div class="notice warn" id="careNote" hidden>
+          <p class="small">Thanks for saying so. You can stop here for today. Eyes-closed practice sometimes brings up difficult feelings. If this felt distressing, take a break and talk to someone you trust or a health professional. In the US you can call or text 988 at any time; elsewhere, your local crisis line can help.</p>
+        </div>
+      </div>
+      <div class="stats" id="stats"></div>
+      <div>
+        <div class="label">This sit, minute by minute</div>
+        <svg class="timeline" id="timeline" role="img" aria-label="Timeline of the sit"></svg>
+        <div class="key">
+          <span><i style="background: var(--line)"></i>Breath</span>
+          <span><i style="background: var(--alert)"></i>Count slipped</span>
+          <span><i style="background: var(--accent)"></i>Return</span>
+          <span><i style="border: 2px solid var(--ink)"></i>Chime</span>
+        </div>
+      </div>
+      <p class="small muted" id="reportNote"></p>
+      <div class="btn-row">
+        <button class="btn" type="button" id="doneReport">Done</button>
+        <button class="btn secondary" type="button" id="exportSit">Export this sit (JSON)</button>
+      </div>
+      <p class="small muted" id="exportMsg" hidden></p>
+    </div>
+
+
+    <div class="card trace-wrap">
+      <div class="trace-meta">
+        <span class="chip live" id="modeChip"><span class="dot"></span><span id="modeText">Demo breathing</span></span>
+        <span class="bpm"><span id="bpm">–</span> <small>breaths/min</small></span>
+      </div>
+      <canvas class="trace" id="trace" aria-label="Live breathing trace. Each dot marks the end of a breath out."></canvas>
+      <p class="small muted" id="traceNote">This trace is synthetic until you start. With the phone flat on your belly, it follows your breathing, and each dot marks the end of a breath out.</p>
+    </div>
+
+    <!-- idle: setup -->
+    <div class="card" id="setupCard">
+      <h2>Set up a sit</h2>
+      <div class="choices" role="group" aria-label="Sit length">
+        <span class="seg" id="lengthSeg">
+          <button type="button" data-min="5" aria-pressed="false">5 min</button>
+          <button type="button" data-min="10" aria-pressed="true">10 min</button>
+          <button type="button" data-min="15" aria-pressed="false">15 min</button>
+        </span>
+      </div>
+      <p class="small muted">Lie on your back and rest the phone flat on your belly, just below the ribs, screen up. Turn off silent mode so you can hear the chimes.</p>
+      <div class="btn-row">
+        <button class="btn" type="button" id="startSensor">Use breath sensing</button>
+        <button class="btn secondary" type="button" id="startTap">Tap only</button>
+        <button class="btn secondary" type="button" id="startDemo">Try with demo breathing</button>
+      </div>
+      <div class="notice warn" id="sensorNotice" hidden>
+        <strong id="sensorNoticeTitle">This view can't read the motion sensor</strong>
+        <p class="small" id="sensorNoticeText">Pages shown inside the Claude app don't get phone sensor access. You can sit in tap-only mode here, or open the standalone copy of Caught from its own web address to use breath sensing.</p>
+      </div>
+    </div>
+
+    <!-- calibrating -->
+    <div class="card" id="calibCard" hidden>
+      <h2 id="calibTitle">Finding your breath</h2>
+      <p class="small muted" id="calibText">Breathe normally for half a minute. Don't change anything; the sensor only needs to see a few ordinary breaths.</p>
+      <div class="progress" aria-hidden="true"><i id="calibBar"></i></div>
+      <ul class="checks" id="calibChecks">
+        <li id="chkBreaths">Breaths detected</li>
+        <li id="chkRhythm">Steady rhythm</li>
+        <li id="chkStrength">Clear signal</li>
+      </ul>
+      <div class="btn-row">
+        <button class="btn accent" type="button" id="beginSit" disabled>Close your eyes and begin</button>
+        <button class="btn secondary" type="button" id="cancelCalib">Cancel</button>
+      </div>
+      <p class="small muted" id="calibHelp" hidden>Still no clear signal. Move the phone a little lower on your belly and keep it flat. If it doesn't settle, use tap-only mode.</p>
+    </div>
+
+    <div class="card">
+      <h3>How to play</h3>
+      <ul class="legend">
+        <li><span class="g">Tap</span><span>One breath. Count one to nine in your head.</span></li>
+        <li><span class="g">Double-tap</span><span>The tenth breath. Then start again at one.</span></li>
+        <li><span class="g">Press &amp; hold</span><span>You noticed you'd wandered. Let it go and start again at one.</span></li>
+      </ul>
+      <p class="small muted">Every few minutes a soft chime asks where you were. Tap if you were with your breath. Press and hold if you were somewhere else. The only setback is a chime that finds you away before you noticed.</p>
+      <p class="small muted">Breaths-to-catch is how many breaths passed between losing the count and noticing. Lower means you're catching drift sooner. Zero means you caught it before the count slipped.</p>
+    </div>
+  </section>
+
+  <!-- ATTENTION TEST -->
+  <section class="panel" id="panel-test" role="tabpanel" aria-labelledby="tab-test" hidden>
+    <div class="card">
+      <h2>Attention test (SART)</h2>
+      <p>Digits from 1 to 9 flash one at a time. Tap for every digit except 3. When you see a 3, don't tap.</p>
+      <p class="small muted">The test is independent of the sit, which is the point: if breaths-to-catch tracks real attention, your mistakes on 3 should fall as your sits improve. In the planned study it's given separately from the app; here it sits alongside for convenience.</p>
+      <div class="btn-row">
+        <button class="btn" type="button" id="sartQuick">Quick test · 90 digits · 2 min</button>
+        <button class="btn secondary" type="button" id="sartFull">Standard · 225 digits · 4 min</button>
+      </div>
+      <button class="linkbtn small" type="button" id="sartPractice">Practise with 9 digits first</button>
+    </div>
+    <div class="card" id="sartResult" hidden>
+      <h3 id="sartResultTitle">Your result</h3>
+      <div class="stats" id="sartStats"></div>
+      <p class="small muted">Taps on a 3 measure lapses of attention, the main SART score. Missed digits and response time are context.</p>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="panel" id="panel-history" role="tabpanel" aria-labelledby="tab-history" hidden>
+    <div class="card">
+      <h2>Over the days</h2>
+      <p class="small muted" id="historyNote"></p>
+      <div>
+        <div class="label">Median breaths-to-catch per sit</div>
+        <svg class="chart" id="chartBtc" role="img" aria-label="Median breaths-to-catch by date"></svg>
+      </div>
+      <div>
+        <div class="label">Attention test: taps on 3</div>
+        <svg class="chart" id="chartSart" role="img" aria-label="SART commission errors by date"></svg>
+      </div>
+    </div>
+    <div class="card">
+      <h3>All entries</h3>
+      <div class="table-wrap"><table id="historyTable"></table></div>
+      <div class="btn-row">
+        <button class="btn secondary" type="button" id="exportAll">Export everything (JSON)</button>
+        <button class="btn secondary" type="button" id="clearAll">Clear history</button>
+      </div>
+      <div class="notice warn" id="clearConfirm" hidden>
+        <p class="small">Delete every saved sit and test from this device? This can't be undone.</p>
+        <div class="btn-row">
+          <button class="btn" type="button" id="clearYes">Delete</button>
+          <button class="btn secondary" type="button" id="clearNo">Keep</button>
+        </div>
+      </div>
+      <p class="small muted" id="exportAllMsg" hidden></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Caught is a wellness practice, not a medical device, and it makes no health claims. Everything runs on this device and nothing is uploaded. Sits are capped at 20 minutes.</p>
+  </footer>
+</div>
+
+<!-- The sit -->
+<div class="layer" id="sitLayer" hidden>
+  <p class="hint" id="sitHint">Eyes closed. Tap each breath.</p>
+  <button class="end" type="button" id="endSit" data-nogesture>End</button>
+  <div class="debug" id="sitDebug" hidden></div>
+</div>
+
+<!-- The attention test -->
+<div class="layer sart-layer" id="sartLayer" hidden>
+  <div id="sartStage"></div>
+  <button class="end" type="button" id="endSart" data-nogesture>Stop</button>
+  <div class="sart-count" id="sartCount"></div>
+</div>
+
+<script>
+(() => {
+"use strict";
+
+/* ---------- config ---------- */
+const DEBUG = /[?&]debug=1/.test(location.search) || location.hash === "#debug";
+const CFG = {
+  fs: 25,                                   // processing rate, Hz
+  calibS: DEBUG ? 8 : 30,
+  probeMeanS: DEBUG ? 20 : 180,             // Poisson probes, mean interval
+  probeQuietS: DEBUG ? 5 : 60,              // no probe in the first minute
+  probeAnswerS: 8,
+  capMin: 20,
+  doubleMs: 350,
+  longMs: 700,
+  noise: 0.0007,                            // tilt noise floor (unit gravity vector)
+  tapMaskMs: [60, 300],                     // hold the sensor still around a touch
+  sartOnMs: DEBUG ? 150 : 250,
+  sartMaskMs: DEBUG ? 250 : 900,
+};
+const STORE_KEY = "caught.v1";
+const now = () => performance.now() / 1000;
+const $ = (id) => document.getElementById(id);
+const median = (a) => { if (!a.length) return NaN; const s = [...a].sort((x, y) => x - y); const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+const mean = (a) => a.length ? a.reduce((x, y) => x + y, 0) / a.length : NaN;
+const sd = (a) => { if (a.length < 2) return NaN; const m = mean(a); return Math.sqrt(a.reduce((s, x) => s + (x - m) ** 2, 0) / (a.length - 1)); };
+const fmt = (x, d = 0) => Number.isFinite(x) ? x.toFixed(d) : "–";
+
+/* ---------- storage (best effort) ---------- */
+function loadStore() { try { const s = JSON.parse(localStorage.getItem(STORE_KEY) || "null"); if (s && Array.isArray(s.entries)) return s; } catch (e) {} return { entries: [] }; }
+function saveStore(s) { try { localStorage.setItem(STORE_KEY, JSON.stringify(s)); return true; } catch (e) { return false; } }
+let store = loadStore();
+
+/* ---------- filters ---------- */
+function biquad(type, f0, fs, Q = Math.SQRT1_2) {
+  const w = 2 * Math.PI * f0 / fs, c = Math.cos(w), s = Math.sin(w), a = s / (2 * Q), a0 = 1 + a;
+  const b = type === "lp" ? [(1 - c) / 2, 1 - c, (1 - c) / 2] : [(1 + c) / 2, -(1 + c), (1 + c) / 2];
+  const B = b.map((v) => v / a0), A1 = -2 * c / a0, A2 = (1 - a) / a0;
+  let x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+  return {
+    step(x) { const y = B[0] * x + B[1] * x1 + B[2] * x2 - A1 * y1 - A2 * y2; x2 = x1; x1 = x; y2 = y1; y1 = y; return y; },
+    prime(x) { x1 = x2 = x; y1 = y2 = type === "lp" ? x : 0; },
+  };
+}
+
+/* ---------- breath sensor: gravity tilt -> bandpass -> principal axis -> end-of-exhale troughs ---------- */
+class BreathSensor {
+  constructor() { this.listeners = []; this.reset(); }
+  reset() {
+    this.raw = []; this.last = null; this.medBuf = []; this.hp = null; this.lp = null;
+    this.win = []; this.axis = [0, 1, 0]; this.pol = 1; this.nTick = 0;
+    this.trace = []; this.breaths = []; this.amps = []; this.rise = []; this.fall = [];
+    this.dir = 0; this.ext = null; this.lastExtT = -1e9; this.lastPeak = null; this.lastTroughT = -1e9;
+    this.maskUntil = -Infinity; this.held = null;
+  }
+  onBreath(fn) { this.listeners.push(fn); }
+  push(gx, gy, gz) {
+    const n = Math.hypot(gx, gy, gz); if (!n || !Number.isFinite(n)) return;
+    this.raw.push([gx / n, gy / n, gz / n]);
+  }
+  mask(untilT) { this.maskUntil = Math.max(this.maskUntil, untilT); }
+  tick(t) {
+    let v;
+    if (this.raw.length) { v = [0, 0, 0]; for (const r of this.raw) { v[0] += r[0]; v[1] += r[1]; v[2] += r[2]; } v = v.map((c) => c / this.raw.length); this.raw.length = 0; this.last = v; }
+    else if (this.last) v = this.last; else return;
+    // Touches shake the phone: hold the last clean sample while a tap settles.
+    if (t < this.maskUntil && this.held) v = this.held; else this.held = v;
+    this.medBuf.push(v); if (this.medBuf.length > 5) this.medBuf.shift();
+    const m = [0, 1, 2].map((i) => median(this.medBuf.map((s) => s[i])));
+    if (!this.hp) {
+      this.hp = [0, 1, 2].map(() => biquad("hp", 0.1, CFG.fs));
+      this.lp = [0, 1, 2].map(() => biquad("lp", 0.5, CFG.fs));
+      this.hp.forEach((f, i) => f.prime(m[i])); this.lp.forEach((f) => f.prime(0));
+    }
+    const f = m.map((x, i) => this.lp[i].step(this.hp[i].step(x)));
+    this.win.push(f); if (this.win.length > CFG.fs * 20) this.win.shift();
+    if (++this.nTick % CFG.fs === 0) this.updateAxis();
+    const y = this.pol * (f[0] * this.axis[0] + f[1] * this.axis[1] + f[2] * this.axis[2]);
+    this.trace.push({ t, y }); while (this.trace.length && this.trace[0].t < t - 40) this.trace.shift();
+    if (this.nTick > CFG.fs * 3) this.zig(t, y);  // let the filters settle first
+  }
+  updateAxis() {
+    const W = this.win; if (W.length < CFG.fs * 4) return;
+    const mu = [0, 1, 2].map((i) => mean(W.map((w) => w[i])));
+    const C = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+    for (const w of W) for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++) C[i][j] += (w[i] - mu[i]) * (w[j] - mu[j]);
+    let a = [...this.axis];
+    for (let k = 0; k < 12; k++) {
+      const b = [0, 1, 2].map((i) => C[i][0] * a[0] + C[i][1] * a[1] + C[i][2] * a[2]);
+      const n = Math.hypot(...b); if (!n) return; a = b.map((x) => x / n);
+    }
+    if (a[0] * this.axis[0] + a[1] * this.axis[1] + a[2] * this.axis[2] < 0) a = a.map((x) => -x);
+    this.axis = a;
+  }
+  hyst(t) {
+    const amp = median(this.amps.slice(-6));
+    if (Number.isFinite(amp)) return Math.max(0.4 * amp, CFG.noise);
+    const recent = this.trace.filter((p) => p.t > t - 8).map((p) => p.y);
+    const rms = Math.sqrt(mean(recent.map((y) => y * y)) || 0);
+    return Math.max(rms, CFG.noise);
+  }
+  zig(t, y) {
+    const h = this.hyst(t);
+    if (this.dir === 0) { this.ext = { t, y }; this.dir = -1; return; }
+    if (this.dir < 0) {
+      if (y < this.ext.y) this.ext = { t, y };
+      else if (y > this.ext.y + h && this.ext.t - this.lastExtT > 0.6) {
+        const tr = this.ext;
+        if (this.lastPeak) { this.amps.push(this.lastPeak.y - tr.y); this.fall.push(tr.t - this.lastPeak.t); }
+        this.lastExtT = tr.t; this.dir = 1; this.ext = { t, y };
+        if (tr.t - this.lastTroughT >= 1.5) { this.lastTroughT = tr.t; this.breaths.push(tr.t); this.listeners.forEach((fn) => fn(tr.t)); }
+      }
+    } else {
+      if (y > this.ext.y) this.ext = { t, y };
+      else if (y < this.ext.y - h && this.ext.t - this.lastExtT > 0.6) {
+        const pk = this.ext;
+        if (this.breaths.length) this.rise.push(pk.t - this.breaths[this.breaths.length - 1]);
+        this.lastPeak = pk; this.lastExtT = pk.t; this.dir = -1; this.ext = { t, y };
+      }
+    }
+  }
+  // Breathing in is usually quicker than breathing out. If "rises" run longer than "falls", the sign is upside down.
+  settlePolarity() {
+    const r = median(this.rise.slice(-8)), f = median(this.fall.slice(-8));
+    if (Number.isFinite(r) && Number.isFinite(f) && r > f * 1.1) {
+      this.pol *= -1; this.trace.forEach((p) => (p.y = -p.y));
+      this.dir = 0; this.lastPeak = null; this.rise = []; this.fall = [];
+    }
+  }
+  quality(t, span = 30) {
+    const b = this.breaths.filter((x) => x > t - span);
+    const iv = b.slice(1).map((x, i) => x - b[i]);
+    const amp = median(this.amps.slice(-6));
+    const bpm = iv.length ? 60 / median(iv) : NaN;
+    return {
+      n: b.length, bpm,
+      breathsOk: b.length >= 4 && bpm >= 4 && bpm <= 30,
+      rhythmOk: iv.length >= 3 && sd(iv) / mean(iv) < 0.45,
+      strengthOk: Number.isFinite(amp) && amp > CFG.noise * 3,
+    };
+  }
+  bpm(t) { return this.quality(t, 40).bpm; }
+}
+
+/* ---------- synthetic breathing for demo mode ---------- */
+class DemoBreather {
+  constructor() { this.phase = 0.3; this.period = 5.2; this.amp = 0.012; }
+  step(dt) {
+    this.phase += dt / this.period;
+    if (this.phase >= 1) { this.phase -= 1; this.period = 4.4 + Math.random() * 1.6; this.amp = 0.009 + Math.random() * 0.006; }
+    const p = this.phase;
+    const w = p < 0.4 ? 0.5 - 0.5 * Math.cos(Math.PI * p / 0.4) : 0.5 + 0.5 * Math.cos(Math.PI * (p - 0.4) / 0.6);
+    const nz = () => (Math.random() - 0.5) * 0.0012;
+    const pitch = this.amp * w + nz(), roll = 0.3 * this.amp * w + nz();
+    return [9.81 * Math.sin(roll), 9.81 * Math.sin(pitch), 9.81 * Math.cos(pitch) * Math.cos(roll)];
+  }
+}
+
+/* ---------- audio ---------- */
+const Sound = {
+  ctx: null,
+  unlock() {
+    try {
+      if (!this.ctx) this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+      if (this.ctx.state === "suspended") this.ctx.resume();
+      const b = this.ctx.createBuffer(1, 1, 22050), s = this.ctx.createBufferSource(); s.buffer = b; s.connect(this.ctx.destination); s.start(0);
+    } catch (e) {}
+  },
+  tone(freq, dur, gain, delay = 0, partials = [[1, 1]]) {
+    const c = this.ctx; if (!c) return;
+    const t0 = c.currentTime + delay, out = c.createGain();
+    out.gain.setValueAtTime(0.0001, t0); out.gain.exponentialRampToValueAtTime(gain, t0 + 0.02); out.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    out.connect(c.destination);
+    for (const [mult, g] of partials) {
+      const o = c.createOscillator(), pg = c.createGain(); o.type = "sine"; o.frequency.value = freq * mult; pg.gain.value = g;
+      o.connect(pg); pg.connect(out); o.start(t0); o.stop(t0 + dur + 0.05);
+    }
+  },
+  chime() { this.tone(659, 2.6, 0.22, 0, [[1, 1], [2.76, 0.35], [5.4, 0.12]]); this.buzz([40, 80, 40]); },
+  ret() { this.tone(392, 1.4, 0.14, 0, [[1, 1], [2, 0.2]]); },
+  hold() { this.tone(880, 0.12, 0.05); this.buzz(15); },
+  bell() { [0, 1.6, 3.2].forEach((d) => this.tone(523, 3.2, 0.2, d, [[1, 1], [2.76, 0.3], [5.4, 0.1]])); },
+  buzz(p) { try { navigator.vibrate && navigator.vibrate(p); } catch (e) {} },
+};
+
+/* ---------- wake lock ---------- */
+const Wake = {
+  lock: null, want: false,
+  async on() { this.want = true; try { if ("wakeLock" in navigator) { this.lock = await navigator.wakeLock.request("screen"); } } catch (e) { this.lock = null; } },
+  off() { this.want = false; try { this.lock && this.lock.release(); } catch (e) {} this.lock = null; },
+};
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible" && Wake.want) Wake.on(); });
+
+/* ---------- source management: sensor | demo | tap ---------- */
+const sensor = new BreathSensor();
+let source = "demo";            // what feeds the trace
+let demo = new DemoBreather();
+let demoTimer = null, tickTimer = null, motionHandler = null, lastDemoT = 0;
+
+function startTicking() {
+  if (tickTimer) return;
+  tickTimer = setInterval(() => sensor.tick(now()), 1000 / CFG.fs);
+}
+function stopTicking() { clearInterval(tickTimer); tickTimer = null; }
+function startDemoFeed() {
+  stopDemoFeed(); lastDemoT = now();
+  demoTimer = setInterval(() => { const t = now(); const g = demo.step(t - lastDemoT); lastDemoT = t; sensor.push(...g); }, 20);
+}
+function stopDemoFeed() { clearInterval(demoTimer); demoTimer = null; }
+function stopMotion() { if (motionHandler) window.removeEventListener("devicemotion", motionHandler); motionHandler = null; }
+
+// Must be called synchronously inside a tap: iOS only shows its permission prompt from a user gesture.
+function enableMotion() {
+  if (typeof DeviceMotionEvent === "undefined") return Promise.resolve("none");
+  const ask = typeof DeviceMotionEvent.requestPermission === "function" ? DeviceMotionEvent.requestPermission() : Promise.resolve("granted");
+  return Promise.resolve(ask).catch(() => "denied").then((r) => {
+    if (r !== "granted") return "denied";
+    return new Promise((resolve) => {
+      let got = false;
+      motionHandler = (e) => {
+        const a = e.accelerationIncludingGravity;
+        if (!a || a.x == null) return;
+        if (!got) { got = true; resolve("ok"); }
+        sensor.push(a.x, a.y, a.z);
+      };
+      window.addEventListener("devicemotion", motionHandler);
+      setTimeout(() => { if (!got) { stopMotion(); resolve("silent"); } }, 1500);
+    });
+  });
+}
+
+function setModeChip(kind, text) {
+  const chip = $("modeChip");
+  chip.className = "chip " + kind;
+  $("modeText").textContent = text;
+}
+
+/* ---------- trace drawing ---------- */
+const canvas = $("trace"), g2 = canvas.getContext("2d");
+let colors = {};
+function readColors() {
+  const cs = getComputedStyle(document.documentElement);
+  colors = { ink: cs.getPropertyValue("--ink").trim(), muted: cs.getPropertyValue("--muted").trim(), line: cs.getPropertyValue("--line").trim(), accent: cs.getPropertyValue("--accent").trim(), bg: cs.getPropertyValue("--bg").trim() };
+}
+readColors();
+setInterval(readColors, 1000);
+function drawTrace() {
+  const dpr = window.devicePixelRatio || 1, w = canvas.clientWidth, h = canvas.clientHeight;
+  if (canvas.width !== Math.round(w * dpr) || canvas.height !== Math.round(h * dpr)) { canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr); }
+  g2.setTransform(dpr, 0, 0, dpr, 0, 0);
+  g2.fillStyle = colors.bg; g2.fillRect(0, 0, w, h);
+  const t1 = now(), span = 30, t0 = t1 - span, pts = sensor.trace.filter((p) => p.t >= t0);
+  g2.strokeStyle = colors.line; g2.lineWidth = 1;
+  for (let s = Math.ceil(t0 / 5) * 5; s <= t1; s += 5) { const x = (s - t0) / span * w; g2.beginPath(); g2.moveTo(x, 0); g2.lineTo(x, h); g2.stroke(); }
+  if (pts.length > 2) {
+    const maxAbs = Math.max(CFG.noise * 4, ...pts.map((p) => Math.abs(p.y))) * 1.15;
+    const Y = (y) => h / 2 - (y / maxAbs) * (h / 2 - 10);
+    g2.strokeStyle = colors.ink; g2.lineWidth = 2; g2.lineJoin = "round"; g2.beginPath();
+    pts.forEach((p, i) => { const x = (p.t - t0) / span * w; i ? g2.lineTo(x, Y(p.y)) : g2.moveTo(x, Y(p.y)); });
+    g2.stroke();
+    g2.fillStyle = colors.accent;
+    for (const bt of sensor.breaths) {
+      if (bt < t0) continue;
+      const near = pts.reduce((a, p) => (Math.abs(p.t - bt) < Math.abs(a.t - bt) ? p : a), pts[0]);
+      g2.beginPath(); g2.arc((bt - t0) / span * w, Y(near.y), 4.5, 0, Math.PI * 2); g2.fill();
+    }
+  } else {
+    g2.fillStyle = colors.muted; g2.font = "13px " + getComputedStyle(document.body).fontFamily; g2.fillText("Waiting for signal…", 12, h / 2);
+  }
+  const bpm = sensor.bpm(t1); $("bpm").textContent = source === "tap" ? "–" : fmt(bpm, 1);
+}
+function loop() { if (!document.hidden && !$("panel-sit").hidden && $("sitLayer").hidden) drawTrace(); requestAnimationFrame(loop); }
+
+/* ---------- gestures ---------- */
+class Gestures {
+  constructor(el, emit, onTouch) {
+    this.emit = emit; this.down = null; this.pending = null; this.active = false;
+    const isUi = (e) => e.target.closest && e.target.closest("[data-nogesture]");
+    el.addEventListener("pointerdown", (e) => { if (!this.active || isUi(e)) return; e.preventDefault(); this.press(e.pointerId); onTouch && onTouch(); });
+    el.addEventListener("pointerup", (e) => { if (!this.active || isUi(e)) return; e.preventDefault(); this.release(e.pointerId, false); onTouch && onTouch(); });
+    el.addEventListener("pointercancel", (e) => this.release(e.pointerId, true));
+    el.addEventListener("contextmenu", (e) => e.preventDefault());
+    window.addEventListener("keydown", (e) => { if (!this.active || e.code !== "Space") return; e.preventDefault(); if (e.repeat) return; this.press("key"); });
+    window.addEventListener("keyup", (e) => { if (!this.active || e.code !== "Space") return; e.preventDefault(); this.release("key", false); });
+  }
+  press(id) {
+    if (this.down) return;
+    const d = { id, t: now(), long: false }; this.down = d;
+    d.timer = setTimeout(() => { d.long = true; this.flushPending(); this.emit("long", d.t + CFG.longMs / 1000); }, CFG.longMs);
+  }
+  release(id, cancel) {
+    const d = this.down; if (!d || d.id !== id) return;
+    clearTimeout(d.timer); this.down = null;
+    if (d.long || cancel) return;
+    const p = this.pending;
+    if (p && d.t - p.t < CFG.doubleMs / 1000) { clearTimeout(p.timer); this.pending = null; this.emit("ten", p.t); return; }
+    this.flushPending();
+    const np = { t: d.t }; np.timer = setTimeout(() => { if (this.pending === np) { this.pending = null; this.emit("tap", np.t); } }, CFG.doubleMs);
+    this.pending = np;
+  }
+  flushPending() { const p = this.pending; if (!p) return; clearTimeout(p.timer); this.pending = null; this.emit("tap", p.t); }
+  stop() { this.active = false; this.flushPending(); if (this.down) { clearTimeout(this.down.timer); this.down = null; } }
+}
+
+/* ---------- the sit ---------- */
+let sit = null;
+class Sit {
+  constructor(mode, minutes) {
+    this.mode = mode; this.minutes = minutes; this.t0 = now();
+    this.events = []; this.breathTimes = []; this.tapTimes = [];
+    this.count = 0; this.drifting = false; this.driftBreath = 0; this.driftT = 0; this.ranPast = false;
+    this.breathsSinceTap = 0; this.gapFlagged = false; this.lastCatchT = -1e9; this.lastTapT = null;
+    this.probe = null; this.nextProbe = this.t0 + CFG.probeQuietS + this.expo();
+    this.paused = 0; this.hiddenAt = null; this.done = false;
+  }
+  expo() { return -CFG.probeMeanS * Math.log(1 - Math.random()); }
+  rel(t) { return +(t - this.t0).toFixed(3); }
+  log(type, t, extra = {}) { this.events.push({ type, t: this.rel(t), ...extra }); }
+  get elapsed() { return now() - this.t0; }
+  medTapInterval() { const T = this.tapTimes.slice(-11); const iv = T.slice(1).map((x, i) => x - T[i]).filter((x) => x < 30); return iv.length >= 5 ? median(iv) : NaN; }
+  breathIndex() { return this.breathTimes.length; }
+  slip(kind, t, extra = {}) {
+    this.log("slip", t, { kind, ...extra });
+    if (!this.drifting) { this.drifting = true; this.driftBreath = this.breathIndex(); this.driftT = t; }
+  }
+  onBreath(t) {
+    if (this.done || t < this.t0) return;
+    this.breathTimes.push(t); this.log("breath", t);
+    if (this.probe) return;            // the chime interrupts tapping; those breaths aren't missed
+    this.breathsSinceTap++;
+    if (this.breathsSinceTap >= 2 && !this.gapFlagged) { this.gapFlagged = true; this.slip("missed-breath", t); }
+  }
+  gesture(kind, t) {
+    if (this.done) return;
+    if (this.probe && t >= this.probe.t) { this.answer(kind === "long" ? "away" : "here", t); return; }
+    if (kind === "tap" || kind === "ten") {
+      this.tapTimes.push(t); this.lastTapT = t; this.breathsSinceTap = 0; this.gapFlagged = false;
+      if (kind === "tap") {
+        this.count++; this.log("tap", t, { count: this.count });
+        if (this.count >= 10 && !this.ranPast) { this.ranPast = true; this.slip("past-ten", t, { count: this.count }); }
+      } else {
+        this.log("ten", t, { after: this.count });
+        if (this.count !== 9) this.slip("wrong-ten", t, { after: this.count });
+        this.count = 0; this.ranPast = false;
+      }
+    } else if (kind === "long") {
+      let btc, estimated = false;
+      if (!this.drifting) btc = 0;
+      else if (this.mode === "tap") { const m = this.medTapInterval(); btc = Number.isFinite(m) ? Math.max(1, Math.round((t - this.driftT) / m)) : null; estimated = true; }
+      else btc = this.breathIndex() - this.driftBreath;
+      this.log("return", t, { breathsToCatch: btc, estimated });
+      this.drifting = false; this.count = 0; this.ranPast = false; this.lastCatchT = t;
+      this.restartGapClock(t);
+      Sound.ret();
+    }
+  }
+  answer(ans, t) {
+    const p = this.probe; this.probe = null;
+    this.restartGapClock(t);
+    const setback = ans === "away" && t - this.lastCatchT > 10;
+    this.log("probe", p.t, { answer: ans, answeredAt: this.rel(t), setback, countSlipped: this.drifting });
+    if (setback) { this.drifting = false; this.count = 0; this.ranPast = false; }
+    this.nextProbe = now() + Math.max(20, this.expo());
+  }
+  restartGapClock(t) { this.breathsSinceTap = 0; this.gapFlagged = false; if (this.lastTapT !== null) this.lastTapT = t; }
+  tick() {
+    if (this.done) return;
+    const t = now(), el = t - this.t0 - this.paused;
+    if (this.probe && t > this.probe.t + CFG.probeAnswerS) {
+      const p = this.probe; this.probe = null;
+      this.log("probe", p.t, { answer: "none", setback: false, countSlipped: this.drifting });
+      this.restartGapClock(t);
+      this.nextProbe = t + Math.max(20, this.expo());
+    }
+    if (!this.probe && t >= this.nextProbe && el < this.minutes * 60 - 15) {
+      this.probe = { t }; Sound.chime();
+    }
+    if (this.mode === "tap" && !this.probe) {
+      const m = this.medTapInterval();
+      if (Number.isFinite(m) && this.lastTapT && t - this.lastTapT > 2.2 * m && !this.gapFlagged) { this.gapFlagged = true; this.slip("long-gap", this.lastTapT + 2.2 * m); }
+    }
+    if (el >= this.minutes * 60 || t - this.t0 >= CFG.capMin * 60) finishSit("complete");
+  }
+  summary() {
+    const ev = this.events, returns = ev.filter((e) => e.type === "return"), probes = ev.filter((e) => e.type === "probe");
+    const slips = ev.filter((e) => e.type === "slip");
+    const btcs = returns.map((e) => e.breathsToCatch).filter((x) => x != null);
+    const setbacks = probes.filter((p) => p.setback).length;
+    const iv = this.breathTimes.slice(1).map((x, i) => x - this.breathTimes[i]);
+    const tapIv = this.tapTimes.slice(1).map((x, i) => x - this.tapTimes[i]).filter((x) => x < 30);
+    const bpm = this.mode === "tap" ? (tapIv.length ? 60 / median(tapIv) : NaN) : (iv.length ? 60 / median(iv) : NaN);
+    const kinds = {}; slips.forEach((s) => (kinds[s.kind] = (kinds[s.kind] || 0) + 1));
+    return {
+      medianBreathsToCatch: btcs.length ? median(btcs) : null,
+      breathsToCatchEstimated: this.mode === "tap",
+      returns: returns.length, setbacks,
+      selfCaughtRatio: returns.length + setbacks ? returns.length / (returns.length + setbacks) : null,
+      probes: { here: probes.filter((p) => p.answer === "here").length, away: probes.filter((p) => p.answer === "away").length, unanswered: probes.filter((p) => p.answer === "none").length },
+      countSlips: { total: slips.length, ...kinds },
+      breathsPerMin: Number.isFinite(bpm) ? +bpm.toFixed(1) : null,
+      taps: this.tapTimes.length,
+    };
+  }
+  // Tap minus the nearest sensor breath, in seconds. Export only: this is the "jitter" layer and it is a likely signal, never a score.
+  likelyOffsets() {
+    if (this.mode === "tap" || !this.breathTimes.length) return [];
+    return this.tapTimes.map((t) => {
+      let best = null; for (const b of this.breathTimes) if (best === null || Math.abs(t - b) < Math.abs(t - best)) best = b;
+      const d = t - best; return Math.abs(d) <= 3 ? +d.toFixed(3) : null;
+    }).filter((x) => x !== null);
+  }
+}
+
+sensor.onBreath((t) => { if (sit) sit.onBreath(t); });
+
+const sitGestures = new Gestures($("sitLayer"), (kind, t) => { if (sit) sit.gesture(kind, t); updateDebug(); }, () => {
+  const t = now(); sensor.mask(t + CFG.tapMaskMs[1] / 1000);
+});
+let sitTick = null, hintTimer = null;
+
+function updateDebug() {
+  if (!DEBUG || !sit) return;
+  const s = sit.summary();
+  $("sitDebug").textContent = `t ${fmt(sit.elapsed, 0)}s  count ${sit.count}  drifting ${sit.drifting}\nbreaths ${sit.breathTimes.length}  taps ${sit.tapTimes.length}\nslips ${s.countSlips.total}  returns ${s.returns}  setbacks ${s.setbacks}\nprobe ${sit.probe ? "OPEN" : "next in " + fmt(sit.nextProbe - now(), 0) + "s"}`;
+}
+
+/* ---------- Sit tab flow ---------- */
+let minutes = 10, mode = "demo", calib = null;
+const show = (id, on) => { $(id).hidden = !on; };
+
+document.querySelectorAll("#lengthSeg button").forEach((b) => b.addEventListener("click", () => {
+  minutes = +b.dataset.min;
+  document.querySelectorAll("#lengthSeg button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+}));
+if (DEBUG) {
+  const b = document.createElement("button"); b.type = "button"; b.dataset.min = "1"; b.textContent = "1 min"; b.setAttribute("aria-pressed", "false");
+  $("lengthSeg").prepend(b);
+  b.addEventListener("click", () => { minutes = 1; document.querySelectorAll("#lengthSeg button").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); });
+}
+
+function resetToPreview() {
+  stopMotion(); stopDemoFeed(); sensor.reset(); demo = new DemoBreather();
+  source = "demo";
+  // Pre-roll 35 s of synthetic breathing so the preview trace starts full.
+  const t1 = now(); for (let k = 0; k < 35 * CFG.fs; k++) { sensor.push(...demo.step(0.02)); sensor.push(...demo.step(0.02)); sensor.tick(t1 - 35 + k / CFG.fs); }
+  startDemoFeed(); startTicking();
+  setModeChip("live", "Demo breathing · preview");
+  $("traceNote").textContent = "This trace is synthetic until you start. With the phone flat on your belly, it follows your breathing, and each dot marks the end of a breath out.";
+}
+
+$("startSensor").addEventListener("click", () => {
+  const motion = enableMotion();     // first, inside the gesture
+  Sound.unlock(); Wake.on();
+  $("startSensor").disabled = true;
+  motion.then((r) => {
+    $("startSensor").disabled = false;
+    if (r === "ok") { stopDemoFeed(); sensor.reset(); source = "sensor"; startTicking(); beginCalibration("sensor"); return; }
+    stopMotion();
+    $("sensorNotice").hidden = false;
+    if (r === "denied") {
+      $("sensorNoticeTitle").textContent = "Motion access was turned down";
+      $("sensorNoticeText").textContent = "Caught needs motion and orientation access to follow your breathing. On iPhone, reload the page and choose Allow when asked. You can also sit in tap-only mode.";
+    } else {
+      $("sensorNoticeTitle").textContent = "This view can't read the motion sensor";
+      $("sensorNoticeText").textContent = r === "none"
+        ? "This browser has no motion sensor. On a laptop, try it with demo breathing, or use tap-only mode."
+        : "Pages shown inside the Claude app don't get phone sensor access. You can sit in tap-only mode here, or open the standalone copy of Caught from its own web address to use breath sensing.";
+    }
+  });
+});
+$("startDemo").addEventListener("click", () => { Sound.unlock(); Wake.on(); resetToPreview(); beginCalibration("demo"); });
+$("startTap").addEventListener("click", () => { Sound.unlock(); Wake.on(); mode = "tap"; startSit("tap"); });
+
+function beginCalibration(m) {
+  mode = m; show("setupCard", false); show("reportCard", false); show("calibCard", true);
+  $("beginSit").disabled = true; $("calibHelp").hidden = true;
+  ["chkBreaths", "chkRhythm", "chkStrength"].forEach((id) => $(id).classList.remove("pass"));
+  if (m === "sensor") { setModeChip("live", "Breath sensing"); $("traceNote").textContent = "Your breathing, from the phone's tilt. Each dot marks the end of a breath out."; }
+  else { setModeChip("live", "Demo breathing"); $("traceNote").textContent = "Demo breathing: a synthetic breath for trying the controls. Scores from a demo sit aren't meaningful."; }
+  $("calibTitle").textContent = m === "demo" ? "Checking the demo signal" : "Finding your breath";
+  const t0 = now(); let polarityDone = false;
+  clearInterval(calib);
+  calib = setInterval(() => {
+    const t = now(), frac = Math.min(1, (t - t0) / CFG.calibS);
+    $("calibBar").style.width = (frac * 100).toFixed(1) + "%";
+    const q = sensor.quality(t, Math.min(30, Math.max(10, t - t0)));
+    $("chkBreaths").classList.toggle("pass", q.breathsOk);
+    $("chkRhythm").classList.toggle("pass", q.rhythmOk);
+    $("chkStrength").classList.toggle("pass", q.strengthOk);
+    const ok = q.breathsOk && q.rhythmOk && q.strengthOk;
+    if (frac >= 1 && !polarityDone) { polarityDone = true; sensor.settlePolarity(); }
+    $("beginSit").disabled = !(ok && frac >= 1);
+    if (frac >= 1) {
+      setModeChip(ok ? "ok" : "warn", ok ? (m === "demo" ? "Demo signal OK" : "Signal OK") : "No clear signal yet");
+      $("calibHelp").hidden = ok;
+    }
+  }, 250);
+}
+$("cancelCalib").addEventListener("click", () => { clearInterval(calib); Wake.off(); show("calibCard", false); show("setupCard", true); resetToPreview(); });
+$("beginSit").addEventListener("click", () => { clearInterval(calib); Sound.unlock(); startSit(mode); });
+
+function startSit(m) {
+  mode = m; show("calibCard", false); show("setupCard", false); show("reportCard", false);
+  if (m === "tap") { stopMotion(); stopDemoFeed(); source = "tap"; setModeChip("", "Tap only"); }
+  sit = new Sit(m, minutes);
+  $("sitLayer").hidden = false; sitGestures.active = true;
+  const hint = $("sitHint"); hint.classList.remove("faded");
+  hint.textContent = m === "tap" ? "Eyes closed. Tap each breath." : "Eyes closed. Tap each breath out.";
+  clearTimeout(hintTimer); hintTimer = setTimeout(() => hint.classList.add("faded"), 5000);
+  $("sitDebug").hidden = !DEBUG;
+  clearInterval(sitTick); sitTick = setInterval(() => { if (sit) { sit.tick(); updateDebug(); } }, 250);
+  Wake.on();
+}
+$("endSit").addEventListener("click", () => finishSit("ended"));
+
+let lastRecord = null;
+function finishSit(how) {
+  if (!sit || sit.done) return;
+  sitGestures.stop();
+  if (sit.probe) sit.answer("none", now());
+  sit.done = true; clearInterval(sitTick);
+  if (how === "complete") Sound.bell();
+  $("sitLayer").hidden = true; Wake.off();
+  const s = sit.summary();
+  const rec = {
+    id: "sit-" + Date.now(), kind: "sit", date: new Date().toISOString(), mode: sit.mode,
+    plannedMinutes: sit.minutes, durationS: +sit.elapsed.toFixed(1), ended: how,
+    metrics: s, checkin: null,
+    events: sit.events, breaths: sit.breathTimes.map((t) => sit.rel(t)),
+    likelyTapMinusBreathS: sit.likelyOffsets(),
+  };
+  lastRecord = rec;
+  store.entries.push(rec); saveStore(store);
+  renderReport(rec);
+  window.scrollTo(0, 0);
+  sit = null;
+  resetToPreview();
+  renderHistory();
+}
+
+function statHtml(v, label, desc, hero) { return `<div class="stat"><span class="label">${label}</span><span class="v${hero ? " hero" : ""}">${v}</span>${desc ? `<span class="d">${desc}</span>` : ""}</div>`; }
+function renderReport(rec) {
+  const m = rec.metrics;
+  show("reportCard", true); show("setupCard", true);
+  document.querySelectorAll("#checkin [data-feel]").forEach((b) => b.setAttribute("aria-pressed", "false"));
+  $("careNote").hidden = true; $("exportMsg").hidden = true;
+  const btc = m.medianBreathsToCatch == null ? "–" : fmt(m.medianBreathsToCatch, m.medianBreathsToCatch % 1 ? 1 : 0);
+  $("stats").innerHTML = [
+    statHtml(btc, "Breaths-to-catch", m.breathsToCatchEstimated ? "median, estimated from your tap rhythm" : "median over your returns", true),
+    statHtml(m.returns, "Returns", "times you caught yourself"),
+    statHtml(m.setbacks, "Setbacks", "chime found you away first"),
+    statHtml(m.selfCaughtRatio == null ? "–" : Math.round(m.selfCaughtRatio * 100) + "%", "Self-caught", "returns ÷ (returns + setbacks)"),
+    statHtml(`${m.probes.here}/${m.probes.away}/${m.probes.unanswered}`, "Chimes", "here / away / no answer"),
+    statHtml(m.countSlips.total, "Count slips", slipDesc(m.countSlips)),
+    statHtml(m.breathsPerMin == null ? "–" : fmt(m.breathsPerMin, 1), rec.mode === "tap" ? "Taps/min" : "Breaths/min", ""),
+    statHtml(fmtDur(rec.durationS), "Length", rec.ended === "complete" ? "full sit" : "ended early"),
+  ].join("");
+  drawTimeline(rec);
+  $("reportNote").textContent = rec.mode === "demo"
+    ? "This was a demo sit against synthetic breathing, so the numbers only show how scoring works. Demo sits are kept out of the trend."
+    : rec.mode === "tap"
+      ? "Tap-only mode can't see your real breaths, so missed breaths are guessed from long gaps in your tapping and breaths-to-catch is an estimate."
+      : "Count slips come from your taps against the breaths the sensor saw. Timing between taps and breaths is kept only in the export, as a likely signal; it never affects your score.";
+}
+function slipDesc(c) {
+  const parts = [];
+  if (c["missed-breath"]) parts.push(`${c["missed-breath"]} missed breath`);
+  if (c["long-gap"]) parts.push(`${c["long-gap"]} long gap`);
+  if (c["past-ten"]) parts.push(`${c["past-ten"]} ran past ten`);
+  if (c["wrong-ten"]) parts.push(`${c["wrong-ten"]} early ten`);
+  return parts.join(" · ") || "none";
+}
+function fmtDur(s) { const m = Math.floor(s / 60), r = Math.round(s % 60); return `${m}:${String(r).padStart(2, "0")}`; }
+
+function drawTimeline(rec) {
+  const svg = $("timeline"), W = svg.clientWidth || 600, H = 86, pad = 8;
+  const dur = Math.max(rec.durationS, 1), X = (t) => pad + (t / dur) * (W - 2 * pad);
+  let out = `<rect x="0" y="0" width="${W}" height="${H}" fill="none"/>`;
+  out += `<line x1="${pad}" y1="40" x2="${W - pad}" y2="40" stroke="var(--line)" stroke-width="1"/>`;
+  for (const b of rec.breaths) out += `<line x1="${X(b).toFixed(1)}" y1="33" x2="${X(b).toFixed(1)}" y2="47" stroke="var(--line)" stroke-width="1.5"/>`;
+  for (const e of rec.events) {
+    const x = X(e.t).toFixed(1);
+    if (e.type === "slip") out += `<path d="M${x} 52 l5 9 h-10 z" fill="var(--alert)"/>`;
+    if (e.type === "return") out += `<circle cx="${x}" cy="24" r="6" fill="var(--accent)"/>`;
+    if (e.type === "probe") out += `<circle cx="${x}" cy="40" r="7" fill="none" stroke="${e.setback ? "var(--alert)" : "var(--ink)"}" stroke-width="2"/>`;
+  }
+  const steps = dur > 600 ? 300 : dur > 120 ? 60 : 30;
+  for (let s = 0; s <= dur; s += steps) { const x = X(s); out += `<text x="${x.toFixed(1)}" y="80" text-anchor="${s === 0 ? "start" : x > W - 30 ? "end" : "middle"}">${fmtDur(s)}</text>`; }
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.innerHTML = out;
+}
+
+document.querySelectorAll("#checkin [data-feel]").forEach((b) => b.addEventListener("click", () => {
+  document.querySelectorAll("#checkin [data-feel]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+  $("careNote").hidden = b.dataset.feel !== "unpleasant";
+  if (lastRecord) { lastRecord.checkin = b.dataset.feel; const e = store.entries.find((x) => x.id === lastRecord.id); if (e) e.checkin = b.dataset.feel; saveStore(store); renderHistory(); }
+}));
+$("doneReport").addEventListener("click", () => { show("reportCard", false); show("setupCard", true); });
+
+/* ---------- export ---------- */
+let downloadsApi; // undefined = not asked yet, null = unavailable
+async function getDownloads() {
+  if (downloadsApi !== undefined) return downloadsApi;
+  try { downloadsApi = window.claude && window.claude.use ? await window.claude.use("downloads") : null; } catch (e) { downloadsApi = null; }
+  return downloadsApi;
+}
+async function exportJson(name, obj, msgEl) {
+  const text = JSON.stringify(obj, null, 2);
+  msgEl.hidden = false;
+  const dl = await getDownloads();
+  if (dl) {
+    try { await dl.save({ filename: name, data: text }); msgEl.textContent = "Saved " + name + "."; return; }
+    catch (e) { if (e && e.code === "declined") { msgEl.textContent = "Not saved."; return; } }
+  }
+  try {
+    const url = URL.createObjectURL(new Blob([text], { type: "application/json" }));
+    const a = document.createElement("a"); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+    msgEl.textContent = "Download started: " + name + ".";
+  } catch (e) { msgEl.textContent = "This view can't save files."; }
+}
+$("exportSit").addEventListener("click", () => lastRecord && exportJson(`caught-sit-${lastRecord.date.slice(0, 10)}.json`, exportShape([lastRecord]), $("exportMsg")));
+$("exportAll").addEventListener("click", () => exportJson(`caught-history-${new Date().toISOString().slice(0, 10)}.json`, exportShape(store.entries), $("exportAllMsg")));
+function exportShape(entries) {
+  return {
+    app: "Caught prototype (POC 5)", exportedAt: new Date().toISOString(),
+    notes: {
+      breathsToCatch: "Sensor breaths from the first count slip to the self-catch; 0 when caught before the count slipped. In tap-only mode it is estimated from the tap rhythm.",
+      likelyTapMinusBreathS: "Seconds from each tap to the nearest detected end of a breath out. A likely signal only, includes filter delay, never scored.",
+      times: "Seconds from the start of the sit.",
+    },
+    entries,
+  };
+}
+
+/* ---------- SART ---------- */
+let sartRun = null;
+const sartGestureLayer = $("sartLayer");
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function startSart(perDigit, practice) {
+  Sound.unlock();
+  let digits = []; for (let d = 1; d <= 9; d++) for (let k = 0; k < perDigit; k++) digits.push(d);
+  if (DEBUG && !practice) digits = digits.slice(0, 27);
+  shuffle(digits);
+  const sizes = [48, 72, 94, 100, 120];
+  sartRun = { practice, trials: digits.map((d) => ({ d, size: sizes[Math.floor(Math.random() * sizes.length)], rt: null })), i: -1, onset: 0, stopped: false };
+  $("sartLayer").hidden = false; $("sartCount").textContent = practice ? "Practice" : "";
+  Wake.on();
+  $("sartStage").innerHTML = `<p class="hint">Tap for every digit except 3.</p>`;
+  setTimeout(nextSartTrial, 1500);
+}
+function nextSartTrial() {
+  const r = sartRun; if (!r || r.stopped) return;
+  r.i++;
+  if (r.i >= r.trials.length) return endSart(false);
+  const tr = r.trials[r.i];
+  const scale = Math.min(1, window.innerWidth / 400);
+  $("sartStage").innerHTML = `<span class="sart-digit" style="font-size:${Math.round(tr.size * scale * 1.3)}px">${tr.d}</span>`;
+  $("sartCount").textContent = r.practice ? "Practice" : `${r.i + 1} / ${r.trials.length}`;
+  r.onset = now();
+  setTimeout(() => { if (sartRun === r && !r.stopped) $("sartStage").innerHTML = `<span class="sart-mask" aria-hidden="true"></span>`; }, CFG.sartOnMs);
+  setTimeout(nextSartTrial, CFG.sartOnMs + CFG.sartMaskMs);
+}
+function sartRespond() {
+  const r = sartRun; if (!r || r.i < 0 || r.i >= r.trials.length) return;
+  const tr = r.trials[r.i]; if (tr.rt !== null) return;
+  tr.rt = +((now() - r.onset) * 1000).toFixed(0);
+}
+sartGestureLayer.addEventListener("pointerdown", (e) => { if (e.target.closest("[data-nogesture]")) return; e.preventDefault(); sartRespond(); });
+window.addEventListener("keydown", (e) => { if (!sartRun || $("sartLayer").hidden || e.code !== "Space" || e.repeat) return; e.preventDefault(); sartRespond(); });
+$("endSart").addEventListener("click", () => endSart(true));
+function endSart(stopped) {
+  const r = sartRun; if (!r) return;
+  r.stopped = true; sartRun = null; $("sartLayer").hidden = true; Wake.off();
+  const done = r.trials.slice(0, Math.max(0, r.i + (stopped ? 0 : 1)));
+  const nogo = done.filter((t) => t.d === 3), go = done.filter((t) => t.d !== 3);
+  const commission = nogo.filter((t) => t.rt !== null).length, omission = go.filter((t) => t.rt === null).length;
+  const rts = go.filter((t) => t.rt !== null).map((t) => t.rt);
+  const res = {
+    id: "sart-" + Date.now(), kind: "sart", date: new Date().toISOString(), trials: done.length, planned: r.trials.length, stoppedEarly: stopped,
+    commission, nogoTrials: nogo.length, omission, goTrials: go.length, meanRtMs: rts.length ? Math.round(mean(rts)) : null, sdRtMs: rts.length > 1 ? Math.round(sd(rts)) : null,
+  };
+  $("sartResult").hidden = false;
+  $("sartResultTitle").textContent = r.practice ? "Practice result (not saved)" : stopped ? "Stopped early" : "Your result";
+  $("sartStats").innerHTML = [
+    statHtml(`${commission}/${nogo.length}`, "Taps on 3", "lapses: lower is better", true),
+    statHtml(`${omission}/${go.length}`, "Missed digits", "no tap when you should have"),
+    statHtml(res.meanRtMs == null ? "–" : res.meanRtMs + " ms", "Response time", res.sdRtMs == null ? "" : "± " + res.sdRtMs + " ms"),
+  ].join("");
+  if (!r.practice && !stopped) { store.entries.push(res); saveStore(store); renderHistory(); }
+}
+$("sartQuick").addEventListener("click", () => startSart(10, false));
+$("sartFull").addEventListener("click", () => startSart(25, false));
+$("sartPractice").addEventListener("click", () => startSart(1, true));
+
+/* ---------- history ---------- */
+function exampleEntries() {
+  const day = 86400000, base = Date.now() - 13 * day, out = [];
+  [7, 6, 6, 5, 4.5, 4, 3.5, 3].forEach((v, i) => out.push({ kind: "sit", example: true, date: new Date(base + [0, 1, 3, 4, 6, 8, 10, 12][i] * day).toISOString(), mode: "sensor", metrics: { medianBreathsToCatch: v, returns: 5 + (i % 3), setbacks: i < 4 ? 2 : 1 }, durationS: 600 }));
+  [[9, 0], [7, 6], [5, 12]].forEach(([c, d]) => out.push({ kind: "sart", example: true, date: new Date(base + d * day).toISOString(), commission: c, nogoTrials: 25, omission: 3, goTrials: 200, meanRtMs: 380 }));
+  return out;
+}
+function renderHistory() {
+  const real = store.entries.filter((e) => e.kind === "sit" ? e.mode !== "demo" : true);
+  const useExamples = !store.entries.length;
+  const data = useExamples ? exampleEntries() : store.entries;
+  $("historyNote").textContent = useExamples
+    ? "Example data, shown until you finish your first sit or test. If the practice trains attention, both lines should fall together."
+    : "Demo sits are listed below but left out of the chart. If the practice trains attention, both lines should fall together.";
+  const sits = (useExamples ? data : real).filter((e) => e.kind === "sit" && e.metrics && e.metrics.medianBreathsToCatch != null);
+  const sarts = data.filter((e) => e.kind === "sart");
+  const all = [...sits, ...sarts].map((e) => +new Date(e.date));
+  const dom = all.length ? [Math.min(...all), Math.max(...all)] : [Date.now() - 86400000, Date.now()];
+  lineChart($("chartBtc"), sits.map((e) => ({ x: +new Date(e.date), y: e.metrics.medianBreathsToCatch })), dom, "No sits with returns yet", "", useExamples);
+  lineChart($("chartSart"), sarts.map((e) => ({ x: +new Date(e.date), y: e.commission })), dom, "No attention tests yet", "alt", useExamples);
+  const rows = [...data].sort((a, b) => new Date(b.date) - new Date(a.date)).map((e) => {
+    const d = new Date(e.date).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+    const cls = e.example ? ' class="example"' : "";
+    if (e.kind === "sit") {
+      const m = e.metrics || {};
+      return `<tr${cls}><td>${d}</td><td>Sit · ${e.mode === "tap" ? "tap only" : e.mode === "demo" ? "demo" : "sensor"}${e.example ? " (example)" : ""}</td><td class="num">${m.medianBreathsToCatch == null ? "–" : m.medianBreathsToCatch}</td><td class="num">${m.returns ?? "–"} / ${m.setbacks ?? "–"}</td><td class="num">${fmtDur(e.durationS || 0)}</td><td>${e.checkin || ""}</td></tr>`;
+    }
+    return `<tr${cls}><td>${d}</td><td>Attention test${e.example ? " (example)" : ""}</td><td class="num">${e.commission}/${e.nogoTrials} on 3</td><td class="num">${e.omission} missed</td><td class="num">${e.meanRtMs ?? "–"} ms</td><td></td></tr>`;
+  });
+  $("historyTable").innerHTML = `<thead><tr><th>Date</th><th>Entry</th><th>Breaths-to-catch / lapses</th><th>Returns / setbacks</th><th>Length / RT</th><th>Felt</th></tr></thead><tbody>${rows.join("") || `<tr><td colspan="6">Nothing yet.</td></tr>`}</tbody>`;
+}
+function lineChart(svg, pts, dom, unit, alt, example) {
+  const W = svg.clientWidth || 600, H = 150, L = 34, R = 12, T = 12, B = 26;
+  pts = pts.sort((a, b) => a.x - b.x);
+  const ymax = Math.max(1, ...pts.map((p) => p.y)) * 1.15;
+  const span = Math.max(dom[1] - dom[0], 86400000);
+  const X = (x) => L + ((x - dom[0]) / span) * (W - L - R), Y = (y) => T + (1 - y / ymax) * (H - T - B);
+  let s = "";
+  const step = ymax > 12 ? 5 : ymax > 6 ? 2 : 1;
+  for (let v = 0; v <= ymax; v += step) s += `<line class="grid" x1="${L}" x2="${W - R}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}"/><text x="${L - 6}" y="${(Y(v) + 4).toFixed(1)}" text-anchor="end">${v}</text>`;
+  const fmtD = (x) => new Date(x).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  s += `<text x="${L}" y="${H - 6}">${fmtD(dom[0])}</text><text x="${W - R}" y="${H - 6}" text-anchor="end">${fmtD(dom[1])}</text>`;
+  if (!pts.length) s += `<text x="${(L + W - R) / 2}" y="${H / 2}" text-anchor="middle">${unit}</text>`;
+  const ex = example ? " example" : "";
+  if (pts.length > 1) s += `<polyline class="line ${alt}${ex}" points="${pts.map((p) => X(p.x).toFixed(1) + "," + Y(p.y).toFixed(1)).join(" ")}"/>`;
+  pts.forEach((p, i) => { s += `<circle class="pt ${alt}${ex}" cx="${X(p.x).toFixed(1)}" cy="${Y(p.y).toFixed(1)}" r="${i === pts.length - 1 ? 5 : 3.5}"/>`; });
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.innerHTML = s;
+}
+$("clearAll").addEventListener("click", () => { $("clearConfirm").hidden = false; });
+$("clearNo").addEventListener("click", () => { $("clearConfirm").hidden = true; });
+$("clearYes").addEventListener("click", () => { store = { entries: [] }; saveStore(store); $("clearConfirm").hidden = true; renderHistory(); });
+
+/* ---------- tabs ---------- */
+const tabs = [["tab-sit", "panel-sit"], ["tab-test", "panel-test"], ["tab-history", "panel-history"]];
+function selectTab(tabId) {
+  tabs.forEach(([t, p]) => { const on = t === tabId; $(t).setAttribute("aria-selected", String(on)); $(p).hidden = !on; });
+  if (tabId === "tab-history") renderHistory();
+}
+tabs.forEach(([t]) => $(t).addEventListener("click", () => selectTab(t)));
+const hashTab = { "#sit": "tab-sit", "#test": "tab-test", "#history": "tab-history" }[location.hash];
+if (hashTab) selectTab(hashTab);
+window.addEventListener("resize", () => { if (!$("panel-history").hidden) renderHistory(); if (lastRecord && !$("reportCard").hidden) drawTimeline(lastRecord); });
+
+/* ---------- boot ---------- */
+resetToPreview();
+renderHistory();
+requestAnimationFrame(loop);
+if (DEBUG) window.__caught = { sensor, get sit() { return sit; }, CFG, finishSit, store: () => store };
+})();
+</script>
+</body></html>

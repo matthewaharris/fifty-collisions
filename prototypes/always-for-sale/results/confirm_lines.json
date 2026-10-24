@@ -1,0 +1,95 @@
+[
+ {
+  "centre": "x033",
+  "axis": "tax_rate",
+  "cells": [
+   "x033:tax_rate:-2",
+   "x033:tax_rate:-1",
+   "x033:tax_rate:+0",
+   "x033:tax_rate:+1",
+   "x033:tax_rate:+2"
+  ]
+ },
+ {
+  "centre": "x033",
+  "axis": "rent",
+  "cells": [
+   "x033:rent:-1",
+   "x033:rent:+0",
+   "x033:rent:+1",
+   "x033:rent:+2"
+  ]
+ },
+ {
+  "centre": "x033",
+  "axis": "start_treasury",
+  "cells": [
+   "x033:start_treasury:+0",
+   "x033:start_treasury:+1",
+   "x033:start_treasury:+2"
+  ]
+ },
+ {
+  "centre": "x089",
+  "axis": "tax_rate",
+  "cells": [
+   "x089:tax_rate:-2",
+   "x089:tax_rate:-1",
+   "x089:tax_rate:+0",
+   "x089:tax_rate:+1",
+   "x089:tax_rate:+2"
+  ]
+ },
+ {
+  "centre": "x089",
+  "axis": "rent",
+  "cells": [
+   "x089:rent:+0",
+   "x089:rent:+1",
+   "x089:rent:+2"
+  ]
+ },
+ {
+  "centre": "x089",
+  "axis": "start_treasury",
+  "cells": [
+   "x089:start_treasury:-2",
+   "x089:start_treasury:-1",
+   "x089:start_treasury:+0",
+   "x089:start_treasury:+1",
+   "x089:start_treasury:+2"
+  ]
+ },
+ {
+  "centre": "x075",
+  "axis": "tax_rate",
+  "cells": [
+   "x075:tax_rate:-2",
+   "x075:tax_rate:-1",
+   "x075:tax_rate:+0",
+   "x075:tax_rate:+1"
+  ]
+ },
+ {
+  "centre": "x075",
+  "axis": "rent",
+  "cells": [
+   "x075:rent:-2",
+   "x075:rent:-1",
+   "x075:rent:+0",
+   "x075:rent:+1",
+   "x075:rent:+2"
+  ]
+ },
+ {
+  "centre": "x075",
+  "axis": "start_treasury",
+  "cells": [
+   "x075:start_treasury:-2",
+   "x075:start_treasury:-1",
+   "x075:start_treasury:+0",
+   "x075:start_treasury:+1",
+   "x075:start_treasury:+2"
+  ]
+ }
+]
