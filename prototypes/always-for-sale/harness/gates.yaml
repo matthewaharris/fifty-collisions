@@ -1,0 +1,68 @@
+_comment: Pre-registered before the confirmatory run (plans/poc-07, milestone 4). Do not edit after the
+  tag afs-gate-a-prereg.
+gate_a:
+  gap_plies:
+  - 6
+  - 10
+  gap_definition: median of pooled gaps, in plies (one player's action), between consecutive buyouts in
+    full-vs-full self-play, counting the first gap from ply 0
+  max_draw_share: 0.15
+  draw_definition: ply cap, stalemate, insufficient material or mutual bankruptcy, in self-play
+  min_win_rate: 0.6
+  min_ci_lower: 0.55
+  ci: 95% bootstrap over seed pairs (2,000 resamples)
+  band_cells: 3
+  band_definition: 3 adjacent passing cells on one line
+centres:
+- name: x033
+  exploratory:
+    gap_median: 7.0
+    draw_share: 0.0
+    win_vs_no_buy: 0.72
+    win_vs_rote: 0.9
+  point:
+    tax_rate: 0.0553
+    rent: 0.1704
+    start_treasury: 12.6087
+    prog_threshold: 50.7084
+    late_slope: 0.0051
+    coin_value: 216.8508
+    reprice_limit: 0.0305
+- name: x089
+  exploratory:
+    gap_median: 9.5
+    draw_share: 0.06
+    win_vs_no_buy: 0.73
+    win_vs_rote: 0.665
+  point:
+    tax_rate: 0.0402
+    rent: 0.0038
+    start_treasury: 43.2385
+    prog_threshold: 76.349
+    late_slope: 0.0085
+    coin_value: 229.7212
+    reprice_limit: 0.8684
+- name: x075
+  exploratory:
+    gap_median: 6.0
+    draw_share: 0.0
+    win_vs_no_buy: 0.66
+    win_vs_rote: 0.93
+  point:
+    tax_rate: 0.1815
+    rent: 0.3882
+    start_treasury: 40.8383
+    prog_threshold: 20.6568
+    late_slope: 0.0049
+    coin_value: 221.7333
+    reprice_limit: 0.4237
+centre_selection: the 3 exploratory cells (of 128, seeds 1-50) that passed every point estimate
+lines:
+  tax_rate: 0.01
+  rent: 0.1
+  start_treasury: 5.0
+line_levels: centre -2 .. +2 steps, clipped to the exploratory range
+pairs_per_comparison: 1000
+seeds: confirmatory seeds start at 1,000,000,000; exploratory used 1-50
+bots: full = depth-2 alpha-beta over moves and buys, hedged pricing (HEDGE 0.4), stale-quote repricing;
+  no_buy and rote ablations as in src/bot.rs at this tag
