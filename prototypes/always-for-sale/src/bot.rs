@@ -47,6 +47,10 @@ impl BotCfg {
     pub fn no_buy(coin_value: f64) -> BotCfg {
         BotCfg { name: "no_buy".into(), buys: false, ..BotCfg::full(coin_value) }
     }
+    /// Hedged opening prices like the full bot, but never reprices during play.
+    pub fn no_reprice(coin_value: f64) -> BotCfg {
+        BotCfg { name: "no_reprice".into(), reprices: false, ..BotCfg::full(coin_value) }
+    }
     pub fn rote(coin_value: f64) -> BotCfg {
         BotCfg { name: "rote".into(), reprices: false, rote_setup: true, ..BotCfg::full(coin_value) }
     }

@@ -45,6 +45,7 @@ fn opponent(matchup: &str, cv: f64) -> BotCfg {
         "self" => BotCfg::full(cv),
         "vs_no_buy" => BotCfg::no_buy(cv),
         "vs_rote" => BotCfg::rote(cv),
+        "vs_no_reprice" => BotCfg::no_reprice(cv),
         "vs_monopolist" => BotCfg::monopolist(cv),
         other => panic!("unknown matchup {other}"),
     }
