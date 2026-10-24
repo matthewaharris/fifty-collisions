@@ -9,17 +9,19 @@ Fifty app, game, system and institution ideas, each built from two to four field
 
 ## Prototype shortlist
 
+Each pick has a high-level build plan in [`plans/`](plans/README.md), with a timebox, budget, architecture and pre-registered go/no-go test.
+
 | POC | # | Idea | Go/no-go test |
 | --- | --- | --- | --- |
 | 1 | 47 | Piepowder | Do pairs of online juries agree on replayed agent failures more often than chance? |
 | 2 | 39 | Bottleneck | Does it block more prompt-injection attacks than the best current defence on a standard attack benchmark? |
 | 3 | 45 | Repro | Does a sandbox with planted secrets filter junk bug reports while letting real ones through? |
 | 4 | 3 | Litmus Ghost | Does any consciousness-theory team engage with a $20K counterexample season on IIT? |
-| 5 | 9 | Caught | Does a phone on the belly track breathing as well as a chest strap in 20 people? |
+| 5 | 9 | Caught | Over four weeks, does breaths-to-catch improve, and does that improvement track an independent attention test (SART)? |
 | 6 | 8 | Smoke-Filled Room | Do AI bots rediscover 3 of 4 historical auction exploits on their own? |
 | 7 | 24 | Always For Sale | Is there a tax setting where buying pieces matters without breaking the game? |
 | 8 | 44 | Seventeen Moments | In millions of bot games, does any single card dominate? |
-| 9 | 1 | Precedent | Do a pharmacist and a lawyer agree 300 extracted appeal arguments are valid? |
+| 9 | 1 | Precedent | Do doctors sign at least half the pre-filled letters within 7 days, across 200 live appeals? |
 | 10 | 50 | Dry Run | Do AI agents find the 2017 tax bill's grain-glitch loophole within 72 hours? |
 | 11 | 10 | One Take | Does sharing the same quantum-seeded dice cut the noise in model comparisons by at least 30%? |
 
@@ -36,6 +38,7 @@ Fifty app, game, system and institution ideas, each built from two to four field
 | `persona_visionary.md`, `persona_builder.md` | The two agents' role prompts |
 | `research/trends_brief.md` | The October 2026 trends research the agents used for grounding |
 | `plain/` | Plain-language summaries (`batch-*.json`), their brief and the script that formats them |
+| `plans/` | High-level build plans for the 11 prototype picks, with an index, a suggested build order and the components they share |
 | `site/` | The page template and the build script |
 | `fifty-collisions.html` | The built page |
 | `archive/` | Retired material: #10 Crossover and the catalog before the swap |
@@ -52,3 +55,4 @@ This reads `records/` and `transcripts/` and writes `fifty-collisions.html`. The
 
 - **#3** was renamed from Zombie Bounty to **Litmus Ghost**. Its contest modes are now Hollow and Overlooked.
 - **#10 Crossover** was retired because it duplicated #25 Offtaker. Slot 10 now holds **One Take**, from a later bonus round on quantum randomness and AI.
+- **Prototype plans** were added in `plans/`. For Caught and Precedent, the go/no-go test above now matches each record's own kill metric. The earlier questions (chest-strap accuracy, and a pharmacist and lawyer audit) are now early milestones.
