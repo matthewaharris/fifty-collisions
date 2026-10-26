@@ -85,3 +85,6 @@
 - **Innovation 4:** tip logs are commodity. What's new is sealing at close plus double-entry tip-outs between co-workers.
 - **Feasibility 8:** text entry, OCR and a PDF on known stacks, with no bank feeds and no advice.
 - **Market fit 6, accepted.** The deadline is real and monthly. But the cash-tipped buyer has no proven spend on tip logs, CAC is roughly a year's revenue, and the window closes in 2028. A salon-suite chain paying per member, or test CAC under $25, would earn it; neither is shown.
+
+### Turn 6 — Builder
+Scores: 4/8/5. Market fit drops to 5, not 6: the buyer we chose keeps her tip log free on paper or in Toast, and the people who do pay for logs (MileIQ, Gridwise) are the drivers we dropped. Build cost is low, the deadline is real and monthly, and the double-entry tip-out is a real idea. But a year's revenue per customer in CAC and a deduction that ends after 2028 make this a careful $90k-ARR test until a salon-suite chain or a sub-$25 CAC shows up in the data.

@@ -3,3 +3,4 @@
 - **03. Morning Tile** (4/8/6) — She checks in for herself, because that's the door the grandchildren's voices come through.
 - **04. Counter** (4/7/5) — A vet clinic's price list built from its own invoices, signed once, and quoted the same to callers, Google and agents.
 - **05. Afterlist** (4/7/5) — The contents list rebuilt after the shoebox burned, from records you already have, with every line showing how it's proven.
+- **06. Cashout** (4/8/5) — The tip log in Publication 531, sealed before she sleeps, with a second witness on every tip-out.
