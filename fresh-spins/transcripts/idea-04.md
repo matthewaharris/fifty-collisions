@@ -52,3 +52,24 @@ Holds survive offline: an 11pm `hold-appointment` waits in the registry mailbox 
 **Five-second demo:** "Quote a spay for my 40lb dog within 5 miles and hold Thursday." Three signed cards appear with a "signed by clinic.com, from 38 invoices" badge. Tap hold. Cut to the clinic's morning pad: "Hold: Thu 9am, Biscuit, $380–460, signed."
 
 **Demand test (3 weeks):** mystery-shop 200 independent clinics in two metros with AI-style price calls. Send each a free report, "what Google's assistant heard from you," with a $49 list offer. **Go:** 10+ paid. In parallel, publish 20 consenting clinics' cards. Keep the OACP lane only if 50+ agent quote requests arrive.
+
+### Turn 4 — Builder
+**Repo check:** both exist. `ttl_seconds` (60 s to 1 year) redacts the payload; the v1 accuracy formula is shipped. But disputes are unadjudicated signals, and year-one volume is near zero. No "97% honoured" claim before 100+ measured quotes.
+
+**Invoice data rule:** parse in the browser. Strip names, contact details, client and patient IDs and medical notes before upload; keep service code, species, weight band, month and amount. Store only the digest. Vet-record confidentiality laws (California B&P §4857, verify) make this mandatory.
+
+**Demand test changed.** 200 AI-voice calls waste staff time and risk all-party recording-consent laws and the FCC's 2024 TCPA ruling on AI voices. They insult prospects too. Replace them with a desk audit of 200 clinics' websites and Google profiles ("what Google's assistant can see about your prices") plus 40 unrecorded founder calls. Gate: 10+ paid.
+
+**Market:** about 34k vet establishments (Census), about 30% corporate (JAAEA 2025; Mars alone runs about 2,081), so about 22–25k independents.
+
+**12 months:**
+- **Price:** $49 list; $149 voice plus $10 per booking.
+- **Channel:** state VMA conferences, practice-manager Facebook groups, the audit report.
+- **Assumptions:** CAC about $500, churn 3% a month.
+- **Target:** 120 clinics, 40 on voice, about $14k MRR.
+- **Liability:** quotes are estimates, not contracts; no triage, emergencies route to staff or an ER.
+- **Copycats:** Weave or PetDesk can copy the guardrail; invoice-derived ranges take longer.
+
+**90 days:** weeks 1–3, audit. Weeks 3–7, browser invoice parser (Cornerstone, AVImark, ezyVet), approval UI, publishing. Weeks 8–12, overflow voice. Week 13, 10 paying clinics.
+
+**Kill:** by month 6, under 40 paying clinics, under 25% voice attach, or churn over 4%. **OACP lane:** fewer than 50 agent quote requests across 20 cards in 90 days means freeze engineering; fewer than 200 a month by month 9 means drop it from the pitch.
