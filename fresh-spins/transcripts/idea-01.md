@@ -13,3 +13,16 @@
 **Borrows:** from #38 Tally, state is set by the event rather than by anyone's memory, and every hot cycle proves the device still works. From #9 Caught, a single control you press only when you notice.
 
 **Price:** $19.99 for a two-pack (one to gift). The open problem is resetting on unload.
+
+### Turn 2 — Builder
+**Correction.** US5839458 (Delcarson, 1998, expired) isn't bimetal. It uses a release arm that a dish holds down. The bimetal-spring-plus-latch design is US6196239 ("Dishwasher status indicator"). Prior art goes back to 1971 (US3608514, US4129954, US4653423), and US10662571 ("Clean status indicator", 2020) may still be live (freedom to operate unverified). So it's free to copy but has little claim to patent, which means APEX won't stop knockoffs. Fifty years of patents, no hit: a warning. No Amazon listing found (unverified).
+
+**What exists:** clean/dirty magnets at $6–10 (Visionary's figure), and the dishwasher's own free "Clean" light, which on many machines goes out the moment someone opens the door to peek.
+
+**Physics, the hardest problem:** eco programmes wash at roughly 40–50°C for a long time (unverified per model), and the disc lags inside a plastic shell. US hot tap water is about 49°C (120°F). A plain 50°C trip point will miss eco loads and fire on a hot-tap rinse. One wrong reading and they're back to the magnet. Detergent (alkaline, enzymes), rinse aid and roughly 70°C drying are fine for food-contact PP and silicone, but bare bimetal corrodes, so it needs a fully welded seal.
+
+**Twist:** don't design a disc and flag. Buy an off-the-shelf manual-reset thermal cutout (KSD301 class, sold at 40–150°C, about $0.30–0.60, unverified). Its reset button already pops out when tripped. Pot it under a green-capped silicone dome in a single welded PP shell. The pop-up button is the flag, and pressing it is the reset: one mould and one dome, tooling about $10–15k.
+
+**MVP:** 40 hand-built units with 45/50/55°C parts, logged across 20 home dishwashers on eco, quick and normal cycles, plus hot-tap tests.
+
+**Economics:** $19.99 two-pack, landed about $4. After the 15% referral fee ($3.00), FBA ($3.18) and 15% ads ($3.00), that leaves about $6.80 (34%) before returns.
