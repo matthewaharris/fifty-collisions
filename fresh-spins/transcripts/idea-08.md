@@ -17,3 +17,20 @@
 **Channel:** the Jobber App Marketplace (fees unverified), that forum thread, and Jobber user Facebook groups.
 
 **Held below 7 if:** Jobber ships native change orders, or lost extras prove too rare to justify $39 a month.
+
+### Turn 2 — Builder
+**The gap is real, and someone's already in it.** Jobber's community thread confirms the workaround: a second quote, signed but separate from the job. A 2026 review says Jobber still has no change-order module. In that same thread, **JobAmend** sells exactly our approval flow on Jobber: free until the first approved change order, then $29/month flat (vendor post). I found nothing on ScopeProof.
+
+**Others** (prices from memory, unverified): Buildertrend, which absorbed CoConstruct, and Knowify, Contractor Foreman, Houzz Pro and Projul all have native signed change orders for remodelers, at roughly $50–500/month. Housecall Pro and ServiceTitan handle it through revised estimates. Joist is a cheap estimate pad.
+
+**Marketplace:** GraphQL API, App Review before listing, 100+ integrations, revenue share not public. Jobber leaves niches to apps; that's why it hasn't built this.
+
+**Law:** California B&P §7159.6, Pennsylvania's HICPA, New Jersey's home-improvement rules and Massachusetts 142A require written change orders (from memory; I didn't reopen the statutes). None is new, so there's no dated trigger. I found no residential data on how often extras go unpaid.
+
+**Hardest problem:** the tech, not the homeowner. With her standing there, he says yes and skips the app rather than look petty.
+
+**MVP (8 weeks):** Jobber OAuth; a mobile-web Extra button (no App Store); a homeowner page with photo, price and the original quote snapshot; e-signature and timestamp; a PDF and line written back to the job.
+
+**Economics:** $39/month, about $1 to serve (SMS, storage). Assume marketplace CAC around $150 and 3% monthly churn: unverified.
+
+**Twist: lead with the surprise menu, not approval.** Approval is JobAmend's at $29. Signing likely extras with the original quote means the tech never asks mid-job; he picks a line and she gets a notice. Check per state whether a pre-signed range satisfies §7159.6.
