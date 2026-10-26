@@ -97,3 +97,6 @@ Habit-stack it: the board ships with a sticker that says "while the kettle boils
 - **Innovation 4:** check-in apps and IVRs are commodity. What's new is the inversion: a parent-started physical ritual whose reward is the family's voice.
 - **Feasibility 8:** IVR, app, print; no certification.
 - **Market fit 6:** the payer already spends on pendants and paid for Alexa Together; the test is cheap. But two people must be won, free apps exist, and 5% churn is an assumption. It's 7 only if week-3 call rates hold at 70%.
+
+### Turn 6 — Builder
+Scores: 4/8/6. Market fit gets 6, not 7, because two people have to be won and Snug is free; it moves up only if week-3 calling holds at 70%. This is the best-shaped business of the three so far: recurring revenue, an adult child who already pays for pendants and did pay for Alexa Together, and an MVP built on an IVR and a printer with no certification. The family's recording effort will decide retention more than anything we build, so measure that on day one.
