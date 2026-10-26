@@ -65,3 +65,24 @@ Six to eight questions fill a year. ChatGPT Health reads the past; it can't rand
 **90 days:** weeks 1–3, test. Weeks 4–8, watch timer, HealthKit and Health Connect import (device-sourced only), doctor PDF, safety floor. Weeks 9–13, experiment engine and cards.
 
 **Kill:** pre-sale CPA over $40 or under 75% of mornings logged; by month 6, under 1,000 payers or under 35% starting a second experiment.
+
+### Turn 5 — Visionary
+**Accepted, all of it:** 8-week experiments, no salt, cards that describe her readings, the 180/120 safety floor, insert cards later. "Too close to call" is still a result: she stops forcing the walk and tries the next question.
+
+**Final form.** Seated is a $39.99/yr hard-paywalled BP log for phone and watch.
+- **Every reading:** the watch times five still minutes, then pulls paired readings from any cleared Bluetooth cuff via HealthKit or Health Connect. Each is stamped "rested 5 min · paired."
+- **Week one:** a one-page doctor-ready average that the clinic reads free.
+- **After that:** one sealed 8-week lifestyle question at a time, randomized by day, with a peek-proof evidence meter. The result card goes on the next doctor page.
+- **Never:** stages or medication advice.
+
+**Boring on the surface,** it's the paper BP log. **But** every reading shows she rested first, and every habit she bets on gets a fair test.
+
+**3-year version:**
+- **The clinic tier:** once patients bring the pages, practices pay a flat $49 a month for a panel view, and bill 99473/99474 on their side.
+- **The question library:** sleep timing, sitting breaks, the weekend drink.
+- **Target:** 20–30k payers plus 400 practices, about $1–1.5M ARR.
+
+**Scores.**
+- **Innovation 4:** BP logs are commodity. Verified rest and a sealed n-of-1 inside one are new.
+- **Feasibility 7:** known stack, but health App Review (1.4.1), a safety floor and a statistics engine on two platforms.
+- **Market fit 5:** the watch trigger is real, but no evidence shows patients pay for BP apps. CAC is about a year's revenue; WWDC can take the seven-day week. It earns 6–7 only if pre-sale CPA is $30 or less and 35%+ start a second experiment.
