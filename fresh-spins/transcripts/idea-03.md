@@ -39,3 +39,19 @@ None is a phone-free ritual the parent starts herself. That gap is why hardware 
 **Twist: prove the ritual before the radio.** Ship a $15 unpowered magnetic tile board. She reports her tile by pressing 1, 2 or 3 on a free number from her own landline (Twilio IVR, about $0.02 a call). Same parent-initiated signal, chosen hour and one-person escalation; no certification, carrier or returns. Charge $12/month from day one. Build the LTE-M board only once 60-day IVR retention passes 70%.
 
 **MVP:** IVR, SMS dashboard, printed boards, 30 families, 4 weeks.
+
+### Turn 3 — Visionary
+**Accepted:** the $15 board and landline IVR first, with radio only after 70% retention at 60 days.
+
+**Day 9: make the call pay her, not us.** Pressing her tile number unlocks today's message from the family. Family members send voice notes to the Morning Tile number, and one plays the moment she reports: "Hi Gran, it's Lily, I lost a tooth!" After the tone she can answer, and her reply goes to the family thread. The tile becomes an answering machine that only plays when she says she's fine. It borrows the daily-unlock pull of Wordle and the advent calendar.
+
+Any nudge goes to the payer, never to her. The child's dashboard says "Mum's had no message from you in 3 days." If nobody recorded anything, the line plays a question from her own life ("What was your first job?") and keeps her answer for the family archive. A missed morning is never a chime. At her chosen hour the line rings once: "Lily left you something."
+
+Habit-stack it: the board ships with a sticker that says "while the kettle boils," and it hangs beside the kettle.
+
+**Five-second demo:** she slides in green, lifts the landline, presses 1. Grandchild's voice, she laughs. Cut to the daughter's phone: "Mum: green, 8:12."
+
+**Demand test (3 weeks, about $1.5k):**
+- **Ads:** Meta ads to women aged 45–64 for "Mum checks in, and gets a message from the grandkids," with a $12/month card-on-file pre-sale.
+- **Go:** paid CAC of $60 or less, and in the first 30 families, 70%+ of parents calling 5 of 7 days in week 3, with 60%+ of days carrying a family message.
+- **Kill:** if families stop recording, the pull dies.
