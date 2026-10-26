@@ -83,3 +83,25 @@ Validate it with `python3 -c "import json;json.load(open('<path>'))"`.
 
 Catalog line, appended to `/home/user/fifty-collisions/fresh-spins/catalog.md`:
 `- **NN. Name** (I/F/M) — tagline`
+
+---
+
+# Round 2 addendum: ideas 06–08 and the Morning Tile supplement
+
+Everything above still applies, with these changes.
+
+- **Apps only.** No hardware product. The only devices are ones people already own: a phone, a watch or an existing wearable (prefer HealthKit and Health Connect over Oura, Whoop or Garmin APIs, which are restricted). Kind is `consumer app` or `SMB app`.
+- **Stronger market fit.** Target **market fit 7 or higher** and earn it with evidence: people already pay for the old product or a close substitute; a dated trigger (a deadline, a new rule, a new OS or watch feature, a shutdown); a channel with a known install or acquisition cost; and a price that pays back that cost (the brief says a hard paywall or web funnel at about $30–60 a year, since freemium rarely pays back). Name what would make it fall short of 7.
+- **New research:** read `research/app_brief.md` fully. It has subscription benchmarks, fast-fit app cases, 2026 distribution and payments, new phone and watch capabilities, and failure modes. Use it alongside `research/market_brief.md`.
+- **Platform risk.** Ask "would WWDC 2027 or a free ChatGPT feature kill this?" Avoid rebuilding free OS features (iOS Check In, fall detection, sleep score). Keep health apps clear of diagnostic claims and finance apps clear of lending.
+- **No OACP** in ideas 06–08. Idea 04 is the round's OACP idea.
+- **Don't duplicate** ideas 01–05 here or the original fifty.
+
+## The Morning Tile supplement (2 turns)
+
+The question: could Morning Tile (idea 03) be just a mobile app, with no board and no phone line? Write it to `transcripts/idea-03-app.md`.
+
+| Turn | Who | Job |
+|---|---|---|
+| A | Visionary | **APP VERSION.** Create the file with `# Idea 03 supplement — Morning Tile as an app` and write your turn: what the parent does each morning on her own phone (or watch), what replaces the tile and the fridge, what the family sees, how the voice-note reward and the one-person escalation work, what's lost and gained against the board, and how it avoids rebuilding iOS Check In. 200–350 words. |
+| B | Builder | **VERDICT.** Ground it: competitors, App Store and older-user realities, retention, price and channel. Say whether the app should replace the board, sit beside it, or come first. Give innovation, feasibility and market-fit scores for the app version. Then add an `app_version` object to `records/idea-03.json` with keys `summary`, `parent_flow`, `family_flow`, `vs_board`, `price`, `verdict`, `innovation`, `feasibility`, `market_fit_12mo`. Validate the JSON. 200–350 words. |
