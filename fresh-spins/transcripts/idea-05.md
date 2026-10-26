@@ -42,3 +42,16 @@ No line exists until the user confirms it. Mass-balance gaps only prompt memory.
 **Twist: public adjusters first.** They hold the steady, unwaived losses, run dozens of files a year, and inventory is their bottleneck. Charge $199/file and reach consumers through them.
 
 **Economics:** about $30–80/file in vision and parsing (unverified), so 60–85% margin.
+
+### Turn 3 — Visionary
+**Accepted:** adjusters first at $199 per file, evidence tiers, user-confirmed lines, refund if waived. Big disasters waive the list; the steady market is the unwaived loss.
+
+**The tiers are the demo.** Drag in an Amazon export and a card-statement CSV. Lines pour in and sort themselves by colour, and a header totals them: **A $61,380 (214 items, order numbers) · B $23,100 · C $9,400 (estimate) · D $4,200.** Tap any green line and the original order record opens. The adjuster's five-second takeaway is that two-thirds of the claim arrives already proven. The photo that sells it: one line, the sofa with its 2022 order number and its 2022 birthday picture side by side.
+
+**Steadier buyer: theft, not fire.** Burglary and theft claims come every week, carry no waiver, and are mostly electronics, bikes and tools, the items order records prove best. Adjusters rarely take a $12k theft file, so this is a direct consumer lane: a $99 self-serve tier (A and B only, no photo AI) sold on constant search intent ("list of stolen items for insurance," "renters theft claim"). Estates need fair market value for probate, a different job, so park them.
+
+**Demand test (4 weeks, about $1.5k):**
+- **Adjusters:** pull 60 public adjusters from California, Florida and Texas licence rolls and NAPIA. Offer each a free 72-hour concierge rebuild of one live file, done by hand plus LLM parsing.
+- **Measure:** hours saved against their usual process, the share of value landing in tiers A and B, and whether the carrier's desk adjuster accepts tier-A lines without asking for receipts.
+- **Go:** 5+ adjusters send a second file at $199, and 50%+ of the value lands in A/B.
+- **Consumer theft lane:** $500 of search ads to a $99 pre-order page. Go at 2%+ conversion and CAC under $40.
