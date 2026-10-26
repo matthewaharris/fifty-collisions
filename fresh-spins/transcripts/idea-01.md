@@ -37,3 +37,18 @@
 **Five seconds:** it ships tripped. The first use is pressing the green dome and hearing it click to red. The photo is a green dome among wine glasses with the caption "it ran."
 
 **Demand test (3 weeks, about $1.5k):** 15 hand-potted units filmed in real dishwashers. Run three silent 5-second Reels and TikToks with $600 of spend to a Shopify pre-order page ($19.99 two-pack, ships in 90 days, refundable). Run a parallel LinkedIn and r/OfficeManagers post for the $39 office kit. **Go** at 2%+ visit-to-preorder and paid CAC of $15 or less. Stop below 0.7%.
+
+### Turn 4 — Builder
+**Slug physics hold up, mostly.** Eco runs long at 45–50°C: Bosch eco washes about 2 hours before rinsing (one German study); Fisher & Paykel lists a 45°C wash, 55–60°C final rinse. A 60-second 49°C tap rinse lifts the core about 3°C. Heated dry only follows a wash, so tripping there is correct. The real gap is part tolerance: a cheap KSD301 drifts about ±5°C (unverified), so a "42°C" part might trip at 47°C and miss eco. Fix: test every unit in two baths (no trip at 38°C, trip at 44°C), about a $2k rig.
+
+**Cuts.** Colour drops: they sell things carried in public, not things inside a dishwasher. Office 6-pack: one kitchen, one unit. $15 CAC gate: DTC contribution is about $10 after shipping, so the bar is $8.
+
+**Market fit, plainly:** no consumable, no visible colourway, and copies at $9.99 within months; the only defence is speed, reviews and the bath-tested eco claim. It's a profitable impulse SKU selling thousands of units, not returning customers in 12 months. Around 5. The one repeat buyer worth testing: realtor closing gifts and short-term-rental hosts buying branded packs in 25s (unverified).
+
+**Liability:** food-contact PP and silicone, nickel-bearing bimetal sealed in (check Prop 65), no battery, never sold as a kids' product.
+
+**First 100:** about 60 test pre-orders, 30 TikTok Shop creators at 20% commission, 30 Vine units ($200).
+
+**90 days:** weeks 1–3, bin-test 200 parts from two suppliers and pot 15 units. Weeks 3–6, logger runs in 20 dishwashers. Weeks 6–10, aluminium tool and silicone dome (about $12k), 500-hour 70°C detergent soak and 1,000 thermal-shock cycles. Weeks 10–13, 1,500 two-packs. About $25k all in.
+
+**Kill:** under 1.5% pre-order or CAC over $8; eco misses over 2% in logging; or 60 days after launch, under 8 orders a day or returns over 8%.
