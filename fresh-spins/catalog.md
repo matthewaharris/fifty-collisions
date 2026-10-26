@@ -1,3 +1,4 @@
 - **01. Ran It** (3/8/5) — The dishwasher clean/dirty sign that's set by the wash, not by whoever remembered.
 - **02. Posted** (4/7/5) — The door notice that proves itself: every posting sealed, the same record for landlord and tenant.
 - **03. Morning Tile** (4/8/6) — She checks in for herself, because that's the door the grandchildren's voices come through.
+- **04. Counter** (4/7/5) — A vet clinic's price list built from its own invoices, signed once, and quoted the same to callers, Google and agents.

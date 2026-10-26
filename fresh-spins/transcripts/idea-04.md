@@ -87,3 +87,6 @@ Holds survive offline: an 11pm `hold-appointment` waits in the registry mailbox 
 - **Innovation 4:** AI receptionists and price pages exist. What's new: invoice-measured ranges, one signed list behind every channel, and disputable agent quotes.
 - **Feasibility 7:** three parsers, a publisher and overflow voice in 90 days is tight but known tech.
 - **Market fit 5:** real pain and a reachable buyer (state VMAs, the audit report), but AI price calls are under 1% of calls, the CAC of about $500 against $49/month is slow, and Weave can copy.
+
+### Turn 6 — Builder
+Scores as proposed: 4/7/5. The sellable product is the invoice-to-range engine and the published price list. OACP is honest plumbing with a hard kill, not the pitch, and that's the right place for it while Google's agent still phones. A $500 CAC against $49 a month is slow money, so the voice attach rate decides whether this is a business. The thing to watch first is whether owners approve ranges built from their own invoices without haggling them down to "call us."

@@ -1,0 +1,45 @@
+{
+  "id": 4,
+  "name": "Counter",
+  "tagline": "A vet clinic's price list built from its own invoices, signed once, and quoted the same to callers, Google and agents.",
+  "kind": "SMB software",
+  "old_product": "The receptionist's message pad and the price list taped beside the phone",
+  "fresh_spin": "The clinic approves price ranges proposed from its own invoices, signs the list once, and every answer to a human, Google or an AI agent comes only from that signed list.",
+  "boring_but": "Boring on the surface, it's a price list. But every number comes from the clinic's own invoices and is signed, so a caller, Google and a pet owner's agent all hear the same quote, and the clinic can be held to it.",
+  "innovation": 4,
+  "feasibility": 7,
+  "market_fit_12mo": 5,
+  "oacp": true,
+  "borrows_from": [
+    "OACP: DNS-verified domain handles (RFC 002), action_specs with input_schema and stranger quarantine (RFC 005), assertions with evidence digests and the v1 accuracy score (RFC 007), ttl_seconds message lifetimes for holds",
+    "#45 Repro: a stranger agent must fit a structured form before a human reads it",
+    "#47 Piepowder: a record of exactly what the agent was told",
+    "#28 Tab: a commitment a server can check later"
+  ],
+  "summary": "Counter is a $49/month signed price list for an independent vet clinic's top 20 services. The clinic drops in a 12-month invoice export; the browser strips client and patient data, and Counter proposes ranges from what was actually charged ('spay, dog 30-50lb: $380-460, 80% of your last 38'), which the owner approves with cost drivers flagged. One approved list publishes to Google Business Profile, schema.org markup, a site widget and a DNS-verified OACP card whose get-quote replies are signed RFC 007 assertions. The $149/month voice tier answers overflow and after-hours calls, quoting only from the list, never triaging, and putting booking holds on one morning message pad.",
+  "first_buyer": "The owner or practice manager of an independent 1-4 vet clinic, after a desk-audit report shows what Google's assistant can and can't see about her prices, or after hearing a nearby clinic got quoted because hers didn't answer.",
+  "why_now": "Google's AI has called local businesses for prices since July 2025, and Invoca (Dec 2025) found AI pricing calls up 300%+ in November, with 26% unanswered and 48% of answered calls giving no price. Veterinary is one of the eligible categories. AI calls are still under 1% of calls, so this is an early, small but rising signal. OACP domain handles, schema-validated action specs, quarantine and claim assertions are shipped in the reference registry.",
+  "competitors": [
+    "Generic AI receptionists (Goodcall, Rosie, Smith.ai, Slang): about $30-900/month by call volume; can invent or refuse prices",
+    "Vet-specific AI receptionists (e.g., DialIQ): from about $49/month for 50 calls",
+    "Weave and PetDesk: vet phone, texting and reminder stacks with AI features (pricing unverified)",
+    "Vetstoria: online booking (pricing unverified)",
+    "Otto and Vello: vet communication and AI front-desk tools (pricing unverified)"
+  ],
+  "price_and_margin": "$49/month signed list; $149/month voice tier plus $10 per booked new-client exam. Voice costs about $0.10/min (unverified), about $60/month for 300 overflow calls, so 60%+ margin at $149. The list tier costs near zero to serve. Assumed CAC about $500 and 3% monthly churn.",
+  "channel": "First 100: a free desk-audit report ('what Google's assistant can see about your prices') sent to 200 independent clinics in two metros, plus 40 unrecorded founder calls, state VMA conferences and practice-manager Facebook groups. First 1,000: conference presence, practice-management consultants, referrals, then groomers and boarding.",
+  "demand_test": "Three weeks: desk-audit 200 independent clinics' websites and Google Business Profiles for visible prices, send each a free report with a $49 list offer, and make 40 unrecorded founder calls. Go at 10+ paid. In parallel, publish 20 consenting clinics' OACP cards and count agent quote requests.",
+  "mvp_90_days": "Weeks 1-3: desk audit and reports. Weeks 3-7: browser-side invoice parser for Cornerstone, AVImark and ezyVet exports, range proposer and approval UI, publishing to Google Business Profile, schema.org, site widget and OACP card. Weeks 8-12: overflow and after-hours voice quoting only from the signed list, emergency routing to staff or an ER, holds to the morning pad. Week 13: 10 paying clinics.",
+  "kill_metric": "Demand test under 10 paid. By month 6, fewer than 40 paying clinics, under 25% voice attach, or churn above 4% a month. OACP lane: fewer than 50 agent quote requests across 20 cards in 90 days freezes OACP engineering; fewer than 200 a month by month 9 drops it from the pitch.",
+  "risks": [
+    "Owners refuse to commit ranges and push everything to 'call us'",
+    "Weave or PetDesk copies the price-list guardrail",
+    "AI price calls stay under 1% of volume, weakening urgency",
+    "Invoice exports carry client and pet records; browser-side stripping and digest-only storage are mandatory under vet confidentiality laws",
+    "Practice-software integrations (Cornerstone, AVImark, ezyVet) are gated; holds stay on a message pad",
+    "Quotes read as contracts or triage advice; disclaimers and emergency routing are required",
+    "OACP agent demand may not materialise within 12 months"
+  ],
+  "three_year": "1,500-2,500 clinics, then groomers, boarding and mobile vets on the same invoice-to-range engine, $1.5-2.5M ARR. If agents arrive, signed quotes and ttl_seconds holds become the bookable layer and the accuracy score a trust badge; if not, signing and digests stay as internal provenance.",
+  "best_line": "Don't ask her to invent prices: propose each range from her own invoices, so she approves numbers that already happened."
+}
