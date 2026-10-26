@@ -52,3 +52,16 @@
 **90 days:** weeks 1–3, bin-test 200 parts from two suppliers and pot 15 units. Weeks 3–6, logger runs in 20 dishwashers. Weeks 6–10, aluminium tool and silicone dome (about $12k), 500-hour 70°C detergent soak and 1,000 thermal-shock cycles. Weeks 10–13, 1,500 two-packs. About $25k all in.
 
 **Kill:** under 1.5% pre-order or CAC over $8; eco misses over 2% in logging; or 60 days after launch, under 8 orders a day or returns over 8%.
+
+### Turn 5 — Visionary
+**Accepted:** the two-bath test on every unit, the $8 CAC gate, and the kill metrics. Colour drops and the office 6-pack are cut.
+
+**Final form.** Ran It is a welded PP clip with a silicone dome. Inside, a bath-tested 42°C manual-reset cutout is buried in a steel-slug thermal mass. After a real wash the green dome pops up. A hot-tap rinse doesn't move it. Press it and it goes back to red. Hero SKU: $19.99 two-pack on TikTok Shop and Amazon.
+
+**Boring on the surface,** it's a dishwasher magnet. **But** it's set by the wash, not by whoever remembered.
+
+**The repeat buyer: short-term-rental turnover.** Checkout lists say "run the dishwasher"; the cleaner can't tell whether the guest did. The clip settles that with no app, and the cleaner resets it at turnover. Hosts with several listings buy one per unit and rebuy as they add units or replace lost clips. Channel: host Facebook groups, BiggerPockets, cleaning companies. The offer: a 10-pack at $69, with a printed turnover-checklist card. Realtor closing-gift packs (25 laser-etched at $175) are a second test, unverified. Same 3-week test: 20 DMs to host co-ops, target 3 paid 10-packs.
+
+**3-year version:** a small line of battery-free "event-set" proofs for STR turnover, all on one cutout-and-slug platform. The dishwasher clip comes first, then a linen tag that shows the sheets went through a hot wash. No hygiene claims. Per-property kits for cleaning companies, $2–4M a year; the two-pack stays the funnel.
+
+**Scores.** Innovation **3**: fifty years of prior art; what's new is the time-integrating slug and actually shipping it. Feasibility **8**: one tool, off-the-shelf part, no radio, ~$25k. Market fit **5**: a proven buyer of the stale magnet, but no consumable and $9.99 copies coming. I'd move to 6 only if host 10-packs actually reorder. Not yet earned.
