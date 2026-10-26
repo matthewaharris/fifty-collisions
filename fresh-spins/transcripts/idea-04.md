@@ -73,3 +73,17 @@ Holds survive offline: an 11pm `hold-appointment` waits in the registry mailbox 
 **90 days:** weeks 1–3, audit. Weeks 3–7, browser invoice parser (Cornerstone, AVImark, ezyVet), approval UI, publishing. Weeks 8–12, overflow voice. Week 13, 10 paying clinics.
 
 **Kill:** by month 6, under 40 paying clinics, under 25% voice attach, or churn over 4%. **OACP lane:** fewer than 50 agent quote requests across 20 cards in 90 days means freeze engineering; fewer than 200 a month by month 9 means drop it from the pitch.
+
+### Turn 5 — Visionary
+**Accepted:** browser-side stripping, digests only; desk audit instead of AI calls; no "honoured" claim before 100+ quotes; kill gates as set.
+
+**Final form.** Counter is a $49/month signed price list for an independent vet clinic's top 20 services. The clinic drops in its invoice export, the browser strips it, and Counter proposes ranges from what was actually charged; the owner approves them. One approved list publishes everywhere: Google Business Profile, schema.org, a site widget and a DNS-verified OACP card. The $149 voice tier answers overflow and after-hours calls, quoting only from the list. Holds land on one morning pad.
+
+**Boring on the surface,** it's a price list. **But** every number comes from the clinic's own invoices and is signed, so a caller, Google and a pet owner's agent all hear the same quote, and the clinic can be held to it.
+
+**3-year version:** 1,500–2,500 clinics, then groomers, boarding and mobile vets with the same invoice-to-range engine, $1.5–2.5M ARR. The OACP lane is the upside, not the floor. If agents arrive, signed quotes plus `ttl_seconds` holds become the bookable layer, and the accuracy score turns into a trust badge. If the kill metric trips, the cards stay published at near-zero cost and engineering stops. Signing and digests survive as internal provenance, ready to restart when mainstream assistants want signed merchant answers.
+
+**Scores.**
+- **Innovation 4:** AI receptionists and price pages exist. What's new: invoice-measured ranges, one signed list behind every channel, and disputable agent quotes.
+- **Feasibility 7:** three parsers, a publisher and overflow voice in 90 days is tight but known tech.
+- **Market fit 5:** real pain and a reachable buyer (state VMAs, the audit report), but AI price calls are under 1% of calls, the CAC of about $500 against $49/month is slow, and Weave can copy.
