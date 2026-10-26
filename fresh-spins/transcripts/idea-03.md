@@ -55,3 +55,27 @@ Habit-stack it: the board ships with a sticker that says "while the kettle boils
 - **Ads:** Meta ads to women aged 45–64 for "Mum checks in, and gets a message from the grandkids," with a $12/month card-on-file pre-sale.
 - **Go:** paid CAC of $60 or less, and in the first 30 families, 70%+ of parents calling 5 of 7 days in week 3, with 60%+ of days carrying a family message.
 - **Kill:** if families stop recording, the pull dies.
+
+### Turn 4 — Builder
+**The voice notes are a scam surface, so lock them down.** Voice-clone "distress" scams reportedly passed $5M in losses in FBI IC3 2025 (secondary sources, unverified).
+- **Recording:** in-app only, from OTP-verified contributors the payer invites and the parent approves once on the line ("press 1 to accept Lily"). No phone-in recording, because caller ID can be spoofed.
+- **Screening:** transcripts mentioning money, bail, gift cards or urgency don't play; they go to the payer.
+- **Cut:** the outbound "Lily left you something" ring. The board says "Morning Tile never calls you and never asks for money."
+- **Cut:** the fallback questions. "First job" is a bank security answer, so keep non-identifying prompts only.
+- **Data:** voice kept 30 days, encrypted; no accounts for grandchildren.
+
+**Phones:** 65+ wireless-only was 17% in 2014 (NHIS), far higher now (2025 split not found). Irrelevant: the IVR works from a mobile speed-dial.
+
+**When families stop recording,** it's a plain check-in again; churn follows family effort.
+
+**12-month plan (assumptions I'd defend):**
+- **Price:** $12/month, board free on annual ($120).
+- **CAC:** about $80 on Meta, above the brief's $53, because two people have to be won.
+- **Churn:** 5% a month, so about $210 lifetime contribution, about 2.6x CAC.
+- **First 100:** 30 from the pre-sale cohort, then caregiver Facebook groups, AgingCare and sibling referrals ($12 credit).
+- **Month 12:** 1,000 families, about $12k MRR, about $80k of ads.
+- **Legal:** "not an emergency service" everywhere; a spoken notice that replies are shared, for two-party-consent states.
+
+**90 days:** weeks 1–3, demand test. Weeks 4–8, IVR, app and screening. Weeks 9–13, 100 families.
+
+**Kill:** under 60% of parents calling 5 of 7 days by day 60; churn over 8% a month by month 4; or CAC over $100 after month 3.
