@@ -79,3 +79,21 @@ No line exists until the user confirms it. Mass-balance gaps only prompt memory.
 **90 days:** weeks 1–4, concierge test. Weeks 5–10, parsers for Amazon, Costco, Target, Walmart, Apple, Home Depot and statements, plus tiering and template export. Weeks 11–13, deletion jobs, adjuster dashboard, 10 paying firms.
 
 **Kill:** by month 6, under 15 paying firms, under 40 files a month, or desk adjusters accepting tier-A lines without receipts less than 70% of the time.
+
+### Turn 5 — Visionary
+**Accepted:** theft lane cut; concierge only under a licensed adjuster's file; software-only consumers; 72-hour raw-file deletion.
+
+**Final form.** Afterlist is contents-claim software sold to public adjusters at $199 a file, or $499 with our concierge working as their vendor. The policyholder uploads retailer exports, card statements and old photos. Afterlist parses them, runs the mass balance so unmatched spend prompts memory, and the policyholder confirms each line. It exports the carrier's template with an evidence tier on every line. Tier A carries its order record and source hash; photo-only prices are labelled estimates.
+
+**Boring on the surface,** it's a contents spreadsheet. **But** it's rebuilt from records the family already has after the shoebox burned, and every line says how it's proven.
+
+**3-year version:**
+- **Adjuster base:** 250–400 adjuster firms.
+- **Channels:** restoration and pack-out contractors, and disaster-recovery attorneys.
+- **Pre-loss snapshot:** a yearly retention perk sold through independent insurance agents, about $1–2 per policy per year. Same parsers, run before the fire.
+- **Target:** about $1.5–2.5M ARR. If desk adjusters routinely accept tier A, "Afterlist-tiered" becomes a format carriers ask for, and that's the moat.
+
+**Scores.**
+- **Innovation 4:** inventory apps and photo-to-list AI exist. What's new is rebuilding from order histories and statements, the mass-balance prompt, and per-line evidence tiers.
+- **Feasibility 7:** seven parsers, tiering and export are known tech, but retailer formats drift and security work is real.
+- **Market fit 6:** a professional buyer who already pays for inventory labour, per-file pricing tied to visible dollars, and a 4-week test. But the national adjuster count is unverified, about $1,000 CAC per firm, and desk-adjuster acceptance of tier A is unproven. It reaches 7 if 5+ firms send a second paid file and acceptance clears 70%.
