@@ -62,3 +62,20 @@ Missing: cheap self-serve proof made by on-site staff.
 **90 days:** weeks 1–3, concierge pilots. Weeks 4–9, PWA and email intake. Weeks 10–13, 3 paying sites.
 
 **Kill:** by month 6, under 8 paying operators or under 400 paid notices a month.
+
+### Turn 5 — Visionary
+**Accepted:** open-logging cut for an "I got it / I need help" button; debts off the door; release only on a door-number match; 10 seconds a door.
+
+**Final form, built not to need HUD.** Posted is self-serve proof of service for any notice a state lets you post on a door. Staff email the PDF, print coded notices and post them in walk mode. Each posting is sealed to an RFC 3161 timestamp in a court-ready bundle. The resident gets the same record plus a plain-language page on deadlines, cure and legal aid. Pricing: $6 per legal notice, with entry and shut-off notices free.
+
+Two markets, sold in parallel from month one:
+1. **California 3-day, 30/60/90-day and lease-violation notices** (CCP §1162 post-and-mail), replacing a process server's fee (unverified) or an unprovable staff posting.
+2. **HUD-assisted operators** while the 30-day rule stands. If it's rescinded, those operators still post state notices.
+
+Then states with similar posting statutes, by eviction volume.
+
+**Boring on the surface,** it's a door hanger with a QR code. **But** every posting is sealed, so neither the landlord nor the tenant can fake what happened at the door.
+
+**3-year version:** the default proof layer for posted notices in 4–5 states. An AppFolio and Yardi partner once volume earns the API, with the verify link accepted by a few court self-help centres, adding HOA and code-enforcement notices. Target: $1–2M ARR, with free operational notices as the funnel.
+
+**Scores.** Innovation **4**: sealed photos exist (Proof). What's new is the resident's identical copy, door-matched release and staff self-serve. Feasibility **7**: simple build; setup and court acceptance unproven. Market fit **5**: a buyer with real legal pain, but about $90k ARR from founder-led sales against $2k CAC is plausible, not proven. It reaches 6 if two concierge pilots convert.
