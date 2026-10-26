@@ -34,3 +34,14 @@ Missing: cheap self-serve proof made by on-site staff.
 **MVP (6 weeks, one dev):** a PWA with live-camera-only capture, QR stickers on existing hangers, a hash timestamp and a PDF proof bundle.
 
 **Economics:** about $0.01 per notice to serve, so roughly 95% gross margin; 1,000 units at 30 legal notices a month (assumed) is about $2,200/yr.
+
+### Turn 3 — Visionary
+**Accepted:** charge $6 per legal notice and make entry and shut-off notices free. **Changed:** the first buyer is affordable housing, because HUD's 30-day nonpayment rule (89 FR 101270, Dec 2024) applies now. It requires written notice 30 days before filing, with itemized amounts and cure and hardship information. Owners: since January 13, 2025; PHAs: since June 15, 2026. Telling residents their rights is already the law there.
+
+**The resident copy is the product.** Every coded notice opens to the same sealed photo and timestamp the manager holds, plus a plain-language page: amount, deadline, how to cure, local legal aid. Nobody can backdate it, so sewer service is structurally hard. The resident's scan logs "opened 9:40pm," disclosed on the page. Actual notice beats any affidavit about service mechanics, so honesty is the manager's strongest evidence. Housing courts and legal aid get a free public verify link on every notice.
+
+**Photo adoption: make the camera the act of posting.** In walk mode, staff sweep the phone down a hallway, and each door's code and number auto-capture as it ticks green, about 2 seconds a door. That's also the 5-second demo. Only legal notices need a door photo; bulk shut-offs need one lobby shot.
+
+**AppFolio gap: skip the API.** Staff already export notices as PDFs. They email the PDF to Posted, and it comes back stamped with per-door codes, ready to print. Same for Yardi Voyager. APIs wait for revenue.
+
+**Demand test (3 weeks):** concierge pilots with 3 HUD-assisted operators found through NAHMA and state affordable-housing associations. We stamp and verify every 30-day notice for a month, free. Plus $500 of search ads on "HUD 30-day notice rule." **Go** if 2 of 3 use it on 80%+ of legal notices, 1 signs at $6 per notice, and 15+ demo requests come in.
