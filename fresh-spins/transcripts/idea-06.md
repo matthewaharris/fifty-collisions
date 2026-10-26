@@ -49,3 +49,22 @@
 **Channel:** #bartok creators first, then USBG chapters, then salon-suite chains (Sola, Phenix) as a member perk for booth renters. Toast and 7shifts come later, since they are the employer's tools.
 
 **Test (3 weeks, about $2.5k):** ten creators send viewers to a $39 pre-sale, and 30 bartenders get the 2am prompt by SMS. Go: at least 150 pre-orders at a cost under $25 each, and 70% of worked shifts logged in week 3.
+
+### Turn 4 — Builder
+**Cuts.**
+- **Geofence: out of v1.** It needs "Always" location, which App Review wants justified, iOS keeps re-asking about, and Google Play reviews. Exits fire late and miss inside malls. Battery is fine; trust isn't. Prompt at her usual close time instead.
+- **Sam's invite:** our text puts his income on his lock screen before he consents. She sends an amount-free link from her own Messages; he sees the line after accepting.
+- **Form 4070:** a PDF for *her* to hand over. No employer accounts, no sending. It mustn't contradict her Toast clock-out declarations.
+- **Lease proof: cut.** Vouching for income to landlords starts to look like a consumer report under FCRA (my reading, unverified) and invites inflated logs. She can export her own PDF marked "self-reported."
+
+**CAC under $25 is optimistic.** A $150 video at 20k views, 0.5% clicks and 5% conversion yields 5 orders: $30 each. Plan on $35–45 against $38 net revenue (web) or $34 (Apple). Year one breaks even; renewals and the rebuild make the profit.
+
+**Copycats:** Gridwise or Stride can add a tips field in a month; only sealed history and tip-out links make leaving costly.
+
+**12 months:** $39.99/yr annual only, web plus in-app purchase; Rebuild 2026 at $29, credited. First 100 from the pre-sale; 1,500 by April through creators ($40k), USBG chapters and Sola/Phenix perks; about 2,500 payers (about $90k ARR) by month 12. That's below 7.
+
+**Safety:** no deduction maths, no "you qualify," no bank feeds.
+
+**90 days:** weeks 1–3, test. Weeks 4–8, log, seal, close-time prompt, 4070 PDF, tip-outs. Weeks 6–12, rebuild importers (Venmo, Cash App, DoorDash, Uber, payslips) live by February 1.
+
+**Kill:** under 100 pre-orders, CAC over $45 or under 60% of shifts logged in the test; by April 30, under 1,000 payers or under 30% rebuild-to-annual.
