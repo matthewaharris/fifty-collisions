@@ -34,3 +34,18 @@
 **Economics:** $39.99/yr, $34 after Apple's 15%, under $1 to serve. At Finance CPI ($9.65) and 10.7% hard-paywall conversion, a payer costs about $90, so it needs creators and word of mouth.
 
 **Twist: rebuild 2026, seal 2027.** In January, sell a $29 reconstruction from platform statements, Venmo exports and payslips, every line tier-labelled, credited toward the annual log. Never show estimated savings.
+
+### Turn 3 — Visionary
+**Accepted:** the cash-and-Venmo buyer, Vision text recognition and the $29 rebuild of 2026.
+
+**The bartender's moment is the walk to her ride, not the count.** When she leaves the bar's geofence after 9pm, a notification opens a keypad: cash, tip-out, Venmo. Ten seconds, then a wax-seal stamp: "Fri · 1:47am · $212 cash · −$40 to Sam · sealed." **The demo is a genre that already exists.** "What I made in tips tonight" videos are a staple of #bartok and #servertok. We pay those creators (about $150 each) to end on the stamp.
+
+**A monthly trigger beats an annual one.** Employees must report cash tips of $20+ to the employer by the 10th (Form 4070). On the 1st, Cashout drafts it from sealed nights for her manager. The tips then land on her W-2 under code TP: better proof than any app, and twelve deadlines a year instead of one.
+
+**Unexpected: double-entry tip-outs.** Her "−$40 to Sam" sends Sam an invite with that line already in it. Once he accepts, each entry confirms the other. Every tip-out reaches a non-user, like a Calendly link.
+
+**After 2028:** the ledger outlives the deduction. "Friday close averages $212, Tuesday $64" tells her which shifts to swap or keep. It also proves income for a lease application, shared by her, with no lending. Taxes recruit her; the pay map keeps her.
+
+**Channel:** #bartok creators first, then USBG chapters, then salon-suite chains (Sola, Phenix) as a member perk for booth renters. Toast and 7shifts come later, since they are the employer's tools.
+
+**Test (3 weeks, about $2.5k):** ten creators send viewers to a $39 pre-sale, and 30 bartenders get the 2am prompt by SMS. Go: at least 150 pre-orders at a cost under $25 each, and 70% of worked shifts logged in week 3.
