@@ -55,3 +55,27 @@ No line exists until the user confirms it. Mass-balance gaps only prompt memory.
 - **Measure:** hours saved against their usual process, the share of value landing in tiers A and B, and whether the carrier's desk adjuster accepts tier-A lines without asking for receipts.
 - **Go:** 5+ adjusters send a second file at $199, and 50%+ of the value lands in A/B.
 - **Consumer theft lane:** $500 of search ads to a $99 pre-order page. Go at 2%+ conversion and CAC under $40.
+
+### Turn 4 — Builder
+**Theft lane: cut for year one.** The average theft claim is about $5,500 (III 2019–23, via secondary sources). After a $500–1,000 deductible that's a 15–30-item list typed in an evening, and many renters have no policy or skip small claims. $99 is a hard sell. If ever tested: $29, CAC under $15.
+
+**Licensing is a real consumer-side risk.** Florida's public-adjuster definition covers anyone paid to "prepare, complete, or file" a claim form (§626.854, verify); California's §15027 is similar. A paid human concierge on a consumer's live claim looks like unlicensed adjusting. So:
+- **Concierge work:** only as a vendor under a licensed public adjuster's file.
+- **Consumers:** self-serve software only. No human edits, no advice, no carrier contact.
+
+**Data rule:**
+- **Raw files:** parsed on upload, deleted within 72 hours.
+- **Kept:** line items, card last-4 only, and a SHA-256 hash per source file so tier-A lines stay checkable.
+- **Never:** inbox OAuth or stored credentials.
+- **Deletion:** everything 90 days after export or on request; SOC 2 Type I by month 12 if adjusters ask.
+
+**Market:** Florida had about 1,800 licensed public adjusters, about 700 practising (2012). The national count is unverified; assume 40–100 files per adjuster a year, a third with sizeable contents.
+
+**12 months:**
+- **Price:** $199 self-serve, $499 concierge.
+- **Channel:** NAPIA and state-association events, founder outreach; CAC about $1,000 per firm (assumed).
+- **Target:** 30 firms × 15 files = 450 files, about $110k.
+
+**90 days:** weeks 1–4, concierge test. Weeks 5–10, parsers for Amazon, Costco, Target, Walmart, Apple, Home Depot and statements, plus tiering and template export. Weeks 11–13, deletion jobs, adjuster dashboard, 10 paying firms.
+
+**Kill:** by month 6, under 15 paying firms, under 40 files a month, or desk adjusters accepting tier-A lines without receipts less than 70% of the time.
