@@ -26,3 +26,14 @@
 **MVP:** 40 hand-built units with 45/50/55°C parts, logged across 20 home dishwashers on eco, quick and normal cycles, plus hot-tap tests.
 
 **Economics:** $19.99 two-pack, landed about $4. After the 15% referral fee ($3.00), FBA ($3.18) and 15% ads ($3.00), that leaves about $6.80 (34%) before returns.
+
+### Turn 3 — Visionary
+**Accepted:** the KSD301 pop-up as flag and reset, and the patent correction. No moat from patents.
+
+**Wash vs. hot rinse: trip on time, not temperature.** Borrow from cold-chain time-temperature indicators: integrate heat over time. Pot a 42°C KSD301 inside a thermal slug, a small steel washer in thick silicone, tuned to a time constant of about 10 minutes. A 60-second 49°C hot-tap rinse lifts the core only a few degrees. A 30-minute eco wash at 45°C, or any normal cycle, trips it. The Builder's 40-unit MVP becomes a tuning run: vary slug mass, log core temperature against eco, quick and hot-tap. If quick cycles miss, we print "not for rinse-only or quick wash" (unverified until logged).
+
+**Copycats:** a knockoff with a bare 50°C disc will misfire on eco, so make the slug the named claim. "Eco-proof: tested on 20 dishwashers," with a side-by-side video of a bare disc lying. Beyond that, honestly, this is a gift and colourway product, not a consumable. Repeat comes from colour drops with lines ("RAN IT" / "YOUR MOVE"), housewarming two-packs and a 6-pack office kit at $39, a buyer Amazon knockoffs don't court. File the $130 provisional on the slug as cheap insurance, not a moat.
+
+**Five seconds:** it ships tripped. The first use is pressing the green dome and hearing it click to red. The photo is a green dome among wine glasses with the caption "it ran."
+
+**Demand test (3 weeks, about $1.5k):** 15 hand-potted units filmed in real dishwashers. Run three silent 5-second Reels and TikToks with $600 of spend to a Shopify pre-order page ($19.99 two-pack, ships in 90 days, refundable). Run a parallel LinkedIn and r/OfficeManagers post for the $39 office kit. **Go** at 2%+ visit-to-preorder and paid CAC of $15 or less. Stop below 0.7%.
