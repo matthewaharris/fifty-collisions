@@ -50,3 +50,18 @@ Six to eight questions fill a year. ChatGPT Health reads the past; it can't rand
 - **Ads and pads:** Search Ads plus 10 seeded clinic pads lead to a $39.99 pre-sale.
 - **Cohort:** 20 TestFlight users run the walk experiment.
 - **Go:** a pre-sale CPA of $30 or less, and 75% of scheduled mornings recorded in week 3.
+
+### Turn 4 — Builder
+**The maths cuts the card.** Morning systolic varies about 6–7 mmHg day to day (HOPE-Combi and other cohorts). With 14 walk and 14 no-walk mornings the standard error is about 2.3 mmHg, so a real 4 mmHg effect shows up about 40% of the time, less with an anytime-valid meter. "About 4 lower (range 1–7)" can't come out of 28 days. Run 8 weeks (about 70% power), or 4 weeks for effects of 8+. Cut salt: two one-week blocks per arm are two data points. Many cards will say "too close to call."
+
+**Claims.** Cards describe her readings ("walk mornings averaged 4 lower; uncertain"), never "lowers blood pressure" or "treats." That stays in FDA's 2026 wellness lane (my reading), with methodology disclosed per Guideline 1.4.1.
+
+**Safety floor.** A reading of 180/120 or higher prompts a retest after 5 minutes of rest. Still high, it shows AHA's fixed text: chest pain, breathlessness, weakness, vision or speech change, call 911; otherwise call your clinician today. Experiments pause; the reading goes on the doctor page. No experiments if pregnant or under 18. No experiment touches medication, and every card says "don't change medication without your clinician."
+
+**Insert cards:** Omron and Withings have their own apps and clinical programs, so no. Amazon brands might (terms unverified). Later.
+
+**12 months:** $39.99/yr, hard paywall. First 100 from the pre-sale and pads. To 1,000 through Search Ads (about $35 per payer) and 300 seeded practices. Month 12: about 3,000 payers, about $110k ARR. Moat: thin; the timer is copyable.
+
+**90 days:** weeks 1–3, test. Weeks 4–8, watch timer, HealthKit and Health Connect import (device-sourced only), doctor PDF, safety floor. Weeks 9–13, experiment engine and cards.
+
+**Kill:** pre-sale CPA over $40 or under 75% of mornings logged; by month 6, under 1,000 payers or under 35% starting a second experiment.
