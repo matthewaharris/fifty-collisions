@@ -15,3 +15,18 @@
 **Price:** $9 per active patient-month to the clinic; patients use it free. Self-pay, $29.99 one-off for a doctor-ready week.
 
 **Borrows:** #38 Tally and Ran It, so the event (verified rest) sets the record. #20 Facing Out: it faces only the clinic and the people the patient chooses.
+
+### Turn 2 — Builder
+**Codes, checked.** 99445 (device supply, 2–15 days in 30, FDA-cleared device, exclusive of 99454) and 99470 (first 10 minutes, one interactive communication) took effect January 1, 2026 (dollar figures from vendor blogs). RPM needs consent, an established patient and automatic transmission. A cleared Bluetooth cuff syncing to HealthKit qualifies only if we take device-sourced readings and reject typed ones. Billing guides treat 99445 as the practice *supplying* the cuff, so a patient's own is a grey area (unverified). 99474's 12-reading rule and its FQHC status: unverified.
+
+**Incumbents.** Few publish prices: Accuhealth $20/patient-month plus $25 device and $15 onboarding; MedM $10; full-service programs $40–80 (vendor blogs). Cadence, Tenovi, Smart Meter, HRS, Validic, Omron VitalSight, Withings RPM and employer-paid Hello Heart: unpublished. Several ship cellular cuffs because phone pairing fails at 75. Nobody verifies rest: nobody pays for it.
+
+**The watch** can confirm a still wrist and settling heart rate for five minutes (extended runtime session). It can't confirm seated, feet flat or arm at heart height. Label it "rested 5 min · paired," not "protocol-valid," which keeps it data handling rather than a device function (my reading, unverified).
+
+**Hardest problem: the user isn't the patient.** Series 9+ owners aren't the Medicare and FQHC patients RPM pays for. Clinics bring BAAs, security reviews and 6–12-month FQHC cycles (estimate); $9 just undercuts a commodity.
+
+**Twist: the patient pays, the clinic reads free.** $39.99/yr for repeat doctor-ready weeks, sold at the notification or the "keep a log" appointment. A patient-chosen app isn't a business associate (the FTC breach rule applies), and the clinic can bill 99473/99474 off the page. It nets $34 after Apple, against about $35 per payer (Health CPI $3.77, 10.7% paywall).
+
+**MVP:** watch rest timer, HealthKit/Health Connect cuff import, a seven-day PDF, 6 weeks.
+
+**Risk:** WWDC 2027 adds a seven-day BP summary to Health.
