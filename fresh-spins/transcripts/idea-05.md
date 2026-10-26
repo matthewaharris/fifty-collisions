@@ -13,3 +13,32 @@
 **Borrows:** #22 Unaccounted's mass balance. Statements show $4,200 at REI from 2019 to 2024, and unmatched spend flags the camping gear memory forgot. #31 Tombstone maps which source recovers which room.
 
 **Price:** $399 flat per household, never a percentage, to stay clear of public-adjuster licensing. Adjusters pay $249 per file.
+
+### Turn 2 — Builder
+**SB 495 checks out:** Chapter 542, effective Jan 1, 2026. In a declared emergency, total-loss policyholders get 60% of contents limits (capped at $350k) with no itemised list for at least 100 days. It cuts both ways: by March 2025, most LA-fire insurers had agreed to pay 75%+ of contents limits without a list, some 100% (CDI). The list matters less in big declared disasters, and fully in single-home fires and burglaries, which get no waiver.
+
+**What exists:**
+- **Bevelmade:** free.
+- **United Policyholders:** free guides and app.
+- **ProofList:** pricing unverified.
+- **Encircle:** B2B field documentation for contractors and adjusters.
+- **Sortly:** business inventory.
+- **Contents specialists working for public adjusters:** fees unverified.
+
+None I found import order histories (unverified).
+
+**Volume (unverified estimate):** probably tens of thousands of total-loss contents claims a year. Steady house fires, plus lumpy disaster spikes (LA 2025 destroyed about 16k structures). Consumer demand comes in bursts.
+
+**Fraud is the hardest problem.** AI that "spots" and prices a sofa is a padding machine, and adjusters will discount the whole list. Evidence tiers per line:
+- **A:** order record, exact price and date.
+- **B:** statement line, item user-attested.
+- **C:** photo only, price labelled as an estimate.
+- **D:** memory, attested.
+
+No line exists until the user confirms it. Mass-balance gaps only prompt memory. Every line shows its tier, which makes the list more credible to the adjuster.
+
+**Survivors:** no burn-zone geo-targeting for 30 days, payment only once the export is ready, and a refund if the insurer waives the list.
+
+**Twist: public adjusters first.** They hold the steady, unwaived losses, run dozens of files a year, and inventory is their bottleneck. Charge $199/file and reach consumers through them.
+
+**Economics:** about $30–80/file in vision and parsing (unverified), so 60–85% margin.
