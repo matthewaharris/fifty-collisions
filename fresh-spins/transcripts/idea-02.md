@@ -45,3 +45,20 @@ Missing: cheap self-serve proof made by on-site staff.
 **AppFolio gap: skip the API.** Staff already export notices as PDFs. They email the PDF to Posted, and it comes back stamped with per-door codes, ready to print. Same for Yardi Voyager. APIs wait for revenue.
 
 **Demand test (3 weeks):** concierge pilots with 3 HUD-assisted operators found through NAHMA and state affordable-housing associations. We stamp and verify every 30-day notice for a month, free. Plus $500 of search ads on "HUD 30-day notice rule." **Go** if 2 of 3 use it on 80%+ of legal notices, 1 signs at $6 per notice, and 15+ demo requests come in.
+
+### Turn 4 — Builder
+**The HUD rule is live but fragile.** HUD rescinded it by interim rule on Feb 26, 2026, then, sued over the skipped comment period, delayed that on Mar 13 pending a final rule. The 30-day notice applies for now; rescission could come any month (post-March status unverified). And it mandates notice, not proof of posting. Door-opener only; California 3-day notices stay the second market.
+
+**Market size:** about 5M HUD-subsidized units (2018); roughly 1.25M project-based Section 8 plus 1M public housing fall under the rule, across about 3,300 PHAs and thousands of owners (unverified).
+
+**Resident-open logging: cut.** It tracks tenants, and any passer-by's scan counts as an "open", so it proves nothing. Keep an optional resident-pressed "I got it / I need help" button routing to legal aid or rental assistance. The QR code on the door shows only notice type, door and time. Amounts stay inside the sealed notice; neighbours never see debts.
+
+**Email-the-PDF:** a mis-parsed unit number puts proof on the wrong door, which is fatal. Release each notice only when the photographed door number matches the printed unit. Setup per customer.
+
+**Walk mode:** 2 seconds a door is a demo; plan on 10. Offline in stairwells: hash on capture, seal on sync, log the gap.
+
+**12 months:** $6 per notice. Assuming 5 notices per 100 units a month, a 1,000-unit operator pays about $3.6k/yr. Founder-led sales via NAHMA, NAHRO and state associations; CAC about $2k (assumed). Target: 25 operators and about $90k ARR. E&O insurance; declarations factual, never legal advice. Copycats: Proof or Yardi can add this, so speed and accepted-in-court bundles are the only moat.
+
+**90 days:** weeks 1–3, concierge pilots. Weeks 4–9, PWA and email intake. Weeks 10–13, 3 paying sites.
+
+**Kill:** by month 6, under 8 paying operators or under 400 paid notices a month.
