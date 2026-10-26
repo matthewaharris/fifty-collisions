@@ -68,3 +68,20 @@
 **90 days:** weeks 1–3, test. Weeks 4–8, log, seal, close-time prompt, 4070 PDF, tip-outs. Weeks 6–12, rebuild importers (Venmo, Cash App, DoorDash, Uber, payslips) live by February 1.
 
 **Kill:** under 100 pre-orders, CAC over $45 or under 60% of shifts logged in the test; by April 30, under 1,000 payers or under 30% rebuild-to-annual.
+
+### Turn 5 — Visionary
+**Accepted, all of it:** close-time prompt, amount-free tip-out links, a 4070 PDF she hands over, no lease proof.
+
+**Final form.** Cashout is a $39.99-a-year sealed tip log for workers paid in cash and Venmo: bartenders, servers, booth-renting stylists and valets. At her usual close time a keypad asks for cash, tip-out and Venmo; ten seconds later the night is sealed, and corrections show as amendments. An accepted tip-out link lets a co-worker's entry confirm hers. She gets a 4070-style PDF on the 1st and an evidence-tiered ledger in January. Rebuild 2026 ($29, credited) covers earlier months. It never does deduction maths and never says "you qualify."
+
+**Boring on the surface,** it's the tip log in Publication 531. **But** every night is sealed before she sleeps, and every tip-out has a second witness.
+
+**3-year version:**
+- **The pay map:** "Friday close $212, Tuesday $64": which shifts to swap or keep, and the reason to renew if the deduction lapses.
+- **The house sheet:** small bars without Toast run tip pools on paper. A $19/month house sheet, with each line confirmed by staff, is a second, SMB buyer.
+- **Target:** 15–20k worker payers and 500 bars, about $0.7–0.9M ARR.
+
+**Scores.**
+- **Innovation 4:** tip logs are commodity. What's new is sealing at close plus double-entry tip-outs between co-workers.
+- **Feasibility 8:** text entry, OCR and a PDF on known stacks, with no bank feeds and no advice.
+- **Market fit 6, accepted.** The deadline is real and monthly. But the cash-tipped buyer has no proven spend on tip logs, CAC is roughly a year's revenue, and the window closes in 2028. A salon-suite chain paying per member, or test CAC under $25, would earn it; neither is shown.
