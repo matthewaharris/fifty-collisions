@@ -1,0 +1,45 @@
+{
+  "id": 5,
+  "name": "Afterlist",
+  "tagline": "The contents list rebuilt after the shoebox burned, from records you already have, with every line showing how it's proven.",
+  "kind": "SMB software",
+  "old_product": "The shoebox of receipts and the home-inventory app nobody keeps current",
+  "fresh_spin": "Instead of asking people to keep an inventory, rebuild it after the loss from retailer order exports, card statements and old photos, and export the carrier's template with an evidence tier on every line.",
+  "boring_but": "Boring on the surface, it's a contents spreadsheet. But it's rebuilt from records the family already has after the shoebox burned, and every line says how it's proven.",
+  "innovation": 4,
+  "feasibility": 7,
+  "market_fit_12mo": 5,
+  "oacp": false,
+  "borrows_from": [
+    "#22 Unaccounted: mass balance, so unmatched card spend (e.g. $4,200 at REI) prompts the items memory forgot",
+    "#31 Tombstone: map which source recovers which room",
+    "#36 Settlement: source-file hashes sealed at upload so tier-A lines stay checkable"
+  ],
+  "summary": "Afterlist is contents-claim software sold to public adjusters at $199 a file, or $499 with concierge work done as the adjuster's vendor. The policyholder uploads retailer exports (Amazon, Costco, Target, Walmart, Apple, Home Depot), card statements and old photos. Afterlist parses them and runs a mass balance so unmatched spend prompts memory; no line exists until the policyholder confirms it. The export follows the carrier's template with an evidence tier on every line: A (order record), B (statement line, item attested), C (photo, price labelled as an estimate), D (memory, attested). Raw files are deleted within 72 hours; only line items, card last-4 and source hashes are kept.",
+  "first_buyer": "A licensed public adjuster handling an unwaived total-loss or large contents claim (a single-home fire, not a declared disaster with a list waiver), the week the carrier asks for the itemised inventory and the client faces hundreds of hours of listing.",
+  "why_now": "California SB 495 (Ch. 542, effective Jan 1, 2026) advances 60% of contents limits (capped at $350k) with no list for 100 days in declared emergencies, so the remaining balance and every unwaived loss still need an itemised list. Retailer data-export rights and LLM parsing now make rebuilding the list from records cheap. After the 2025 LA fires, contents inventory became a visible, painful job.",
+  "competitors": [
+    "Bevelmade: free photo-to-list contents tool built by a Palisades fire family",
+    "United Policyholders: free inventory guides and app",
+    "ProofList: photo-based home inventory (pricing unverified)",
+    "Encircle: B2B field documentation for restoration contractors and adjusters (pricing unverified)",
+    "Sortly: business inventory software, not claims-focused",
+    "Contents inventory specialists working for public adjusters: fees unverified"
+  ],
+  "price_and_margin": "$199 per file self-serve, $499 per file with concierge as the adjuster's vendor. Cost to serve about $30-80 per file in parsing and vision (unverified), so 60-85% gross margin. Assumed CAC about $1,000 per adjuster firm.",
+  "channel": "First 100 files: a free 72-hour concierge rebuild of one live file for 60 public adjusters pulled from California, Florida and Texas licence rolls and NAPIA, converting to paid second files. First 1,000 files: NAPIA and state-association events, founder outreach and adjuster referrals; later restoration and pack-out contractors and disaster-recovery attorneys.",
+  "demand_test": "Four weeks, about $1.5k: offer 60 public adjusters a free concierge rebuild of one live file. Measure hours saved, the share of claim value landing in tiers A and B, and whether desk adjusters accept tier-A lines without receipts. Go if 5+ adjusters send a second file at $199 and 50%+ of value lands in A/B.",
+  "mvp_90_days": "Weeks 1-4: concierge test run by hand with LLM parsing. Weeks 5-10: parsers for Amazon, Costco, Target, Walmart, Apple, Home Depot and card statements, the mass-balance prompt, user line confirmation, evidence tiering and carrier-template export. Weeks 11-13: 72-hour raw-file deletion jobs, card masking, adjuster dashboard and 10 paying firms.",
+  "kill_metric": "By month 6, fewer than 15 paying adjuster firms, fewer than 40 files a month, or desk adjusters accepting tier-A lines without receipts less than 70% of the time.",
+  "risks": [
+    "Claim padding: AI-spotted or AI-priced items invite fraud; mitigated by user-confirmed lines, labelled estimates and per-line evidence tiers",
+    "Public-adjuster licensing and unauthorised practice: paid concierge work only under a licensed adjuster; consumers self-serve only",
+    "Sensitive data in order exports and statements: raw files deleted in 72 hours, last-4 only, no OAuth or credentials",
+    "Disaster demand is lumpy, and declared-disaster list waivers shrink the need",
+    "Retailer export formats drift and break parsers",
+    "Marketing to survivors: no burn-zone geo-targeting for 30 days, pay only once the export is ready, refund if the list is waived",
+    "National public-adjuster count and files per adjuster unverified"
+  ],
+  "three_year": "250-400 adjuster firms, plus restoration and pack-out contractors and disaster-recovery attorneys, and a yearly pre-loss snapshot sold through independent insurance agents at about $1-2 per policy per year on the same parsers. About $1.5-2.5M ARR; if desk adjusters routinely accept tier A, 'Afterlist-tiered' becomes a format carriers ask for.",
+  "best_line": "Evidence tiers make the list both harder to pad and faster to pay, the rare feature both sides of a claim want."
+}

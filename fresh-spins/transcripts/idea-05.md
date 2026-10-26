@@ -97,3 +97,6 @@ No line exists until the user confirms it. Mass-balance gaps only prompt memory.
 - **Innovation 4:** inventory apps and photo-to-list AI exist. What's new is rebuilding from order histories and statements, the mass-balance prompt, and per-line evidence tiers.
 - **Feasibility 7:** seven parsers, tiering and export are known tech, but retailer formats drift and security work is real.
 - **Market fit 6:** a professional buyer who already pays for inventory labour, per-file pricing tied to visible dollars, and a 4-week test. But the national adjuster count is unverified, about $1,000 CAC per firm, and desk-adjuster acceptance of tier A is unproven. It reaches 7 if 5+ firms send a second paid file and acceptance clears 70%.
+
+### Turn 6 — Builder
+Scores: 4/7/5. I'm marking market fit down one from the Visionary's 6. That adjusters pay for contents labour, how many adjusters there are and whether desk adjusters accept tier A are all still unverified, and the test, not our reasoning, should earn the 6. The product is sound and honest: evidence tiers make the list both harder to pad and faster to pay, which is the rare feature both sides of a claim want. Run the 60-adjuster concierge test before writing a single retailer parser.
