@@ -5,3 +5,4 @@
 - **05. Afterlist** (4/7/5) — The contents list rebuilt after the shoebox burned, from records you already have, with every line showing how it's proven.
 - **06. Cashout** (4/8/5) — The tip log in Publication 531, sealed before she sleeps, with a second witness on every tip-out.
 - **07. Seated** (4/7/5) — The home BP log where every reading shows she rested first, and every habit she bets on gets a fair test.
+- **08. While You're Here** (4/7/6) — A shop prices its surprises from its own history before the job starts, so saying yes and getting paid are the same tap.

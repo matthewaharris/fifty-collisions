@@ -87,3 +87,6 @@
 - **Innovation 4:** change orders are commodity. Conditional ranges with honest odds from the shop's own invoices are new to the trades.
 - **Feasibility 7:** a known API, but a fuzzy diff and state-by-state change-order law.
 - **Market fit 6:** proven spend (shops pay Jobber, and JobAmend sells the adjacent flow) and business apps renew best. But there's no measured loss figure, no dated trigger, a $250 CAC, and Jobber may go native. It earns 7 if the concierge test shows $150+ more per menu job with 6 of 10 shops paying.
+
+### Turn 6 — Builder
+Scores: 4/7/6. Of the three app ideas, this one has the soundest economics: shops already pay Jobber, JobAmend proves the adjacent spend, and $1,400 of lifetime revenue against a $250 CAC works if churn holds. It stays at 6 because nobody has measured the lost extras, there's no deadline, and Jobber can make approval free whenever it likes. The capped, odds-labelled menu is the part worth defending, so build that first and treat approval as plumbing.

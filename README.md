@@ -38,7 +38,7 @@ Each pick has a high-level build plan in [`plans/`](plans/README.md), with a tim
 | `persona_visionary.md`, `persona_builder.md` | The two agents' role prompts |
 | `research/trends_brief.md` | The October 2026 trends research the agents used for grounding |
 | `plain/` | Plain-language summaries (`batch-*.json`), their brief and the script that formats them |
-| `fresh-spins/` | Five near-term product ideas from a second round: fresh spins on boring products, aimed at market fit within 12 months, each with a demand test and kill metric |
+| `fresh-spins/` | Eight near-term product ideas: fresh spins on boring products aimed at market fit within 12 months, each with a demand test and kill metric. Page: [Fresh Spins](https://claude.ai/artifact/3fX3cqisXuWbY9o94MCqiq) |
 | `prototypes/` | Working prototypes: Always For Sale (rules engine, sweeps, play page) and Caught (phone web app) |
 | `plans/` | High-level build plans for the 11 prototype picks, with an index, a suggested build order and the components they share |
 | `site/` | The page template and the build script |
@@ -58,4 +58,4 @@ This reads `records/` and `transcripts/` and writes `fifty-collisions.html`. The
 - **#3** was renamed from Zombie Bounty to **Litmus Ghost**. Its contest modes are now Hollow and Overlooked.
 - **#10 Crossover** was retired because it duplicated #25 Offtaker. Slot 10 now holds **One Take**, from a later bonus round on quantum randomness and AI.
 - **Prototype plans** were added in `plans/`. For Caught and Precedent, the go/no-go test above now matches each record's own kill metric. The earlier questions (chest-strap accuracy, and a pharmacist and lawyer audit) are now early milestones.
-- **Fresh Spins** (`fresh-spins/`) added five near-term ideas: Ran It, Posted, Morning Tile, Counter (the OACP one) and Afterlist.
+- **Fresh Spins** (`fresh-spins/`) added eight near-term ideas over two rounds: Ran It, Posted, Morning Tile (plus an app-version supplement), Counter (the OACP one) and Afterlist; then, apps only, Cashout, Seated and While You're Here.

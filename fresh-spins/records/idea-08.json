@@ -1,0 +1,45 @@
+{
+  "id": 8,
+  "name": "While You're Here",
+  "tagline": "A shop prices its surprises from its own history before the job starts, so saying yes and getting paid are the same tap.",
+  "kind": "SMB app",
+  "old_product": "The carbon-copy job ticket, the estimate pad and the unwritten 'while you're here, can you also…' extra",
+  "fresh_spin": "At quote time the homeowner signs a capped menu of likely surprises with honest odds from the shop's own invoices, and mid-job her tap on that list is the change order.",
+  "boring_but": "Boring on the surface, it's a change-order form. But the shop prices its surprises from its own history before the job starts, so saying yes and getting paid are the same tap.",
+  "innovation": 4,
+  "feasibility": 7,
+  "market_fit_12mo": 6,
+  "oacp": false,
+  "borrows_from": [
+    "Counter (fresh spin 04): ranges proposed from the business's own invoices, approved by the owner",
+    "#35 Lookahead: a forecast the contractor commits to in advance and is held to",
+    "Posted (fresh spin 02): every approval sealed with a timestamp into one evidence pack"
+  ],
+  "summary": "While You're Here is a $49-a-month Jobber app plus a $99 menu build for 2-6-person remodelers, handymen and electricians. It pulls quote and invoice line items through Jobber's GraphQL API, diffs them, and proposes a surprise menu: hidden conditions with locked odds ('31 of 80 jobs') and ranges, plus pre-priced add-ons. The owner prunes and approves. The homeowner signs the menu with the quote under a plain top line ('Your price $8,400. At most $10,100, only if we find…'), with the worst case capped at 25% of base. The menu stays live on her phone as 'Your job list': she taps add-ons herself, and hidden-condition lines bill only with a photo and her tap after ESIGN e-consent. Each tap is written back to Jobber as a signed change order and sealed into an evidence pack; off-menu extras get a plain approval link.",
+  "first_buyer": "The owner of a 2-6-person remodeling, handyman or electrical shop already paying for Jobber, the week after a homeowner refused to pay for an unwritten extra.",
+  "why_now": "Jobber still has no change-order module; its own community thread documents the second-quote workaround, and add-ons such as JobAmend have appeared to fill it. Jobber's GraphQL API and app marketplace (100+ integrations) make a plug-in feasible. Jobber's AI Receptionist books jobs from a phone description before anyone sees the wall, which pushes more scope discovery mid-job. Business apps have the best first annual renewal (40%). There is no dated legal trigger: written change-order statutes (California B&P 7159.6, Pennsylvania HICPA, New Jersey, Massachusetts 142A) are long-standing.",
+  "competitors": [
+    "JobAmend: Jobber change-order approval app, free until the first approved change order, then $29/month flat (vendor post)",
+    "Jobber: quotes with required client signatures; change orders handled by revising or adding quotes",
+    "ScopeProof: standalone change-order app (no information found)",
+    "Buildertrend (absorbed CoConstruct), Knowify, Contractor Foreman, Houzz Pro, Projul: native signed change orders for remodelers, roughly $50-500/month (unverified)",
+    "Housecall Pro and ServiceTitan: change orders through revised estimates (pricing unverified)",
+    "Joist: low-cost estimate and invoice app (pricing unverified)"
+  ],
+  "price_and_margin": "$49/month plus a $99 menu build. Cost to serve about $1/month (SMS, storage, API calls), so about 98% gross margin. Assumed CAC about $250 and 3.5% monthly churn give about $1,400 lifetime revenue per shop, about 5.6x CAC (assumptions, unverified).",
+  "channel": "First 100: the 10 concierge-test shops, the Jobber community change-order thread, Jobber user Facebook groups and NARI chapters, founder-led. First 1,000: the Jobber App Marketplace listing after App Review, homeowners' 'Your job list' pages exposing other shops' customers, and referrals; Housecall Pro and QuickBooks later.",
+  "demand_test": "Four weeks with 10 Jobber shops from the forum and Facebook groups: $99 for a hand-built menu from their invoice export, alternating menu and plain quotes. Measure add-on dollars per job, extras collected versus written off, close rate (directional on about 200 quotes), and how many shops' invoices yield five or more usable menu lines. Go if 6 of 10 pay and menu jobs bring $150+ more, or close rate rises 5+ points.",
+  "mvp_90_days": "Weeks 1-4: concierge test from invoice exports. Weeks 3-9: Jobber OAuth app, GraphQL pull of quote and invoice line items, diff with catalog matching plus fuzzy matching for free-text lines, owner approval, capped menu builder with locked odds, 'Your job list' homeowner page with ESIGN e-consent, tap-to-add, photo-required hidden conditions, timestamp seal, write-back to the Jobber job. Weeks 10-13: Jobber App Review and listing, 25 paying shops.",
+  "kill_metric": "Fewer than 6 of 10 test shops paying; by month 6, under 75 paying shops, churn over 5% a month, or under 40% of menu jobs with at least one homeowner tap.",
+  "risks": [
+    "Jobber builds native change orders (likely within two years), making approval free",
+    "Messy data: free-text and lump-sum invoices hide extras, so many shops yield few usable menu lines",
+    "Lowball-then-upcharge abuse would be an FTC Act and state UDAP problem; mitigated by full-scope base price, locked odds with counts, a 25% cap, photo proof and declinable lines",
+    "State change-order statutes: a tap must carry the required fields, contractor signature and prior ESIGN consumer consent; counsel needed in California and Pennsylvania before launch",
+    "No measured data on how often extras go unpaid, and no dated trigger",
+    "Techs skip the app mid-job rather than look petty; the homeowner-tap design must make it easier than saying yes",
+    "Jobber marketplace terms and revenue share are not public"
+  ],
+  "three_year": "Housecall Pro and QuickBooks histories added; pooled, anonymised regional odds ('rot in 38% of pre-1970 bathrooms in this county') so new shops can quote honestly; if Jobber goes native, approval goes free and the odds engine and regional data become the product or an acquisition. Target 3-5k shops, about $2-3M ARR.",
+  "best_line": "'At most $10,100' is a promise a lowballer can't print."
+}
