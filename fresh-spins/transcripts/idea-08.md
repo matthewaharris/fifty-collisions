@@ -34,3 +34,20 @@
 **Economics:** $39/month, about $1 to serve (SMS, storage). Assume marketplace CAC around $150 and 3% monthly churn: unverified.
 
 **Twist: lead with the surprise menu, not approval.** Approval is JobAmend's at $29. Signing likely extras with the original quote means the tech never asks mid-job; he picks a line and she gets a notice. Check per state whether a pre-signed range satisfies §7159.6.
+
+### Turn 3 — Visionary
+**Accepted:** JobAmend owns approval at $29; the surprise menu is the product. Off-menu extras get a plain approval link.
+
+**The five-second demo is the menu being built.** Connect Jobber; it diffs every quote against its final invoice, and lines found only on invoices are the shop's real extras: "Bathrooms, last 80 jobs: subfloor rot on 31, $380–720; shutoff valves on 44, $120." The owner prunes and approves: Counter's ranges plus Lookahead's committed forecast.
+
+**At quote time it sells the job.** The homeowner sees "If we find…" lines with honest odds and signs the range with the quote. A visible worst case beats a suspiciously low rival bid. It also pre-prices "while we're here" items (valves, GFCIs). Jobber's optional items are static; these come from what this shop actually found.
+
+**Saying yes and recording it become one act.** The signed menu stays live on her phone as "Your job list." When she asks "while you're here, the valve?", the tech says "It's on your list, add it," and she taps it herself. His phone buzzes: "Dana added valve, $120." Finding rot, he taps the line plus a photo; she gets a notice within her signed range. In states that need written change orders, the notice takes one tap from her, fast because the price was agreed (legal check per state).
+
+**Demand test (4 weeks, 10 Jobber shops from the forum and Facebook groups):**
+- **Offer:** $99 for a hand-built menu from their invoice export.
+- **Method:** alternate menu and plain quotes.
+- **Measure:** close rate, add-on dollars per job, extras collected vs written off.
+- **Go:** 6 of 10 shops pay, plus either $150+ more per menu job or a close rate 5+ points higher. On about 200 quotes, close rate is only directional; dollars per job leads.
+
+**Price:** $49/month.
