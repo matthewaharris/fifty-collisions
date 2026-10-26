@@ -13,3 +13,29 @@
 **Borrows:** from #20 Facing Out, her signs face out only to people she chooses, as scarce graded clues. From #38 Tally, a weekly drill texts the family "test: tap if you'd have got this," which proves the chain works.
 
 **Price:** $129 board plus $12/month: cheaper than the pendant, and earlier.
+
+### Turn 2 — Builder
+**Facts check out:** Amazon's May 21, 2025 note says Alexa Together is gone (pointing to Emergency Assist); AARP figures match the brief.
+
+**What exists (crowded):**
+- **Snug:** free daily check-in, with a $19.99/month dispatch tier.
+- **Other apps:** AllsOK, OneTap Safe, KinStatus, "Are You Ok?"
+- **County and police "RUOK" calls:** free.
+- **Pendants** (Medical Guardian, Lively): $25–45/month.
+- **GrandPad and passive sensors** (Alarm.com Wellness via security dealers): prices unverified.
+
+None is a phone-free ritual the parent starts herself. That gap is why hardware is the point: her pride lives in a fridge object, not an app.
+
+**Hardest problem: the habit lapses.** She forgets on day 9, the chime nags, the daughter gets texts, and the board goes in a drawer. The parent churns; the child pays.
+
+**Hardware reality:**
+- **Certification:** a pre-certified LTE-M module (nRF9160 class) still needs $6.5–10k of FCC testing.
+- **Carrier:** an IoT MVNO (Hologram, 1NCE) avoids a carrier deal, about $1/month (unverified).
+- **Power:** no outlet on a fridge door, so AA cells and power-save mode.
+- **BOM:** about $35–45, landed about $50.
+- **Economics:** the $129 board nets about $70; $12/month leaves about $10.50. A Meta CAC of $80–150 pays back in 1–8 months. Six-month retention decides it, not margin.
+- **Positioning:** "not an emergency device" on the box, or a missed fall becomes a lawsuit.
+
+**Twist: prove the ritual before the radio.** Ship a $15 unpowered magnetic tile board. She reports her tile by pressing 1, 2 or 3 on a free number from her own landline (Twilio IVR, about $0.02 a call). Same parent-initiated signal, chosen hour and one-person escalation; no certification, carrier or returns. Charge $12/month from day one. Build the LTE-M board only once 60-day IVR retention passes 70%.
+
+**MVP:** IVR, SMS dashboard, printed boards, 30 families, 4 weeks.
