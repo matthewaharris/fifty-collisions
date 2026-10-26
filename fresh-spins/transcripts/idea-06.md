@@ -17,3 +17,20 @@
 **Borrows:** Afterlist's evidence tiers (photo > same night > later), #36 Settlement (seal it at the time), and Ran It (the event sets the record, not memory).
 
 **What keeps it below 7:** Stride adding a free tips field before January.
+
+### Turn 2 — Builder
+**Rules, checked.** Final regulations (TD 10044, April 2026) list 70+ occupations; rideshare drivers and goods delivery people are on it (proposed list; final list not opened). From tax year 2026, W-2s show qualified tips in Box 12 code TP and the occupation in Box 14b (draft instructions); 1099 fields are unverified. FICA still applies. Employees keep a daily tip record and report $20+ a month on Form 4070 (Pub 531); unreported tips go on Form 4137.
+
+**That moves the buyer.** App tips already sit in DoorDash and Uber statements. DoorDash sends a 1099-NEC, not a 1099-K, so her January surprise doesn't happen. The worker with no record is paid in cash or Venmo: the bartender, the booth-renting stylist, the valet.
+
+**What exists:** Stride, free mileage; Gridwise Pro, $79.99/yr, imports platform earnings and tips; MileIQ $59.99–139.99/yr and Everlance $69.99–89.99/yr (sources disagree); Solo and Keeper, prices unverified. Toast asks for cash tips at clock-out; TurboTax and TaxAct handle filing. Incumbents are mileage-first or bank-feed-first, and cash never touches a feed. Mileage is solved and free: drop it as the lead.
+
+**Multimodal:** the iOS 27 claim is vendor-sourced and needs an iPhone 15 Pro or later. Vision text recognition and ML Kit read a slip free on any phone.
+
+**Hardest problem:** it's October. Most of 2026 is already unrecorded, and the deduction ends after 2028.
+
+**MVP:** iOS and Android log, geofence prompt at shift end, sealed entries, monthly Form-4070-style report.
+
+**Economics:** $39.99/yr, $34 after Apple's 15%, under $1 to serve. At Finance CPI ($9.65) and 10.7% hard-paywall conversion, a payer costs about $90, so it needs creators and word of mouth.
+
+**Twist: rebuild 2026, seal 2027.** In January, sell a $29 reconstruction from platform statements, Venmo exports and payslips, every line tier-labelled, credited toward the annual log. Never show estimated savings.
