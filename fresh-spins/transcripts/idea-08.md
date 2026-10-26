@@ -51,3 +51,21 @@
 - **Go:** 6 of 10 shops pay, plus either $150+ more per menu job or a close rate 5+ points higher. On about 200 quotes, close rate is only directional; dollars per job leads.
 
 **Price:** $49/month.
+
+### Turn 4 — Builder
+**The diff is messier than the demo.** Jobber's GraphQL API exposes quote and invoice line items. Catalog lines match cleanly; free-text lines ("addl labor 2hr") need fuzzy matching, and lump-sum invoices hide extras entirely. The diff proposes, the owner approves. Measure how many shops yield five usable lines.
+
+**Fairness rules, or it's lowball-then-upcharge** (an FTC Act and UDAP problem):
+- **Full base:** covers the described scope; the menu holds only hidden conditions and add-ons.
+- **Locked odds:** shown with counts ("31 of 80 jobs"); the owner can delete a line, not edit its odds.
+- **Cap:** the worst case, shown beside the base, is capped at 25% of it.
+- **Plain top line:** "Your price $8,400. At most $10,100, only if we find…"
+- **Proof and choice:** hidden conditions bill only with a photo; she can decline any line.
+
+**Her tap as a change order.** Under ESIGN and UETA, an intentional tap on an authenticated link can be a signature. Where statutes require written disclosures, ESIGN needs her e-consent first: collect it at quote signing. Each notice carries §7159.6's scope, price and schedule fields and the contractor's signature. Require her tap everywhere, rot included; get counsel in California and Pennsylvania first.
+
+**12 months:** $49/month plus a $99 menu build. In scope: 2–6-person remodelers, handymen and electricians on Jobber, guessed at 15–40k shops. CAC about $250 (forum, Facebook groups, NARI, then the marketplace). At 3.5% monthly churn, lifetime revenue is about $1,400. Month 12: 300 shops, about $175k ARR. Jobber going native within two years is likely.
+
+**90 days:** weeks 1–4, concierge test. Weeks 3–9, OAuth, diff, capped menu, "Your job list," write-back. Weeks 10–13, App Review, 25 paying shops.
+
+**Kill:** under 6 of 10 paying; month 6, under 75 shops, churn over 5%, or under 40% of menu jobs with a tap.
