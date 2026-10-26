@@ -39,3 +39,16 @@ Vet-stack prices unverified; no vet price-posting mandate found. Why incumbents 
 **Twist: lead with the list, not the voice.** A $49/month signed price list for the top 20 services publishes everywhere at once: Google Business Profile services, schema.org markup, a website widget and the OACP card. Machines read prices without calling. Voice answering is the upsell: overflow and after-hours only, quoting only from the list, with booking requests going to the message pad, not into the practice software.
 
 **Cost to serve:** voice runs about $0.10/min (unverified), so 300 overflow calls a month cost about $60. 60%+ margin at $149.
+
+### Turn 3 — Visionary
+**Accepted:** lead with the $49 list and make voice the overflow upsell.
+
+**The owner won't commit ranges, so don't ask her to invent them.** She uploads a 12-month invoice export. Counter proposes each range from her own bills: "spay, dog 30–50lb: $380–460, 80% of your last 38." She approves numbers that already happened, drivers flagged. Now the range is genuinely `measured`, with the invoice export's digest attached.
+
+**Where OACP earns its place: the quote you can hold them to.** Phone and schema.org give an unsigned number. Through OACP, a pet owner's own assistant (Claude or Cursor with `oacp-mcp`) runs `oacp_discover` for capability `vet-quote`. It finds clinics' DNS-verified cards with no aggregator ranking them (location is a client-side filter on card metadata; a registry geo-filter would be an extension). It sends `get-quote` with species and weight and gets back a reply signed by `@clinic.com/desk`, tied to that pet and thread. If the bill lands outside the range with no disclosed driver, the owner files an RFC 007 dispute with the invoice digest. The clinic's public accuracy score (v1 formula, shipped) becomes a number honest clinics advertise: "quotes honoured 97%."
+
+Holds survive offline: an 11pm `hold-appointment` waits in the registry mailbox and expires by itself through `ttl_seconds`.
+
+**Five-second demo:** "Quote a spay for my 40lb dog within 5 miles and hold Thursday." Three signed cards appear with a "signed by clinic.com, from 38 invoices" badge. Tap hold. Cut to the clinic's morning pad: "Hold: Thu 9am, Biscuit, $380–460, signed."
+
+**Demand test (3 weeks):** mystery-shop 200 independent clinics in two metros with AI-style price calls. Send each a free report, "what Google's assistant heard from you," with a $49 list offer. **Go:** 10+ paid. In parallel, publish 20 consenting clinics' cards. Keep the OACP lane only if 50+ agent quote requests arrive.
