@@ -79,3 +79,21 @@ Habit-stack it: the board ships with a sticker that says "while the kettle boils
 **90 days:** weeks 1–3, demand test. Weeks 4–8, IVR, app and screening. Weeks 9–13, 100 families.
 
 **Kill:** under 60% of parents calling 5 of 7 days by day 60; churn over 8% a month by month 4; or CAC over $100 after month 3.
+
+### Turn 5 — Visionary
+**Accepted, all of it:** verified, parent-approved contributors; money screening; no outbound calls; no identifying prompts. "Never calls you, never asks for money" is now part of the dignity promise.
+
+**Final form.** Morning Tile is a $12/month family service with a free printed magnetic board on annual plans. Each morning she slides a tile (fine / out / call me) and presses its number from any phone. That unlocks today's screened voice note from the family, and her reply goes back to them. The payer sees tile and time. Silence past her chosen hour goes to her one chosen person, never an alarm at her. Not an emergency service. The radio board waits for 70% retention at 60 days.
+
+**Boring on the surface,** it's a fridge calendar and a phone number. **But** the check-in is something she does for herself, because it's the door the grandchildren's voices come through.
+
+**3-year version:**
+- **Lead product:** a mains-powered, cellular "tile slot" for parents who'd skip the phone step.
+- **Keepsake:** an annual printed "year of mornings" book of her approved replies, a $49 yearly repeat gift.
+- **B2B2C:** with two years of retention data, home-care agencies resell it as between-visit check-ins and Medicare Advantage plans buy it under loneliness supplemental benefits.
+- **Target:** 15–25k families, $2–3.5M ARR. No sensors, ever.
+
+**Scores.**
+- **Innovation 4:** check-in apps and IVRs are commodity. What's new is the inversion: a parent-started physical ritual whose reward is the family's voice.
+- **Feasibility 8:** IVR, app, print; no certification.
+- **Market fit 6:** the payer already spends on pendants and paid for Alexa Together; the test is cheap. But two people must be won, free apps exist, and 5% churn is an assumption. It's 7 only if week-3 call rates hold at 70%.
