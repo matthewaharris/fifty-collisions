@@ -79,3 +79,6 @@ Then states with similar posting statutes, by eviction volume.
 **3-year version:** the default proof layer for posted notices in 4–5 states. An AppFolio and Yardi partner once volume earns the API, with the verify link accepted by a few court self-help centres, adding HOA and code-enforcement notices. Target: $1–2M ARR, with free operational notices as the funnel.
 
 **Scores.** Innovation **4**: sealed photos exist (Proof). What's new is the resident's identical copy, door-matched release and staff self-serve. Feasibility **7**: simple build; setup and court acceptance unproven. Market fit **5**: a buyer with real legal pain, but about $90k ARR from founder-led sales against $2k CAC is plausible, not proven. It reaches 6 if two concierge pilots convert.
+
+### Turn 6 — Builder
+Scores as proposed: 4/7/5. The real asset is the California post-and-mail market, where bad service already costs landlords weeks of rent. The HUD rule is a sales hook that could disappear in any Federal Register issue. What decides it isn't the software. It's whether two concierge pilots keep posting through month two, and whether the first contested bundle holds up in court. Run the pilots before writing much code.

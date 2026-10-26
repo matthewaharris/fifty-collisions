@@ -1,1 +1,2 @@
 - **01. Ran It** (3/8/5) — The dishwasher clean/dirty sign that's set by the wash, not by whoever remembered.
+- **02. Posted** (4/7/5) — The door notice that proves itself: every posting sealed, the same record for landlord and tenant.

@@ -1,0 +1,43 @@
+{
+  "id": 2,
+  "name": "Posted",
+  "tagline": "The door notice that proves itself: every posting sealed, the same record for landlord and tenant.",
+  "kind": "SMB software",
+  "old_product": "Paper door hangers and posted notices (entry, shut-off, 3-day and 30-day notices) with a staff member's word or a process server's affidavit as proof",
+  "fresh_spin": "Every paper notice carries a per-door code. Posting it means photographing it on the door, and that photo is sealed to an RFC 3161 timestamp in a court-ready bundle the resident can see too.",
+  "boring_but": "Boring on the surface, it's a door hanger with a QR code. But every posting is sealed, so neither the landlord nor the tenant can fake what happened at the door.",
+  "innovation": 4,
+  "feasibility": 7,
+  "market_fit_12mo": 5,
+  "oacp": false,
+  "borrows_from": [
+    "#36 Settlement: seal the record before anyone knows it will be disputed",
+    "#35 Lookahead: the notice is a commitment (window, deadline) that the record later checks"
+  ],
+  "summary": "Posted is self-serve proof of service for notices a state lets landlords post on a door. Staff email the PDF from AppFolio or Yardi; it comes back with per-door codes, they print and post it, and walk mode captures each door. A notice is released only when the photographed door number matches the printed unit. The bundle (photo, code in frame, timestamp, factual declaration draft) is sealed at capture. The resident's QR page shows only notice type, door and time, plus plain-language deadlines, cure steps and legal aid. Amounts stay inside the sealed notice. Legal notices cost $6 each; entry and shut-off notices are free.",
+  "first_buyer": "A California property manager or HUD-assisted operator with 500-3,000 units, the week after an eviction case is delayed or dismissed over disputed service, or while getting into line with HUD's 30-day nonpayment notice.",
+  "why_now": "HUD's 30-day nonpayment notice rule (89 FR 101270) still applies to public housing and project-based Section 8, because the Feb 2026 interim rescission was delayed on Mar 13, 2026 pending a final rule. In a 2024 NY decision (2024 NY Slip Op 50219(U)), posting photos were admitted but GPS and timestamps were discarded as unauthenticated third-party data, so self-authenticating records matter. California CCP §1162 post-and-mail service remains a common failure point.",
+  "competitors": [
+    "Proof (proofserve.com): process-serving network that posts notices for property managers with timestamped, geotagged photos and affidavits within 72 hours; per-serve pricing unverified",
+    "AppFolio and Buildium: notice templates, mass email and text, no per-door proof of posting",
+    "Yardi RentCafe and Entrata resident apps: portal announcements",
+    "ButterflyMX: building-entry photos and logs, not unit doors",
+    "SmartRent: unit lock access logs prove entry, not notice",
+    "Latchel: vendor entry scheduling with residents"
+  ],
+  "price_and_margin": "$6 per legal notice; entry and shut-off notices free. Cost to serve is about $0.01 per notice (storage, timestamping), so roughly 95% gross margin. A 1,000-unit operator at an assumed 5 legal notices per 100 units a month pays about $3.6k/yr.",
+  "channel": "First 100 properties: founder-led concierge pilots through NAHMA, NAHRO and state affordable-housing associations, plus California Apartment Association events and $500 of search ads on the HUD rule. First 1,000: referrals between operators, every posted notice's verify link seen by legal aid and courts, and later the AppFolio and Yardi partner marketplaces.",
+  "demand_test": "Three-week free concierge pilots with 3 HUD-assisted or California operators, stamping and verifying every legal notice. Go if 2 of 3 use it on 80%+ of legal notices, 1 signs at $6 per notice, and 15+ demo requests come from $500 of search ads.",
+  "mvp_90_days": "Weeks 1-3: concierge pilots run by hand. Weeks 4-9: PWA with live-camera-only capture, walk mode (about 10 s per door), offline hash-on-capture and seal-on-sync, email-PDF intake with per-customer unit-number mapping and door-match release, PDF proof bundle and resident verify page. Weeks 10-13: 3 paying sites.",
+  "kill_metric": "By month 6, fewer than 8 paying operators or fewer than 400 paid notices a month; or pilots fall below 80% use on legal notices by month two.",
+  "risks": [
+    "HUD's 30-day rule may be finally rescinded, removing the affordable-housing hook",
+    "Courts may not accept the bundle; the first contested case decides credibility",
+    "Wrong-door proof from a mis-parsed PDF would be fatal; door-match release is mandatory",
+    "Proof, Yardi or AppFolio can add self-serve photo proof; little moat beyond speed and court track record",
+    "Tenant privacy and surveillance: no open-tracking, no amounts on the door",
+    "Unauthorised practice of law if declarations drift into advice; E&O insurance needed"
+  ],
+  "three_year": "The default proof layer for posted notices in 4-5 states by eviction volume, with AppFolio and Yardi partner integrations, a verify link accepted by some court self-help centres, and HOA and code-enforcement notices added; $1-2M ARR with free operational notices as the funnel.",
+  "best_line": "Actual notice beats any affidavit about service mechanics, so honesty is the manager's strongest evidence."
+}
