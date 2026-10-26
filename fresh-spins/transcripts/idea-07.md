@@ -30,3 +30,23 @@
 **MVP:** watch rest timer, HealthKit/Health Connect cuff import, a seven-day PDF, 6 weeks.
 
 **Risk:** WWDC 2027 adds a seven-day BP summary to Health.
+
+### Turn 3 — Visionary
+**Accepted:** patient pays $39.99/yr, the clinic reads free, device-only readings, "rested 5 min · paired."
+
+**The honest demo.** The watch shows "Sit · 4:12" counting down, and the ring resets when her wrist moves. At zero it says "Cuff now." Two readings land a minute apart with a stamp: "7:42am · rested 5 min · paired." The photo: a paper log with a "?" on every line, beside one page of stamps.
+
+**What she keeps paying for: the next question.** After the doctor-ready week come experiments from AHA lifestyle advice, never medication: an evening walk, no drink after 8pm, caffeine after 10am, salt. Washout's design carries over:
+- **Sealed in advance:** the schedule is set before day one, so she can't pick good days.
+- **Matched to timescale:** fast effects (alcohol, the walk) are randomized day by day over 4 weeks. Salt runs in alternating one-week blocks, because it acts slowly.
+- **Peek-proof:** an anytime-valid evidence meter she can check daily.
+- **The result card:** "Evening walk: morning systolic about 4 lower (range 1–7), 28 days." It goes on the next doctor page. No stage, no advice.
+
+Six to eight questions fill a year. ChatGPT Health reads the past; it can't randomize the future. WWDC can ship the seven-day summary without shipping this.
+
+**Cheaper channel: the "keep a log" appointment.** A free tear-off pad for practices: "Your week arrives as one page." Second channel: an insert card in Amazon Bluetooth cuffs with weak apps, on revenue share. Third: Apple Search Ads on "blood pressure log."
+
+**Test (3 weeks, about $2k):**
+- **Ads and pads:** Search Ads plus 10 seeded clinic pads lead to a $39.99 pre-sale.
+- **Cohort:** 20 TestFlight users run the walk experiment.
+- **Go:** a pre-sale CPA of $30 or less, and 75% of scheduled mornings recorded in week 3.
