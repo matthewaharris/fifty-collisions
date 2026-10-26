@@ -65,3 +65,6 @@
 **3-year version:** a small line of battery-free "event-set" proofs for STR turnover, all on one cutout-and-slug platform. The dishwasher clip comes first, then a linen tag that shows the sheets went through a hot wash. No hygiene claims. Per-property kits for cleaning companies, $2–4M a year; the two-pack stays the funnel.
 
 **Scores.** Innovation **3**: fifty years of prior art; what's new is the time-integrating slug and actually shipping it. Feasibility **8**: one tool, off-the-shelf part, no radio, ~$25k. Market fit **5**: a proven buyer of the stale magnet, but no consumable and $9.99 copies coming. I'd move to 6 only if host 10-packs actually reorder. Not yet earned.
+
+### Turn 6 — Builder
+Scores as proposed: 3/8/5. This is the cheapest honest test in the round, about $25k all in, and the physics checks out once every unit is bath-tested. As a consumer gadget it's a one-time impulse buy that knockoffs will undercut fast. If short-term-rental hosts reorder 10-packs, it becomes a small business; if they don't, sell through the first run and stop.

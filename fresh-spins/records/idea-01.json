@@ -1,0 +1,40 @@
+{
+  "id": 1,
+  "name": "Ran It",
+  "tagline": "The dishwasher clean/dirty sign that's set by the wash, not by whoever remembered.",
+  "kind": "physical product",
+  "old_product": "The clean/dirty dishwasher magnet ($6-10 on Amazon)",
+  "fresh_spin": "A top-rack clip whose green dome pops up on its own after a real wash cycle and stays up until someone presses it back to red.",
+  "boring_but": "Boring on the surface, it's a dishwasher magnet. But it's set by the wash, not by whoever remembered.",
+  "innovation": 3,
+  "feasibility": 8,
+  "market_fit_12mo": 5,
+  "oacp": false,
+  "borrows_from": [
+    "#38 Tally: the event sets the state, not anyone's memory, and every hot cycle proves the device still works",
+    "#9 Caught: a single control you press only when you notice"
+  ],
+  "summary": "A welded food-contact PP clip with a silicone dome. Inside, an off-the-shelf 42°C manual-reset thermal cutout (KSD301 class) sits in a steel-slug thermal mass with about a 10-minute time constant. A long eco or normal wash trips it and the cutout's own pop-up button lifts the green dome; a 60-second hot-tap rinse doesn't. Pressing the dome resets it to red. Every unit is tested in two baths (no trip at 38°C, trip at 44°C) to beat the ±5°C part tolerance. The hero SKU is a $19.99 two-pack; the repeat-buyer test is a $69 10-pack for short-term-rental hosts and cleaners.",
+  "first_buyer": "Couples and roommates who already own the magnet, on the morning they open the dishwasher and can't tell whether it ran. Repeat-buyer test: short-term-rental hosts whose checkout list says 'run the dishwasher' and whose cleaner can't tell whether the guest did.",
+  "why_now": "TikTok Shop (about $15.1B US GMV in 2025) rewards a silent 5-second demo. Off-the-shelf manual-reset cutouts make the mechanism a cheap bought part, not R&D. The relevant patents (US5839458, US6196239 and older) are expired, so it's free to build. Eco programmes now run long at 45-50°C, and that breaks naive 50°C bimetal designs, which the thermal slug fixes.",
+  "competitors": [
+    "Clean/dirty dishwasher magnets and sliders: printed signs, many identical Amazon listings, $6-10 (unverified)",
+    "The dishwasher's built-in 'Clean' light: free, but on many machines it goes out as soon as the door is opened",
+    "Prior-art mechanical indicators (US3608514, US4129954, US4653423, US5839458, US6196239): patented over 50 years, no lasting product found on sale",
+    "US10662571 'Clean status indicator' (2020): possibly live; freedom to operate unverified"
+  ],
+  "price_and_margin": "$19.99 two-pack, about $4 landed (two cutouts at $0.30-0.60, unverified; welded PP shell; silicone dome; slug; packaging; 12.5% Section 301 duty). Amazon: after the 15% referral fee ($3.00), FBA ($3.18) and 15% ads ($3.00), about $6.80 contribution (34%) before returns. DTC: about $10 after shipping, so the CAC has to stay at or below $8. STR 10-pack at $69: landed about $20, high margin, shipped direct.",
+  "channel": "First 100: about 60 pre-orders from the demand test, 30 TikTok Shop affiliate creators at 20% commission, 30 Amazon Vine units ($200). First 1,000: TikTok Shop creator videos (pour-the-kettle and real-dishwasher demos) plus Amazon with Brand Registry. STR 10-packs through host Facebook groups, BiggerPockets, host co-ops and cleaning companies.",
+  "demand_test": "Three weeks, about $1.5k: 15 hand-potted units filmed in real dishwashers; three silent 5-second Reels and TikToks with $600 of spend to a Shopify refundable pre-order page ($19.99 two-pack, ships in 90 days). Go at 2% or more visit-to-preorder with CAC of $8 or less. In parallel, 20 DMs to STR host co-ops with a target of 3 paid 10-packs at $69.",
+  "mvp_90_days": "Weeks 1-3: bin-test 200 cutouts from two suppliers and pot 15 units. Weeks 3-6: data-logger runs in 20 home dishwashers on eco, quick and normal cycles plus hot-tap tests, to tune slug mass. Weeks 6-10: aluminium housing tool and silicone dome tool (about $12k), a two-bath end-of-line rig (about $2k), a 500-hour 70°C detergent soak and 1,000 thermal-shock cycles. Weeks 10-13: first run of 1,500 two-packs. About $25k all in.",
+  "kill_metric": "Stop if the pre-order test converts under 1.5% or paid CAC exceeds $8; if logged eco cycles miss more than 2%; or if, 60 days after launch, sales are under 8 orders a day or returns exceed 8%. STR channel: no reorder of 10-packs from at least 3 of the first 10 host accounts within 6 months.",
+  "risks": [
+    "Knockoffs at $9.99 within months; no meaningful patent moat (prior art since 1971), so APEX won't help",
+    "±5°C cutout tolerance and model-to-model cycle variation produce misreads; one wrong reading sends the household back to the magnet",
+    "Seal failure lets detergent corrode the nickel-bearing bimetal; needs a welded seal and a Prop 65 check",
+    "No consumable or visible colourway, so there's no repeat purchase without the STR channel",
+    "Quick and rinse-only cycles may not trip it; packaging has to say so"
+  ],
+  "three_year": "A small line of battery-free 'event-set' proofs for short-term-rental turnover on one cutout-and-slug platform: the dishwasher clip first, then a linen tag that shows sheets went through a hot wash (no hygiene claims). Sold as per-property kits to cleaning companies and multi-listing hosts, $2-4M a year, with the consumer two-pack as the funnel.",
+  "best_line": "The magnet records memory, not events."
+}
