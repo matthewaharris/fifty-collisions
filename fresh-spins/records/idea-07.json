@@ -1,0 +1,47 @@
+{
+  "id": 7,
+  "name": "Seated",
+  "tagline": "The home BP log where every reading shows she rested first, and every habit she bets on gets a fair test.",
+  "kind": "consumer app",
+  "old_product": "The paper blood-pressure log doctors ask patients to keep for a week, and free brand-tied cuff apps",
+  "fresh_spin": "The watch times five still minutes before each paired cuff reading, so every entry is stamped 'rested 5 min · paired' instead of being a bare number.",
+  "boring_but": "Boring on the surface, it's the paper BP log. But every reading shows she rested first, and every habit she bets on gets a fair test.",
+  "innovation": 4,
+  "feasibility": 7,
+  "market_fit_12mo": 5,
+  "oacp": false,
+  "borrows_from": [
+    "#11 Washout: a sealed, randomized self-experiment with a peek-proof, anytime-valid evidence meter",
+    "#20 Facing Out: the record faces only the clinic and the people she chooses",
+    "#38 Tally and Ran It (fresh spin 01): the event (verified rest) sets the record, not memory"
+  ],
+  "summary": "Seated is a $39.99-a-year hard-paywalled blood-pressure log for phone and watch. The watch runs a five-minute stillness timer that resets if her wrist moves, then pulls paired readings a minute apart from any cleared Bluetooth cuff via HealthKit or Health Connect, accepting only device-sourced readings and stamping each 'rested 5 min · paired'. Week one produces a one-page, AHA-style doctor-ready average that the clinic reads free. After that she runs one sealed 8-week lifestyle question at a time (evening walk, no drink after 8pm, caffeine timing), randomized by day, and the result card describing her own readings, often 'too close to call', goes on the next doctor page. It never labels a stage or touches medication, and readings at 180/120 or above trigger a retest and AHA's fixed crisis guidance.",
+  "first_buyer": "An Apple Watch Series 9+ owner in the week after a hypertension notification tells her to log blood pressure for 7 days, or a patient leaving a 'keep a home log' appointment with a new Bluetooth cuff.",
+  "why_now": "Apple's FDA-cleared hypertension notifications (watchOS 26, Series 9 and later) are expected to reach 1M+ people with undiagnosed hypertension in the first year, and each is told to log BP for 7 days. The 2026 Medicare fee schedule added 99445 and 99470 for 2-15 days of monitoring, making short home logs more visible in practices. FDA's January 2026 general wellness guidance clarifies the lifestyle-wellness lane for non-diagnostic BP tools.",
+  "competitors": [
+    "Omron Connect and Withings Health Mate: free cuff apps tied to one brand",
+    "Apple Health: stores BP readings free, with no measurement protocol",
+    "Accuhealth: RPM at $20/patient-month plus $25 device and $15 onboarding (vendor blog)",
+    "MedM: RPM platform at $10/patient-month (vendor blog)",
+    "Cadence, Tenovi, Smart Meter, HRS, Validic, Omron VitalSight, Withings RPM: clinic RPM programs, prices unpublished; several ship cellular cuffs",
+    "Hello Heart: employer-paid hypertension app with a connected cuff (pricing unpublished)",
+    "Full-service RPM programs: about $40-80/patient-month (vendor blogs)"
+  ],
+  "price_and_margin": "$39.99 a year, hard paywall; about $34 net after Apple's 15%. Cost to serve near zero (on-device statistics, PDF generation, storage). Search Ads at Health & Fitness CPI $3.77 and 10.7% hard-paywall conversion put a payer at about $35, roughly a year's revenue, so profit depends on renewals driven by repeat doctor weeks and experiments.",
+  "channel": "First 100: the pre-sale (Apple Search Ads on 'blood pressure log') plus free 'your week arrives as one page' tear-off pads seeded in 10 practices. First 1,000: Search Ads at about $35 per payer and pads in 300 seeded practices. Insert cards in Amazon cuff brands later (terms unverified); Omron and Withings won't carry a rival app.",
+  "demand_test": "Three weeks, about $2k: Search Ads and 10 seeded clinic pads drive a $39.99 pre-sale, while 20 TestFlight users run the walk experiment. Go if pre-sale CPA is $30 or less and 75%+ of scheduled mornings are recorded in week 3.",
+  "mvp_90_days": "Weeks 1-3: demand test. Weeks 4-8: watch stillness timer (extended runtime session), HealthKit and Health Connect BP import filtered to device-sourced readings, doctor-ready PDF, 180/120 safety floor with AHA fixed text. Weeks 9-13: experiment engine (sealed daily randomization, 8-week default, anytime-valid meter), result cards with uncertainty, methodology disclosure for App Review 1.4.1.",
+  "kill_metric": "Pre-sale CPA over $40 or under 75% of scheduled mornings logged in the test; by month 6, under 1,000 payers or under 35% of payers starting a second experiment.",
+  "risks": [
+    "No evidence that patients pay for BP apps; free cuff apps and Apple Health set the price at zero",
+    "WWDC 2027 could add a seven-day BP summary to the Health app",
+    "Statistical power: with 6-7 mmHg day-to-day SD, 28 days detects a 4 mmHg effect only about 40% of the time; 8 weeks needed, and many cards will be 'too close to call'",
+    "Health claims: cards must describe her readings, never 'lowers' or 'treats'; App Review 1.4.1 methodology disclosure",
+    "Safety: crisis readings (180/120+) and symptoms need AHA fixed guidance and an experiment pause; no experiments if pregnant or under 18; never touches medication",
+    "The watch verifies a still wrist and settling heart rate, not posture, feet or arm height",
+    "Thin moat: the stillness timer is copyable by Omron, Withings or Apple",
+    "Watch owners aren't the Medicare and FQHC patients RPM pays for, so the clinic route is a separate business"
+  ],
+  "three_year": "A clinic tier at a flat $49 a month for a panel view once patients bring the pages, with practices billing 99473/99474 on their side; a question library (sleep timing, sitting breaks, the weekend drink). Target 20-30k payers plus 400 practices, about $1-1.5M ARR.",
+  "best_line": "ChatGPT Health reads the past; it can't randomize the future."
+}

@@ -86,3 +86,6 @@ Six to eight questions fill a year. ChatGPT Health reads the past; it can't rand
 - **Innovation 4:** BP logs are commodity. Verified rest and a sealed n-of-1 inside one are new.
 - **Feasibility 7:** known stack, but health App Review (1.4.1), a safety floor and a statistics engine on two platforms.
 - **Market fit 5:** the watch trigger is real, but no evidence shows patients pay for BP apps. CAC is about a year's revenue; WWDC can take the seven-day week. It earns 6–7 only if pre-sale CPA is $30 or less and 35%+ start a second experiment.
+
+### Turn 6 — Builder
+Scores: 4/7/5. The verified-rest stamp is a real improvement doctors would notice, and the safety floor and wellness-only cards keep it shippable. But nobody has shown that patients pay for BP apps, a payer costs about a year's revenue, and Apple could ship the seven-day week next June. Run the $2k pre-sale before writing the statistics engine. If CPA comes in at $30 or less, build it; if not, the clinic tier is the only business left, and that's a different company.
