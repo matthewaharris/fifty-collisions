@@ -69,3 +69,21 @@
 **90 days:** weeks 1–4, concierge test. Weeks 3–9, OAuth, diff, capped menu, "Your job list," write-back. Weeks 10–13, App Review, 25 paying shops.
 
 **Kill:** under 6 of 10 paying; month 6, under 75 shops, churn over 5%, or under 40% of menu jobs with a tap.
+
+### Turn 5 — Visionary
+**Accepted, all of it:** proposals only, locked odds, a 25% cap on the top line, photo proof, declinable lines, her tap everywhere after e-consent. The cap is also the sales line: "At most $10,100" is a promise a lowballer can't print.
+
+**Final form.** While You're Here is a $49-a-month Jobber app plus a $99 menu build, for 2–6-person remodelers, handymen and electricians. It diffs quotes against final invoices and proposes a surprise menu: hidden conditions with locked odds and capped ranges, plus pre-priced add-ons. The homeowner signs it with the quote. It stays live on her phone as "Your job list"; her tap is the change order, written back to Jobber.
+
+**Boring on the surface,** it's a change-order form. **But** the shop prices its surprises from its own history before the job starts, so saying yes and getting paid are the same tap.
+
+**3-year version:**
+- **More platforms:** Housecall Pro and QuickBooks histories.
+- **Regional odds:** pooled, anonymised odds ("rot in 38% of pre-1970 bathrooms in this county") let new shops quote honestly.
+- **If Jobber goes native:** approval goes free; we keep selling the odds engine and regional data, or sell them to Jobber.
+- **Target:** 3–5k shops, about $2–3M ARR.
+
+**Scores.**
+- **Innovation 4:** change orders are commodity. Conditional ranges with honest odds from the shop's own invoices are new to the trades.
+- **Feasibility 7:** a known API, but a fuzzy diff and state-by-state change-order law.
+- **Market fit 6:** proven spend (shops pay Jobber, and JobAmend sells the adjacent flow) and business apps renew best. But there's no measured loss figure, no dated trigger, a $250 CAC, and Jobber may go native. It earns 7 if the concierge test shows $150+ more per menu job with 6 of 10 shops paying.

@@ -1,0 +1,420 @@
+<title>Fresh Spins</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sibling of Fifty Collisions. A scoreboard of three scores per idea (market fit against its target of 7), a short "where to start", then filterable cards that open a full dossier, the six-turn discussion and, for Morning Tile, the app-version supplement. */
+:root {
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --ink: #17202a;
+  --muted: #5b6875;
+  --line: #d6dde4;
+  --grid: #e6ebf0;
+  --accent: #2a4dd0;
+  --inn: #b86a00;
+  --feas: #0f8a7e;
+  --fit: #2a4dd0;
+  --r1: #6a4fc7;
+  --r2: #0f8a7e;
+  --r1-soft: #ece8fb;
+  --r2-soft: #dff3f0;
+  --oacp: #b8287a;
+  --target: #b8287a;
+  --shadow: 0 1px 2px rgba(23,32,42,.06), 0 8px 24px rgba(23,32,42,.06);
+  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1419; --surface: #171e26; --ink: #e6ebf0; --muted: #93a1ae; --line: #2a3541; --grid: #1f2832;
+    --accent: #8ea6ff; --inn: #f0a43c; --feas: #45c9b9; --fit: #8ea6ff; --r1: #b4a2f5; --r2: #45c9b9;
+    --r1-soft: #251f3d; --r2-soft: #12302d; --oacp: #f06bb5; --target: #f06bb5;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1419; --surface: #171e26; --ink: #e6ebf0; --muted: #93a1ae; --line: #2a3541; --grid: #1f2832;
+  --accent: #8ea6ff; --inn: #f0a43c; --feas: #45c9b9; --fit: #8ea6ff; --r1: #b4a2f5; --r2: #45c9b9;
+  --r1-soft: #251f3d; --r2-soft: #12302d; --oacp: #f06bb5; --target: #f06bb5;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 15px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 40px 80px; display: grid; gap: 40px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+section > h2 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+.sub { color: var(--muted); margin: 0 0 14px; max-width: 70ch; }
+
+/* Header */
+header { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+header h1 { font-size: clamp(40px, 7vw, 76px); font-weight: 800; line-height: .95; }
+header h1 span { color: var(--accent); }
+.lede { max-width: 62ch; font-size: 16.5px; margin: 16px 0 0; }
+.scale { display: grid; gap: 10px; padding: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.scale h2 { font-size: 15px; font-weight: 700; }
+.band { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 10px; font-size: 13.5px; align-items: baseline; }
+.band b { font-family: var(--f-mono); font-weight: 500; font-size: 12px; }
+.anchor { font-size: 13px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 10px; }
+@media (max-width: 820px) { header { grid-template-columns: minmax(0, 1fr); } }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px 28px; font-family: var(--f-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.stats strong { color: var(--ink); font-weight: 500; font-size: 15px; }
+
+/* Scoreboard */
+.board { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow-x: auto; }
+.board table { width: 100%; border-collapse: collapse; min-width: 720px; font-variant-numeric: tabular-nums; }
+.board th { font: 500 11.5px var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+.board td { padding: 10px 14px; border-bottom: 1px solid var(--grid); vertical-align: middle; font-size: 14px; }
+.board tr:last-child td { border-bottom: 0; }
+.board tr.row { cursor: pointer; }
+.board tr.row:hover td { background: var(--bg); }
+.board .nm { font-family: var(--f-display); font-weight: 700; font-size: 17px; white-space: nowrap; }
+.board .spin { color: var(--muted); font-size: 13px; max-width: 46ch; }
+.bar { display: grid; grid-template-columns: repeat(10, 1fr); gap: 2px; width: 120px; height: 8px; position: relative; }
+.bar span { background: var(--grid); border-radius: 1px; }
+.bar span.on { background: currentColor; }
+.bar.fit::after { content: ""; position: absolute; left: calc(60% + 0px); top: -4px; bottom: -4px; width: 2px; background: var(--target); border-radius: 1px; }
+.cellscore { display: flex; align-items: center; gap: 8px; font-family: var(--f-mono); font-size: 13px; }
+.legendrow { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 12.5px; color: var(--muted); padding: 10px 14px; border-top: 1px solid var(--line); }
+.legendrow i { display: inline-block; width: 12px; height: 8px; border-radius: 1px; margin-right: 6px; vertical-align: middle; }
+.legendrow i.t { width: 2px; height: 14px; background: var(--target); }
+
+/* Start here */
+.order { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 14px; counter-reset: o; }
+.step { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 6px; align-content: start; }
+.step .k { font-family: var(--f-mono); font-size: 12px; color: var(--accent); }
+.step h3 { font-size: 19px; }
+.step p { margin: 0; font-size: 14px; color: var(--muted); }
+
+/* Controls */
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px; border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.chip { font: 500 13px var(--f-body); border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: 6px 12px; border-radius: 999px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip .n { font-family: var(--f-mono); font-size: 11.5px; opacity: .7; margin-left: 4px; }
+.controls select { font: 14px var(--f-body); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; }
+.count { font-family: var(--f-mono); font-size: 12.5px; color: var(--muted); margin-left: auto; }
+
+/* Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 16px; margin-top: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: grid; gap: 10px; align-content: start; cursor: pointer; text-align: left; color: inherit; font: inherit; transition: transform .15s, box-shadow .15s; }
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.num { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.pill { font-family: var(--f-mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; }
+.pill.r1 { background: var(--r1-soft); color: var(--r1); }
+.pill.r2 { background: var(--r2-soft); color: var(--r2); }
+.tagx { font-family: var(--f-mono); font-size: 11px; letter-spacing: .04em; border: 1px solid currentColor; border-radius: 999px; padding: 1px 7px; }
+.tagx.oacp { color: var(--oacp); }
+.tagx.app { color: var(--accent); }
+.kind { font-size: 12px; color: var(--muted); }
+.scores { margin-left: auto; display: flex; gap: 10px; font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.scores b { color: var(--ink); font-weight: 500; }
+.card h3 { font-size: 24px; font-weight: 700; line-height: 1.1; }
+.card p { margin: 0; }
+.card .tag { font-size: 14.5px; }
+.fromto { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 10px; font-size: 13px; }
+.fromto dt { font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
+.fromto dd { margin: 0; }
+.empty { padding: 40px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 10px; }
+
+/* Dossier */
+dialog { width: min(920px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); border: 1px solid var(--line); border-radius: 12px; padding: 0; background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+dialog::backdrop { background: rgba(10,14,20,.55); }
+.dhead { position: sticky; top: 0; background: var(--surface); padding: 20px 24px 14px; border-bottom: 1px solid var(--line); display: grid; gap: 8px; z-index: 2; }
+.dhead h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 800; line-height: 1.05; }
+.dhead .tag { font-size: 16px; margin: 0; }
+.close { position: absolute; z-index: 3; top: 14px; right: 14px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 8px; width: 34px; height: 34px; font-size: 18px; cursor: pointer; }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tab { font: 500 13px var(--f-body); border: 0; background: none; color: var(--muted); padding: 6px 2px; margin-right: 14px; border-bottom: 2px solid transparent; cursor: pointer; }
+.tab[aria-selected="true"] { color: var(--ink); border-color: var(--accent); }
+.tab[hidden] { display: none; }
+.dbody { padding: 20px 24px 32px; display: grid; gap: 22px; }
+.fields { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 28px; }
+.field { display: grid; gap: 4px; min-width: 0; }
+.field.wide { grid-column: 1 / -1; }
+.field h4 { margin: 0; font-family: var(--f-mono); font-weight: 500; font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.field p, .field ul { margin: 0; max-width: 70ch; }
+.field ul { padding-left: 18px; }
+.quote { font-family: var(--f-display); font-size: 21px; font-weight: 500; line-height: 1.3; border-left: 3px solid var(--accent); padding-left: 14px; margin: 0; }
+.panel { background: var(--bg); border-radius: 8px; padding: 14px 16px; }
+.panel.kill { border-left: 3px solid var(--target); }
+.scorerow { display: flex; flex-wrap: wrap; gap: 14px 28px; }
+@media (max-width: 640px) { .fields { grid-template-columns: minmax(0, 1fr); } .dhead, .dbody { padding-left: 16px; padding-right: 16px; } }
+
+/* Transcript */
+.tx { display: grid; gap: 18px; max-width: 74ch; }
+.tx .seed { font-size: 13.5px; color: var(--muted); border: 1px dashed var(--line); border-radius: 8px; padding: 10px 12px; }
+.turn { display: grid; gap: 6px; padding-left: 14px; border-left: 3px solid var(--line); min-width: 0; }
+.turn.v { border-color: var(--accent); }
+.turn.b { border-color: var(--inn); }
+.turn .who { font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.turn .who b { color: var(--ink); font-weight: 500; }
+.turn p, .turn ul, .turn ol { margin: 0; }
+.turn ul, .turn ol { padding-left: 20px; }
+.turn code { font-family: var(--f-mono); font-size: 13px; background: var(--bg); padding: 1px 4px; border-radius: 3px; }
+.turn .tbl { overflow-x: auto; }
+.turn table { border-collapse: collapse; font-size: 13.5px; }
+.turn th, .turn td { border: 1px solid var(--line); padding: 4px 8px; text-align: left; vertical-align: top; }
+.turn blockquote { margin: 0; padding-left: 10px; border-left: 2px solid var(--line); color: var(--muted); }
+
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; display: grid; gap: 6px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Two-agent brainstorm · Visionary × Builder · 6 turns per idea</div>
+      <h1>Fresh <span>Spins</span></h1>
+      <p class="lede">Eight ideas we could build and sell within a year, each a fresh spin on something people already buy or put up with: a dishwasher magnet, a door notice, a tip log, an estimate pad. The same two agents behind Fifty Collisions worked each one through six turns, grounded in market research from October 2026. Round one allowed any product; round two was apps only, with the phone or watch as the device.</p>
+    </div>
+    <aside class="scale" aria-label="How the ideas were scored">
+      <h2>Three scores, 1–10</h2>
+      <div class="band"><b style="color:var(--inn)">Innovation</b><span>Same scale as Fifty Collisions. Target 3–6: a real, nameable improvement, not a new category.</span></div>
+      <div class="band"><b style="color:var(--feas)">Feasibility</b><span>Target 7+: a team of 1–4 ships a sellable version in 90 days.</span></div>
+      <div class="band"><b style="color:var(--fit)">Market fit</b><span>Paying, returning customers within 12 months. Target 7+. A 5 means plausible but unproven.</span></div>
+      <div class="anchor">Anchor: OACP / liteneen.net scores 3 on innovation. Exactly one idea, Counter, is built on it.</div>
+    </aside>
+  </header>
+
+  <div class="stats" id="stats"></div>
+
+  <section aria-labelledby="sbh">
+    <h2 id="sbh">The scoreboard</h2>
+    <p class="sub">No idea reached the market-fit target of 7 on paper. The agents wouldn't score demand nobody had shown. Each idea instead names the cheap test that would move it, and every test can run before any real code. Select a row to open the dossier.</p>
+    <div class="board"><table id="board"></table>
+      <div class="legendrow"><span><i style="background:var(--inn)"></i>innovation</span><span><i style="background:var(--feas)"></i>feasibility</span><span><i style="background:var(--fit)"></i>market fit</span><span><i class="t"></i>market-fit target (7)</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="sth">
+    <h2 id="sth">Where to start</h2>
+    <p class="sub">Ranked by the shape of the business and the cost of finding out, not by score alone.</p>
+    <div class="order" id="order"></div>
+  </section>
+
+  <section aria-label="Ideas">
+    <div class="controls" role="toolbar" aria-label="Filter ideas">
+      <div id="roundChips" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+      <select id="kindSel" aria-label="Kind"></select>
+      <select id="sortSel" aria-label="Sort">
+        <option value="id">Sort: discussion order</option>
+        <option value="fit">Sort: market fit</option>
+        <option value="feas">Sort: feasibility</option>
+        <option value="inn">Sort: innovation</option>
+      </select>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <footer>
+    <div>Method: the moderator wrote one seed per idea, each naming an old product and pointing at mechanisms in Fifty Collisions to borrow. Two Claude agents then ran a fixed six-turn loop: pitch, ground, sharpen, stress-test, converge, record. Round one (ideas 1–5) used one agent pair, and round two (ideas 6–8 and the Morning Tile app supplement) a fresh pair. Both worked from two researched briefs: one on products and channels, one on apps.</div>
+    <div>Scores are the Builder's calibrated judgment, not market validation. Figures marked unverified in the transcripts are unverified.</div>
+  </footer>
+</div>
+
+<dialog id="dlg" aria-labelledby="dTitle">
+  <div class="dhead">
+    <button class="close" id="dClose" aria-label="Close">×</button>
+    <div class="top" id="dMeta"></div>
+    <h2 id="dTitle"></h2>
+    <p class="tag" id="dTag"></p>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" id="tabD" aria-selected="true">Dossier</button>
+      <button class="tab" role="tab" id="tabT" aria-selected="false">Discussion (6 turns)</button>
+      <button class="tab" role="tab" id="tabA" aria-selected="false" hidden>App version</button>
+    </div>
+  </div>
+  <div class="dbody" id="dBody"></div>
+</dialog>
+
+<script type="application/json" id="data">__DATA__</script>
+<script>
+(function () {
+  const DATA = JSON.parse(document.getElementById('data').textContent);
+  const ideas = DATA.ideas;
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const pad = (n) => String(n).padStart(2, '0');
+  const roundOf = (d) => d.id <= 5 ? 1 : 2;
+  const roundName = { 1: 'Round 1 · any product', 2: 'Round 2 · apps only' };
+
+  const avg = (k) => (ideas.reduce((a, d) => a + d[k], 0) / ideas.length).toFixed(1);
+  $('stats').innerHTML = [
+    ['ideas', ideas.length], ['rounds', 2], ['avg innovation', avg('innovation')], ['avg feasibility', avg('feasibility')],
+    ['avg market fit', avg('market_fit_12mo')], ['agent turns', ideas.length * 6 + 2], ['OACP ideas', ideas.filter((d) => d.oacp).length]
+  ].map(([k, v]) => `<span><strong>${v}</strong> ${k}</span>`).join('');
+
+  const bar = (v, color, fit) => `<div class="bar${fit ? ' fit' : ''}" style="color:${color}" aria-hidden="true">${Array.from({ length: 10 }, (_, i) => `<span class="${i < v ? 'on' : ''}"></span>`).join('')}</div>`;
+  const cs = (v, color, fit) => `<div class="cellscore">${bar(v, color, fit)}<span>${v}</span></div>`;
+
+  // Scoreboard
+  $('board').innerHTML = `<thead><tr><th>#</th><th>Idea</th><th>Old product → fresh spin</th><th>Innovation</th><th>Feasibility</th><th>Market fit</th></tr></thead><tbody>` +
+    ideas.map((d) => `<tr class="row" tabindex="0" data-id="${d.id}" aria-label="Open ${esc(d.name)}">
+      <td class="num">${pad(d.id)}</td>
+      <td><div class="nm">${esc(d.name)}</div><div class="kind">${esc(d.kind)}${d.oacp ? ' · <span style="color:var(--oacp)">OACP</span>' : ''}</div></td>
+      <td class="spin"><strong style="color:var(--ink);font-weight:500">${esc(d.old_product)}</strong> → ${esc(d.fresh_spin)}</td>
+      <td>${cs(d.innovation, 'var(--inn)')}</td><td>${cs(d.feasibility, 'var(--feas)')}</td><td>${cs(d.market_fit_12mo, 'var(--fit)', true)}</td></tr>`).join('') + '</tbody>';
+  $('board').addEventListener('click', (e) => { const r = e.target.closest('tr.row'); if (r) openIdea(+r.dataset.id); });
+  $('board').addEventListener('keydown', (e) => { const r = e.target.closest('tr.row'); if (r && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openIdea(+r.dataset.id); } });
+
+  // Where to start
+  $('order').innerHTML = DATA.order.map((o, i) => `<div class="step"><span class="k">${i + 1} · ${esc(o.when)}</span><h3>${esc(o.title)}</h3><p>${esc(o.why)}</p></div>`).join('');
+
+  // Filters
+  let state = { round: 'all', kind: 'all', sort: 'id' };
+  try { const s = JSON.parse(localStorage.getItem('fs-state') || 'null'); if (s) state = Object.assign(state, s); } catch (e) {}
+  const save = () => { try { localStorage.setItem('fs-state', JSON.stringify(state)); } catch (e) {} };
+  const rounds = ['all', 1, 2];
+  $('roundChips').innerHTML = rounds.map((r) => `<button class="chip" data-r="${r}" aria-pressed="${String(state.round) === String(r)}">${r === 'all' ? 'Both rounds' : roundName[r]}<span class="n">${r === 'all' ? ideas.length : ideas.filter((d) => roundOf(d) === r).length}</span></button>`).join('');
+  $('roundChips').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-r]'); if (!b) return;
+    state.round = b.dataset.r === 'all' ? 'all' : +b.dataset.r; save();
+    $('roundChips').querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', c.dataset.r === String(state.round)));
+    render();
+  });
+  const kinds = [...new Set(ideas.map((d) => d.kind))].sort();
+  $('kindSel').innerHTML = `<option value="all">All kinds</option>` + kinds.map((k) => `<option value="${esc(k)}">${esc(k)} (${ideas.filter((d) => d.kind === k).length})</option>`).join('');
+  $('kindSel').value = state.kind; $('sortSel').value = state.sort;
+  $('kindSel').onchange = (e) => { state.kind = e.target.value; save(); render(); };
+  $('sortSel').onchange = (e) => { state.sort = e.target.value; save(); render(); };
+
+  function render() {
+    let list = ideas.filter((d) => (state.round === 'all' || roundOf(d) === state.round) && (state.kind === 'all' || d.kind === state.kind));
+    const s = state.sort;
+    list.sort((a, b) => s === 'fit' ? b.market_fit_12mo - a.market_fit_12mo || b.feasibility - a.feasibility
+      : s === 'feas' ? b.feasibility - a.feasibility || b.market_fit_12mo - a.market_fit_12mo
+      : s === 'inn' ? b.innovation - a.innovation || b.market_fit_12mo - a.market_fit_12mo : a.id - b.id);
+    $('count').textContent = `${list.length} of ${ideas.length}`;
+    $('grid').innerHTML = list.length ? list.map((d) => `
+      <button class="card" data-id="${d.id}" aria-label="Open ${esc(d.name)}">
+        <div class="top"><span class="num">#${pad(d.id)}</span><span class="pill r${roundOf(d)}">round ${roundOf(d)}</span><span class="kind">${esc(d.kind)}</span>
+          ${d.oacp ? '<span class="tagx oacp">OACP</span>' : ''}${d.app_version ? '<span class="tagx app">+ app version</span>' : ''}
+          <span class="scores"><span>I <b>${d.innovation}</b></span><span>F <b>${d.feasibility}</b></span><span>M <b>${d.market_fit_12mo}</b></span></span></div>
+        <h3>${esc(d.name)}</h3>
+        <p class="tag">${esc(d.tagline)}</p>
+        <dl class="fromto"><dt>Old</dt><dd>${esc(d.old_product)}</dd><dt>Spin</dt><dd>${esc(d.fresh_spin)}</dd><dt>Buyer</dt><dd>${esc(firstSentence(d.first_buyer))}</dd></dl>
+        ${bar(d.market_fit_12mo, 'var(--fit)', true)}
+      </button>`).join('') : `<div class="empty">No ideas match. Pick "Both rounds" or "All kinds".</div>`;
+  }
+  function firstSentence(t) { const m = String(t).match(/^.*?[.!?](\s|$)/); return m ? m[0].trim() : t; }
+  $('grid').addEventListener('click', (e) => { const c = e.target.closest('.card'); if (c) openIdea(+c.dataset.id); });
+
+  // Minimal markdown for transcripts (escape first, then format)
+  function inline(t) {
+    return esc(t).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/(^|[^*])\*([^*\s][^*]*)\*/g, '$1<em>$2</em>');
+  }
+  function md(src) {
+    const lines = src.split('\n'); let out = '', i = 0;
+    while (i < lines.length) {
+      const l = lines[i];
+      if (!l.trim()) { i++; continue; }
+      if (/^\s*\|/.test(l)) {
+        const rows = []; while (i < lines.length && /^\s*\|/.test(lines[i])) rows.push(lines[i++]);
+        const cells = (r) => r.trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+        const body = rows.filter((r) => !/^\s*\|?\s*:?-{2,}/.test(r));
+        out += '<div class="tbl"><table>' + body.map((r, ri) => '<tr>' + cells(r).map((c) => ri === 0 ? `<th>${inline(c)}</th>` : `<td>${inline(c)}</td>`).join('') + '</tr>').join('') + '</table></div>';
+        continue;
+      }
+      if (/^\s*[-*] /.test(l)) { let li = ''; while (i < lines.length && /^\s*[-*] /.test(lines[i])) li += `<li>${inline(lines[i++].replace(/^\s*[-*] /, ''))}</li>`; out += `<ul>${li}</ul>`; continue; }
+      if (/^\s*\d+[.)] /.test(l)) { let li = ''; while (i < lines.length && /^\s*\d+[.)] /.test(lines[i])) li += `<li>${inline(lines[i++].replace(/^\s*\d+[.)] /, ''))}</li>`; out += `<ol>${li}</ol>`; continue; }
+      if (/^>/.test(l)) { let q = ''; while (i < lines.length && /^>/.test(lines[i])) q += lines[i++].replace(/^>\s?/, '') + ' '; out += `<blockquote>${inline(q)}</blockquote>`; continue; }
+      if (/^#{1,6} /.test(l)) { out += `<p><strong>${inline(l.replace(/^#+ /, ''))}</strong></p>`; i++; continue; }
+      let p = ''; while (i < lines.length && lines[i].trim() && !/^\s*([-*] |\d+[.)] |\||>|#{1,6} )/.test(lines[i])) p += lines[i++] + ' ';
+      out += `<p>${inline(p.trim())}</p>`;
+    }
+    return out;
+  }
+  function transcriptHTML(raw, jobs) {
+    const parts = raw.split(/^### /m);
+    const head = parts.shift();
+    const seed = (head.match(/^> Seed:(.*)$/m) || [])[1];
+    let h = seed ? `<div class="seed"><strong>Seed:</strong> ${inline(seed.trim())}</div>` : '';
+    parts.forEach((p) => {
+      const nl = p.indexOf('\n'); const title = p.slice(0, nl); const body = p.slice(nl + 1);
+      const m = title.match(/Turn\s+(\w+)\s*[—-]\s*(\w+)/); const n = m ? m[1] : ''; const who = m ? m[2] : title;
+      h += `<section class="turn ${/vision/i.test(who) ? 'v' : 'b'}"><div class="who">Turn ${esc(n)} · <b>${esc(who)}</b> · ${jobs[n] || ''}</div>${md(body)}</section>`;
+    });
+    return `<div class="tx">${h}</div>`;
+  }
+
+  // Dossier
+  const dlg = $('dlg'); let cur = null;
+  const field = (t, v, wide) => `<div class="field${wide ? ' wide' : ''}"><h4>${t}</h4><p>${esc(v)}</p></div>`;
+  const list = (t, arr, wide) => `<div class="field${wide ? ' wide' : ''}"><h4>${t}</h4><ul>${(arr || []).map((r) => `<li>${esc(r)}</li>`).join('')}</ul></div>`;
+  const JOBS = { 1: 'Pitch', 2: 'Ground', 3: 'Sharpen', 4: 'Stress-test', 5: 'Converge', 6: 'Record', A: 'App version', B: 'Verdict' };
+  function showTab(which) {
+    ['D', 'T', 'A'].forEach((k) => $('tab' + k).setAttribute('aria-selected', which === k));
+    const d = cur;
+    if (which === 'T') $('dBody').innerHTML = transcriptHTML(DATA.transcripts[d.id] || 'Transcript unavailable.', JOBS);
+    else if (which === 'A') {
+      const a = d.app_version;
+      $('dBody').innerHTML = `
+        <div class="scorerow cellscore"><span>Innovation ${a.innovation}</span><span>Feasibility ${a.feasibility}</span><span>Market fit ${a.market_fit_12mo}</span><span style="color:var(--muted)">(app alone)</span></div>
+        <div class="field wide panel"><h4>Verdict</h4><p>${esc(a.verdict)}</p></div>
+        <div class="fields">
+          ${field('What it is', a.summary, true)}
+          ${field("The parent's morning", a.parent_flow)}
+          ${field('What the family sees', a.family_flow)}
+          ${field('Against the board', a.vs_board)}
+          ${field('Price', a.price)}
+        </div>
+        <h4 class="eyebrow" style="margin:0">The two-turn supplement</h4>
+        ${transcriptHTML(DATA.app_transcript || '', JOBS)}`;
+    } else {
+      $('dBody').innerHTML = `
+        <p class="quote">${esc(d.boring_but)}</p>
+        <div class="fields">
+          ${field('What it is', d.summary, true)}
+          ${field('The old product', d.old_product)}
+          ${field('The one change', d.fresh_spin)}
+          ${field('First buyer', d.first_buyer)}
+          ${field('Why now', d.why_now)}
+          ${field('Price and margin', d.price_and_margin)}
+          ${field('Channel', d.channel)}
+          ${list('Competitors', d.competitors, true)}
+          <div class="field wide panel"><h4>Demand test · 2–4 weeks</h4><p>${esc(d.demand_test)}</p></div>
+          ${field('90-day MVP', d.mvp_90_days, true)}
+          <div class="field wide panel kill"><h4>Kill metric</h4><p>${esc(d.kill_metric)}</p></div>
+          ${list('Risks', d.risks)}
+          ${list('Borrows from', d.borrows_from)}
+          ${field('Three years out', d.three_year, true)}
+          ${field('Best line from the discussion', d.best_line, true)}
+        </div>`;
+    }
+    $('dBody').scrollTop = 0; dlg.scrollTop = 0;
+  }
+  function openIdea(id) {
+    cur = ideas.find((d) => d.id === id); if (!cur) return;
+    const d = cur;
+    $('dMeta').innerHTML = `<span class="num">#${pad(d.id)}</span><span class="pill r${roundOf(d)}">${roundName[roundOf(d)]}</span><span class="kind">${esc(d.kind)}</span>${d.oacp ? '<span class="tagx oacp">OACP</span>' : ''}
+      <span class="scores"><span>Innovation <b>${d.innovation}</b></span><span>Feasibility <b>${d.feasibility}</b></span><span>Market fit <b>${d.market_fit_12mo}</b></span></span>`;
+    $('dTitle').textContent = d.name; $('dTag').textContent = d.tagline;
+    $('tabA').hidden = !d.app_version;
+    showTab('D');
+    if (!dlg.open) dlg.showModal();
+  }
+  $('tabD').onclick = () => showTab('D'); $('tabT').onclick = () => showTab('T'); $('tabA').onclick = () => showTab('A');
+  $('dClose').onclick = () => dlg.close();
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+
+  render();
+  const h = (location.hash || '').replace('#', '');
+  const hit = ideas.find((d) => d.name.toLowerCase().replace(/[^a-z]+/g, '-') === h);
+  if (hit) openIdea(hit.id);
+})();
+</script>
